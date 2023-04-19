@@ -1,0 +1,3 @@
+-Q . PV
+-Q ./compcert_lib compcert.lib
+-Q ./SetsClass SetsClass
