@@ -1,0 +1,31 @@
+DIGEST f2a95900be5f613f14ed28fc72055714
+FSetsClass.SetsClass
+R15:34 SetsClass.SetElement <> <> lib
+R52:71 SetsClass.SetsDomain <> <> lib
+R89:108 SetsClass.RelsDomain <> <> lib
+mod 119:130 <> SetsNotation
+R214:223 SetsClass.SetsDomain Sets empty meth
+not 206:206 SetsNotation ::sets_scope:'['_']'
+R270:279 SetsClass.SetsDomain Sets empty meth
+not 262:262 SetsNotation ::sets_scope:'∅'
+R345:358 SetsClass.SetsDomain Sets singleton def
+not 334:334 SetsNotation ::sets_scope:'['_x_']'
+R400:413 SetsClass.SetsDomain Sets intersect meth
+not 386:386 SetsNotation ::sets_scope:x_'∩'_x
+R489:498 SetsClass.SetsDomain Sets union meth
+not 475:475 SetsNotation ::sets_scope:x_'∪'_x
+R572:589 SetsClass.SetsDomain Sets indexed_union meth
+not 560:560 SetsNotation ::sets_scope:'⋃'_x
+R659:680 SetsClass.SetsDomain Sets indexed_intersect meth
+not 647:647 SetsNotation ::sets_scope:'⋂'_x
+R751:760 SetsClass.SetsDomain Sets equiv meth
+not 738:738 SetsNotation ::sets_scope:x_'=='_x
+R835:847 SetsClass.SetsDomain Sets included meth
+not 821:821 SetsNotation ::sets_scope:x_'⊆'_x
+R922:931 SetsClass.SetElement SetsEle In meth
+not 908:908 SetsNotation ::sets_scope:x_'∈'_x
+R1008:1020 SetsClass.SetsDomain Sets prop_inj meth
+not 992:992 SetsNotation ::sets_scope:'⌜'_x_'⌝'
+R1093:1103 SetsClass.RelsDomain Rels concat meth
+not 1079:1079 SetsNotation ::sets_scope:x_'∘'_x
+R1163:1174 SetsClass.SetsClass SetsNotation <> mod

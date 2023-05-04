@@ -1,0 +1,595 @@
+DIGEST 42f3b6257028787f1aa445397bc7eef6
+FPV.Syntax
+R15:32 Coq.Strings.String <> <> lib
+R50:66 Coq.ZArith.ZArith <> <> lib
+R84:102 Coq.micromega.Psatz <> <> lib
+mod 205:220 <> Lang_SimpleWhile
+def 730:737 Lang_SimpleWhile var_name
+R748:753 Coq.Strings.String <> string ind
+ind 767:774 Lang_SimpleWhile expr_int
+constr 790:795 Lang_SimpleWhile EConst
+constr 818:821 Lang_SimpleWhile EVar
+constr 851:854 Lang_SimpleWhile EAdd
+constr 888:891 Lang_SimpleWhile ESub
+constr 925:928 Lang_SimpleWhile EMul
+R801:801 Coq.Numbers.BinNums <> Z ind
+binder 798:798 <> n:3
+R805:812 PV.Syntax <> expr_int:1 ind
+R827:834 PV.Syntax Lang_SimpleWhile var_name def
+binder 824:824 <> x:4
+R838:845 PV.Syntax <> expr_int:1 ind
+R864:871 PV.Syntax <> expr_int:1 ind
+binder 857:858 <> e1:5
+binder 860:861 <> e2:6
+R875:882 PV.Syntax <> expr_int:1 ind
+R901:908 PV.Syntax <> expr_int:1 ind
+binder 894:895 <> e1:7
+binder 897:898 <> e2:8
+R912:919 PV.Syntax <> expr_int:1 ind
+R938:945 PV.Syntax <> expr_int:1 ind
+binder 931:932 <> e1:9
+binder 934:935 <> e2:10
+R949:956 PV.Syntax <> expr_int:1 ind
+def 1051:1055 Lang_SimpleWhile EVar'
+R1064:1067 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1068:1075 PV.Syntax Lang_SimpleWhile expr_int ind
+R1058:1063 Coq.Strings.String <> string ind
+R1080:1083 PV.Syntax Lang_SimpleWhile EVar constr
+R1119:1149 PV.Syntax Lang_SimpleWhile EConst constr
+R1152:1187 PV.Syntax Lang_SimpleWhile EVar constr
+R1190:1224 PV.Syntax Lang_SimpleWhile EVar' def
+not 1236:1236 Lang_SimpleWhile :::'[['_x_']]'
+not 1309:1309 Lang_SimpleWhile :expr_entry::'('_x_')'
+not 1390:1390 Lang_SimpleWhile :expr_entry::x
+not 1466:1466 Lang_SimpleWhile :expr_entry::x_x
+R1612:1615 PV.Syntax Lang_SimpleWhile EMul constr
+not 1600:1600 Lang_SimpleWhile :expr_entry::x_'*'_x
+R1701:1704 PV.Syntax Lang_SimpleWhile EAdd constr
+not 1689:1689 Lang_SimpleWhile :expr_entry::x_'+'_x
+R1790:1793 PV.Syntax Lang_SimpleWhile ESub constr
+not 1778:1778 Lang_SimpleWhile :expr_entry::x_'-'_x
+R1909:1910 PV.Syntax Lang_SimpleWhile :::'[['_x_']]' not
+R1918:1919 PV.Syntax Lang_SimpleWhile :::'[['_x_']]' not
+R1912:1914 PV.Syntax Lang_SimpleWhile :expr_entry::x_'+'_x not
+R1928:1929 PV.Syntax Lang_SimpleWhile :::'[['_x_']]' not
+R1951:1952 PV.Syntax Lang_SimpleWhile :::'[['_x_']]' not
+R1933:1935 PV.Syntax Lang_SimpleWhile :expr_entry::x_'*'_x not
+R1936:1936 PV.Syntax Lang_SimpleWhile :expr_entry::'('_x_')' not
+R1950:1950 PV.Syntax Lang_SimpleWhile :expr_entry::'('_x_')' not
+R1946:1948 PV.Syntax Lang_SimpleWhile :expr_entry::x_'+'_x not
+R1940:1942 PV.Syntax Lang_SimpleWhile :expr_entry::x_'+'_x not
+ind 1966:1974 Lang_SimpleWhile expr_bool
+constr 1989:1993 Lang_SimpleWhile ETrue
+constr 2010:2015 Lang_SimpleWhile EFalse
+constr 2032:2034 Lang_SimpleWhile ELt
+constr 2069:2072 Lang_SimpleWhile EAnd
+constr 2108:2111 Lang_SimpleWhile ENot
+R1996:2004 PV.Syntax <> expr_bool:11 ind
+R2018:2026 PV.Syntax <> expr_bool:11 ind
+R2044:2051 PV.Syntax Lang_SimpleWhile expr_int ind
+binder 2037:2038 <> e1:13
+binder 2040:2041 <> e2:14
+R2055:2063 PV.Syntax <> expr_bool:11 ind
+R2082:2090 PV.Syntax <> expr_bool:11 ind
+binder 2075:2076 <> e1:15
+binder 2078:2079 <> e2:16
+R2094:2102 PV.Syntax <> expr_bool:11 ind
+R2117:2125 PV.Syntax <> expr_bool:11 ind
+binder 2114:2114 <> e:17
+R2129:2137 PV.Syntax <> expr_bool:11 ind
+ind 2151:2153 Lang_SimpleWhile com
+constr 2169:2173 Lang_SimpleWhile CSkip
+constr 2184:2188 Lang_SimpleWhile CAsgn
+constr 2227:2230 Lang_SimpleWhile CSeq
+constr 2254:2256 Lang_SimpleWhile CIf
+constr 2295:2300 Lang_SimpleWhile CWhile
+R2176:2178 PV.Syntax <> com:18 ind
+R2194:2201 PV.Syntax Lang_SimpleWhile var_name def
+binder 2191:2191 <> x:20
+R2208:2215 PV.Syntax Lang_SimpleWhile expr_int ind
+binder 2205:2205 <> e:21
+R2219:2221 PV.Syntax <> com:18 ind
+R2240:2242 PV.Syntax <> com:18 ind
+binder 2233:2234 <> c1:22
+binder 2236:2237 <> c2:23
+R2246:2248 PV.Syntax <> com:18 ind
+R2262:2270 PV.Syntax Lang_SimpleWhile expr_bool ind
+binder 2259:2259 <> e:24
+R2281:2283 PV.Syntax <> com:18 ind
+binder 2274:2275 <> c1:25
+binder 2277:2278 <> c2:26
+R2287:2289 PV.Syntax <> com:18 ind
+R2306:2314 PV.Syntax Lang_SimpleWhile expr_bool ind
+binder 2303:2303 <> e:27
+R2321:2323 PV.Syntax <> com:18 ind
+binder 2318:2318 <> c:28
+R2327:2329 PV.Syntax <> com:18 ind
+R2339:2354 PV.Syntax Lang_SimpleWhile <> mod
+mod 2387:2396 <> Lang_While
+def 2732:2739 Lang_While var_name
+R2750:2755 Coq.Strings.String <> string ind
+ind 2822:2826 Lang_While binop
+constr 2842:2844 Lang_While OOr
+constr 2848:2851 Lang_While OAnd
+constr 2857:2859 Lang_While OLt
+constr 2863:2865 Lang_While OLe
+constr 2869:2871 Lang_While OGt
+constr 2875:2877 Lang_While OGe
+constr 2881:2883 Lang_While OEq
+constr 2887:2889 Lang_While ONe
+constr 2895:2899 Lang_While OPlus
+constr 2903:2908 Lang_While OMinus
+constr 2912:2915 Lang_While OMul
+constr 2919:2922 Lang_While ODiv
+constr 2926:2929 Lang_While OMod
+ind 2943:2946 Lang_While unop
+constr 2962:2965 Lang_While ONot
+constr 2969:2972 Lang_While ONeg
+ind 3033:3036 Lang_While expr
+constr 3052:3057 Lang_While EConst
+constr 3076:3079 Lang_While EVar
+constr 3105:3110 Lang_While EBinop
+constr 3148:3152 Lang_While EUnop
+R3063:3063 Coq.Numbers.BinNums <> Z ind
+binder 3060:3060 <> n:35
+R3067:3070 PV.Syntax <> expr:33 ind
+R3085:3092 PV.Syntax Lang_While var_name def
+binder 3082:3082 <> x:36
+R3096:3099 PV.Syntax <> expr:33 ind
+R3117:3121 PV.Syntax Lang_While binop ind
+binder 3113:3114 <> op:37
+R3132:3135 PV.Syntax <> expr:33 ind
+binder 3125:3126 <> e1:38
+binder 3128:3129 <> e2:39
+R3139:3142 PV.Syntax <> expr:33 ind
+R3159:3162 PV.Syntax Lang_While unop ind
+binder 3155:3156 <> op:40
+R3169:3172 PV.Syntax <> expr:33 ind
+binder 3166:3166 <> e:41
+R3176:3179 PV.Syntax <> expr:33 ind
+ind 3243:3245 Lang_While com
+constr 3261:3265 Lang_While CSkip
+constr 3276:3280 Lang_While CAsgn
+constr 3315:3318 Lang_While CSeq
+constr 3342:3344 Lang_While CIf
+constr 3378:3383 Lang_While CWhile
+R3268:3270 PV.Syntax <> com:42 ind
+R3286:3293 PV.Syntax Lang_While var_name def
+binder 3283:3283 <> x:44
+R3300:3303 PV.Syntax Lang_While expr ind
+binder 3297:3297 <> e:45
+R3307:3309 PV.Syntax <> com:42 ind
+R3328:3330 PV.Syntax <> com:42 ind
+binder 3321:3322 <> c1:46
+binder 3324:3325 <> c2:47
+R3334:3336 PV.Syntax <> com:42 ind
+R3350:3353 PV.Syntax Lang_While expr ind
+binder 3347:3347 <> e:48
+R3364:3366 PV.Syntax <> com:42 ind
+binder 3357:3358 <> c1:49
+binder 3360:3361 <> c2:50
+R3370:3372 PV.Syntax <> com:42 ind
+R3389:3392 PV.Syntax Lang_While expr ind
+binder 3386:3386 <> e:51
+R3399:3401 PV.Syntax <> com:42 ind
+binder 3396:3396 <> c:52
+R3405:3407 PV.Syntax <> com:42 ind
+R3415:3424 PV.Syntax Lang_While <> mod
+ind 3482:3485 <> tree
+constr 3498:3501 <> Leaf
+constr 3511:3514 <> Node
+R3504:3507 PV.Syntax <> tree:53 ind
+R3520:3523 PV.Syntax <> tree:53 ind
+binder 3517:3517 <> l:55
+R3530:3530 Coq.Numbers.BinNums <> Z ind
+binder 3527:3527 <> v:56
+R3537:3540 PV.Syntax <> tree:53 ind
+binder 3534:3534 <> r:57
+R3544:3547 PV.Syntax <> tree:53 ind
+def 3793:3805 <> tree_example0
+R3808:3811 PV.Syntax <> tree ind
+R3818:3821 PV.Syntax <> Node constr
+R3830:3833 PV.Syntax <> Leaf constr
+R3823:3826 PV.Syntax <> Leaf constr
+def 3848:3860 <> tree_example1
+R3863:3866 PV.Syntax <> tree ind
+R3873:3876 PV.Syntax <> Node constr
+R3899:3902 PV.Syntax <> Leaf constr
+R3879:3882 PV.Syntax <> Node constr
+R3891:3894 PV.Syntax <> Leaf constr
+R3884:3887 PV.Syntax <> Leaf constr
+def 3917:3930 <> tree_example2a
+R3933:3936 PV.Syntax <> tree ind
+R3943:3946 PV.Syntax <> Node constr
+R3972:3975 PV.Syntax <> Node constr
+R3984:3987 PV.Syntax <> Leaf constr
+R3977:3980 PV.Syntax <> Leaf constr
+R3949:3952 PV.Syntax <> Node constr
+R3961:3964 PV.Syntax <> Leaf constr
+R3954:3957 PV.Syntax <> Leaf constr
+def 4003:4016 <> tree_example2b
+R4019:4022 PV.Syntax <> tree ind
+R4029:4032 PV.Syntax <> Node constr
+R4058:4061 PV.Syntax <> Node constr
+R4070:4073 PV.Syntax <> Leaf constr
+R4063:4066 PV.Syntax <> Leaf constr
+R4035:4038 PV.Syntax <> Node constr
+R4047:4050 PV.Syntax <> Leaf constr
+R4040:4043 PV.Syntax <> Leaf constr
+def 4089:4102 <> tree_example3a
+R4105:4108 PV.Syntax <> tree ind
+R4115:4118 PV.Syntax <> Node constr
+R4141:4154 PV.Syntax <> tree_example2a def
+R4121:4124 PV.Syntax <> Node constr
+R4133:4136 PV.Syntax <> Leaf constr
+R4126:4129 PV.Syntax <> Leaf constr
+def 4169:4182 <> tree_example3b
+R4185:4188 PV.Syntax <> tree ind
+R4195:4198 PV.Syntax <> Node constr
+R4218:4221 PV.Syntax <> Node constr
+R4230:4233 PV.Syntax <> Leaf constr
+R4223:4226 PV.Syntax <> Leaf constr
+R4200:4213 PV.Syntax <> tree_example2b def
+def 4480:4490 <> tree_height
+R4496:4499 PV.Syntax <> tree ind
+binder 4493:4493 <> t:58
+R4503:4503 Coq.Numbers.BinNums <> Z ind
+R4516:4516 PV.Syntax <> t:58 var
+R4527:4530 PV.Syntax <> Leaf constr
+R4541:4544 PV.Syntax <> Node constr
+R4592:4594 Coq.ZArith.BinInt <> ::Z_scope:x_'+'_x not
+R4555:4559 Coq.ZArith.BinInt Z max def
+R4578:4588 PV.Syntax <> tree_height:59 def
+R4562:4572 PV.Syntax <> tree_height:59 def
+def 4614:4622 <> tree_size
+R4628:4631 PV.Syntax <> tree ind
+binder 4625:4625 <> t:61
+R4635:4635 Coq.Numbers.BinNums <> Z ind
+R4648:4648 PV.Syntax <> t:61 var
+R4659:4662 PV.Syntax <> Leaf constr
+R4673:4676 PV.Syntax <> Node constr
+R4712:4714 Coq.ZArith.BinInt <> ::Z_scope:x_'+'_x not
+R4698:4700 Coq.ZArith.BinInt <> ::Z_scope:x_'+'_x not
+R4687:4695 PV.Syntax <> tree_size:62 def
+R4701:4709 PV.Syntax <> tree_size:62 def
+def 5219:5229 <> Leaf_height
+R5250:5252 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5234:5244 PV.Syntax <> tree_height def
+R5246:5249 PV.Syntax <> Leaf constr
+def 5290:5310 <> tree_example2a_height
+R5341:5343 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5315:5325 PV.Syntax <> tree_height def
+R5327:5340 PV.Syntax <> tree_example2a def
+def 5381:5398 <> treeexample3b_size
+R5427:5429 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5403:5411 PV.Syntax <> tree_size def
+R5413:5426 PV.Syntax <> tree_example3b def
+def 5586:5597 <> tree_reverse
+R5603:5606 PV.Syntax <> tree ind
+binder 5600:5600 <> t:64
+R5610:5613 PV.Syntax <> tree ind
+R5626:5626 PV.Syntax <> t:64 var
+R5637:5640 PV.Syntax <> Leaf constr
+R5645:5648 PV.Syntax <> Leaf constr
+R5654:5657 PV.Syntax <> Node constr
+R5668:5671 PV.Syntax <> Node constr
+R5693:5704 PV.Syntax <> tree_reverse:65 def
+R5674:5685 PV.Syntax <> tree_reverse:65 def
+def 5781:5797 <> Leaf_tree_reverse
+R5819:5821 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5802:5813 PV.Syntax <> tree_reverse def
+R5815:5818 PV.Syntax <> Leaf constr
+R5822:5825 PV.Syntax <> Leaf constr
+def 5862:5887 <> tree_example0_tree_reverse
+R5918:5920 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5892:5903 PV.Syntax <> tree_reverse def
+R5905:5917 PV.Syntax <> tree_example0 def
+R5921:5933 PV.Syntax <> tree_example0 def
+def 5970:5995 <> tree_example3_tree_reverse
+R6027:6029 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6000:6011 PV.Syntax <> tree_reverse def
+R6013:6026 PV.Syntax <> tree_example3a def
+R6030:6043 PV.Syntax <> tree_example3b def
+prf 6634:6646 <> Node_inj_left
+binder 6656:6657 <> l1:67
+binder 6659:6660 <> v1:68
+binder 6662:6663 <> r1:69
+binder 6665:6666 <> l2:70
+binder 6668:6669 <> v2:71
+binder 6671:6672 <> r2:72
+R6706:6711 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6714:6716 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6712:6713 PV.Syntax <> l1:67 var
+R6717:6718 PV.Syntax <> l2:70 var
+R6690:6692 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6677:6680 PV.Syntax <> Node constr
+R6688:6689 PV.Syntax <> r1:69 var
+R6685:6686 PV.Syntax <> v1:68 var
+R6682:6683 PV.Syntax <> l1:67 var
+R6693:6696 PV.Syntax <> Node constr
+R6704:6705 PV.Syntax <> r2:72 var
+R6701:6702 PV.Syntax <> v2:71 var
+R6698:6699 PV.Syntax <> l2:70 var
+prf 7046:7059 <> Node_inj_right
+binder 7069:7070 <> l1:73
+binder 7072:7073 <> v1:74
+binder 7075:7076 <> r1:75
+binder 7078:7079 <> l2:76
+binder 7081:7082 <> v2:77
+binder 7084:7085 <> r2:78
+R7119:7124 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7127:7129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7125:7126 PV.Syntax <> r1:75 var
+R7130:7131 PV.Syntax <> r2:78 var
+R7103:7105 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7090:7093 PV.Syntax <> Node constr
+R7101:7102 PV.Syntax <> r1:75 var
+R7098:7099 PV.Syntax <> v1:74 var
+R7095:7096 PV.Syntax <> l1:73 var
+R7106:7109 PV.Syntax <> Node constr
+R7117:7118 PV.Syntax <> r2:78 var
+R7114:7115 PV.Syntax <> v2:77 var
+R7111:7112 PV.Syntax <> l2:76 var
+prf 7479:7492 <> Node_inj_value
+binder 7502:7503 <> l1:79
+binder 7505:7506 <> v1:80
+binder 7508:7509 <> r1:81
+binder 7511:7512 <> l2:82
+binder 7514:7515 <> v2:83
+binder 7517:7518 <> r2:84
+R7552:7557 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7560:7562 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7558:7559 PV.Syntax <> v1:80 var
+R7563:7564 PV.Syntax <> v2:83 var
+R7536:7538 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7523:7526 PV.Syntax <> Node constr
+R7534:7535 PV.Syntax <> r1:81 var
+R7531:7532 PV.Syntax <> v1:80 var
+R7528:7529 PV.Syntax <> l1:79 var
+R7539:7542 PV.Syntax <> Node constr
+R7550:7551 PV.Syntax <> r2:84 var
+R7547:7548 PV.Syntax <> v2:83 var
+R7544:7545 PV.Syntax <> l2:82 var
+prf 7814:7831 <> Leaf_Node_conflict
+binder 7841:7841 <> l:85
+binder 7843:7843 <> v:86
+binder 7845:7845 <> r:87
+R7867:7870 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7872:7874 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7854:7856 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7850:7853 PV.Syntax <> Leaf constr
+R7857:7860 PV.Syntax <> Node constr
+R7866:7866 PV.Syntax <> r:87 var
+R7864:7864 PV.Syntax <> v:86 var
+R7862:7862 PV.Syntax <> l:85 var
+prf 7983:8001 <> reverse_result_Leaf
+binder 8011:8011 <> t:88
+R8037:8042 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8044:8046 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8043:8043 PV.Syntax <> t:88 var
+R8047:8050 PV.Syntax <> Leaf constr
+R8030:8032 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8016:8027 PV.Syntax <> tree_reverse def
+R8029:8029 PV.Syntax <> t:88 var
+R8033:8036 PV.Syntax <> Leaf constr
+prf 10115:10126 <> reverse_size
+binder 10136:10136 <> t:89
+R10167:10169 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10141:10149 PV.Syntax <> tree_size def
+R10152:10163 PV.Syntax <> tree_reverse def
+R10165:10165 PV.Syntax <> t:89 var
+R10170:10178 PV.Syntax <> tree_size def
+R10180:10180 PV.Syntax <> t:89 var
+prf 11142:11155 <> reverse_height
+binder 11165:11165 <> t:90
+R11198:11200 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11170:11180 PV.Syntax <> tree_height def
+R11183:11194 PV.Syntax <> tree_reverse def
+R11196:11196 PV.Syntax <> t:90 var
+R11201:11211 PV.Syntax <> tree_height def
+R11213:11213 PV.Syntax <> t:90 var
+prf 11532:11554 <> reverse_height_attempt2
+binder 11564:11564 <> t:91
+R11597:11599 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11569:11579 PV.Syntax <> tree_height def
+R11582:11593 PV.Syntax <> tree_reverse def
+R11595:11595 PV.Syntax <> t:91 var
+R11600:11610 PV.Syntax <> tree_height def
+R11612:11612 PV.Syntax <> t:91 var
+prf 12171:12188 <> reverse_involutive
+binder 12198:12198 <> t:92
+R12232:12234 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12203:12214 PV.Syntax <> tree_reverse def
+R12217:12228 PV.Syntax <> tree_reverse def
+R12230:12230 PV.Syntax <> t:92 var
+R12235:12235 PV.Syntax <> t:92 var
+prf 12489:12504 <> tree_reverse_inj
+binder 12514:12515 <> t1:93
+binder 12517:12518 <> t2:94
+R12556:12561 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12564:12566 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12562:12563 PV.Syntax <> t1:93 var
+R12567:12568 PV.Syntax <> t2:94 var
+R12538:12540 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12523:12534 PV.Syntax <> tree_reverse def
+R12536:12537 PV.Syntax <> t1:93 var
+R12541:12552 PV.Syntax <> tree_reverse def
+R12554:12555 PV.Syntax <> t2:94 var
+prf 13914:13929 <> tree_reverse_inj
+binder 13939:13940 <> t1:95
+binder 13942:13943 <> t2:96
+R13981:13986 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13989:13991 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13987:13988 PV.Syntax <> t1:95 var
+R13992:13993 PV.Syntax <> t2:96 var
+R13963:13965 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13948:13959 PV.Syntax <> tree_reverse def
+R13961:13962 PV.Syntax <> t1:95 var
+R13966:13977 PV.Syntax <> tree_reverse def
+R13979:13980 PV.Syntax <> t2:96 var
+prf 14591:14612 <> tree_reverse_inj_again
+binder 14622:14623 <> t1:97
+binder 14625:14626 <> t2:98
+R14664:14669 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14672:14674 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14670:14671 PV.Syntax <> t1:97 var
+R14675:14676 PV.Syntax <> t2:98 var
+R14646:14648 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14631:14642 PV.Syntax <> tree_reverse def
+R14644:14645 PV.Syntax <> t1:97 var
+R14649:14660 PV.Syntax <> tree_reverse def
+R14662:14663 PV.Syntax <> t2:98 var
+R14710:14727 PV.Syntax <> reverse_involutive thm
+R14738:14755 PV.Syntax <> reverse_involutive thm
+R14710:14727 PV.Syntax <> reverse_involutive thm
+R14710:14727 PV.Syntax <> reverse_involutive thm
+R14738:14755 PV.Syntax <> reverse_involutive thm
+R14738:14755 PV.Syntax <> reverse_involutive thm
+mod 14845:14855 <> Lang_WhileD
+ind 14992:14995 Lang_WhileD expr
+constr 15011:15016 Lang_WhileD EConst
+constr 15035:15038 Lang_WhileD EVar
+constr 15064:15069 Lang_WhileD EBinop
+constr 15107:15111 Lang_WhileD EUnop
+constr 15144:15149 Lang_WhileD EDeref
+constr 15171:15177 Lang_WhileD EAddrOf
+R15022:15022 Coq.Numbers.BinNums <> Z ind
+binder 15019:15019 <> n:101
+R15026:15029 PV.Syntax <> expr:99 ind
+R15044:15051 PV.Syntax Lang_While var_name def
+binder 15041:15041 <> x:102
+R15055:15058 PV.Syntax <> expr:99 ind
+R15076:15080 PV.Syntax Lang_While binop ind
+binder 15072:15073 <> op:103
+R15091:15094 PV.Syntax <> expr:99 ind
+binder 15084:15085 <> e1:104
+binder 15087:15088 <> e2:105
+R15098:15101 PV.Syntax <> expr:99 ind
+R15118:15121 PV.Syntax Lang_While unop ind
+binder 15114:15115 <> op:106
+R15128:15131 PV.Syntax <> expr:99 ind
+binder 15125:15125 <> e:107
+R15135:15138 PV.Syntax <> expr:99 ind
+R15155:15158 PV.Syntax <> expr:99 ind
+binder 15152:15152 <> e:108
+R15162:15165 PV.Syntax <> expr:99 ind
+R15183:15186 PV.Syntax <> expr:99 ind
+binder 15180:15180 <> e:109
+R15190:15193 PV.Syntax <> expr:99 ind
+ind 15269:15271 Lang_WhileD com
+constr 15287:15291 Lang_WhileD CSkip
+constr 15302:15309 Lang_WhileD CAsgnVar
+constr 15344:15353 Lang_WhileD CAsgnDeref
+constr 15378:15381 Lang_WhileD CSeq
+constr 15405:15407 Lang_WhileD CIf
+constr 15441:15446 Lang_WhileD CWhile
+R15294:15296 PV.Syntax <> com:110 ind
+R15315:15322 PV.Syntax Lang_While var_name def
+binder 15312:15312 <> x:112
+R15329:15332 PV.Syntax Lang_WhileD expr ind
+binder 15326:15326 <> e:113
+R15336:15338 PV.Syntax <> com:110 ind
+R15363:15366 PV.Syntax Lang_WhileD expr ind
+binder 15356:15357 <> e1:114
+binder 15359:15360 <> e2:115
+R15370:15372 PV.Syntax <> com:110 ind
+R15391:15393 PV.Syntax <> com:110 ind
+binder 15384:15385 <> c1:116
+binder 15387:15388 <> c2:117
+R15397:15399 PV.Syntax <> com:110 ind
+R15413:15416 PV.Syntax Lang_WhileD expr ind
+binder 15410:15410 <> e:118
+R15427:15429 PV.Syntax <> com:110 ind
+binder 15420:15421 <> c1:119
+binder 15423:15424 <> c2:120
+R15433:15435 PV.Syntax <> com:110 ind
+R15452:15455 PV.Syntax Lang_WhileD expr ind
+binder 15449:15449 <> e:121
+R15462:15464 PV.Syntax <> com:110 ind
+binder 15459:15459 <> c:122
+R15468:15470 PV.Syntax <> com:110 ind
+R15478:15488 PV.Syntax Lang_WhileD <> mod
+mod 15541:15552 <> Lang_WhileDC
+ind 15687:15690 Lang_WhileDC expr
+constr 15706:15711 Lang_WhileDC EConst
+constr 15730:15733 Lang_WhileDC EVar
+constr 15759:15764 Lang_WhileDC EBinop
+constr 15802:15806 Lang_WhileDC EUnop
+constr 15839:15844 Lang_WhileDC EDeref
+constr 15866:15872 Lang_WhileDC EAddrOf
+R15717:15717 Coq.Numbers.BinNums <> Z ind
+binder 15714:15714 <> n:125
+R15721:15724 PV.Syntax <> expr:123 ind
+R15739:15746 PV.Syntax Lang_While var_name def
+binder 15736:15736 <> x:126
+R15750:15753 PV.Syntax <> expr:123 ind
+R15771:15775 PV.Syntax Lang_While binop ind
+binder 15767:15768 <> op:127
+R15786:15789 PV.Syntax <> expr:123 ind
+binder 15779:15780 <> e1:128
+binder 15782:15783 <> e2:129
+R15793:15796 PV.Syntax <> expr:123 ind
+R15813:15816 PV.Syntax Lang_While unop ind
+binder 15809:15810 <> op:130
+R15823:15826 PV.Syntax <> expr:123 ind
+binder 15820:15820 <> e:131
+R15830:15833 PV.Syntax <> expr:123 ind
+R15850:15853 PV.Syntax <> expr:123 ind
+binder 15847:15847 <> e:132
+R15857:15860 PV.Syntax <> expr:123 ind
+R15878:15881 PV.Syntax <> expr:123 ind
+binder 15875:15875 <> e:133
+R15885:15888 PV.Syntax <> expr:123 ind
+ind 15902:15904 Lang_WhileDC com
+constr 15920:15924 Lang_WhileDC CSkip
+constr 15935:15942 Lang_WhileDC CAsgnVar
+constr 15977:15986 Lang_WhileDC CAsgnDeref
+constr 16011:16014 Lang_WhileDC CSeq
+constr 16038:16040 Lang_WhileDC CIf
+constr 16074:16079 Lang_WhileDC CWhile
+constr 16109:16112 Lang_WhileDC CFor
+constr 16163:16170 Lang_WhileDC CDoWhile
+constr 16200:16208 Lang_WhileDC CContinue
+constr 16219:16224 Lang_WhileDC CBreak
+R15927:15929 PV.Syntax <> com:134 ind
+R15948:15955 PV.Syntax Lang_While var_name def
+binder 15945:15945 <> x:136
+R15962:15965 PV.Syntax Lang_WhileDC expr ind
+binder 15959:15959 <> e:137
+R15969:15971 PV.Syntax <> com:134 ind
+R15996:15999 PV.Syntax Lang_WhileDC expr ind
+binder 15989:15990 <> e1:138
+binder 15992:15993 <> e2:139
+R16003:16005 PV.Syntax <> com:134 ind
+R16024:16026 PV.Syntax <> com:134 ind
+binder 16017:16018 <> c1:140
+binder 16020:16021 <> c2:141
+R16030:16032 PV.Syntax <> com:134 ind
+R16046:16049 PV.Syntax Lang_WhileDC expr ind
+binder 16043:16043 <> e:142
+R16060:16062 PV.Syntax <> com:134 ind
+binder 16053:16054 <> c1:143
+binder 16056:16057 <> c2:144
+R16066:16068 PV.Syntax <> com:134 ind
+R16085:16088 PV.Syntax Lang_WhileDC expr ind
+binder 16082:16082 <> e:145
+R16095:16097 PV.Syntax <> com:134 ind
+binder 16092:16092 <> c:146
+R16101:16103 PV.Syntax <> com:134 ind
+R16119:16121 PV.Syntax <> com:134 ind
+binder 16115:16116 <> c1:147
+R16128:16131 PV.Syntax Lang_WhileDC expr ind
+binder 16125:16125 <> e:148
+R16139:16141 PV.Syntax <> com:134 ind
+binder 16135:16136 <> c2:149
+R16149:16151 PV.Syntax <> com:134 ind
+binder 16145:16146 <> c3:150
+R16155:16157 PV.Syntax <> com:134 ind
+R16176:16178 PV.Syntax <> com:134 ind
+binder 16173:16173 <> c:151
+R16185:16188 PV.Syntax Lang_WhileDC expr ind
+binder 16182:16182 <> e:152
+R16192:16194 PV.Syntax <> com:134 ind
+R16211:16213 PV.Syntax <> com:134 ind
+R16227:16229 PV.Syntax <> com:134 ind
+R16237:16248 PV.Syntax Lang_WhileDC <> mod
