@@ -17,13 +17,16 @@ Module HoareWhileD.
 Import  Lang_WhileD
         DntSem_WhileD.
 
+(*
 Notation "x < y" := (ELt x y)
   (in custom expr_entry at level 13, no associativity).
 Notation "x && y" := (EAnd x y)
   (in custom expr_entry at level 14, left associativity).
 Notation "! x" := (ENot x)
-  (in custom expr_entry at level 10).
-Notation "x = e" := (CAsgn x e)
+  (in custom expr_entry at level 10).*)
+Notation "x = e" := (CAsgnVar x e)
+  (in custom expr_entry at level 18, no associativity).
+Notation "* e1 = e2" := (CAsgnDeref e1 e2)
   (in custom expr_entry at level 18, no associativity).
 Notation "c1 ; c2" := (CSeq c1 c2)
   (in custom expr_entry at level 20, right associativity).
@@ -96,11 +99,17 @@ Notation "{{ P }}  c  {{ Q }}" :=
 
 (** 一个布尔表达式为真是一个断言：*)
 
+(*
 Definition eb2assn (b: expr_bool): assertion := fun s => eval_expr_bool b s = true.
+*)
 
 (** 断言中描述整数的逻辑表达式（区分于程序表达式）：*)
 
+(*
 Definition exprZ: Type := state -> Z.
+*)
+
+Definition exprVal: Type := state -> option val.
 
 (** 一个程序中的整数类型可以用作逻辑表达式：*)
 
