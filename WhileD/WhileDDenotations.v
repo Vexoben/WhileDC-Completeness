@@ -1,3 +1,10 @@
+Require Import Coq.Strings.String.
+Require Import Coq.ZArith.ZArith.
+Require Import Coq.micromega.Psatz.
+Require Import Coq.Classes.Morphisms_Prop.
+Require Import Coq.Classes.RelationClasses.
+Require Import Coq.Logic.Classical_Pred_Type.
+Require Import Coq.Logic.Classical_Prop.
 Require Import Coq.ZArith.ZArith.
 Require Import Coq.Strings.String.
 Require Import SetsClass.SetsClass. Import SetsNotation.
@@ -352,6 +359,648 @@ with eval_l (e: expr): EDenote :=
   | _ =>
       {| nrm := ∅; err := Sets.full; |}
   end.
+
+Fixpoint rank (e:expr): nat :=
+  match e with
+  | EConst n =>
+      O
+  | EVar X =>
+      O
+  | EBinop op e1 e2 =>
+      S(rank e1 + rank e2)
+  | EUnop op e1 =>
+      S(rank e1)
+  | EDeref e1 =>
+      S(rank e1)
+  | EAddrOf e1 =>
+      S(rank e1)
+  end.
+
+Lemma eval_r_sem_inj_pre:
+  forall (n: nat)(a b: int64)(e: expr)(s: state),
+  (eval_r e).(nrm) s a ->
+  (eval_r e).(nrm) s b ->
+  le (rank e) n ->
+  a = b.
+Proof.
+  induction n; simpl; intros; pose proof H1 as HH; clear H1.
+  + destruct e; simpl; intros.
+    all: simpl in HH.
+    all: try lia.
+    - simpl in H, H0.
+      destruct H, H0.
+      subst a b.
+      tauto.
+    - simpl in H, H0.
+      destruct H, H0.
+      destruct H, H0.
+      subst x0 x1.
+      rewrite H2 in H1.
+      injection H1.
+      auto.
+  + destruct e; simpl; intros; simpl in H, H0.
+    - destruct H, H0.
+      rewrite H, H0.
+      tauto.
+    - unfold deref_sem_nrm in H, H0.
+      destruct H as [a0 [? ?]].
+      destruct H0 as [b0 [? ?]].
+      rewrite H0 in H.
+      subst a0.
+      rewrite H1 in H2.
+      injection H2.
+      tauto.
+    - unfold binop_sem in H, H0.
+      destruct op.
+      * unfold or_sem in H, H0. 
+        simpl in H, H0.
+        unfold or_sem_nrm in H, H0. 
+        destruct H as [i1 [? ?]].
+        destruct H0 as [i2 [? ?]].
+        specialize (IHn i1 i2).
+        assert (i1 = i2) by auto.
+        subst i2.
+        unfold SC_or_compute_nrm in H1, H2.
+        unfold NonSC_or in H1, H2.
+        unfold NonSC_compute_nrm in H1, H2.
+        destruct (Int64.signed i1) eqn : I1.
+        * destruct H1; destruct H1; try contradiction.
+          destruct H2; destruct H2; try contradiction.
+          destruct H3 as [i2 [? ?]].
+          destruct H4 as [i2' [? ?]].
+          specialize (IHe2 i2 i2').
+          assert (i2 = i2') by auto.
+          subst i2'.
+          destruct (Int64.signed i2) eqn : I2.
+          ++  destruct H5; destruct H5; try contradiction.
+              destruct H6; destruct H6; try contradiction.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+        * destruct H1; destruct H1;
+          destruct H2; destruct H2.
+          all: try rewrite H1 in I1.
+          all: try rewrite H2 in I1.
+          all: try discriminate.
+          subst a b; auto.
+        * destruct H1; destruct H1;
+          destruct H2; destruct H2.
+          all: try rewrite H1 in I1.
+          all: try rewrite H2 in I1.
+          all: try discriminate.
+          subst a b; auto.
+      - unfold and_sem in H, H0. 
+        simpl in H, H0.
+        unfold and_sem_nrm in H, H0. 
+        destruct H as [i1 [? ?]].
+        destruct H0 as [i2 [? ?]].
+        specialize (IHe1 i1 i2).
+        assert (i1 = i2) by auto.
+        subst i2.
+        unfold SC_and_compute_nrm in H1, H2.
+        unfold NonSC_and in H1, H2.
+        unfold NonSC_compute_nrm in H1, H2.
+        destruct (Int64.signed i1) eqn : I1.
+        * destruct H1; destruct H1;
+          destruct H2; destruct H2.
+          all: try contradiction.
+          subst a b; auto.
+        * destruct H1; destruct H1;
+          destruct H2; destruct H2.
+          all: try rewrite H1 in I1.
+          all: try rewrite H2 in I1.
+          all: try discriminate.
+          destruct H3 as [i2 [? ?]].
+          destruct H4 as [i2' [? ?]].
+          specialize (IHe2 i2 i2').
+          assert (i2 = i2') by auto.
+          subst i2'.
+          destruct (Int64.signed i2) eqn : I2.
+          ++  destruct H5; destruct H5; try contradiction.
+              destruct H6; destruct H6; try contradiction.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+        * destruct H1; destruct H1;
+          destruct H2; destruct H2.
+          all: try rewrite H1 in I1.
+          all: try rewrite H2 in I1.
+          all: try discriminate.
+          destruct H3 as [i2 [? ?]].
+          destruct H4 as [i2' [? ?]].
+          specialize (IHe2 i2 i2').
+          assert (i2 = i2') by auto.
+          subst i2'.
+          destruct (Int64.signed i2) eqn : I2.
+          ++  destruct H5; destruct H5; try contradiction.
+              destruct H6; destruct H6; try contradiction.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+          ++  destruct H5; destruct H5;
+              destruct H6; destruct H6. 
+              all: try rewrite H5 in I2.
+              all: try rewrite H6 in I2.
+              all: try discriminate.
+              rewrite H7, H8.
+              tauto.
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.      
+      - unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.      
+      - unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        destruct H2, H4.
+        subst i1' i2' a b; auto.
+      - unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        destruct H2, H4.
+        subst i1' i2' a b; auto.
+      - unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        destruct H2, H4.
+        subst i1' i2' a b; auto.          
+      - unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        destruct H2, H4.
+        subst i1' i2' a b; auto.     
+      - unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        specialize (IHe1 i1 i1').
+        specialize (IHe2 i2 i2').
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        destruct H2, H4.
+        subst i1' i2' a b; auto.
+      
+      
+
+
+
+  + destruct H, H0.
+    rewrite H, H0.
+    tauto.
+  + unfold deref_sem_nrm in H, H0.
+    destruct H as [a0 [? ?]].
+    destruct H0 as [b0 [? ?]].
+    rewrite H0 in H.
+    subst a0.
+    rewrite H1 in H2.
+    injection H2.
+    tauto.
+  + unfold binop_sem in H, H0.
+    destruct op.
+    - unfold or_sem in H, H0. 
+      simpl in H, H0.
+      unfold or_sem_nrm in H, H0. 
+      destruct H as [i1 [? ?]].
+      destruct H0 as [i2 [? ?]].
+      specialize (IHe1 i1 i2).
+      assert (i1 = i2) by auto.
+      subst i2.
+      unfold SC_or_compute_nrm in H1, H2.
+      unfold NonSC_or in H1, H2.
+      unfold NonSC_compute_nrm in H1, H2.
+      destruct (Int64.signed i1) eqn : I1.
+      * destruct H1; destruct H1; try contradiction.
+        destruct H2; destruct H2; try contradiction.
+        destruct H3 as [i2 [? ?]].
+        destruct H4 as [i2' [? ?]].
+        specialize (IHe2 i2 i2').
+        assert (i2 = i2') by auto.
+        subst i2'.
+        destruct (Int64.signed i2) eqn : I2.
+        ++  destruct H5; destruct H5; try contradiction.
+            destruct H6; destruct H6; try contradiction.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+      * destruct H1; destruct H1;
+        destruct H2; destruct H2.
+        all: try rewrite H1 in I1.
+        all: try rewrite H2 in I1.
+        all: try discriminate.
+        subst a b; auto.
+      * destruct H1; destruct H1;
+        destruct H2; destruct H2.
+        all: try rewrite H1 in I1.
+        all: try rewrite H2 in I1.
+        all: try discriminate.
+        subst a b; auto.
+    - unfold and_sem in H, H0. 
+      simpl in H, H0.
+      unfold and_sem_nrm in H, H0. 
+      destruct H as [i1 [? ?]].
+      destruct H0 as [i2 [? ?]].
+      specialize (IHe1 i1 i2).
+      assert (i1 = i2) by auto.
+      subst i2.
+      unfold SC_and_compute_nrm in H1, H2.
+      unfold NonSC_and in H1, H2.
+      unfold NonSC_compute_nrm in H1, H2.
+      destruct (Int64.signed i1) eqn : I1.
+      * destruct H1; destruct H1;
+        destruct H2; destruct H2.
+        all: try contradiction.
+        subst a b; auto.
+      * destruct H1; destruct H1;
+        destruct H2; destruct H2.
+        all: try rewrite H1 in I1.
+        all: try rewrite H2 in I1.
+        all: try discriminate.
+        destruct H3 as [i2 [? ?]].
+        destruct H4 as [i2' [? ?]].
+        specialize (IHe2 i2 i2').
+        assert (i2 = i2') by auto.
+        subst i2'.
+        destruct (Int64.signed i2) eqn : I2.
+        ++  destruct H5; destruct H5; try contradiction.
+            destruct H6; destruct H6; try contradiction.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+      * destruct H1; destruct H1;
+        destruct H2; destruct H2.
+        all: try rewrite H1 in I1.
+        all: try rewrite H2 in I1.
+        all: try discriminate.
+        destruct H3 as [i2 [? ?]].
+        destruct H4 as [i2' [? ?]].
+        specialize (IHe2 i2 i2').
+        assert (i2 = i2') by auto.
+        subst i2'.
+        destruct (Int64.signed i2) eqn : I2.
+        ++  destruct H5; destruct H5; try contradiction.
+            destruct H6; destruct H6; try contradiction.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+        ++  destruct H5; destruct H5;
+            destruct H6; destruct H6. 
+            all: try rewrite H5 in I2.
+            all: try rewrite H6 in I2.
+            all: try discriminate.
+            rewrite H7, H8.
+            tauto.
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.      
+    - unfold cmp_sem in H, H0.
+      simpl in H, H0.
+      unfold cmp_sem_nrm in H, H0.
+      unfold cmp_compute_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      subst i1' i2' a b; auto.      
+    - unfold arith_sem1 in H, H0.
+      simpl in H, H0.
+      unfold arith_sem1_nrm in H, H0.
+      unfold arith_compute1_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      destruct H2, H4.
+      subst i1' i2' a b; auto.
+    - unfold arith_sem1 in H, H0.
+      simpl in H, H0.
+      unfold arith_sem1_nrm in H, H0.
+      unfold arith_compute1_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      destruct H2, H4.
+      subst i1' i2' a b; auto.
+    - unfold arith_sem1 in H, H0.
+      simpl in H, H0.
+      unfold arith_sem1_nrm in H, H0.
+      unfold arith_compute1_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      destruct H2, H4.
+      subst i1' i2' a b; auto.          
+    - unfold arith_sem1 in H, H0.
+      simpl in H, H0.
+      unfold arith_sem1_nrm in H, H0.
+      unfold arith_compute1_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      destruct H2, H4.
+      subst i1' i2' a b; auto.     
+    - unfold arith_sem1 in H, H0.
+      simpl in H, H0.
+      unfold arith_sem1_nrm in H, H0.
+      unfold arith_compute1_nrm in H, H0.
+      destruct H as [i1 [i2 [? [? ?]]]].
+      destruct H0 as [i1' [i2' [? [? ?]]]].
+      specialize (IHe1 i1 i1').
+      specialize (IHe2 i2 i2').
+      assert (i1 = i1') by tauto.
+      assert (i2 = i2') by tauto.
+      destruct H2, H4.
+      subst i1' i2' a b; auto.   
+  + unfold unop_sem in H, H0.
+    destruct op; simpl; intros.
+    - unfold not_sem in H, H0.
+      simpl in H, H0.
+      unfold not_sem_nrm in H, H0.
+      unfold not_compute_nrm in H, H0.
+      destruct H as [i1 [? ?]].
+      destruct H0 as [i1' [? ?]].
+      specialize (IHe i1 i1').
+      assert (i1 = i1') by tauto.
+      subst i1'.
+      destruct (Int64.signed i1) eqn : I.
+      * destruct H1; destruct H1; destruct H2; destruct H2.
+        all: try discriminate; try contradiction.
+        subst a b; auto.
+      * destruct H1; destruct H1; destruct H2; destruct H2.
+        all: try rewrite H1 in I.
+        all: try rewrite H2 in I.
+        all: try discriminate; try contradiction.
+        subst a b; auto.
+      * destruct H1; destruct H1; destruct H2; destruct H2.
+        all: try rewrite H1 in I.
+        all: try rewrite H2 in I.
+        all: try discriminate; try contradiction.
+        subst a b; auto.
+    - unfold neg_sem in H, H0.
+      simpl in H, H0.
+      unfold neg_sem_nrm in H, H0.
+      unfold neg_compute_nrm in H, H0.
+      destruct H as [i1 [? ?]].
+      destruct H0 as [i1' [? ?]].
+      specialize (IHe i1 i1').
+      assert (i1 = i1') by tauto.
+      subst i1'.
+      destruct H1, H2.
+      subst a b; auto.
+  + unfold deref_sem_nrm in H, H0.
+    destruct H as [i1 [? ?]].
+    destruct H0 as [i1' [? ?]].
+    specialize (IHe i1 i1').
+    assert (i1 = i1') by tauto.
+    subst i1'.
+    rewrite H2 in H1.
+    injection H1.
+    auto.
+  + unfold eval_l in H, H0.
+    destruct e eqn : I. 
+    - revert H H0.
+      unfold_RELS_tac.
+      simpl.
+      intros.
+      contradiction.
+    - unfold var_sem_l in H, H0.
+      simpl in H, H0.
+      subst a b; auto.
+    - simpl in H, H0.
+      revert H H0.
+      unfold_RELS_tac.
+      simpl.
+      intros.
+      contradiction.
+    - simpl in H, H0.
+      revert H H0.
+      unfold_RELS_tac.
+      simpl.
+      intros.
+      contradiction.
+    - fold eval_r in H, H0.
+      simpl in IHe.
+      unfold deref_sem_nrm in IHe.
+      specialize (IHe (s.(mem) a) (s.(mem) b)).
 
 (** 这里_[test_true]_与_[test_false]_的定义不变，不过之后只会将其作用在表达式的
     右值上。*)

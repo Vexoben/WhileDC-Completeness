@@ -4,6 +4,7 @@ Require Import Coq.Lists.List.
 Require Import Coq.Strings.String.
 Require Import Coq.ZArith.ZArith.
 Require Import Coq.micromega.Psatz.
+Require Import compcert.lib.Integers.
 Require Import SetsClass.SetsClass. Import SetsNotation.
 Require Import PV.Syntax.
 Require Import PV.WhileDDenotations.
@@ -24,10 +25,14 @@ Notation "x && y" := (EAnd x y)
   (in custom expr_entry at level 14, left associativity).
 Notation "! x" := (ENot x)
   (in custom expr_entry at level 10).*)
+Notation "x" := x
+  (in custom expr_entry at level 0, x constr at level 0).
+Notation "( x )" := x
+  (in custom expr_entry at level 0, x custom expr_entry at level 0).
 Notation "x = e" := (CAsgnVar x e)
   (in custom expr_entry at level 18, no associativity).
-Notation "* e1 = e2" := (CAsgnDeref e1 e2)
-  (in custom expr_entry at level 18, no associativity).
+Notation "* e1 ::= e2" := (CAsgnDeref e1 e2)
+  (in custom expr_entry at level 17, no associativity).
 Notation "c1 ; c2" := (CSeq c1 c2)
   (in custom expr_entry at level 20, right associativity).
 Notation "'skip'" := (CSkip)
@@ -47,6 +52,17 @@ Notation "'while' e 'do' '{' c1 '}'" := (CWhile e c1)
 
 Definition assertion: Type := state -> Prop.
 
+(* (s.(mem) i = None /\ s1.(mem) i = None /\ s2.(mem) i = None) *)
+
+Definition sepcon(P Q: assertion) : assertion :=
+  fun s => (exists s1 s2 : state,
+     P s1 /\ Q s2 /\ s.(env) = s1.(env) /\ s.(env) = s2.(env)
+     /\ (forall i : int64, 
+        (s.(mem) i = s1.(mem) i /\ s2.(mem) i = None) \/ (s.(mem) i = s2.(mem) i /\ s1.(mem) i = None))).
+
+Definition store(a : int64)(b : val) : assertion := 
+  fun s => (s.(mem) a = Some b /\ (forall i : int64, i <> a -> s.(mem) i = None)).
+
 Definition derives (P Q: assertion): Prop :=
   forall s, P s -> Q s.
 
@@ -55,7 +71,7 @@ Definition logical_equiv (P Q: assertion): Prop :=
 
 Definition andp (P Q: assertion): assertion := fun s => P s /\ Q s.
 
-Definition exp (P: Z -> assertion): assertion := fun s => exists n, P n s.
+Definition exp (P: val -> assertion): assertion := fun s => exists n, P n s.
 
 (** 下面的Notation定义可以跳过*)
 
@@ -73,6 +89,9 @@ Notation "f x" := (f x)
    x custom assn_entry at level 0).
 
 Notation "x && y" := (andp x y)
+  (in custom assn_entry at level 14, left associativity).
+
+Notation "x * y" := (sepcon x y)
   (in custom assn_entry at level 14, left associativity).
 
 Notation "'exists' x , P" := (exp (fun x: Z => P))
@@ -99,9 +118,16 @@ Notation "{{ P }}  c  {{ Q }}" :=
 
 (** 一个布尔表达式为真是一个断言：*)
 
-(*
-Definition eb2assn (b: expr_bool): assertion := fun s => eval_expr_bool b s = true.
-*)
+Definition eb2assn (b: expr): assertion := 
+  fun s => exists i, (eval_r b).(nrm) s i /\ Int64.signed i <> 0.
+
+Definition eb2assn_not (b: expr): assertion := 
+  fun s => exists i, (eval_r b).(nrm) s i /\ Int64.signed i = 0.
+
+Notation "[[ e ]]" := (eb2assn e)
+  (in custom assn_entry at level 0,
+      e custom expr_entry at level 99,
+      only printing).
 
 (** 断言中描述整数的逻辑表达式（区分于程序表达式）：*)
 
@@ -110,7 +136,7 @@ Definition exprZ: Type := state -> Z.
 *)
 
 Definition exprVal: Type := state -> option val.
-
+(* 
 (** 一个程序中的整数类型可以用作逻辑表达式：*)
 
 Definition ei2exprZ (e: expr_int): exprZ :=
@@ -137,20 +163,16 @@ Definition assn_subst (P: assertion) (x: var_name) (v: exprZ): assertion :=
 
 Definition exprZ_subst (u: exprZ) (x: var_name) (v: exprZ): exprZ :=
   fun s =>
-    u (state_subst s x (v s)).
+    u (state_subst s x (v s)). *)
 
 (** 下面的Notation定义可以跳过*)
-
-Notation "[[ e ]]" := (eb2assn e)
-  (in custom assn_entry at level 0,
-      e custom expr_entry at level 99,
-      only printing).
+(* 
 
 Notation "[[ e ]]" := (ei2exprZ e)
   (in custom assn_entry at level 0,
       e custom expr_entry at level 99,
-      only printing).
-
+      only printing). *)
+(* 
 Ltac any_expr e :=
   match goal with
   | |- assertion => exact (eb2assn e)
@@ -188,7 +210,7 @@ Notation "'assn_subst' P x v" := (assn_subst P x v)
   (in custom assn_entry at level 1,
       P custom assn_entry at level 0,
       x custom assn_entry at level 0,
-      v custom assn_entry at level 0).
+      v custom assn_entry at level 0). *)
 
 (** 下面定义有效：*)
 
@@ -198,7 +220,7 @@ Definition valid: HoareTriple -> Prop :=
   | BuildHoareTriple P c Q =>
       forall s1 s2,
         P s1 ->
-        eval_com c s1 s2 ->
+        (eval_com c).(nrm) s1 s2 ->
         Q s2
   end.
 
@@ -207,20 +229,17 @@ Lemma hoare_skip_sound:
     valid {{ P }} skip {{ P }}.
 Proof.
   simpl.
-  unfold skip_sem.
-  unfold_RELS_tac.
   intros.
   rewrite <- H0; tauto.
 Qed.
 
 Lemma hoare_seq_sound:
   forall (P Q R: assertion) (c1 c2: com),
-    valid {{ P }} c1 {{ Q }} ->
-    valid {{ Q }} c2 {{ R }} ->
-    valid {{ P }} c1; c2 {{ R }}.
+    valid (BuildHoareTriple P c1 Q) ->
+    valid (BuildHoareTriple Q c2 R) ->
+    valid (BuildHoareTriple P (CSeq c1 c2) R).
 Proof.
   simpl.
-  unfold seq_sem.
   unfold_RELS_tac.
   intros.
   destruct H2 as [s1' [? ?] ].
@@ -231,11 +250,10 @@ Qed.
 
 (** 习题：*)
 Lemma hoare_if_sound:
-  forall (P Q: assertion) (e: expr_bool) (c1 c2: com),
-    valid {{ P && [[ e ]] }} c1 {{ Q }} ->
-    valid {{ P && [[! e ]] }} c2 {{ Q }} ->
-    valid {{ P }} if (e) then { c1 } else { c2 } {{ Q }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
+  forall (P Q: assertion) (e: expr) (c1 c2: com),
+    valid (BuildHoareTriple (andp P (eb2assn e)) c1 Q) ->
+    valid (BuildHoareTriple (andp P (eb2assn_not e)) c2 Q) ->
+    valid (BuildHoareTriple P (CIf e c1 c2) Q).
 Proof.
   simpl.
   unfold if_sem.
@@ -254,16 +272,18 @@ Proof.
     revert H2; unfold_RELS_tac; intros.
     destruct H2 as [H2 ?]; subst s1'.
     apply (H0 s1 s2).
-    - rewrite H2; tauto.
+    - unfold eb2assn_not.
+      split; auto.
+      exists (Int64.repr 0).
+      tauto.
     - tauto.
 Qed.
 
 (** 习题：*)
 Lemma hoare_while_sound:
-  forall (P: assertion) (e: expr_bool) (c: com),
-    valid {{ P && [[ e ]] }} c {{ P }} ->
-    valid {{ P }} while (e) do { c } {{ P && [[! e ]] }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
+  forall (P: assertion) (e: expr) (c: com),
+    valid (BuildHoareTriple (andp P (eb2assn e)) c P) ->
+    valid (BuildHoareTriple P (CWhile e c) (andp P (eb2assn_not e))).
 Proof.
   simpl.
   unfold while_sem.
@@ -277,17 +297,61 @@ Proof.
   + simpl in H1.
     unfold test_false in H1.
     revert H1; unfold_RELS_tac; intros.
-    destruct H1 as [H1 ?]; subst s2.
-    rewrite H1; tauto.
+    contradiction.
   + simpl in H1.
     unfold test_true in H1.
     revert H1; unfold_RELS_tac; intros.
-    destruct H1 as [s1' [ [? ?] [s1'' [? ?] ] ] ].
-    subst s1'.
-    apply (IHn s1''); [| tauto].
-    apply (H s1); tauto.
+    destruct H1; destruct H1.
+    - destruct H1.
+      destruct H1.
+      destruct H1.
+      destruct H2.
+      destruct H2.
+      pose proof IHn x1 s2.
+      apply H5; auto.
+      pose proof H s1 x1.
+      apply H6; auto.
+      * split; auto.
+        exists x0; auto.
+      * subst x; auto.
+    - revert H1 H2; unfold_RELS_tac; intros; subst s2; split; auto.
+      unfold eb2assn_not.
+      exists (Int64.repr 0).
+      auto.
 Qed.
 
+Lemma hoare_asgn_deref_fwd_sound:
+  forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
+    (forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
+    (forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
+    derives P (exp (fun u => (sepcon (store a u) Q) )) ->
+    valid ( {{P}} ( * (e1) ::= e2 ) {{(store a (Vint b)) * Q}} ).
+Proof.
+  simpl.
+  unfold asgn_deref_sem_nrm.
+  intros.
+  unfold exp in H1.
+  destruct H3 as [i1 [i2 [? [ ? [? ? ]]]]].
+  destruct H6 as [? [? ?]].
+  unfold derives in H1.
+  specialize (H s1).
+  specialize (H0 s1).
+  specialize (H1 s1).
+  pose proof H2.
+  pose proof H2.
+  pose proof H2.
+  apply H in H9.
+  apply H0 in H10.
+  apply H1 in H11.
+  clear H H0 H1.
+  destruct H11.
+  unfold eval_r in H3. fold eval_r in H3.
+
+  
+Lemma hoare_asgn_var_fwd_sound:
+
+
+(* 
 Lemma state_subst_fact:
   forall (s1 s2: state) (x: var_name),
     (forall y, x <> y -> s2 y = s1 y) ->
@@ -321,16 +385,15 @@ Proof.
   exists (s1 x).
   rewrite state_subst_fact by tauto.
   rewrite H0; tauto.
-Qed.
+Qed. *)
 
 (** 习题：*)
 Lemma hoare_conseq_sound:
   forall (P P' Q Q': assertion) (c: com),
-    valid {{ P' }} c {{ Q' }} ->
+    valid (BuildHoareTriple P' c Q') ->
     derives P P' ->
     derives Q' Q ->
-    valid {{ P }} c {{ Q }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
+    valid (BuildHoareTriple P c Q).
 Proof.
   simpl.
   unfold derives.
