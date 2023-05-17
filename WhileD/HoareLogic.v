@@ -15,6 +15,7 @@ Arguments Rels.concat: simpl never.
 Arguments Sets.indexed_union: simpl never.
 
 Module HoareWhileD.
+Import Lang_While.
 Import  Lang_WhileD
         DntSem_WhileD.
 
@@ -320,6 +321,16 @@ Proof.
       auto.
 Qed.
 
+Definition state_subst(s: state)(p:int64)(a:val) : state :=
+  {|
+    env := s.(env);
+    mem := fun x => if (Int64.eq x p) then (Some a) else s.(mem) x;
+  |}.  
+
+Definition assn_subst (P: assertion) (x: var_name) (v: val): assertion :=
+  fun s =>
+    P (state_subst s (s.(env) x) v).
+
 Lemma hoare_asgn_deref_fwd_sound:
   forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
     (forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
@@ -346,48 +357,174 @@ Proof.
   clear H H0 H1.
   destruct H11.
   unfold eval_r in H3. fold eval_r in H3.
-
-  
-Lemma hoare_asgn_var_fwd_sound:
-
-
-(* 
-Lemma state_subst_fact:
-  forall (s1 s2: state) (x: var_name),
-    (forall y, x <> y -> s2 y = s1 y) ->
-      state_subst s2 x (s1 x) = s1.
-Proof.
-  intros. 
-  apply functional_extensionality.
-  intros y.
-  unfold state_subst.
-  destruct (String.eqb x y) eqn:EQ.
-  + apply String.eqb_eq in EQ.
-    rewrite EQ.
-    reflexivity.
-  + apply String.eqb_neq in EQ.
-    apply H; tauto.
+  pose proof eval_r_sem_inj i1 a e1 s1.
+  assert (i1 = a) by tauto.
+  pose proof eval_r_sem_inj i2 b e2 s1.
+  assert (i2 = b) by tauto.
+  subst i1 i2.
+  clear H0 H11 H9 H10.
+  unfold sepcon.
+  unfold sepcon in H.
+  destruct H as [s11 [s12 ?]].
+  exists (state_subst s11 a (Vint b)), s12.
+  destruct H as [? [? [? [? ?]]]].
+  split.
+  + unfold store.
+    split. 
+    - simpl.
+      destruct (Int64.eq a a) eqn : I; auto.
+      pose proof Int64.eq_true a.
+      rewrite H11 in I.
+      discriminate.
+    - intros.
+      unfold store in H.
+      simpl.
+      destruct (Int64.eq i a) eqn : I.
+      * pose proof Int64.eq_false i a.
+        apply H12 in H11.
+        rewrite H11 in I.
+        discriminate.
+      * destruct H.
+        specialize (H12 i).
+        auto.
+  + split; auto.
+    split.
+    - simpl.
+      rewrite <- H1.
+      apply functional_extensionality.
+      intros.
+      specialize (H7 x0).
+      rewrite H7.
+      tauto.
+    - split.
+      * rewrite <- H9.
+        apply functional_extensionality.
+        intros.
+        specialize (H7 x0).
+        rewrite H7.
+        tauto.
+      * intros.
+        simpl.
+        pose proof Int64.eq_spec i a.
+        destruct (Int64.eq i a) eqn : I.
+        ++  left.
+            pose proof Int64.same_if_eq i a.
+            apply H12 in I; clear H11.
+            subst i.
+            specialize (H10 a).
+            unfold store in H.
+            destruct H.
+            destruct H10; try tauto.
+            destruct H10.
+            rewrite H in H13.
+            discriminate.
+        ++  specialize (H10 i).
+            destruct H10.
+            --  left.
+                specialize (H8 i).
+                pose proof not_eq_sym H11.
+                apply H8 in H12.
+                rewrite <- H12.
+                tauto.
+            --  right. 
+                specialize (H8 i).
+                pose proof not_eq_sym H11.
+                apply H8 in H12.
+                rewrite <- H12.
+                tauto.  
 Qed.
 
-(** 习题：*)
-Lemma hoare_asgn_fwd_sound:
-  forall P x e,
-    valid {{ P }} x = e {{ exists x', exprZ_subst [[ e ]] x [[ x' ]] == [[ x ]] && assn_subst P x [[ x' ]] }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
+Definition var_equal_a(x : var_name)(a : int64) : assertion := 
+  fun s => exists i, (s.(env) x = i) /\ (s.(mem) i = Some (Vint a)).
+(*             
+Lemma hoare_asgn_var_fwd_sound:
+  forall (P: assertion) (e: expr) (x : var_name),
+  exists a: int64, (forall (s:state), P s -> ((eval_r e).(nrm) s a)) ->
+  valid (BuildHoareTriple P (CAsgnVar x e) ( andp (var_equal_a x a) (exp(fun u => (assn_subst P x u)) ))).
 Proof.
-  intros.
-  simpl.
-  unfold asgn_sem.
-  unfold andp, exp, exprZ_eq, const_sem, var_sem, ei2exprZ.
-  unfold_substs.
-  intros.
-  destruct H0.
-  exists (s1 x).
-  rewrite state_subst_fact by tauto.
-  rewrite H0; tauto.
-Qed. *)
+Admitted. *)  
 
-(** 习题：*)
+(* 
+forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
+(forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
+(forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
+derives P (exp (fun u => (sepcon (store a u) Q) )) ->
+valid ( {{P}} ( * (e1) ::= e2 ) {{(store a (Vint b)) * Q}} ). *)
+
+Lemma hoare_asgn_var_fwd_sound:
+  forall (P Q: assertion) (e: expr) (a b: int64) (x : var_name),
+  (forall (s:state), P s -> ((eval_r e).(nrm) s b)) ->
+  (forall (s:state), P s -> s.(env) x = a) ->
+  derives P (exp (fun u => (sepcon (store a u) Q) )) ->
+  valid ( {{P}} ( (x = e) ) {{(store a (Vint b)) * Q}} ).
+  (* valid (BuildHoareTriple P (CAsgnVar x e) ( andp (var_equal_a x a) (exp(fun u => (assn_subst P x u)) ))). *)
+Proof.
+  simpl.
+  unfold asgn_deref_sem_nrm.
+  intros.
+  destruct H1 as [xp [xv [? [? [? [? [? ?]]]]]]].
+  unfold var_equal_a.
+  unfold exp.
+  unfold andp.
+  split.
+  + exists xp.
+    split.
+    - specialize (H5 x).
+      rewrite <- H1.
+      rewrite H5.
+      tauto.
+    - specialize (H s1).
+      apply H in H0.
+      pose proof eval_r_sem_inj a xv e s1.
+      assert(a = xv) by tauto.
+      subst xv.
+      tauto.
+  + unfold assn_subst.
+    assert (exists xv0 : val, (s1).(mem) xp = Some xv0).
+    - destruct (s1.(mem) xp) eqn : I.
+      * exists v.
+        reflexivity.
+      * contradiction.
+    - destruct H7 as [xv0 ?]. 
+      exists (xv0).
+      assert(state_subst s2 (s2.(env) x) xv0 = s1).
+      * unfold state_subst.
+        assert((fun x0 : int64 =>
+        if Int64.eq x0 (s2.(env) x)
+        then Some xv0
+        else s2.(mem) x0) = s1.(mem)).
+        ++  apply functional_extensionality. 
+            intros.
+            pose proof Int64.eq_spec x0 (s2.(env) x).
+            destruct (Int64.eq x0 (s2.(env) x)) eqn : I.
+            --  specialize (H5 x).
+                subst xp.
+                subst x0.
+                rewrite <- H7.
+                rewrite H5.
+                reflexivity.
+            --  specialize (H6 x0).
+                specialize (H5 x).
+                rewrite <- H5 in H8.
+                subst xp.
+                pose proof not_eq_sym H8.
+                apply H6 in H1.
+                rewrite H1.
+                reflexivity.
+        ++  assert(s1.(env) = s2.(env)).
+            apply functional_extensionality.
+            intros.
+            specialize (H5 x0).
+            apply H5.
+            rewrite H8.
+            rewrite <- H9.
+            destruct s1.
+            simpl.
+            reflexivity.
+      * rewrite H8.
+        apply H0.
+Qed.
+
 Lemma hoare_conseq_sound:
   forall (P P' Q Q': assertion) (c: com),
     valid (BuildHoareTriple P' c Q') ->
@@ -415,17 +552,24 @@ Inductive provable: HoareTriple -> Prop :=
       provable {{ Q }} c2 {{ R }} ->
       provable {{ P }} c1; c2 {{ R }}
 | hoare_if:
-    forall (P Q: assertion) (e: expr_bool) (c1 c2: com),
-      provable {{ P && [[ e ]] }} c1 {{ Q }} ->
-      provable {{ P && [[! e ]] }} c2 {{ Q }} ->
-      provable {{ P }} if (e) then { c1 } else { c2 } {{ Q }}
+    forall (P Q: assertion) (e: expr) (c1 c2: com),
+      provable (BuildHoareTriple (andp P (eb2assn e)) c1 Q) ->
+      provable (BuildHoareTriple (andp P (eb2assn_not e)) c2 Q) ->
+      provable (BuildHoareTriple P (CIf e c1 c2) Q)
 | hoare_while:
-    forall (P: assertion) (e: expr_bool) (c: com),
-      provable {{ P && [[ e ]] }} c {{ P }} ->
-      provable {{ P }} while (e) do { c } {{ P && [[! e ]] }}
-| hoare_asgn_fwd:
-    forall P x e,
-      provable {{ P }} x = e {{ exists x', exprZ_subst [[ e ]] x [[ x' ]] == [[ x ]] && assn_subst P x [[ x' ]] }}
+    forall (P: assertion) (e: expr) (c: com),
+      provable (BuildHoareTriple (andp P (eb2assn e)) c P) ->
+      provable (BuildHoareTriple P (CWhile e c) (andp P (eb2assn_not e)))
+| hoare_asgn_deref_fwd:
+    forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
+    (forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
+    (forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
+      derives P (exp (fun u => (sepcon (store a u) Q) )) ->
+      provable ( {{P}} ( * (e1) ::= e2 ) {{(store a (Vint b)) * Q}} )
+| hoare_asgn_var_fwd:
+    forall (P: assertion) (e: expr) (a: int64) (x : var_name),
+    (forall (s:state), P s -> ((eval_r e).(nrm) s a)) ->
+      provable (BuildHoareTriple P (CAsgnVar x e) ( andp (var_equal_a x a) (exp(fun u => (assn_subst P x u)) )))
 | hoare_conseq:
     forall (P P' Q Q': assertion) (c: com),
       provable {{ P' }} c {{ Q' }} ->
@@ -444,90 +588,20 @@ Proof.
   + apply (hoare_seq_sound _ Q); tauto.
   + apply hoare_if_sound; tauto.
   + apply hoare_while_sound; tauto.
-  + apply hoare_asgn_fwd_sound; tauto.
+  + apply hoare_asgn_deref_fwd_sound; tauto.
+  + apply hoare_asgn_var_fwd_sound; tauto.
   + apply (hoare_conseq_sound P P' Q Q'); tauto.
 Qed.
 
+End HoareWhileD.
 
-End HoareSimpleWhile.
+Module HoareWhileD_Admissible.
 
-(** * Coq中归纳定义命题 *)
+Import Lang_While.
+Import Lang_WhileD.
+Import DntSem_WhileD.
+Import HoareWhileD.
 
-Module Permutation.
-Import ListNotations.
-
-
-(** 列表之间的置换关系在Coq中是一个归纳定义的命题。*)
-
-Inductive Permutation {A: Type}: list A -> list A -> Prop :=
-| perm_nil: Permutation nil nil
-| perm_skip: forall x (l l': list A), Permutation l l' ->
-    Permutation (x :: l) (x :: l')
-| perm_swap: forall x y (l: list A),
-    Permutation (x :: y :: l) (y :: x :: l)
-| perm_trans: forall l1 l2 l3: list A,
-    Permutation l1 l2 ->
-    Permutation l2 l3 ->
-    Permutation l1 l3.
-
-(** 在证明中，归纳定义命题的每个分支可以简单的用作引理或定义。下面这个例子演示了
-    如何证明一个归纳定义的命题。*)
-
-Example perm_fact1: Permutation [1 ; 3; 5] [3; 5; 1].
-Proof.
-  intros.
-  apply (perm_trans _ [3; 1; 5]). 
-  + apply perm_swap.
-  + apply perm_skip.
-    apply perm_swap.
-Qed.
-
-
-(** 利用类似的方法，可以证明上面定义的置换关系有自反性。*)
-
-(** 习题：*)
-Lemma perm_refl: forall {A: Type} (l: list A),
-  Permutation l l.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
-Proof.
-  intros.
-  induction l.
-  + apply perm_nil.
-  + apply perm_skip; tauto.
-Qed.
-
-(** 当归纳定义的命题在前提中时，可以对其做证明树归纳。*)
-
-Lemma perm_symm: forall {A: Type} (l1 l2: list A),
-  Permutation l1 l2 ->
-  Permutation l2 l1.
-Proof.
-  intros.
-  induction H.
-  + apply perm_nil.
-  + apply perm_skip; tauto.
-  + apply perm_swap.
-  + apply (perm_trans _ l2); tauto.
-Qed.
-
-
-
-
-
-End Permutation.
-
-(** * 导出规则 *)
-
-Module HoareSimpleWhile_Derived.
-Import Lang_SimpleWhile
-       DntSem_SimpleWhile2
-       DntSem_SimpleWhile3
-       DntSem_SimpleWhile4
-       HoareSimpleWhile.
-
-
-(** 除了上述霍尔逻辑规则之外，其实也可以在保持逻辑可靠性的基础上增加一些其他的规
-    则。例如，我们可以增加单侧的Consequence规则。*)
 
 Lemma hoare_conseq_pre_sound:
   forall (P P' Q: assertion) (c: com),
@@ -555,8 +629,6 @@ Proof.
   apply (H s1); tauto.
 Qed.
 
-(** 然而，我们并不需要将其添加到霍尔逻辑的原始规则（primitive rules）集合中去。
-    因为，这一规则可以由双侧的Consequence规则导出。*)
 
 Lemma hoare_conseq_pre:
   forall (P P' Q: assertion) (c: com),
@@ -573,11 +645,6 @@ Proof.
     intros; tauto.
 Qed.
 
-(** 上面证明中用到了_[Q |-- Q]_这一性质。之后的证明中还会用到许多关于断言推导的
-    命题逻辑性质。证明中可以使用_[assn_tauto]_指令用于证明。具体而言，
-    _[assn_tauto H1 H2 ... Hn]_表示在将_[H1]_等前提考虑在内的情况下使用命题逻辑
-    证明。*)
-
 Ltac assn_unfold :=
   unfold derives, andp.
 
@@ -588,7 +655,7 @@ Ltac assn_tauto_lift H :=
       constr:(fun X0 (X1: H1) => (F (fun s => (X0 s) (X1 s))): H2)
   | _ =>
       constr:(fun X: H => X)
-  end.
+  end.  
 
 Tactic Notation "assn_tauto" constr_list(Hs) :=
   revert Hs;
@@ -609,164 +676,4 @@ Proof.
   + assn_tauto.
   + assn_tauto H0.
 Qed.
-
-(** 类似的，可以用变量赋值规则（正向）与顺序执行规则导出下面规则。在Coq证明中，
-    _[eapply]_表示使用_[apply]_但是相关参数暂时空缺。*)
-
-Lemma forward_symbolic_exe:
-  forall P x e c Q,
-    provable {{ exists x',
-                  exprZ_subst [[ e ]] x [[ x' ]] == [[ x ]] &&
-                  assn_subst P x [[ x' ]] }} c {{ Q }} ->
-    provable {{ P }} x = e; c {{ Q }}.
-Proof.
-  intros.
-  eapply hoare_seq.
-  + apply hoare_asgn_fwd.
-  + apply H.
-Qed.
-
-
-End HoareSimpleWhile_Derived.
-
-(** * 证明树归纳 *)
-
-Module HoareSimpleWhile_Admissible.
-Import Lang_SimpleWhile
-       DntSem_SimpleWhile2
-       DntSem_SimpleWhile3
-       DntSem_SimpleWhile4
-       HoareSimpleWhile
-       HoareSimpleWhile_Derived.
-
-Lemma hoare_seq_inv: forall P R c1 c2,
-  provable {{ P }} c1 ; c2 {{ R }} ->
-  exists Q: assertion,
-    provable {{ P }} c1 {{ Q }} /\
-    provable {{ Q }} c2 {{ R }}.
-Proof.
-  intros.
-  remember ( {{P}} c1; c2 {{R}} ) as ht eqn:EQ.
-  revert P R EQ; induction H; intros.
-  + discriminate EQ.
-  + clear IHprovable1 IHprovable2.
-    injection EQ as ? ? ? ?.
-    subst P0 c0 c3 R0.
-    exists Q.
-    tauto.
-  + discriminate EQ.
-  + discriminate EQ.
-  + discriminate EQ.
-  + injection EQ as ? ? ?.
-    subst P0 c Q.
-    rename Q' into R'.
-    specialize (IHprovable _ _ eq_refl).
-    destruct IHprovable as [Q [? ?] ].
-    exists Q.
-    split.
-    - apply (hoare_conseq_pre _ P'); tauto.
-    - apply (hoare_conseq_post _ _ R'); tauto.
-Qed.
-
-Lemma hoare_seq_assoc: forall P Q c1 c2 c3,
-  provable {{ P }} c1 ; (c2; c3) {{ Q }} <->
-  provable {{ P }} (c1 ; c2); c3 {{ Q }}.
-Proof.
-  intros.
-  split; intros.
-  + apply hoare_seq_inv in H.
-    destruct H as [M1 [H1 H23] ].
-    apply hoare_seq_inv in H23.
-    destruct H23 as [M2 [H2 H3] ].
-    apply (hoare_seq _ M2); [| tauto].
-    apply (hoare_seq _ M1); tauto.
-  + apply hoare_seq_inv in H.
-    destruct H as [M2 [H12 H3] ].
-    apply hoare_seq_inv in H12.
-    destruct H12 as [M1 [H1 H2] ].
-    apply (hoare_seq _ M1); [tauto |].
-    apply (hoare_seq _ M2); tauto.
-Qed.
-
-Lemma hoare_asgn_fwd_inv: forall P Q x e,
-  provable {{ P }} x = e {{ Q }} ->
-  Assn (exists x',
-           exprZ_subst [[ e ]] x [[ x' ]] == [[ x ]] &&
-           assn_subst P x [[ x' ]]) |-- Q.
-Proof.
-  intros.
-  remember ( {{ P }} x = e {{ Q }} ) as ht eqn:EQ.
-  revert P Q EQ; induction H; intros.
-  + discriminate EQ.
-  + discriminate EQ.
-  + discriminate EQ.
-  + discriminate EQ.
-  + injection EQ as ? ? ?.
-    subst P0 Q e0 x0.
-    unfold derives; intros; tauto.
-  + injection EQ as ? ? ?.
-    subst P0 c Q0.
-    specialize (IHprovable _ _ eq_refl).
-    revert IHprovable.
-    unfold derives, exp, andp, ei2exprZ, exprZ_eq.
-    unfold_substs.
-    intros.
-    apply H1.
-    apply (IHprovable s); clear IHprovable.
-    destruct H2 as [x' [? ?] ].
-    exists x'.
-    split; [| apply H0]; tauto.
-Qed.
-
-(** 习题：*)
-
-Lemma hoare_if_inv: forall P Q e c1 c2,
-  provable {{ P }} if (e) then { c1 } else { c2 } {{ Q }} ->
-  provable {{ P && [[ e ]] }} c1 {{ Q }} /\
-  provable {{ P && [[ ! e ]] }} c2 {{ Q }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
-Proof.
-  intros.
-  remember ( {{ P }} if (e) then { c1 } else { c2 } {{ Q }} ) as ht eqn:EQ.
-  revert P Q EQ; induction H; intros.
-  + discriminate EQ.
-  + discriminate EQ.
-  + clear IHprovable1 IHprovable2.
-    injection EQ as ? ? ? ? ?.
-    subst P0 e0 c0 c3 Q0.
-    tauto.
-  + discriminate EQ.
-  + discriminate EQ.
-  + injection EQ as ? ? ?.
-    subst P0 c Q0.
-    specialize (IHprovable _ _ eq_refl).
-    destruct IHprovable.
-    split.
-    - eapply hoare_conseq; [eauto | | eauto].
-      assn_tauto H0.
-    - eapply hoare_conseq; [eauto | | eauto].
-      assn_tauto H0.
-Qed.
-
-(** 习题：*)
-
-Lemma hoare_if_seq1: forall P Q e c1 c2 c3,
-  provable {{ P }} if (e) then { c1 } else { c2 }; c3 {{ Q }} ->
-  provable {{ P }} if (e) then { c1; c3 } else { c2; c3 } {{ Q }}.
-(* 请在此处填入你的证明，以_[Qed]_结束。 *)
-Proof.
-  intros.
-  apply hoare_seq_inv in H.
-  destruct H as [M [? ?] ].
-  apply hoare_if.
-  + apply hoare_if_inv in H.
-    destruct H.
-    apply (hoare_seq _ M); tauto.
-  + apply hoare_if_inv in H.
-    destruct H.
-    apply (hoare_seq _ M); tauto.
-Qed.
-
-
-
-End HoareSimpleWhile_Admissible.
+End HoareWhileD_Admissible.

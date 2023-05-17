@@ -417,590 +417,393 @@ Proof.
         unfold or_sem_nrm in H, H0. 
         destruct H as [i1 [? ?]].
         destruct H0 as [i2 [? ?]].
-        specialize (IHn i1 i2).
+        pose proof (IHn i1 i2 e1 s).
+        simpl in HH.
+        assert (le (rank e1) n) by lia.
         assert (i1 = i2) by auto.
         subst i2.
         unfold SC_or_compute_nrm in H1, H2.
         unfold NonSC_or in H1, H2.
         unfold NonSC_compute_nrm in H1, H2.
         destruct (Int64.signed i1) eqn : I1.
-        * destruct H1; destruct H1; try contradiction.
+        ++ destruct H1; destruct H1; try contradiction.
           destruct H2; destruct H2; try contradiction.
-          destruct H3 as [i2 [? ?]].
-          destruct H4 as [i2' [? ?]].
-          specialize (IHe2 i2 i2').
+          destruct H5 as [i2 [? ?]].
+          destruct H6 as [i2' [? ?]].
+          pose proof (IHn i2 i2' e2 s).
+          assert (le (rank e2) n) by lia.
           assert (i2 = i2') by auto.
           subst i2'.
           destruct (Int64.signed i2) eqn : I2.
-          ++  destruct H5; destruct H5; try contradiction.
-              destruct H6; destruct H6; try contradiction.
-              rewrite H7, H8.
+          --  destruct H7; destruct H7; try contradiction.
+              destruct H8; destruct H8; try contradiction.
+              rewrite H11, H12.
               tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
+          --  destruct H7; destruct H7;
+              destruct H8; destruct H8.
+              all: try rewrite H7 in I2.
+              all: try rewrite H8 in I2.
               all: try discriminate.
-              rewrite H7, H8.
+              rewrite H11, H12.
               tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
+          --  destruct H7; destruct H7;
+              destruct H8; destruct H8.
+              all: try rewrite H7 in I2.
+              all: try rewrite H8 in I2.
               all: try discriminate.
-              rewrite H7, H8.
+              rewrite H11, H12.
               tauto.
-        * destruct H1; destruct H1;
+        ++ destruct H1; destruct H1;
           destruct H2; destruct H2.
           all: try rewrite H1 in I1.
           all: try rewrite H2 in I1.
           all: try discriminate.
           subst a b; auto.
-        * destruct H1; destruct H1;
+        ++ destruct H1; destruct H1;
           destruct H2; destruct H2.
           all: try rewrite H1 in I1.
           all: try rewrite H2 in I1.
           all: try discriminate.
           subst a b; auto.
-      - unfold and_sem in H, H0. 
+      * unfold and_sem in H, H0. 
         simpl in H, H0.
         unfold and_sem_nrm in H, H0. 
         destruct H as [i1 [? ?]].
         destruct H0 as [i2 [? ?]].
-        specialize (IHe1 i1 i2).
+        pose proof (IHn i1 i2 e1 s).
+        simpl in HH.
+        assert (le (rank e1) n) by lia.
         assert (i1 = i2) by auto.
         subst i2.
         unfold SC_and_compute_nrm in H1, H2.
         unfold NonSC_and in H1, H2.
         unfold NonSC_compute_nrm in H1, H2.
         destruct (Int64.signed i1) eqn : I1.
-        * destruct H1; destruct H1;
+        ++ destruct H1; destruct H1;
           destruct H2; destruct H2.
           all: try contradiction.
           subst a b; auto.
-        * destruct H1; destruct H1;
+        ++ destruct H1; destruct H1;
           destruct H2; destruct H2.
           all: try rewrite H1 in I1.
           all: try rewrite H2 in I1.
           all: try discriminate.
-          destruct H3 as [i2 [? ?]].
-          destruct H4 as [i2' [? ?]].
-          specialize (IHe2 i2 i2').
+          destruct H5 as [i2 [? ?]].
+          destruct H6 as [i2' [? ?]].
+          pose proof IHn i2 i2' e2 s.
+          assert(le(rank e2) n) by lia.
           assert (i2 = i2') by auto.
           subst i2'.
           destruct (Int64.signed i2) eqn : I2.
-          ++  destruct H5; destruct H5; try contradiction.
-              destruct H6; destruct H6; try contradiction.
-              rewrite H7, H8.
+          --  destruct H7; destruct H7; try contradiction.
+              destruct H8; destruct H8; try contradiction.
+              rewrite H11, H12.
               tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
+          --  destruct H7; destruct H7;
+              destruct H8; destruct H8. 
+              all: try rewrite H7 in I2.
+              all: try rewrite H8 in I2.
               all: try discriminate.
-              rewrite H7, H8.
+              rewrite H11, H12.
               tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
+          --  destruct H7; destruct H7;
+              destruct H8; destruct H8. 
+              all: try rewrite H7 in I2.
+              all: try rewrite H8 in I2.
               all: try discriminate.
-              rewrite H7, H8.
+              rewrite H11, H12.
               tauto.
-        * destruct H1; destruct H1;
-          destruct H2; destruct H2.
-          all: try rewrite H1 in I1.
-          all: try rewrite H2 in I1.
-          all: try discriminate.
-          destruct H3 as [i2 [? ?]].
-          destruct H4 as [i2' [? ?]].
-          specialize (IHe2 i2 i2').
-          assert (i2 = i2') by auto.
-          subst i2'.
-          destruct (Int64.signed i2) eqn : I2.
-          ++  destruct H5; destruct H5; try contradiction.
-              destruct H6; destruct H6; try contradiction.
-              rewrite H7, H8.
-              tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
-              all: try discriminate.
-              rewrite H7, H8.
-              tauto.
-          ++  destruct H5; destruct H5;
-              destruct H6; destruct H6. 
-              all: try rewrite H5 in I2.
-              all: try rewrite H6 in I2.
-              all: try discriminate.
-              rewrite H7, H8.
-              tauto.
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.      
-      - unfold cmp_sem in H, H0.
-        simpl in H, H0.
-        unfold cmp_sem_nrm in H, H0.
-        unfold cmp_compute_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        subst i1' i2' a b; auto.      
-      - unfold arith_sem1 in H, H0.
-        simpl in H, H0.
-        unfold arith_sem1_nrm in H, H0.
-        unfold arith_compute1_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        destruct H2, H4.
-        subst i1' i2' a b; auto.
-      - unfold arith_sem1 in H, H0.
-        simpl in H, H0.
-        unfold arith_sem1_nrm in H, H0.
-        unfold arith_compute1_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        destruct H2, H4.
-        subst i1' i2' a b; auto.
-      - unfold arith_sem1 in H, H0.
-        simpl in H, H0.
-        unfold arith_sem1_nrm in H, H0.
-        unfold arith_compute1_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        destruct H2, H4.
-        subst i1' i2' a b; auto.          
-      - unfold arith_sem1 in H, H0.
-        simpl in H, H0.
-        unfold arith_sem1_nrm in H, H0.
-        unfold arith_compute1_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        destruct H2, H4.
-        subst i1' i2' a b; auto.     
-      - unfold arith_sem1 in H, H0.
-        simpl in H, H0.
-        unfold arith_sem1_nrm in H, H0.
-        unfold arith_compute1_nrm in H, H0.
-        destruct H as [i1 [i2 [? [? ?]]]].
-        destruct H0 as [i1' [i2' [? [? ?]]]].
-        specialize (IHe1 i1 i1').
-        specialize (IHe2 i2 i2').
-        assert (i1 = i1') by tauto.
-        assert (i2 = i2') by tauto.
-        destruct H2, H4.
-        subst i1' i2' a b; auto.
-      
-      
-
-
-
-  + destruct H, H0.
-    rewrite H, H0.
-    tauto.
-  + unfold deref_sem_nrm in H, H0.
-    destruct H as [a0 [? ?]].
-    destruct H0 as [b0 [? ?]].
-    rewrite H0 in H.
-    subst a0.
-    rewrite H1 in H2.
-    injection H2.
-    tauto.
-  + unfold binop_sem in H, H0.
-    destruct op.
-    - unfold or_sem in H, H0. 
-      simpl in H, H0.
-      unfold or_sem_nrm in H, H0. 
-      destruct H as [i1 [? ?]].
-      destruct H0 as [i2 [? ?]].
-      specialize (IHe1 i1 i2).
-      assert (i1 = i2) by auto.
-      subst i2.
-      unfold SC_or_compute_nrm in H1, H2.
-      unfold NonSC_or in H1, H2.
-      unfold NonSC_compute_nrm in H1, H2.
-      destruct (Int64.signed i1) eqn : I1.
-      * destruct H1; destruct H1; try contradiction.
-        destruct H2; destruct H2; try contradiction.
-        destruct H3 as [i2 [? ?]].
-        destruct H4 as [i2' [? ?]].
-        specialize (IHe2 i2 i2').
-        assert (i2 = i2') by auto.
-        subst i2'.
-        destruct (Int64.signed i2) eqn : I2.
-        ++  destruct H5; destruct H5; try contradiction.
-            destruct H6; destruct H6; try contradiction.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
+        ++  destruct H1; destruct H1;
+            destruct H2; destruct H2.
+            all: try rewrite H1 in I1.
+            all: try rewrite H2 in I1.
             all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
-            all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-      * destruct H1; destruct H1;
-        destruct H2; destruct H2.
-        all: try rewrite H1 in I1.
-        all: try rewrite H2 in I1.
-        all: try discriminate.
+            destruct H5 as [i2 [? ?]].
+            destruct H6 as [i2' [? ?]].
+            pose proof IHn i2 i2' e2 s.
+            assert(le(rank e2) n) by lia.
+            assert (i2 = i2') by auto.
+            subst i2'.
+            destruct (Int64.signed i2) eqn : I2.
+            --  destruct H7; destruct H7; try contradiction.
+                destruct H8; destruct H8; try contradiction.
+                rewrite H11, H12.
+                tauto.
+            --  destruct H7; destruct H7;
+                destruct H8; destruct H8. 
+                all: try rewrite H7 in I2.
+                all: try rewrite H8 in I2.
+                all: try discriminate.
+                rewrite H11, H12.
+                tauto.
+            --  destruct H7; destruct H7;
+                destruct H8; destruct H8. 
+                all: try rewrite H7 in I2.
+                all: try rewrite H8 in I2.
+                all: try discriminate.
+                rewrite H11, H12.
+                tauto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold cmp_sem in H, H0.
+        simpl in H, H0.
+        unfold cmp_sem_nrm in H, H0.
+        unfold cmp_compute_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2' a b; auto.
+      * unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2'.
+        destruct H2, H4.
         subst a b; auto.
-      * destruct H1; destruct H1;
-        destruct H2; destruct H2.
-        all: try rewrite H1 in I1.
-        all: try rewrite H2 in I1.
-        all: try discriminate.
+      * unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2'.
+        destruct H2, H4.
         subst a b; auto.
-    - unfold and_sem in H, H0. 
-      simpl in H, H0.
-      unfold and_sem_nrm in H, H0. 
-      destruct H as [i1 [? ?]].
-      destruct H0 as [i2 [? ?]].
-      specialize (IHe1 i1 i2).
-      assert (i1 = i2) by auto.
-      subst i2.
-      unfold SC_and_compute_nrm in H1, H2.
-      unfold NonSC_and in H1, H2.
-      unfold NonSC_compute_nrm in H1, H2.
-      destruct (Int64.signed i1) eqn : I1.
-      * destruct H1; destruct H1;
-        destruct H2; destruct H2.
-        all: try contradiction.
+      * unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2'.
+        destruct H2, H4.
         subst a b; auto.
-      * destruct H1; destruct H1;
-        destruct H2; destruct H2.
-        all: try rewrite H1 in I1.
-        all: try rewrite H2 in I1.
-        all: try discriminate.
-        destruct H3 as [i2 [? ?]].
-        destruct H4 as [i2' [? ?]].
-        specialize (IHe2 i2 i2').
-        assert (i2 = i2') by auto.
-        subst i2'.
-        destruct (Int64.signed i2) eqn : I2.
-        ++  destruct H5; destruct H5; try contradiction.
-            destruct H6; destruct H6; try contradiction.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
-            all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
-            all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-      * destruct H1; destruct H1;
-        destruct H2; destruct H2.
-        all: try rewrite H1 in I1.
-        all: try rewrite H2 in I1.
-        all: try discriminate.
-        destruct H3 as [i2 [? ?]].
-        destruct H4 as [i2' [? ?]].
-        specialize (IHe2 i2 i2').
-        assert (i2 = i2') by auto.
-        subst i2'.
-        destruct (Int64.signed i2) eqn : I2.
-        ++  destruct H5; destruct H5; try contradiction.
-            destruct H6; destruct H6; try contradiction.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
-            all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-        ++  destruct H5; destruct H5;
-            destruct H6; destruct H6. 
-            all: try rewrite H5 in I2.
-            all: try rewrite H6 in I2.
-            all: try discriminate.
-            rewrite H7, H8.
-            tauto.
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.      
-    - unfold cmp_sem in H, H0.
-      simpl in H, H0.
-      unfold cmp_sem_nrm in H, H0.
-      unfold cmp_compute_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      subst i1' i2' a b; auto.      
-    - unfold arith_sem1 in H, H0.
-      simpl in H, H0.
-      unfold arith_sem1_nrm in H, H0.
-      unfold arith_compute1_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      destruct H2, H4.
-      subst i1' i2' a b; auto.
-    - unfold arith_sem1 in H, H0.
-      simpl in H, H0.
-      unfold arith_sem1_nrm in H, H0.
-      unfold arith_compute1_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      destruct H2, H4.
-      subst i1' i2' a b; auto.
-    - unfold arith_sem1 in H, H0.
-      simpl in H, H0.
-      unfold arith_sem1_nrm in H, H0.
-      unfold arith_compute1_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      destruct H2, H4.
-      subst i1' i2' a b; auto.          
-    - unfold arith_sem1 in H, H0.
-      simpl in H, H0.
-      unfold arith_sem1_nrm in H, H0.
-      unfold arith_compute1_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      destruct H2, H4.
-      subst i1' i2' a b; auto.     
-    - unfold arith_sem1 in H, H0.
-      simpl in H, H0.
-      unfold arith_sem1_nrm in H, H0.
-      unfold arith_compute1_nrm in H, H0.
-      destruct H as [i1 [i2 [? [? ?]]]].
-      destruct H0 as [i1' [i2' [? [? ?]]]].
-      specialize (IHe1 i1 i1').
-      specialize (IHe2 i2 i2').
-      assert (i1 = i1') by tauto.
-      assert (i2 = i2') by tauto.
-      destruct H2, H4.
-      subst i1' i2' a b; auto.   
-  + unfold unop_sem in H, H0.
-    destruct op; simpl; intros.
-    - unfold not_sem in H, H0.
-      simpl in H, H0.
-      unfold not_sem_nrm in H, H0.
-      unfold not_compute_nrm in H, H0.
+      * unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2'.
+        destruct H2, H4.
+        subst a b; auto.
+      * unfold arith_sem1 in H, H0.
+        simpl in H, H0.
+        unfold arith_sem1_nrm in H, H0.
+        unfold arith_compute1_nrm in H, H0.
+        destruct H as [i1 [i2 [? [? ?]]]].
+        destruct H0 as [i1' [i2' [? [? ?]]]].
+        pose proof IHn i1 i1' e1 s.
+        pose proof IHn i2 i2' e2 s.
+        simpl in HH.
+        assert(le (rank e1) n) by lia.
+        assert(le (rank e2) n) by lia.
+        assert (i1 = i1') by tauto.
+        assert (i2 = i2') by tauto.
+        subst i1' i2'.
+        destruct H2, H4.
+        subst a b; auto.
+    - unfold unop_sem in H, H0.
+      destruct op; simpl; intros.
+      * unfold not_sem in H, H0.
+        simpl in H, H0.
+        unfold not_sem_nrm in H, H0.
+        unfold not_compute_nrm in H, H0.
+        destruct H as [i1 [? ?]].
+        destruct H0 as [i1' [? ?]].
+        pose proof IHn i1 i1' e s.
+        simpl in HH.
+        assert(le(rank e) n) by lia.
+        assert (i1 = i1') by tauto.
+        subst i1'.
+        destruct (Int64.signed i1) eqn : I.
+        ++ destruct H1; destruct H1; destruct H2; destruct H2.
+          all: try discriminate; try contradiction.
+          subst a b; auto.
+        ++ destruct H1; destruct H1; destruct H2; destruct H2.
+          all: try rewrite H1 in I.
+          all: try rewrite H2 in I.
+          all: try discriminate; try contradiction.
+          subst a b; auto.
+        ++ destruct H1; destruct H1; destruct H2; destruct H2.
+          all: try rewrite H1 in I.
+          all: try rewrite H2 in I.
+          all: try discriminate; try contradiction.
+          subst a b; auto.
+      * unfold neg_sem in H, H0.
+        simpl in H, H0.
+        unfold neg_sem_nrm in H, H0.
+        unfold neg_compute_nrm in H, H0.
+        destruct H as [i1 [? ?]].
+        destruct H0 as [i1' [? ?]].
+        pose proof IHn i1 i1' e s.
+        simpl in HH.
+        assert(le(rank e) n) by lia.
+        assert (i1 = i1') by tauto.
+        subst i1'.
+        destruct H1, H2.
+        subst a b; auto.
+    - unfold deref_sem_nrm in H, H0.
       destruct H as [i1 [? ?]].
       destruct H0 as [i1' [? ?]].
-      specialize (IHe i1 i1').
+      pose proof IHn i1 i1' e s.
+      simpl in HH.
+      assert(le(rank e) n) by lia.
       assert (i1 = i1') by tauto.
       subst i1'.
-      destruct (Int64.signed i1) eqn : I.
-      * destruct H1; destruct H1; destruct H2; destruct H2.
-        all: try discriminate; try contradiction.
+      rewrite H2 in H1.
+      injection H1.
+      auto.
+    - unfold eval_l in H, H0.
+      destruct e eqn : I. 
+      * revert H H0.
+        unfold_RELS_tac.
+        simpl.
+        intros.
+        contradiction.
+      * unfold var_sem_l in H, H0.
+        simpl in H, H0.
         subst a b; auto.
-      * destruct H1; destruct H1; destruct H2; destruct H2.
-        all: try rewrite H1 in I.
-        all: try rewrite H2 in I.
-        all: try discriminate; try contradiction.
-        subst a b; auto.
-      * destruct H1; destruct H1; destruct H2; destruct H2.
-        all: try rewrite H1 in I.
-        all: try rewrite H2 in I.
-        all: try discriminate; try contradiction.
-        subst a b; auto.
-    - unfold neg_sem in H, H0.
-      simpl in H, H0.
-      unfold neg_sem_nrm in H, H0.
-      unfold neg_compute_nrm in H, H0.
-      destruct H as [i1 [? ?]].
-      destruct H0 as [i1' [? ?]].
-      specialize (IHe i1 i1').
-      assert (i1 = i1') by tauto.
-      subst i1'.
-      destruct H1, H2.
-      subst a b; auto.
-  + unfold deref_sem_nrm in H, H0.
-    destruct H as [i1 [? ?]].
-    destruct H0 as [i1' [? ?]].
-    specialize (IHe i1 i1').
-    assert (i1 = i1') by tauto.
-    subst i1'.
-    rewrite H2 in H1.
-    injection H1.
-    auto.
-  + unfold eval_l in H, H0.
-    destruct e eqn : I. 
-    - revert H H0.
-      unfold_RELS_tac.
-      simpl.
-      intros.
-      contradiction.
-    - unfold var_sem_l in H, H0.
-      simpl in H, H0.
-      subst a b; auto.
-    - simpl in H, H0.
-      revert H H0.
-      unfold_RELS_tac.
-      simpl.
-      intros.
-      contradiction.
-    - simpl in H, H0.
-      revert H H0.
-      unfold_RELS_tac.
-      simpl.
-      intros.
-      contradiction.
-    - fold eval_r in H, H0.
-      simpl in IHe.
-      unfold deref_sem_nrm in IHe.
-      specialize (IHe (s.(mem) a) (s.(mem) b)).
+      * simpl in H, H0.
+        revert H H0.
+        unfold_RELS_tac.
+        simpl.
+        intros.
+        contradiction.
+      * simpl in H, H0.
+        revert H H0.
+        unfold_RELS_tac.
+        simpl.
+        intros.
+        contradiction.
+      * fold eval_r in H, H0.
+        simpl in HH.
+        specialize (IHn a b e0 s).
+        assert(le (rank e0) n) by lia.
+        auto.
+      * simpl in H, H0.
+        revert H H0.
+        unfold_RELS_tac.
+        simpl.
+        intros.
+        contradiction.
+Qed.
+
+Lemma eval_r_sem_inj: 
+  forall (a b: int64)(e: expr)(s: state),
+  (eval_r e).(nrm) s a ->
+  (eval_r e).(nrm) s b ->
+  a = b.
+Proof.
+  intros.
+  pose proof eval_r_sem_inj_pre (rank e) a b e s.
+  auto.
+Qed.
+
 
 (** 这里_[test_true]_与_[test_false]_的定义不变，不过之后只会将其作用在表达式的
     右值上。*)

@@ -1,1365 +1,1709 @@
-DIGEST 111704d5ee3a2cbc6f2c046f619c74b7
+DIGEST e08b0a1f84ca0401281beb6be33363f1
 FPV.WhileDDenotations
-R15:31 Coq.ZArith.ZArith <> <> lib
-R49:66 Coq.Strings.String <> <> lib
-R84:102 SetsClass.SetsClass <> <> lib
-R141:161 compcert.lib.Integers <> <> lib
-R179:187 PV.Syntax <> <> lib
-mod 266:278 <> DntSem_WhileD
-ind 331:333 DntSem_WhileD val
-constr 346:352 DntSem_WhileD Vuninit
-constr 361:364 DntSem_WhileD Vint
-R355:357 PV.WhileDDenotations <> val:1 ind
-R370:374 compcert.lib.Integers <> int64 syndef
-binder 367:367 <> i:3
-R378:380 PV.WhileDDenotations <> val:1 ind
-rec 391:395 DntSem_WhileD state
-proj 410:412 DntSem_WhileD env
-proj 436:438 DntSem_WhileD mem
-R423:426 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R427:431 compcert.lib.Integers <> int64 syndef
-R415:422 PV.Syntax Lang_While var_name def
-R446:449 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R450:455 Coq.Init.Datatypes <> option ind
-R457:459 PV.WhileDDenotations DntSem_WhileD val ind
-R441:445 compcert.lib.Integers <> int64 syndef
-R492:494 PV.WhileDDenotations DntSem_WhileD env proj
-not 475:475 DntSem_WhileD :::x_'.(env)'
-R539:541 PV.WhileDDenotations DntSem_WhileD mem proj
-not 522:522 DntSem_WhileD :::x_'.(mem)'
-mod 675:681 <> DntSem_WhileD.EDenote
-rec 692:698 DntSem_WhileD.EDenote EDenote
-proj 713:715 DntSem_WhileD.EDenote nrm
-proj 744:746 DntSem_WhileD.EDenote err
-R723:726 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R732:735 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R727:731 compcert.lib.Integers <> int64 syndef
-R718:722 PV.WhileDDenotations DntSem_WhileD state rec
-R754:757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R749:753 PV.WhileDDenotations DntSem_WhileD state rec
-R772:778 PV.WhileDDenotations DntSem_WhileD.EDenote <> mod
-R825:835 PV.WhileDDenotations DntSem_WhileD nrm proj
-not 808:808 DntSem_WhileD :::x_'.(nrm)'
-R898:908 PV.WhileDDenotations DntSem_WhileD err proj
-not 881:881 DntSem_WhileD :::x_'.(err)'
-R970:980 PV.WhileDDenotations DntSem_WhileD nrm proj
-R1012:1022 PV.WhileDDenotations DntSem_WhileD err proj
-not 1038:1038 DntSem_WhileD :::x_'.(nrm)'
-not 1113:1113 DntSem_WhileD :::x_'.(err)'
-def 1190:1207 DntSem_WhileD arith_compute1_nrm
-R1219:1222 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1224:1227 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1228:1228 Coq.Numbers.BinNums <> Z ind
-R1223:1223 Coq.Numbers.BinNums <> Z ind
-R1218:1218 Coq.Numbers.BinNums <> Z ind
-binder 1212:1215 <> Zfun:10
-R1243:1247 compcert.lib.Integers <> int64 syndef
-binder 1234:1235 <> i1:11
-binder 1237:1238 <> i2:12
-binder 1240:1240 <> i:13
-R1270:1273 PV.WhileDDenotations <> Zfun:10 var
-R1294:1305 compcert.lib.Integers Int64 signed def
-R1307:1308 PV.WhileDDenotations <> i2:12 var
-R1276:1287 compcert.lib.Integers Int64 signed def
-R1289:1290 PV.WhileDDenotations <> i1:11 var
-binder 1263:1265 <> res:14
-R1332:1335 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1315:1317 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1314:1314 PV.WhileDDenotations <> i:13 var
-R1318:1327 compcert.lib.Integers Int64 repr def
-R1329:1331 PV.WhileDDenotations <> res:14 var
-R1352:1355 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
-R1359:1362 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
-R1336:1351 compcert.lib.Integers Int64 min_signed def
-R1356:1358 PV.WhileDDenotations <> res:14 var
-R1356:1358 PV.WhileDDenotations <> res:14 var
-R1363:1378 compcert.lib.Integers Int64 max_signed def
-def 1393:1410 DntSem_WhileD arith_compute1_err
-R1422:1425 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1427:1430 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1431:1431 Coq.Numbers.BinNums <> Z ind
-R1426:1426 Coq.Numbers.BinNums <> Z ind
-R1421:1421 Coq.Numbers.BinNums <> Z ind
-binder 1415:1418 <> Zfun:15
-R1444:1448 compcert.lib.Integers <> int64 syndef
-binder 1437:1438 <> i1:16
-binder 1440:1441 <> i2:17
-R1471:1474 PV.WhileDDenotations <> Zfun:15 var
-R1495:1506 compcert.lib.Integers Int64 signed def
-R1508:1509 PV.WhileDDenotations <> i2:17 var
-R1477:1488 compcert.lib.Integers Int64 signed def
-R1490:1491 PV.WhileDDenotations <> i1:16 var
-binder 1464:1466 <> res:18
-R1537:1540 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R1518:1520 Coq.ZArith.BinInt <> ::Z_scope:x_'<'_x not
-R1515:1517 PV.WhileDDenotations <> res:18 var
-R1521:1536 compcert.lib.Integers Int64 min_signed def
-R1544:1546 Coq.ZArith.BinInt <> ::Z_scope:x_'>'_x not
-R1541:1543 PV.WhileDDenotations <> res:18 var
-R1547:1562 compcert.lib.Integers Int64 max_signed def
-def 1577:1594 DntSem_WhileD arith_compute2_nrm
-R1625:1628 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1634:1637 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R1638:1642 compcert.lib.Integers <> int64 syndef
-R1629:1633 compcert.lib.Integers <> int64 syndef
-R1620:1624 compcert.lib.Integers <> int64 syndef
-binder 1610:1617 <> int64fun:19
-R1668:1672 compcert.lib.Integers <> int64 syndef
-binder 1659:1660 <> i1:20
-binder 1662:1663 <> i2:21
-binder 1665:1665 <> i:22
-R1704:1709 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1687:1689 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1686:1686 PV.WhileDDenotations <> i:22 var
-R1690:1697 PV.WhileDDenotations <> int64fun:19 var
-R1702:1703 PV.WhileDDenotations <> i2:21 var
-R1699:1700 PV.WhileDDenotations <> i1:20 var
-R1730:1736 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1801:1801 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1725:1728 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R1710:1721 compcert.lib.Integers Int64 signed def
-R1723:1724 PV.WhileDDenotations <> i2:21 var
-R1772:1778 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R1752:1755 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R1737:1748 compcert.lib.Integers Int64 signed def
-R1750:1751 PV.WhileDDenotations <> i1:20 var
-R1756:1771 compcert.lib.Integers Int64 min_signed def
-R1794:1797 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R1779:1790 compcert.lib.Integers Int64 signed def
-R1792:1793 PV.WhileDDenotations <> i2:21 var
-def 1816:1833 DntSem_WhileD arith_compute2_err
-R1843:1847 compcert.lib.Integers <> int64 syndef
-binder 1836:1837 <> i1:23
-binder 1839:1840 <> i2:24
-R1880:1886 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R1949:1949 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R1876:1878 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1861:1872 compcert.lib.Integers Int64 signed def
-R1874:1875 PV.WhileDDenotations <> i2:24 var
-R1921:1927 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R1902:1904 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1887:1898 compcert.lib.Integers Int64 signed def
-R1900:1901 PV.WhileDDenotations <> i1:23 var
-R1905:1920 compcert.lib.Integers Int64 min_signed def
-R1943:1945 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R1928:1939 compcert.lib.Integers Int64 signed def
-R1941:1942 PV.WhileDDenotations <> i2:24 var
-def 1964:1978 DntSem_WhileD cmp_compute_nrm
-R1987:1996 compcert.lib.Integers <> comparison ind
-binder 1984:1984 <> c:25
-R2012:2016 compcert.lib.Integers <> int64 syndef
-binder 2003:2004 <> i1:26
-binder 2006:2007 <> i2:27
-binder 2009:2009 <> i:28
-R2035:2037 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2034:2034 PV.WhileDDenotations <> i:28 var
-R2041:2049 compcert.lib.Integers Int64 cmp def
-R2056:2057 PV.WhileDDenotations <> i2:27 var
-R2053:2054 PV.WhileDDenotations <> i1:26 var
-R2051:2051 PV.WhileDDenotations <> c:25 var
-R2094:2103 compcert.lib.Integers Int64 repr def
-R2070:2079 compcert.lib.Integers Int64 repr def
-def 2121:2134 DntSem_WhileD arith_sem1_nrm
-R2157:2160 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2162:2165 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2166:2166 Coq.Numbers.BinNums <> Z ind
-R2161:2161 Coq.Numbers.BinNums <> Z ind
-R2156:2156 Coq.Numbers.BinNums <> Z ind
-binder 2150:2153 <> Zfun:29
-R2195:2198 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2204:2207 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2199:2203 compcert.lib.Integers <> int64 syndef
-R2190:2194 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2183:2184 <> D1:30
-binder 2186:2187 <> D2:31
-R2231:2235 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2228:2228 <> s:32
-R2255:2259 compcert.lib.Integers <> int64 syndef
-binder 2252:2252 <> i:33
-R2273:2279 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2285:2290 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 2280:2281 <> i1:34
-binder 2283:2284 <> i2:35
-R2298:2301 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2291:2292 PV.WhileDDenotations <> D1:30 var
-R2296:2297 PV.WhileDDenotations <> i1:34 var
-R2294:2294 PV.WhileDDenotations <> s:32 var
-R2309:2316 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2302:2303 PV.WhileDDenotations <> D2:31 var
-R2307:2308 PV.WhileDDenotations <> i2:35 var
-R2305:2305 PV.WhileDDenotations <> s:32 var
-R2317:2334 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
-R2347:2347 PV.WhileDDenotations <> i:33 var
-R2344:2345 PV.WhileDDenotations <> i2:35 var
-R2341:2342 PV.WhileDDenotations <> i1:34 var
-R2336:2339 PV.WhileDDenotations <> Zfun:29 var
-def 2362:2375 DntSem_WhileD arith_sem1_err
-R2398:2401 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2403:2406 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2407:2407 Coq.Numbers.BinNums <> Z ind
-R2402:2402 Coq.Numbers.BinNums <> Z ind
-R2397:2397 Coq.Numbers.BinNums <> Z ind
-binder 2391:2394 <> Zfun:36
+R15:32 Coq.Strings.String <> <> lib
+R50:66 Coq.ZArith.ZArith <> <> lib
+R84:102 Coq.micromega.Psatz <> <> lib
+R120:145 Coq.Classes.Morphisms_Prop <> <> lib
+R163:189 Coq.Classes.RelationClasses <> <> lib
+R207:235 Coq.Logic.Classical_Pred_Type <> <> lib
+R253:276 Coq.Logic.Classical_Prop <> <> lib
+R294:310 Coq.ZArith.ZArith <> <> lib
+R328:345 Coq.Strings.String <> <> lib
+R363:381 SetsClass.SetsClass <> <> lib
+R420:440 compcert.lib.Integers <> <> lib
+R458:466 PV.Syntax <> <> lib
+mod 545:557 <> DntSem_WhileD
+ind 610:612 DntSem_WhileD val
+constr 625:631 DntSem_WhileD Vuninit
+constr 640:643 DntSem_WhileD Vint
+R634:636 PV.WhileDDenotations <> val:1 ind
+R649:653 compcert.lib.Integers <> int64 syndef
+binder 646:646 <> i:3
+R657:659 PV.WhileDDenotations <> val:1 ind
+rec 670:674 DntSem_WhileD state
+proj 689:691 DntSem_WhileD env
+proj 715:717 DntSem_WhileD mem
+R702:705 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R706:710 compcert.lib.Integers <> int64 syndef
+R694:701 PV.Syntax Lang_While var_name def
+R725:728 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R729:734 Coq.Init.Datatypes <> option ind
+R736:738 PV.WhileDDenotations DntSem_WhileD val ind
+R720:724 compcert.lib.Integers <> int64 syndef
+R771:773 PV.WhileDDenotations DntSem_WhileD env proj
+not 754:754 DntSem_WhileD :::x_'.(env)'
+R818:820 PV.WhileDDenotations DntSem_WhileD mem proj
+not 801:801 DntSem_WhileD :::x_'.(mem)'
+mod 954:960 <> DntSem_WhileD.EDenote
+rec 971:977 DntSem_WhileD.EDenote EDenote
+proj 992:994 DntSem_WhileD.EDenote nrm
+proj 1023:1025 DntSem_WhileD.EDenote err
+R1002:1005 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1011:1014 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1006:1010 compcert.lib.Integers <> int64 syndef
+R997:1001 PV.WhileDDenotations DntSem_WhileD state rec
+R1033:1036 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1028:1032 PV.WhileDDenotations DntSem_WhileD state rec
+R1051:1057 PV.WhileDDenotations DntSem_WhileD.EDenote <> mod
+R1104:1114 PV.WhileDDenotations DntSem_WhileD nrm proj
+not 1087:1087 DntSem_WhileD :::x_'.(nrm)'
+R1177:1187 PV.WhileDDenotations DntSem_WhileD err proj
+not 1160:1160 DntSem_WhileD :::x_'.(err)'
+R1249:1259 PV.WhileDDenotations DntSem_WhileD nrm proj
+R1291:1301 PV.WhileDDenotations DntSem_WhileD err proj
+not 1317:1317 DntSem_WhileD :::x_'.(nrm)'
+not 1392:1392 DntSem_WhileD :::x_'.(err)'
+def 1469:1486 DntSem_WhileD arith_compute1_nrm
+R1498:1501 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1503:1506 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1507:1507 Coq.Numbers.BinNums <> Z ind
+R1502:1502 Coq.Numbers.BinNums <> Z ind
+R1497:1497 Coq.Numbers.BinNums <> Z ind
+binder 1491:1494 <> Zfun:10
+R1522:1526 compcert.lib.Integers <> int64 syndef
+binder 1513:1514 <> i1:11
+binder 1516:1517 <> i2:12
+binder 1519:1519 <> i:13
+R1549:1552 PV.WhileDDenotations <> Zfun:10 var
+R1573:1584 compcert.lib.Integers Int64 signed def
+R1586:1587 PV.WhileDDenotations <> i2:12 var
+R1555:1566 compcert.lib.Integers Int64 signed def
+R1568:1569 PV.WhileDDenotations <> i1:11 var
+binder 1542:1544 <> res:14
+R1611:1614 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1594:1596 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1593:1593 PV.WhileDDenotations <> i:13 var
+R1597:1606 compcert.lib.Integers Int64 repr def
+R1608:1610 PV.WhileDDenotations <> res:14 var
+R1631:1634 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
+R1638:1641 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
+R1615:1630 compcert.lib.Integers Int64 min_signed def
+R1635:1637 PV.WhileDDenotations <> res:14 var
+R1635:1637 PV.WhileDDenotations <> res:14 var
+R1642:1657 compcert.lib.Integers Int64 max_signed def
+def 1672:1689 DntSem_WhileD arith_compute1_err
+R1701:1704 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1706:1709 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1710:1710 Coq.Numbers.BinNums <> Z ind
+R1705:1705 Coq.Numbers.BinNums <> Z ind
+R1700:1700 Coq.Numbers.BinNums <> Z ind
+binder 1694:1697 <> Zfun:15
+R1723:1727 compcert.lib.Integers <> int64 syndef
+binder 1716:1717 <> i1:16
+binder 1719:1720 <> i2:17
+R1750:1753 PV.WhileDDenotations <> Zfun:15 var
+R1774:1785 compcert.lib.Integers Int64 signed def
+R1787:1788 PV.WhileDDenotations <> i2:17 var
+R1756:1767 compcert.lib.Integers Int64 signed def
+R1769:1770 PV.WhileDDenotations <> i1:16 var
+binder 1743:1745 <> res:18
+R1816:1819 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R1797:1799 Coq.ZArith.BinInt <> ::Z_scope:x_'<'_x not
+R1794:1796 PV.WhileDDenotations <> res:18 var
+R1800:1815 compcert.lib.Integers Int64 min_signed def
+R1823:1825 Coq.ZArith.BinInt <> ::Z_scope:x_'>'_x not
+R1820:1822 PV.WhileDDenotations <> res:18 var
+R1826:1841 compcert.lib.Integers Int64 max_signed def
+def 1856:1873 DntSem_WhileD arith_compute2_nrm
+R1904:1907 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1913:1916 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1917:1921 compcert.lib.Integers <> int64 syndef
+R1908:1912 compcert.lib.Integers <> int64 syndef
+R1899:1903 compcert.lib.Integers <> int64 syndef
+binder 1889:1896 <> int64fun:19
+R1947:1951 compcert.lib.Integers <> int64 syndef
+binder 1938:1939 <> i1:20
+binder 1941:1942 <> i2:21
+binder 1944:1944 <> i:22
+R1983:1988 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1966:1968 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1965:1965 PV.WhileDDenotations <> i:22 var
+R1969:1976 PV.WhileDDenotations <> int64fun:19 var
+R1981:1982 PV.WhileDDenotations <> i2:21 var
+R1978:1979 PV.WhileDDenotations <> i1:20 var
+R2009:2015 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2080:2080 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2004:2007 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R1989:2000 compcert.lib.Integers Int64 signed def
+R2002:2003 PV.WhileDDenotations <> i2:21 var
+R2051:2057 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R2031:2034 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R2016:2027 compcert.lib.Integers Int64 signed def
+R2029:2030 PV.WhileDDenotations <> i1:20 var
+R2035:2050 compcert.lib.Integers Int64 min_signed def
+R2073:2076 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R2058:2069 compcert.lib.Integers Int64 signed def
+R2071:2072 PV.WhileDDenotations <> i2:21 var
+def 2095:2112 DntSem_WhileD arith_compute2_err
+R2122:2126 compcert.lib.Integers <> int64 syndef
+binder 2115:2116 <> i1:23
+binder 2118:2119 <> i2:24
+R2159:2165 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R2228:2228 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R2155:2157 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2140:2151 compcert.lib.Integers Int64 signed def
+R2153:2154 PV.WhileDDenotations <> i2:24 var
+R2200:2206 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2181:2183 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2166:2177 compcert.lib.Integers Int64 signed def
+R2179:2180 PV.WhileDDenotations <> i1:23 var
+R2184:2199 compcert.lib.Integers Int64 min_signed def
+R2222:2224 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2207:2218 compcert.lib.Integers Int64 signed def
+R2220:2221 PV.WhileDDenotations <> i2:24 var
+def 2243:2257 DntSem_WhileD cmp_compute_nrm
+R2266:2275 compcert.lib.Integers <> comparison ind
+binder 2263:2263 <> c:25
+R2291:2295 compcert.lib.Integers <> int64 syndef
+binder 2282:2283 <> i1:26
+binder 2285:2286 <> i2:27
+binder 2288:2288 <> i:28
+R2314:2316 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2313:2313 PV.WhileDDenotations <> i:28 var
+R2320:2328 compcert.lib.Integers Int64 cmp def
+R2335:2336 PV.WhileDDenotations <> i2:27 var
+R2332:2333 PV.WhileDDenotations <> i1:26 var
+R2330:2330 PV.WhileDDenotations <> c:25 var
+R2373:2382 compcert.lib.Integers Int64 repr def
+R2349:2358 compcert.lib.Integers Int64 repr def
+def 2400:2413 DntSem_WhileD arith_sem1_nrm
 R2436:2439 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2445:2448 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2440:2444 compcert.lib.Integers <> int64 syndef
-R2431:2435 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2424:2425 <> D1:37
-binder 2427:2428 <> D2:38
-R2472:2476 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2469:2469 <> s:39
-R2490:2496 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2502:2507 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 2497:2498 <> i1:40
-binder 2500:2501 <> i2:41
-R2515:2518 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2508:2509 PV.WhileDDenotations <> D1:37 var
-R2513:2514 PV.WhileDDenotations <> i1:40 var
-R2511:2511 PV.WhileDDenotations <> s:39 var
-R2526:2533 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2519:2520 PV.WhileDDenotations <> D2:38 var
-R2524:2525 PV.WhileDDenotations <> i2:41 var
-R2522:2522 PV.WhileDDenotations <> s:39 var
-R2534:2551 PV.WhileDDenotations DntSem_WhileD arith_compute1_err def
-R2561:2562 PV.WhileDDenotations <> i2:41 var
-R2558:2559 PV.WhileDDenotations <> i1:40 var
-R2553:2556 PV.WhileDDenotations <> Zfun:36 var
-def 2577:2586 DntSem_WhileD arith_sem1
-binder 2588:2591 <> Zfun:42
-R2601:2607 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 2594:2595 <> D1:43
-binder 2597:2598 <> D2:44
-R2611:2617 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R2631:2633 PV.WhileDDenotations DntSem_WhileD nrm proj
-R2631:2633 PV.WhileDDenotations DntSem_WhileD nrm proj
-R2681:2683 PV.WhileDDenotations DntSem_WhileD err proj
-R2709:2724 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R2696:2700 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R2690:2695 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R2688:2689 PV.WhileDDenotations <> D1:43 var
-R2703:2708 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R2701:2702 PV.WhileDDenotations <> D2:44 var
-R2725:2738 PV.WhileDDenotations DntSem_WhileD arith_sem1_err def
-R2756:2761 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R2754:2755 PV.WhileDDenotations <> D2:44 var
-R2747:2752 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R2745:2746 PV.WhileDDenotations <> D1:43 var
-R2740:2743 PV.WhileDDenotations <> Zfun:42 var
-R2638:2651 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
-R2669:2674 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R2667:2668 PV.WhileDDenotations <> D2:44 var
-R2660:2665 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R2658:2659 PV.WhileDDenotations <> D1:43 var
-R2653:2656 PV.WhileDDenotations <> Zfun:42 var
-def 2782:2795 DntSem_WhileD arith_sem2_nrm
-R2826:2829 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2835:2838 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2839:2843 compcert.lib.Integers <> int64 syndef
-R2830:2834 compcert.lib.Integers <> int64 syndef
-R2821:2825 compcert.lib.Integers <> int64 syndef
-binder 2811:2818 <> int64fun:45
-R2872:2875 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2881:2884 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2876:2880 compcert.lib.Integers <> int64 syndef
-R2867:2871 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2860:2861 <> D1:46
-binder 2863:2864 <> D2:47
-R2908:2912 PV.WhileDDenotations DntSem_WhileD state rec
-binder 2905:2905 <> s:48
-R2932:2936 compcert.lib.Integers <> int64 syndef
-binder 2929:2929 <> i:49
-R2950:2956 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R2962:2967 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 2957:2958 <> i1:50
-binder 2960:2961 <> i2:51
-R2975:2978 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2968:2969 PV.WhileDDenotations <> D1:46 var
-R2973:2974 PV.WhileDDenotations <> i1:50 var
-R2971:2971 PV.WhileDDenotations <> s:48 var
-R2986:2993 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R2979:2980 PV.WhileDDenotations <> D2:47 var
-R2984:2985 PV.WhileDDenotations <> i2:51 var
-R2982:2982 PV.WhileDDenotations <> s:48 var
-R2994:3011 PV.WhileDDenotations DntSem_WhileD arith_compute2_nrm def
-R3028:3028 PV.WhileDDenotations <> i:49 var
-R3025:3026 PV.WhileDDenotations <> i2:51 var
-R3022:3023 PV.WhileDDenotations <> i1:50 var
-R3013:3020 PV.WhileDDenotations <> int64fun:45 var
-def 3043:3056 DntSem_WhileD arith_sem2_err
-R3084:3087 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3093:3096 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3088:3092 compcert.lib.Integers <> int64 syndef
-R3079:3083 PV.WhileDDenotations DntSem_WhileD state rec
-binder 3072:3073 <> D1:52
-binder 3075:3076 <> D2:53
-R3120:3124 PV.WhileDDenotations DntSem_WhileD state rec
-binder 3117:3117 <> s:54
-R3138:3144 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3150:3155 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 3145:3146 <> i1:55
-binder 3148:3149 <> i2:56
-R3163:3166 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R3156:3157 PV.WhileDDenotations <> D1:52 var
-R3161:3162 PV.WhileDDenotations <> i1:55 var
-R3159:3159 PV.WhileDDenotations <> s:54 var
-R3174:3181 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R3167:3168 PV.WhileDDenotations <> D2:53 var
-R3172:3173 PV.WhileDDenotations <> i2:56 var
-R3170:3170 PV.WhileDDenotations <> s:54 var
-R3182:3199 PV.WhileDDenotations DntSem_WhileD arith_compute2_err def
-R3204:3205 PV.WhileDDenotations <> i2:56 var
-R3201:3202 PV.WhileDDenotations <> i1:55 var
-def 3220:3229 DntSem_WhileD arith_sem2
-binder 3231:3238 <> int64fun:57
-R3248:3254 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 3241:3242 <> D1:58
-binder 3244:3245 <> D2:59
-R3258:3264 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R3278:3280 PV.WhileDDenotations DntSem_WhileD nrm proj
-R3278:3280 PV.WhileDDenotations DntSem_WhileD nrm proj
-R3332:3334 PV.WhileDDenotations DntSem_WhileD err proj
-R3360:3375 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R3347:3351 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R3341:3346 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R3339:3340 PV.WhileDDenotations <> D1:58 var
-R3354:3359 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R3352:3353 PV.WhileDDenotations <> D2:59 var
-R3376:3389 PV.WhileDDenotations DntSem_WhileD arith_sem2_err def
-R3402:3407 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3400:3401 PV.WhileDDenotations <> D2:59 var
-R3393:3398 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3391:3392 PV.WhileDDenotations <> D1:58 var
-R3285:3298 PV.WhileDDenotations DntSem_WhileD arith_sem2_nrm def
-R3320:3325 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3318:3319 PV.WhileDDenotations <> D2:59 var
-R3311:3316 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3309:3310 PV.WhileDDenotations <> D1:58 var
-R3300:3307 PV.WhileDDenotations <> int64fun:57 var
-def 3428:3438 DntSem_WhileD cmp_sem_nrm
-R3457:3466 compcert.lib.Integers <> comparison ind
-binder 3454:3454 <> c:60
-R3495:3498 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3504:3507 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3499:3503 compcert.lib.Integers <> int64 syndef
-R3490:3494 PV.WhileDDenotations DntSem_WhileD state rec
-binder 3483:3484 <> D1:61
-binder 3486:3487 <> D2:62
-R3531:3535 PV.WhileDDenotations DntSem_WhileD state rec
-binder 3528:3528 <> s:63
-R3555:3559 compcert.lib.Integers <> int64 syndef
-binder 3552:3552 <> i:64
-R3573:3579 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R3585:3590 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 3580:3581 <> i1:65
-binder 3583:3584 <> i2:66
-R3598:3601 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R3591:3592 PV.WhileDDenotations <> D1:61 var
-R3596:3597 PV.WhileDDenotations <> i1:65 var
-R3594:3594 PV.WhileDDenotations <> s:63 var
-R3609:3612 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R3602:3603 PV.WhileDDenotations <> D2:62 var
-R3607:3608 PV.WhileDDenotations <> i2:66 var
-R3605:3605 PV.WhileDDenotations <> s:63 var
-R3613:3627 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
-R3637:3637 PV.WhileDDenotations <> i:64 var
-R3634:3635 PV.WhileDDenotations <> i2:66 var
-R3631:3632 PV.WhileDDenotations <> i1:65 var
-R3629:3629 PV.WhileDDenotations <> c:60 var
-def 3652:3658 DntSem_WhileD cmp_sem
-binder 3660:3660 <> c:67
-R3670:3676 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 3663:3664 <> D1:68
-binder 3666:3667 <> D2:69
-R3680:3686 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R3700:3702 PV.WhileDDenotations DntSem_WhileD nrm proj
-R3700:3702 PV.WhileDDenotations DntSem_WhileD nrm proj
-R3744:3746 PV.WhileDDenotations DntSem_WhileD err proj
-R3759:3763 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R3753:3758 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R3751:3752 PV.WhileDDenotations <> D1:68 var
-R3766:3771 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R3764:3765 PV.WhileDDenotations <> D2:69 var
-R3707:3717 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
-R3732:3737 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3730:3731 PV.WhileDDenotations <> D2:69 var
-R3723:3728 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R3721:3722 PV.WhileDDenotations <> D1:68 var
-R3719:3719 PV.WhileDDenotations <> c:67 var
-def 3792:3806 DntSem_WhileD neg_compute_nrm
-R3815:3819 compcert.lib.Integers <> int64 syndef
-binder 3809:3810 <> i1:70
-binder 3812:3812 <> i:71
-R3850:3856 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R3835:3837 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R3834:3834 PV.WhileDDenotations <> i:71 var
-R3838:3846 compcert.lib.Integers Int64 neg def
-R3848:3849 PV.WhileDDenotations <> i1:70 var
-R3872:3875 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R3857:3868 compcert.lib.Integers Int64 signed def
-R3870:3871 PV.WhileDDenotations <> i1:70 var
-R3876:3891 compcert.lib.Integers Int64 min_signed def
-def 3906:3920 DntSem_WhileD neg_compute_err
-R3927:3931 compcert.lib.Integers <> int64 syndef
-binder 3923:3924 <> i1:72
-R3961:3963 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R3946:3957 compcert.lib.Integers Int64 signed def
-R3959:3960 PV.WhileDDenotations <> i1:72 var
-R3964:3979 compcert.lib.Integers Int64 min_signed def
-def 3994:4008 DntSem_WhileD not_compute_nrm
-R4017:4021 compcert.lib.Integers <> int64 syndef
-binder 4011:4012 <> i1:73
-binder 4014:4014 <> i:74
-R4076:4082 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R4056:4059 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4051:4054 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R4036:4047 compcert.lib.Integers Int64 signed def
-R4049:4050 PV.WhileDDenotations <> i1:73 var
-R4061:4063 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4060:4060 PV.WhileDDenotations <> i:74 var
-R4064:4073 compcert.lib.Integers Int64 repr def
-R4100:4103 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4085:4087 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4083:4084 PV.WhileDDenotations <> i1:73 var
-R4088:4097 compcert.lib.Integers Int64 repr def
-R4105:4107 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4104:4104 PV.WhileDDenotations <> i:74 var
-R4108:4117 compcert.lib.Integers Int64 repr def
-def 4136:4146 DntSem_WhileD neg_sem_nrm
-R4171:4174 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4180:4183 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4175:4179 compcert.lib.Integers <> int64 syndef
-R4166:4170 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4162:4163 <> D1:75
-R4207:4211 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4204:4204 <> s:76
-R4231:4235 compcert.lib.Integers <> int64 syndef
-binder 4228:4228 <> i:77
-R4249:4255 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4258:4259 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 4256:4257 <> i1:78
-R4267:4270 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4260:4261 PV.WhileDDenotations <> D1:75 var
-R4265:4266 PV.WhileDDenotations <> i1:78 var
-R4263:4263 PV.WhileDDenotations <> s:76 var
-R4271:4285 PV.WhileDDenotations DntSem_WhileD neg_compute_nrm def
-R4290:4290 PV.WhileDDenotations <> i:77 var
-R4287:4288 PV.WhileDDenotations <> i1:78 var
-def 4305:4315 DntSem_WhileD neg_sem_err
-R4340:4343 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4349:4352 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4344:4348 compcert.lib.Integers <> int64 syndef
-R4335:4339 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4331:4332 <> D1:79
-R4376:4380 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4373:4373 <> s:80
-R4394:4400 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4403:4404 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 4401:4402 <> i1:81
-R4412:4415 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4405:4406 PV.WhileDDenotations <> D1:79 var
-R4410:4411 PV.WhileDDenotations <> i1:81 var
-R4408:4408 PV.WhileDDenotations <> s:80 var
-R4416:4430 PV.WhileDDenotations DntSem_WhileD neg_compute_err def
-R4432:4433 PV.WhileDDenotations <> i1:81 var
-def 4448:4454 DntSem_WhileD neg_sem
-R4461:4467 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 4457:4458 <> D1:82
-R4471:4477 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R4491:4493 PV.WhileDDenotations DntSem_WhileD nrm proj
-R4491:4493 PV.WhileDDenotations DntSem_WhileD nrm proj
-R4524:4526 PV.WhileDDenotations DntSem_WhileD err proj
-R4539:4543 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R4533:4538 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R4531:4532 PV.WhileDDenotations <> D1:82 var
-R4544:4554 PV.WhileDDenotations DntSem_WhileD neg_sem_err def
-R4558:4563 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R4556:4557 PV.WhileDDenotations <> D1:82 var
-R4498:4508 PV.WhileDDenotations DntSem_WhileD neg_sem_nrm def
-R4512:4517 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R4510:4511 PV.WhileDDenotations <> D1:82 var
-def 4584:4594 DntSem_WhileD not_sem_nrm
+R2441:2444 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2445:2445 Coq.Numbers.BinNums <> Z ind
+R2440:2440 Coq.Numbers.BinNums <> Z ind
+R2435:2435 Coq.Numbers.BinNums <> Z ind
+binder 2429:2432 <> Zfun:29
+R2474:2477 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2483:2486 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2478:2482 compcert.lib.Integers <> int64 syndef
+R2469:2473 PV.WhileDDenotations DntSem_WhileD state rec
+binder 2462:2463 <> D1:30
+binder 2465:2466 <> D2:31
+R2510:2514 PV.WhileDDenotations DntSem_WhileD state rec
+binder 2507:2507 <> s:32
+R2534:2538 compcert.lib.Integers <> int64 syndef
+binder 2531:2531 <> i:33
+R2552:2558 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2564:2569 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2559:2560 <> i1:34
+binder 2562:2563 <> i2:35
+R2577:2580 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2570:2571 PV.WhileDDenotations <> D1:30 var
+R2575:2576 PV.WhileDDenotations <> i1:34 var
+R2573:2573 PV.WhileDDenotations <> s:32 var
+R2588:2595 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2581:2582 PV.WhileDDenotations <> D2:31 var
+R2586:2587 PV.WhileDDenotations <> i2:35 var
+R2584:2584 PV.WhileDDenotations <> s:32 var
+R2596:2613 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R2626:2626 PV.WhileDDenotations <> i:33 var
+R2623:2624 PV.WhileDDenotations <> i2:35 var
+R2620:2621 PV.WhileDDenotations <> i1:34 var
+R2615:2618 PV.WhileDDenotations <> Zfun:29 var
+def 2641:2654 DntSem_WhileD arith_sem1_err
+R2677:2680 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2682:2685 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2686:2686 Coq.Numbers.BinNums <> Z ind
+R2681:2681 Coq.Numbers.BinNums <> Z ind
+R2676:2676 Coq.Numbers.BinNums <> Z ind
+binder 2670:2673 <> Zfun:36
+R2715:2718 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2724:2727 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2719:2723 compcert.lib.Integers <> int64 syndef
+R2710:2714 PV.WhileDDenotations DntSem_WhileD state rec
+binder 2703:2704 <> D1:37
+binder 2706:2707 <> D2:38
+R2751:2755 PV.WhileDDenotations DntSem_WhileD state rec
+binder 2748:2748 <> s:39
+R2769:2775 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2781:2786 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2776:2777 <> i1:40
+binder 2779:2780 <> i2:41
+R2794:2797 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2787:2788 PV.WhileDDenotations <> D1:37 var
+R2792:2793 PV.WhileDDenotations <> i1:40 var
+R2790:2790 PV.WhileDDenotations <> s:39 var
+R2805:2812 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2798:2799 PV.WhileDDenotations <> D2:38 var
+R2803:2804 PV.WhileDDenotations <> i2:41 var
+R2801:2801 PV.WhileDDenotations <> s:39 var
+R2813:2830 PV.WhileDDenotations DntSem_WhileD arith_compute1_err def
+R2840:2841 PV.WhileDDenotations <> i2:41 var
+R2837:2838 PV.WhileDDenotations <> i1:40 var
+R2832:2835 PV.WhileDDenotations <> Zfun:36 var
+def 2856:2865 DntSem_WhileD arith_sem1
+binder 2867:2870 <> Zfun:42
+R2880:2886 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 2873:2874 <> D1:43
+binder 2876:2877 <> D2:44
+R2890:2896 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R2910:2912 PV.WhileDDenotations DntSem_WhileD nrm proj
+R2910:2912 PV.WhileDDenotations DntSem_WhileD nrm proj
+R2960:2962 PV.WhileDDenotations DntSem_WhileD err proj
+R2988:3003 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R2975:2979 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R2969:2974 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R2967:2968 PV.WhileDDenotations <> D1:43 var
+R2982:2987 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R2980:2981 PV.WhileDDenotations <> D2:44 var
+R3004:3017 PV.WhileDDenotations DntSem_WhileD arith_sem1_err def
+R3035:3040 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3033:3034 PV.WhileDDenotations <> D2:44 var
+R3026:3031 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3024:3025 PV.WhileDDenotations <> D1:43 var
+R3019:3022 PV.WhileDDenotations <> Zfun:42 var
+R2917:2930 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R2948:2953 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R2946:2947 PV.WhileDDenotations <> D2:44 var
+R2939:2944 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R2937:2938 PV.WhileDDenotations <> D1:43 var
+R2932:2935 PV.WhileDDenotations <> Zfun:42 var
+def 3061:3074 DntSem_WhileD arith_sem2_nrm
+R3105:3108 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3114:3117 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3118:3122 compcert.lib.Integers <> int64 syndef
+R3109:3113 compcert.lib.Integers <> int64 syndef
+R3100:3104 compcert.lib.Integers <> int64 syndef
+binder 3090:3097 <> int64fun:45
+R3151:3154 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3160:3163 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3155:3159 compcert.lib.Integers <> int64 syndef
+R3146:3150 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3139:3140 <> D1:46
+binder 3142:3143 <> D2:47
+R3187:3191 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3184:3184 <> s:48
+R3211:3215 compcert.lib.Integers <> int64 syndef
+binder 3208:3208 <> i:49
+R3229:3235 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3241:3246 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3236:3237 <> i1:50
+binder 3239:3240 <> i2:51
+R3254:3257 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3247:3248 PV.WhileDDenotations <> D1:46 var
+R3252:3253 PV.WhileDDenotations <> i1:50 var
+R3250:3250 PV.WhileDDenotations <> s:48 var
+R3265:3272 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3258:3259 PV.WhileDDenotations <> D2:47 var
+R3263:3264 PV.WhileDDenotations <> i2:51 var
+R3261:3261 PV.WhileDDenotations <> s:48 var
+R3273:3290 PV.WhileDDenotations DntSem_WhileD arith_compute2_nrm def
+R3307:3307 PV.WhileDDenotations <> i:49 var
+R3304:3305 PV.WhileDDenotations <> i2:51 var
+R3301:3302 PV.WhileDDenotations <> i1:50 var
+R3292:3299 PV.WhileDDenotations <> int64fun:45 var
+def 3322:3335 DntSem_WhileD arith_sem2_err
+R3363:3366 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3372:3375 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3367:3371 compcert.lib.Integers <> int64 syndef
+R3358:3362 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3351:3352 <> D1:52
+binder 3354:3355 <> D2:53
+R3399:3403 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3396:3396 <> s:54
+R3417:3423 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3429:3434 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3424:3425 <> i1:55
+binder 3427:3428 <> i2:56
+R3442:3445 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3435:3436 PV.WhileDDenotations <> D1:52 var
+R3440:3441 PV.WhileDDenotations <> i1:55 var
+R3438:3438 PV.WhileDDenotations <> s:54 var
+R3453:3460 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3446:3447 PV.WhileDDenotations <> D2:53 var
+R3451:3452 PV.WhileDDenotations <> i2:56 var
+R3449:3449 PV.WhileDDenotations <> s:54 var
+R3461:3478 PV.WhileDDenotations DntSem_WhileD arith_compute2_err def
+R3483:3484 PV.WhileDDenotations <> i2:56 var
+R3480:3481 PV.WhileDDenotations <> i1:55 var
+def 3499:3508 DntSem_WhileD arith_sem2
+binder 3510:3517 <> int64fun:57
+R3527:3533 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 3520:3521 <> D1:58
+binder 3523:3524 <> D2:59
+R3537:3543 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R3557:3559 PV.WhileDDenotations DntSem_WhileD nrm proj
+R3557:3559 PV.WhileDDenotations DntSem_WhileD nrm proj
+R3611:3613 PV.WhileDDenotations DntSem_WhileD err proj
+R3639:3654 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R3626:3630 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R3620:3625 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R3618:3619 PV.WhileDDenotations <> D1:58 var
+R3633:3638 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R3631:3632 PV.WhileDDenotations <> D2:59 var
+R3655:3668 PV.WhileDDenotations DntSem_WhileD arith_sem2_err def
+R3681:3686 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3679:3680 PV.WhileDDenotations <> D2:59 var
+R3672:3677 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3670:3671 PV.WhileDDenotations <> D1:58 var
+R3564:3577 PV.WhileDDenotations DntSem_WhileD arith_sem2_nrm def
+R3599:3604 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3597:3598 PV.WhileDDenotations <> D2:59 var
+R3590:3595 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R3588:3589 PV.WhileDDenotations <> D1:58 var
+R3579:3586 PV.WhileDDenotations <> int64fun:57 var
+def 3707:3717 DntSem_WhileD cmp_sem_nrm
+R3736:3745 compcert.lib.Integers <> comparison ind
+binder 3733:3733 <> c:60
+R3774:3777 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3783:3786 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3778:3782 compcert.lib.Integers <> int64 syndef
+R3769:3773 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3762:3763 <> D1:61
+binder 3765:3766 <> D2:62
+R3810:3814 PV.WhileDDenotations DntSem_WhileD state rec
+binder 3807:3807 <> s:63
+R3834:3838 compcert.lib.Integers <> int64 syndef
+binder 3831:3831 <> i:64
+R3852:3858 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3864:3869 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3859:3860 <> i1:65
+binder 3862:3863 <> i2:66
+R3877:3880 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3870:3871 PV.WhileDDenotations <> D1:61 var
+R3875:3876 PV.WhileDDenotations <> i1:65 var
+R3873:3873 PV.WhileDDenotations <> s:63 var
+R3888:3891 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3881:3882 PV.WhileDDenotations <> D2:62 var
+R3886:3887 PV.WhileDDenotations <> i2:66 var
+R3884:3884 PV.WhileDDenotations <> s:63 var
+R3892:3906 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R3916:3916 PV.WhileDDenotations <> i:64 var
+R3913:3914 PV.WhileDDenotations <> i2:66 var
+R3910:3911 PV.WhileDDenotations <> i1:65 var
+R3908:3908 PV.WhileDDenotations <> c:60 var
+def 3931:3937 DntSem_WhileD cmp_sem
+binder 3939:3939 <> c:67
+R3949:3955 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 3942:3943 <> D1:68
+binder 3945:3946 <> D2:69
+R3959:3965 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R3979:3981 PV.WhileDDenotations DntSem_WhileD nrm proj
+R3979:3981 PV.WhileDDenotations DntSem_WhileD nrm proj
+R4023:4025 PV.WhileDDenotations DntSem_WhileD err proj
+R4038:4042 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R4032:4037 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R4030:4031 PV.WhileDDenotations <> D1:68 var
+R4045:4050 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R4043:4044 PV.WhileDDenotations <> D2:69 var
+R3986:3996 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R4011:4016 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R4009:4010 PV.WhileDDenotations <> D2:69 var
+R4002:4007 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R4000:4001 PV.WhileDDenotations <> D1:68 var
+R3998:3998 PV.WhileDDenotations <> c:67 var
+def 4071:4085 DntSem_WhileD neg_compute_nrm
+R4094:4098 compcert.lib.Integers <> int64 syndef
+binder 4088:4089 <> i1:70
+binder 4091:4091 <> i:71
+R4129:4135 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4114:4116 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4113:4113 PV.WhileDDenotations <> i:71 var
+R4117:4125 compcert.lib.Integers Int64 neg def
+R4127:4128 PV.WhileDDenotations <> i1:70 var
+R4151:4154 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R4136:4147 compcert.lib.Integers Int64 signed def
+R4149:4150 PV.WhileDDenotations <> i1:70 var
+R4155:4170 compcert.lib.Integers Int64 min_signed def
+def 4185:4199 DntSem_WhileD neg_compute_err
+R4206:4210 compcert.lib.Integers <> int64 syndef
+binder 4202:4203 <> i1:72
+R4240:4242 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4225:4236 compcert.lib.Integers Int64 signed def
+R4238:4239 PV.WhileDDenotations <> i1:72 var
+R4243:4258 compcert.lib.Integers Int64 min_signed def
+def 4273:4287 DntSem_WhileD not_compute_nrm
+R4296:4300 compcert.lib.Integers <> int64 syndef
+binder 4290:4291 <> i1:73
+binder 4293:4293 <> i:74
+R4355:4361 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4335:4338 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4330:4333 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R4315:4326 compcert.lib.Integers Int64 signed def
+R4328:4329 PV.WhileDDenotations <> i1:73 var
+R4340:4342 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4339:4339 PV.WhileDDenotations <> i:74 var
+R4343:4352 compcert.lib.Integers Int64 repr def
+R4379:4382 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4364:4366 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4362:4363 PV.WhileDDenotations <> i1:73 var
+R4367:4376 compcert.lib.Integers Int64 repr def
+R4384:4386 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4383:4383 PV.WhileDDenotations <> i:74 var
+R4387:4396 compcert.lib.Integers Int64 repr def
+def 4415:4425 DntSem_WhileD neg_sem_nrm
+R4450:4453 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4459:4462 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4454:4458 compcert.lib.Integers <> int64 syndef
+R4445:4449 PV.WhileDDenotations DntSem_WhileD state rec
+binder 4441:4442 <> D1:75
+R4486:4490 PV.WhileDDenotations DntSem_WhileD state rec
+binder 4483:4483 <> s:76
+R4510:4514 compcert.lib.Integers <> int64 syndef
+binder 4507:4507 <> i:77
+R4528:4534 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4537:4538 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4535:4536 <> i1:78
+R4546:4549 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4539:4540 PV.WhileDDenotations <> D1:75 var
+R4544:4545 PV.WhileDDenotations <> i1:78 var
+R4542:4542 PV.WhileDDenotations <> s:76 var
+R4550:4564 PV.WhileDDenotations DntSem_WhileD neg_compute_nrm def
+R4569:4569 PV.WhileDDenotations <> i:77 var
+R4566:4567 PV.WhileDDenotations <> i1:78 var
+def 4584:4594 DntSem_WhileD neg_sem_err
 R4619:4622 Coq.Init.Logic <> ::type_scope:x_'->'_x not
 R4628:4631 Coq.Init.Logic <> ::type_scope:x_'->'_x not
 R4623:4627 compcert.lib.Integers <> int64 syndef
 R4614:4618 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4610:4611 <> D1:83
+binder 4610:4611 <> D1:79
 R4655:4659 PV.WhileDDenotations DntSem_WhileD state rec
-binder 4652:4652 <> s:84
-R4679:4683 compcert.lib.Integers <> int64 syndef
-binder 4676:4676 <> i:85
-R4697:4703 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R4706:4707 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 4704:4705 <> i1:86
-R4715:4718 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4708:4709 PV.WhileDDenotations <> D1:83 var
-R4713:4714 PV.WhileDDenotations <> i1:86 var
-R4711:4711 PV.WhileDDenotations <> s:84 var
-R4719:4733 PV.WhileDDenotations DntSem_WhileD not_compute_nrm def
-R4738:4738 PV.WhileDDenotations <> i:85 var
-R4735:4736 PV.WhileDDenotations <> i1:86 var
-def 4753:4759 DntSem_WhileD not_sem
-R4766:4772 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 4762:4763 <> D1:87
-R4776:4782 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R4796:4798 PV.WhileDDenotations DntSem_WhileD nrm proj
-R4796:4798 PV.WhileDDenotations DntSem_WhileD nrm proj
-R4829:4831 PV.WhileDDenotations DntSem_WhileD err proj
-R4838:4843 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R4836:4837 PV.WhileDDenotations <> D1:87 var
-R4803:4813 PV.WhileDDenotations DntSem_WhileD not_sem_nrm def
-R4817:4822 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R4815:4816 PV.WhileDDenotations <> D1:87 var
-def 4865:4882 DntSem_WhileD SC_and_compute_nrm
-R4891:4895 compcert.lib.Integers <> int64 syndef
-binder 4885:4886 <> i1:88
-binder 4888:4888 <> i:89
-R4927:4930 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R4912:4914 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4910:4911 PV.WhileDDenotations <> i1:88 var
-R4915:4924 compcert.lib.Integers Int64 repr def
-R4932:4934 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4931:4931 PV.WhileDDenotations <> i:89 var
-R4935:4944 compcert.lib.Integers Int64 repr def
-def 4962:4978 DntSem_WhileD SC_or_compute_nrm
-R4987:4991 compcert.lib.Integers <> int64 syndef
-binder 4981:4982 <> i1:90
-binder 4984:4984 <> i:91
-R5026:5029 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5021:5024 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R5006:5017 compcert.lib.Integers Int64 signed def
-R5019:5020 PV.WhileDDenotations <> i1:90 var
-R5031:5033 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R5030:5030 PV.WhileDDenotations <> i:91 var
-R5034:5043 compcert.lib.Integers Int64 repr def
-def 5061:5069 DntSem_WhileD NonSC_and
-R5076:5080 compcert.lib.Integers <> int64 syndef
-binder 5072:5073 <> i1:92
-R5110:5113 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R5095:5106 compcert.lib.Integers Int64 signed def
-R5108:5109 PV.WhileDDenotations <> i1:92 var
-def 5130:5137 DntSem_WhileD NonSC_or
-R5144:5148 compcert.lib.Integers <> int64 syndef
-binder 5140:5141 <> i1:93
-R5165:5167 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R5163:5164 PV.WhileDDenotations <> i1:93 var
-R5168:5177 compcert.lib.Integers Int64 repr def
-def 5195:5211 DntSem_WhileD NonSC_compute_nrm
-R5220:5224 compcert.lib.Integers <> int64 syndef
-binder 5214:5215 <> i2:94
-binder 5217:5217 <> i:95
-R5276:5282 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R5256:5259 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5241:5243 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R5239:5240 PV.WhileDDenotations <> i2:94 var
-R5244:5253 compcert.lib.Integers Int64 repr def
-R5261:5263 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R5260:5260 PV.WhileDDenotations <> i:95 var
-R5264:5273 compcert.lib.Integers Int64 repr def
-R5303:5306 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5298:5301 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R5283:5294 compcert.lib.Integers Int64 signed def
-R5296:5297 PV.WhileDDenotations <> i2:94 var
-R5308:5310 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R5307:5307 PV.WhileDDenotations <> i:95 var
-R5311:5320 compcert.lib.Integers Int64 repr def
-def 5339:5349 DntSem_WhileD and_sem_nrm
-R5377:5380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5386:5389 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5381:5385 compcert.lib.Integers <> int64 syndef
-R5372:5376 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5365:5366 <> D1:96
-binder 5368:5369 <> D2:97
-R5413:5417 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5410:5410 <> s:98
-R5437:5441 compcert.lib.Integers <> int64 syndef
-binder 5434:5434 <> i:99
-R5455:5461 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R5464:5469 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 5462:5463 <> i1:100
-R5477:5485 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5590:5590 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5470:5471 PV.WhileDDenotations <> D1:96 var
-R5475:5476 PV.WhileDDenotations <> i1:100 var
-R5473:5473 PV.WhileDDenotations <> s:98 var
-R5509:5517 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R5486:5503 PV.WhileDDenotations DntSem_WhileD SC_and_compute_nrm def
-R5508:5508 PV.WhileDDenotations <> i:99 var
-R5505:5506 PV.WhileDDenotations <> i1:100 var
-R5530:5538 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5518:5526 PV.WhileDDenotations DntSem_WhileD NonSC_and def
-R5528:5529 PV.WhileDDenotations <> i1:100 var
-R5539:5545 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R5548:5556 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 5546:5547 <> i2:101
-R5564:5567 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5557:5558 PV.WhileDDenotations <> D2:97 var
-R5562:5563 PV.WhileDDenotations <> i2:101 var
-R5560:5560 PV.WhileDDenotations <> s:98 var
-R5568:5584 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
-R5589:5589 PV.WhileDDenotations <> i:99 var
-R5586:5587 PV.WhileDDenotations <> i2:101 var
-def 5605:5615 DntSem_WhileD and_sem_err
-R5640:5643 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5649:5652 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5644:5648 compcert.lib.Integers <> int64 syndef
-R5635:5639 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5631:5632 <> D1:102
-R5682:5685 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5677:5681 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5673:5674 <> D2:103
-R5709:5713 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5706:5706 <> s:104
-R5727:5733 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R5736:5741 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 5734:5735 <> i1:105
-R5749:5752 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5742:5743 PV.WhileDDenotations <> D1:102 var
-R5747:5748 PV.WhileDDenotations <> i1:105 var
-R5745:5745 PV.WhileDDenotations <> s:104 var
-R5765:5768 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R5753:5761 PV.WhileDDenotations DntSem_WhileD NonSC_and def
-R5763:5764 PV.WhileDDenotations <> i1:105 var
-R5769:5770 PV.WhileDDenotations <> D2:103 var
-R5772:5772 PV.WhileDDenotations <> s:104 var
-def 5787:5793 DntSem_WhileD and_sem
-R5803:5809 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 5796:5797 <> D1:106
-binder 5799:5800 <> D2:107
-R5813:5819 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R5833:5835 PV.WhileDDenotations DntSem_WhileD nrm proj
-R5833:5835 PV.WhileDDenotations DntSem_WhileD nrm proj
-R5875:5877 PV.WhileDDenotations DntSem_WhileD err proj
-R5890:5894 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R5884:5889 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R5882:5883 PV.WhileDDenotations <> D1:106 var
-R5895:5905 PV.WhileDDenotations DntSem_WhileD and_sem_err def
-R5918:5923 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R5916:5917 PV.WhileDDenotations <> D2:107 var
-R5909:5914 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R5907:5908 PV.WhileDDenotations <> D1:106 var
-R5840:5850 PV.WhileDDenotations DntSem_WhileD and_sem_nrm def
-R5863:5868 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R5861:5862 PV.WhileDDenotations <> D2:107 var
-R5854:5859 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R5852:5853 PV.WhileDDenotations <> D1:106 var
-def 5944:5953 DntSem_WhileD or_sem_nrm
-R5981:5984 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5990:5993 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5985:5989 compcert.lib.Integers <> int64 syndef
-R5976:5980 PV.WhileDDenotations DntSem_WhileD state rec
-binder 5969:5970 <> D1:108
-binder 5972:5973 <> D2:109
-R6017:6021 PV.WhileDDenotations DntSem_WhileD state rec
-binder 6014:6014 <> s:110
-R6041:6045 compcert.lib.Integers <> int64 syndef
-binder 6038:6038 <> i:111
-R6059:6065 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R6068:6073 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 6066:6067 <> i1:112
-R6081:6089 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6192:6192 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6074:6075 PV.WhileDDenotations <> D1:108 var
-R6079:6080 PV.WhileDDenotations <> i1:112 var
-R6077:6077 PV.WhileDDenotations <> s:110 var
-R6112:6120 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R6090:6106 PV.WhileDDenotations DntSem_WhileD SC_or_compute_nrm def
-R6111:6111 PV.WhileDDenotations <> i:111 var
-R6108:6109 PV.WhileDDenotations <> i1:112 var
-R6132:6140 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6121:6128 PV.WhileDDenotations DntSem_WhileD NonSC_or def
-R6130:6131 PV.WhileDDenotations <> i1:112 var
-R6141:6147 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R6150:6158 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 6148:6149 <> i2:113
-R6166:6169 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6159:6160 PV.WhileDDenotations <> D2:109 var
-R6164:6165 PV.WhileDDenotations <> i2:113 var
-R6162:6162 PV.WhileDDenotations <> s:110 var
-R6170:6186 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
-R6191:6191 PV.WhileDDenotations <> i:111 var
-R6188:6189 PV.WhileDDenotations <> i2:113 var
-def 6207:6216 DntSem_WhileD or_sem_err
-R6241:6244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6250:6253 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6245:6249 compcert.lib.Integers <> int64 syndef
-R6236:6240 PV.WhileDDenotations DntSem_WhileD state rec
-binder 6232:6233 <> D1:114
-R6283:6286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6278:6282 PV.WhileDDenotations DntSem_WhileD state rec
-binder 6274:6275 <> D2:115
-R6310:6314 PV.WhileDDenotations DntSem_WhileD state rec
-binder 6307:6307 <> s:116
-R6328:6334 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R6337:6342 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 6335:6336 <> i1:117
-R6350:6353 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6343:6344 PV.WhileDDenotations <> D1:114 var
-R6348:6349 PV.WhileDDenotations <> i1:117 var
-R6346:6346 PV.WhileDDenotations <> s:116 var
-R6365:6368 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R6354:6361 PV.WhileDDenotations DntSem_WhileD NonSC_or def
-R6363:6364 PV.WhileDDenotations <> i1:117 var
-R6369:6370 PV.WhileDDenotations <> D2:115 var
-R6372:6372 PV.WhileDDenotations <> s:116 var
-def 6387:6392 DntSem_WhileD or_sem
-R6402:6408 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 6395:6396 <> D1:118
-binder 6398:6399 <> D2:119
-R6412:6418 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R6432:6434 PV.WhileDDenotations DntSem_WhileD nrm proj
-R6432:6434 PV.WhileDDenotations DntSem_WhileD nrm proj
-R6473:6475 PV.WhileDDenotations DntSem_WhileD err proj
-R6488:6492 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R6482:6487 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R6480:6481 PV.WhileDDenotations <> D1:118 var
-R6493:6502 PV.WhileDDenotations DntSem_WhileD or_sem_err def
-R6515:6520 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R6513:6514 PV.WhileDDenotations <> D2:119 var
-R6506:6511 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R6504:6505 PV.WhileDDenotations <> D1:118 var
-R6439:6448 PV.WhileDDenotations DntSem_WhileD or_sem_nrm def
-R6461:6466 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R6459:6460 PV.WhileDDenotations <> D2:119 var
-R6452:6457 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R6450:6451 PV.WhileDDenotations <> D1:118 var
-def 6541:6548 DntSem_WhileD unop_sem
-R6555:6558 PV.Syntax Lang_While unop ind
-binder 6551:6552 <> op:120
-R6565:6571 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 6562:6562 <> D:121
-R6575:6581 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R6594:6595 PV.WhileDDenotations <> op:120 var
-R6606:6609 PV.Syntax Lang_While ONeg constr
-R6614:6620 PV.WhileDDenotations DntSem_WhileD neg_sem def
-R6622:6622 PV.WhileDDenotations <> D:121 var
-R6628:6631 PV.Syntax Lang_While ONot constr
-R6636:6642 PV.WhileDDenotations DntSem_WhileD not_sem def
-R6644:6644 PV.WhileDDenotations <> D:121 var
-def 6665:6673 DntSem_WhileD binop_sem
-R6680:6684 PV.Syntax Lang_While binop ind
-binder 6676:6677 <> op:123
-R6695:6701 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 6688:6689 <> D1:124
-binder 6691:6692 <> D2:125
-R6705:6711 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R6724:6725 PV.WhileDDenotations <> op:123 var
-R6736:6738 PV.Syntax Lang_While OOr constr
-R6743:6748 PV.WhileDDenotations DntSem_WhileD or_sem def
-R6753:6754 PV.WhileDDenotations <> D2:125 var
-R6750:6751 PV.WhileDDenotations <> D1:124 var
-R6760:6763 PV.Syntax Lang_While OAnd constr
-R6768:6774 PV.WhileDDenotations DntSem_WhileD and_sem def
-R6779:6780 PV.WhileDDenotations <> D2:125 var
-R6776:6777 PV.WhileDDenotations <> D1:124 var
-R6786:6788 PV.Syntax Lang_While OLt constr
-R6793:6799 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6808:6809 PV.WhileDDenotations <> D2:125 var
-R6805:6806 PV.WhileDDenotations <> D1:124 var
-R6801:6803 compcert.lib.Integers <> Clt constr
-R6815:6817 PV.Syntax Lang_While OLe constr
-R6822:6828 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6837:6838 PV.WhileDDenotations <> D2:125 var
-R6834:6835 PV.WhileDDenotations <> D1:124 var
-R6830:6832 compcert.lib.Integers <> Cle constr
-R6844:6846 PV.Syntax Lang_While OGt constr
-R6851:6857 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6866:6867 PV.WhileDDenotations <> D2:125 var
-R6863:6864 PV.WhileDDenotations <> D1:124 var
-R6859:6861 compcert.lib.Integers <> Cgt constr
-R6873:6875 PV.Syntax Lang_While OGe constr
-R6880:6886 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6895:6896 PV.WhileDDenotations <> D2:125 var
-R6892:6893 PV.WhileDDenotations <> D1:124 var
-R6888:6890 compcert.lib.Integers <> Cge constr
-R6902:6904 PV.Syntax Lang_While OEq constr
-R6909:6915 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6924:6925 PV.WhileDDenotations <> D2:125 var
-R6921:6922 PV.WhileDDenotations <> D1:124 var
-R6917:6919 compcert.lib.Integers <> Ceq constr
-R6931:6933 PV.Syntax Lang_While ONe constr
-R6938:6944 PV.WhileDDenotations DntSem_WhileD cmp_sem def
-R6953:6954 PV.WhileDDenotations <> D2:125 var
-R6950:6951 PV.WhileDDenotations <> D1:124 var
-R6946:6948 compcert.lib.Integers <> Cne constr
-R6960:6964 PV.Syntax Lang_While OPlus constr
-R6969:6978 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
-R6989:6990 PV.WhileDDenotations <> D2:125 var
-R6986:6987 PV.WhileDDenotations <> D1:124 var
-R6980:6984 Coq.ZArith.BinInt Z add def
-R6996:7001 PV.Syntax Lang_While OMinus constr
-R7006:7015 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
-R7026:7027 PV.WhileDDenotations <> D2:125 var
-R7023:7024 PV.WhileDDenotations <> D1:124 var
-R7017:7021 Coq.ZArith.BinInt Z sub def
-R7033:7036 PV.Syntax Lang_While OMul constr
-R7041:7050 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
-R7061:7062 PV.WhileDDenotations <> D2:125 var
-R7058:7059 PV.WhileDDenotations <> D1:124 var
-R7052:7056 Coq.ZArith.BinInt Z mul def
-R7068:7071 PV.Syntax Lang_While ODiv constr
-R7076:7085 PV.WhileDDenotations DntSem_WhileD arith_sem2 def
-R7101:7102 PV.WhileDDenotations <> D2:125 var
-R7098:7099 PV.WhileDDenotations <> D1:124 var
-R7087:7096 compcert.lib.Integers Int64 divs def
-R7108:7111 PV.Syntax Lang_While OMod constr
-R7116:7125 PV.WhileDDenotations DntSem_WhileD arith_sem2 def
-R7141:7142 PV.WhileDDenotations <> D2:125 var
-R7138:7139 PV.WhileDDenotations <> D1:124 var
-R7127:7136 compcert.lib.Integers Int64 mods def
-def 7163:7171 DntSem_WhileD const_sem
-R7177:7177 Coq.Numbers.BinNums <> Z ind
-binder 7174:7174 <> n:127
-R7181:7187 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R7201:7203 PV.WhileDDenotations DntSem_WhileD nrm proj
-R7201:7203 PV.WhileDDenotations DntSem_WhileD nrm proj
-R7312:7314 PV.WhileDDenotations DntSem_WhileD err proj
-binder 7323:7323 <> s:128
-R7361:7377 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R7342:7344 Coq.ZArith.BinInt <> ::Z_scope:x_'<'_x not
-R7341:7341 PV.WhileDDenotations <> n:127 var
-R7345:7360 compcert.lib.Integers Int64 min_signed def
-R7379:7381 Coq.ZArith.BinInt <> ::Z_scope:x_'>'_x not
-R7378:7378 PV.WhileDDenotations <> n:127 var
-R7382:7397 compcert.lib.Integers Int64 max_signed def
-binder 7212:7212 <> s:129
-binder 7214:7214 <> i:130
-R7248:7264 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R7233:7235 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7232:7232 PV.WhileDDenotations <> i:130 var
-R7236:7245 compcert.lib.Integers Int64 repr def
-R7247:7247 PV.WhileDDenotations <> n:127 var
-R7281:7284 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
-R7286:7289 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
-R7265:7280 compcert.lib.Integers Int64 min_signed def
-R7285:7285 PV.WhileDDenotations <> n:127 var
-R7285:7285 PV.WhileDDenotations <> n:127 var
-R7290:7305 compcert.lib.Integers Int64 max_signed def
-def 7578:7590 DntSem_WhileD deref_sem_nrm
-R7615:7618 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7624:7627 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7619:7623 compcert.lib.Integers <> int64 syndef
-R7610:7614 PV.WhileDDenotations DntSem_WhileD state rec
-binder 7606:7607 <> D1:131
-R7651:7655 PV.WhileDDenotations DntSem_WhileD state rec
-binder 7648:7648 <> s:132
-R7675:7679 compcert.lib.Integers <> int64 syndef
-binder 7672:7672 <> i:133
-R7693:7699 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R7702:7703 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 7700:7701 <> i1:134
-R7711:7714 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R7704:7705 PV.WhileDDenotations <> D1:131 var
-R7709:7710 PV.WhileDDenotations <> i1:134 var
-R7707:7707 PV.WhileDDenotations <> s:132 var
-R7725:7727 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7716:7724 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R7715:7715 PV.WhileDDenotations <> s:132 var
-R7723:7724 PV.WhileDDenotations <> i1:134 var
-R7728:7731 Coq.Init.Datatypes <> Some constr
-R7734:7737 PV.WhileDDenotations DntSem_WhileD Vint constr
-R7739:7739 PV.WhileDDenotations <> i:133 var
-def 7755:7767 DntSem_WhileD deref_sem_err
-R7792:7795 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7801:7804 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7796:7800 compcert.lib.Integers <> int64 syndef
-R7787:7791 PV.WhileDDenotations DntSem_WhileD state rec
-binder 7783:7784 <> D1:135
-R7828:7832 PV.WhileDDenotations DntSem_WhileD state rec
-binder 7825:7825 <> s:136
-R7846:7852 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R7855:7860 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 7853:7854 <> i1:137
-R7868:7876 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R7923:7923 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R7861:7862 PV.WhileDDenotations <> D1:135 var
-R7866:7867 PV.WhileDDenotations <> i1:137 var
-R7864:7864 PV.WhileDDenotations <> s:136 var
-R7894:7897 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R7887:7889 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7878:7886 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R7877:7877 PV.WhileDDenotations <> s:136 var
-R7885:7886 PV.WhileDDenotations <> i1:137 var
-R7890:7893 Coq.Init.Datatypes <> None constr
-R7908:7910 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R7899:7907 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R7898:7898 PV.WhileDDenotations <> s:136 var
-R7906:7907 PV.WhileDDenotations <> i1:137 var
-R7911:7914 Coq.Init.Datatypes <> Some constr
-R7916:7922 PV.WhileDDenotations DntSem_WhileD Vuninit constr
-def 7938:7948 DntSem_WhileD deref_sem_r
-R7955:7961 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 7951:7952 <> D1:138
-R7965:7971 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R7985:7987 PV.WhileDDenotations DntSem_WhileD nrm proj
-R7985:7987 PV.WhileDDenotations DntSem_WhileD nrm proj
-R8020:8022 PV.WhileDDenotations DntSem_WhileD err proj
-R8035:8039 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R8029:8034 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R8027:8028 PV.WhileDDenotations <> D1:138 var
-R8040:8052 PV.WhileDDenotations DntSem_WhileD deref_sem_err def
-R8056:8061 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R8054:8055 PV.WhileDDenotations <> D1:138 var
-R7992:8004 PV.WhileDDenotations DntSem_WhileD deref_sem_nrm def
-R8008:8013 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R8006:8007 PV.WhileDDenotations <> D1:138 var
-def 8227:8235 DntSem_WhileD var_sem_l
-R8241:8248 PV.Syntax Lang_While var_name def
-binder 8238:8238 <> X:139
-R8252:8258 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R8272:8274 PV.WhileDDenotations DntSem_WhileD nrm proj
-R8272:8274 PV.WhileDDenotations DntSem_WhileD nrm proj
-R8309:8311 PV.WhileDDenotations DntSem_WhileD err proj
-R8316:8318 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-binder 8283:8283 <> s:140
-binder 8285:8285 <> i:141
-R8299:8301 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R8291:8298 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
-R8290:8290 PV.WhileDDenotations <> s:140 var
-R8298:8298 PV.WhileDDenotations <> X:139 var
-R8302:8302 PV.WhileDDenotations <> i:141 var
-def 8401:8409 DntSem_WhileD var_sem_r
-R8415:8422 PV.Syntax Lang_While var_name def
-binder 8412:8412 <> X:142
-R8426:8432 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R8439:8449 PV.WhileDDenotations DntSem_WhileD deref_sem_r def
-R8452:8460 PV.WhileDDenotations DntSem_WhileD var_sem_l def
-R8462:8462 PV.WhileDDenotations <> X:142 var
-def 8945:8950 DntSem_WhileD eval_r
-def 9262:9267 DntSem_WhileD eval_l
-R8956:8959 PV.Syntax Lang_WhileD expr ind
-binder 8953:8953 <> e:143
-R9273:9276 PV.Syntax Lang_WhileD expr ind
-binder 9270:9270 <> e:144
-R8963:8969 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R9280:9286 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R8982:8982 PV.WhileDDenotations <> e:143 var
-R8993:8998 PV.Syntax Lang_WhileD EConst constr
-R9011:9019 PV.WhileDDenotations DntSem_WhileD const_sem def
-R9027:9030 PV.Syntax Lang_WhileD EVar constr
-R9043:9051 PV.WhileDDenotations DntSem_WhileD var_sem_r def
-R9059:9064 PV.Syntax Lang_WhileD EBinop constr
-R9084:9092 PV.WhileDDenotations DntSem_WhileD binop_sem def
-R9110:9115 PV.WhileDDenotations <> eval_r:145 def
-R9098:9103 PV.WhileDDenotations <> eval_r:145 def
-R9125:9129 PV.Syntax Lang_WhileD EUnop constr
-R9146:9153 PV.WhileDDenotations DntSem_WhileD unop_sem def
-R9159:9164 PV.WhileDDenotations <> eval_r:145 def
-R9174:9179 PV.Syntax Lang_WhileD EDeref constr
-R9193:9203 PV.WhileDDenotations DntSem_WhileD deref_sem_r def
-R9206:9211 PV.WhileDDenotations <> eval_r:145 def
-R9221:9227 PV.Syntax Lang_WhileD EAddrOf constr
-R9241:9246 PV.WhileDDenotations <> eval_l:146 def
-R9299:9299 PV.WhileDDenotations <> e:144 var
-R9310:9313 PV.Syntax Lang_WhileD EVar constr
-R9326:9334 PV.WhileDDenotations DntSem_WhileD var_sem_l def
-R9342:9347 PV.Syntax Lang_WhileD EDeref constr
-R9361:9366 PV.WhileDDenotations <> eval_r:145 def
-R9389:9391 PV.WhileDDenotations DntSem_WhileD nrm proj
-R9389:9391 PV.WhileDDenotations DntSem_WhileD nrm proj
-R9401:9403 PV.WhileDDenotations DntSem_WhileD err proj
-R9408:9416 SetsClass.SetsDomain Sets full meth
-R9396:9398 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-def 9565:9573 DntSem_WhileD test_true
-R9579:9585 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 9576:9576 <> D:149
-R9596:9599 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9605:9608 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9600:9604 PV.WhileDDenotations DntSem_WhileD state rec
-R9591:9595 PV.WhileDDenotations DntSem_WhileD state rec
-R9619:9627 SetsClass.RelsDomain Rels test meth
-binder 9638:9638 <> s:150
-R9650:9656 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R9658:9659 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 9657:9657 <> i:151
-R9671:9674 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R9661:9670 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R9660:9660 PV.WhileDDenotations <> D:149 var
-R9670:9670 PV.WhileDDenotations <> i:151 var
-R9668:9668 PV.WhileDDenotations <> s:150 var
-R9689:9692 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R9675:9686 compcert.lib.Integers Int64 signed def
-R9688:9688 PV.WhileDDenotations <> i:151 var
-def 9709:9718 DntSem_WhileD test_false
-R9724:9730 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 9721:9721 <> D:152
-R9741:9744 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9750:9753 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9745:9749 PV.WhileDDenotations DntSem_WhileD state rec
-R9736:9740 PV.WhileDDenotations DntSem_WhileD state rec
-R9764:9772 SetsClass.RelsDomain Rels test meth
-binder 9779:9779 <> s:153
-R9785:9807 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R9784:9784 PV.WhileDDenotations <> D:152 var
-R9795:9804 compcert.lib.Integers Int64 repr def
-R9792:9792 PV.WhileDDenotations <> s:153 var
-mod 10044:10050 <> DntSem_WhileD.CDenote
-rec 10061:10067 DntSem_WhileD.CDenote CDenote
-proj 10082:10084 DntSem_WhileD.CDenote nrm
-proj 10113:10115 DntSem_WhileD.CDenote err
-proj 10135:10137 DntSem_WhileD.CDenote inf
-R10092:10095 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10101:10104 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10096:10100 PV.WhileDDenotations DntSem_WhileD state rec
-R10087:10091 PV.WhileDDenotations DntSem_WhileD state rec
-R10123:10126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10118:10122 PV.WhileDDenotations DntSem_WhileD state rec
-R10145:10148 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R10140:10144 PV.WhileDDenotations DntSem_WhileD state rec
-R10162:10168 PV.WhileDDenotations DntSem_WhileD.CDenote <> mod
-R10215:10225 PV.WhileDDenotations DntSem_WhileD nrm proj
-not 10198:10198 DntSem_WhileD :::x_'.(nrm)'
-R10288:10298 PV.WhileDDenotations DntSem_WhileD err proj
-not 10271:10271 DntSem_WhileD :::x_'.(err)'
-R10381:10387 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R10381:10387 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R10418:10424 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10418:10424 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10436:10446 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10399:10409 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10505:10511 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R10505:10511 PV.WhileDDenotations DntSem_WhileD EDenote rec
-R10542:10548 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10542:10548 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10560:10570 PV.WhileDDenotations DntSem_WhileD err proj
-R10523:10533 PV.WhileDDenotations DntSem_WhileD err proj
-def 10594:10601 DntSem_WhileD skip_sem
-R10604:10610 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10624:10626 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10624:10626 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10644:10646 PV.WhileDDenotations DntSem_WhileD err proj
-R10660:10662 PV.WhileDDenotations DntSem_WhileD inf proj
-R10667:10669 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R10651:10653 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R10631:10637 SetsClass.RelsDomain Rels id meth
-def 10690:10696 DntSem_WhileD seq_sem
-R10706:10712 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 10699:10700 <> D1:158
-binder 10702:10703 <> D2:159
-R10716:10722 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10736:10738 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10736:10738 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10770:10772 PV.WhileDDenotations DntSem_WhileD err proj
-R10819:10821 PV.WhileDDenotations DntSem_WhileD inf proj
-R10834:10839 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R10861:10861 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R10830:10832 PV.WhileDDenotations DntSem_WhileD inf proj
-R10826:10827 PV.WhileDDenotations <> D1:158 var
-R10848:10852 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R10842:10847 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R10840:10841 PV.WhileDDenotations <> D1:158 var
-R10857:10859 PV.WhileDDenotations DntSem_WhileD inf proj
-R10853:10854 PV.WhileDDenotations <> D2:159 var
-R10785:10790 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R10812:10812 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R10779:10784 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R10777:10778 PV.WhileDDenotations <> D1:158 var
-R10799:10803 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R10793:10798 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R10791:10792 PV.WhileDDenotations <> D1:158 var
-R10806:10811 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R10804:10805 PV.WhileDDenotations <> D2:159 var
-R10751:10755 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R10745:10750 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R10743:10744 PV.WhileDDenotations <> D1:158 var
-R10758:10763 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R10756:10757 PV.WhileDDenotations <> D2:159 var
-def 10882:10887 DntSem_WhileD if_sem
-R10907:10913 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 10903:10904 <> D0:160
-R10937:10943 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 10930:10931 <> D1:161
-binder 10933:10934 <> D2:162
-R10947:10953 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R10967:10969 PV.WhileDDenotations DntSem_WhileD nrm proj
-R10967:10969 PV.WhileDDenotations DntSem_WhileD nrm proj
-R11051:11053 PV.WhileDDenotations DntSem_WhileD err proj
-R11159:11161 PV.WhileDDenotations DntSem_WhileD inf proj
-R11166:11166 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11192:11209 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11236:11236 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11179:11183 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11167:11175 PV.WhileDDenotations DntSem_WhileD test_true def
-R11177:11178 PV.WhileDDenotations <> D0:160 var
-R11188:11190 PV.WhileDDenotations DntSem_WhileD inf proj
-R11184:11185 PV.WhileDDenotations <> D1:161 var
-R11223:11227 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11210:11219 PV.WhileDDenotations DntSem_WhileD test_false def
-R11221:11222 PV.WhileDDenotations <> D0:160 var
-R11232:11234 PV.WhileDDenotations DntSem_WhileD inf proj
-R11228:11229 PV.WhileDDenotations <> D2:162 var
-R11109:11125 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11152:11152 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11066:11082 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11108:11108 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11060:11065 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R11058:11059 PV.WhileDDenotations <> D0:160 var
-R11095:11099 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11083:11091 PV.WhileDDenotations DntSem_WhileD test_true def
-R11093:11094 PV.WhileDDenotations <> D0:160 var
-R11102:11107 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R11100:11101 PV.WhileDDenotations <> D1:161 var
-R11139:11143 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11126:11135 PV.WhileDDenotations DntSem_WhileD test_false def
-R11137:11138 PV.WhileDDenotations <> D0:160 var
-R11146:11151 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R11144:11145 PV.WhileDDenotations <> D2:162 var
-R10974:10974 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11000:11017 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11044:11044 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R10987:10991 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R10975:10983 PV.WhileDDenotations DntSem_WhileD test_true def
-R10985:10986 PV.WhileDDenotations <> D0:160 var
-R10994:10999 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R10992:10993 PV.WhileDDenotations <> D1:161 var
-R11031:11035 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11018:11027 PV.WhileDDenotations DntSem_WhileD test_false def
-R11029:11030 PV.WhileDDenotations <> D0:160 var
-R11038:11043 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R11036:11037 PV.WhileDDenotations <> D2:162 var
-def 11254:11266 DntSem_WhileD iter_nrm_lt_n
-R11284:11290 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 11280:11281 <> D0:163
-R11309:11315 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 11305:11306 <> D1:164
-R11333:11335 Coq.Init.Datatypes <> nat ind
-binder 11330:11330 <> n:165
-R11346:11349 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11355:11358 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11350:11354 PV.WhileDDenotations DntSem_WhileD state rec
-R11341:11345 PV.WhileDDenotations DntSem_WhileD state rec
-R11375:11375 PV.WhileDDenotations <> n:165 var
-R11386:11386 Coq.Init.Datatypes <> O constr
-R11391:11393 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R11399:11399 Coq.Init.Datatypes <> S constr
-R11413:11413 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11466:11478 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11492:11492 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11426:11430 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11414:11422 PV.WhileDDenotations DntSem_WhileD test_true def
-R11424:11425 PV.WhileDDenotations <> D0:163 var
-R11439:11443 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11433:11438 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R11431:11432 PV.WhileDDenotations <> D1:164 var
-R11444:11456 PV.WhileDDenotations <> iter_nrm_lt_n:166 def
-R11461:11462 PV.WhileDDenotations <> D1:164 var
-R11458:11459 PV.WhileDDenotations <> D0:163 var
-R11479:11488 PV.WhileDDenotations DntSem_WhileD test_false def
-R11490:11491 PV.WhileDDenotations <> D0:163 var
-def 11511:11523 DntSem_WhileD iter_err_lt_n
-R11541:11547 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 11537:11538 <> D0:168
-R11566:11572 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 11562:11563 <> D1:169
-R11590:11592 Coq.Init.Datatypes <> nat ind
-binder 11587:11587 <> n:170
-R11601:11604 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11596:11600 PV.WhileDDenotations DntSem_WhileD state rec
-R11621:11621 PV.WhileDDenotations <> n:170 var
-R11632:11632 Coq.Init.Datatypes <> O constr
-R11637:11639 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R11645:11645 Coq.Init.Datatypes <> S constr
-R11658:11658 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11745:11756 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11671:11684 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11744:11744 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11659:11667 PV.WhileDDenotations DntSem_WhileD test_true def
-R11669:11670 PV.WhileDDenotations <> D0:168 var
-R11685:11685 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11721:11735 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11694:11698 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11688:11693 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R11686:11687 PV.WhileDDenotations <> D1:169 var
-R11699:11711 PV.WhileDDenotations <> iter_err_lt_n:171 def
-R11716:11717 PV.WhileDDenotations <> D1:169 var
-R11713:11714 PV.WhileDDenotations <> D0:168 var
-R11738:11743 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R11736:11737 PV.WhileDDenotations <> D1:169 var
-R11759:11764 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R11757:11758 PV.WhileDDenotations <> D0:168 var
-def 11785:11790 DntSem_WhileD is_inf
-R11810:11816 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 11806:11807 <> D0:173
-R11837:11843 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 11833:11834 <> D1:174
-R11868:11871 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R11863:11867 PV.WhileDDenotations DntSem_WhileD state rec
-binder 11860:11860 <> X:175
-R11890:11894 SetsClass.SetsDomain <> ::sets_scope:x_'⊆'_x not
-R11889:11889 PV.WhileDDenotations <> X:175 var
-R11907:11912 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11942:11942 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11895:11903 PV.WhileDDenotations DntSem_WhileD test_true def
-R11905:11906 PV.WhileDDenotations <> D0:173 var
-R11913:11913 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11928:11933 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R11922:11926 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
-R11916:11921 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R11914:11915 PV.WhileDDenotations <> D1:174 var
-R11927:11927 PV.WhileDDenotations <> X:175 var
-R11938:11940 PV.WhileDDenotations DntSem_WhileD inf proj
-R11934:11935 PV.WhileDDenotations <> D1:174 var
-def 11957:11965 DntSem_WhileD while_sem
-R11985:11991 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 11981:11982 <> D0:176
-R12012:12018 PV.WhileDDenotations DntSem_WhileD CDenote rec
-binder 12008:12009 <> D1:177
-R12022:12028 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R12042:12044 PV.WhileDDenotations DntSem_WhileD nrm proj
-R12042:12044 PV.WhileDDenotations DntSem_WhileD nrm proj
-R12080:12082 PV.WhileDDenotations DntSem_WhileD err proj
-R12118:12120 PV.WhileDDenotations DntSem_WhileD inf proj
-R12125:12142 SetsClass.SetsDomain Sets general_union def
-R12145:12150 PV.WhileDDenotations DntSem_WhileD is_inf def
-R12155:12156 PV.WhileDDenotations <> D1:177 var
-R12152:12153 PV.WhileDDenotations <> D0:176 var
-R12087:12091 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
-R12111:12111 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
-R12092:12104 PV.WhileDDenotations DntSem_WhileD iter_err_lt_n def
-R12109:12110 PV.WhileDDenotations <> D1:177 var
-R12106:12107 PV.WhileDDenotations <> D0:176 var
-R12049:12053 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
-R12073:12073 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
-R12054:12066 PV.WhileDDenotations DntSem_WhileD iter_nrm_lt_n def
-R12071:12072 PV.WhileDDenotations <> D1:177 var
-R12068:12069 PV.WhileDDenotations <> D0:176 var
-def 12344:12361 DntSem_WhileD asgn_deref_sem_nrm
-R12389:12392 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12398:12401 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12393:12397 compcert.lib.Integers <> int64 syndef
-R12384:12388 PV.WhileDDenotations DntSem_WhileD state rec
-binder 12377:12378 <> D1:178
-binder 12380:12381 <> D2:179
-R12429:12433 PV.WhileDDenotations DntSem_WhileD state rec
-binder 12422:12423 <> s1:180
-binder 12425:12426 <> s2:181
-R12447:12453 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R12459:12464 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 12454:12455 <> i1:182
-binder 12457:12458 <> i2:183
-R12473:12480 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12465:12466 PV.WhileDDenotations <> D1:178 var
-R12471:12472 PV.WhileDDenotations <> i1:182 var
-R12468:12469 PV.WhileDDenotations <> s1:180 var
-R12489:12496 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12481:12482 PV.WhileDDenotations <> D2:179 var
-R12487:12488 PV.WhileDDenotations <> i2:183 var
-R12484:12485 PV.WhileDDenotations <> s1:180 var
-R12516:12523 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12508:12511 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R12499:12507 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R12497:12498 PV.WhileDDenotations <> s1:180 var
-R12506:12507 PV.WhileDDenotations <> i1:182 var
-R12512:12515 Coq.Init.Datatypes <> None constr
-R12552:12559 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12535:12537 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12526:12534 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R12524:12525 PV.WhileDDenotations <> s2:181 var
-R12533:12534 PV.WhileDDenotations <> i1:182 var
-R12538:12541 Coq.Init.Datatypes <> Some constr
-R12544:12547 PV.WhileDDenotations DntSem_WhileD Vint constr
-R12549:12550 PV.WhileDDenotations <> i2:183 var
-R12560:12560 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12594:12603 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12648:12648 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 12568:12568 <> X:184
-R12581:12583 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12573:12580 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
-R12571:12572 PV.WhileDDenotations <> s1:180 var
-R12580:12580 PV.WhileDDenotations <> X:184 var
-R12586:12593 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
-R12584:12585 PV.WhileDDenotations <> s2:181 var
-R12593:12593 PV.WhileDDenotations <> X:184 var
-binder 12611:12611 <> p:185
-R12621:12624 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12635:12637 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12627:12634 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R12625:12626 PV.WhileDDenotations <> s1:180 var
-R12634:12634 PV.WhileDDenotations <> p:185 var
-R12640:12647 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R12638:12639 PV.WhileDDenotations <> s2:181 var
-R12647:12647 PV.WhileDDenotations <> p:185 var
-R12616:12619 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R12614:12615 PV.WhileDDenotations <> i1:182 var
-R12620:12620 PV.WhileDDenotations <> p:185 var
-def 12663:12680 DntSem_WhileD asgn_deref_sem_err
-R12705:12708 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12714:12717 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12709:12713 compcert.lib.Integers <> int64 syndef
-R12700:12704 PV.WhileDDenotations DntSem_WhileD state rec
-binder 12696:12697 <> D1:186
-R12742:12746 PV.WhileDDenotations DntSem_WhileD state rec
-binder 12738:12739 <> s1:187
-R12760:12766 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R12769:12774 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 12767:12768 <> i1:188
-R12783:12790 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R12775:12776 PV.WhileDDenotations <> D1:186 var
-R12781:12782 PV.WhileDDenotations <> i1:188 var
-R12778:12779 PV.WhileDDenotations <> s1:187 var
-R12802:12804 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12793:12801 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
-R12791:12792 PV.WhileDDenotations <> s1:187 var
-R12800:12801 PV.WhileDDenotations <> i1:188 var
-R12805:12808 Coq.Init.Datatypes <> None constr
-def 12823:12836 DntSem_WhileD asgn_deref_sem
-R12859:12865 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 12852:12853 <> D1:189
-binder 12855:12856 <> D2:190
-R12869:12875 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R12889:12891 PV.WhileDDenotations DntSem_WhileD nrm proj
-R12889:12891 PV.WhileDDenotations DntSem_WhileD nrm proj
-R12938:12940 PV.WhileDDenotations DntSem_WhileD err proj
-R13015:13017 PV.WhileDDenotations DntSem_WhileD inf proj
-R13022:13024 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R12966:12981 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R12953:12957 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
-R12947:12952 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R12945:12946 PV.WhileDDenotations <> D1:189 var
-R12960:12965 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
-R12958:12959 PV.WhileDDenotations <> D2:190 var
-R12982:12999 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem_err def
-R13003:13008 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R13001:13002 PV.WhileDDenotations <> D2:190 var
-R12896:12913 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem_nrm def
-R12926:12931 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R12924:12925 PV.WhileDDenotations <> D2:190 var
-R12917:12922 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
-R12915:12916 PV.WhileDDenotations <> D1:189 var
-def 13098:13109 DntSem_WhileD asgn_var_sem
-R13128:13135 PV.Syntax Lang_While var_name def
-binder 13125:13125 <> X:191
-R13156:13162 PV.WhileDDenotations DntSem_WhileD EDenote rec
-binder 13152:13153 <> D1:192
-R13166:13172 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R13179:13192 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem def
-R13208:13209 PV.WhileDDenotations <> D1:192 var
-R13195:13203 PV.WhileDDenotations DntSem_WhileD var_sem_l def
-R13205:13205 PV.WhileDDenotations <> X:191 var
-def 13323:13330 DntSem_WhileD eval_com
-R13336:13338 PV.Syntax Lang_WhileD com ind
-binder 13333:13333 <> c:193
-R13342:13348 PV.WhileDDenotations DntSem_WhileD CDenote rec
-R13361:13361 PV.WhileDDenotations <> c:193 var
-R13372:13376 PV.Syntax Lang_WhileD CSkip constr
-R13387:13394 PV.WhileDDenotations DntSem_WhileD skip_sem def
-R13400:13407 PV.Syntax Lang_WhileD CAsgnVar constr
-R13422:13433 PV.WhileDDenotations DntSem_WhileD asgn_var_sem def
-R13438:13443 PV.WhileDDenotations DntSem_WhileD eval_r def
-R13452:13461 PV.Syntax Lang_WhileD CAsgnDeref constr
-R13478:13491 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem def
-R13506:13511 PV.WhileDDenotations DntSem_WhileD eval_r def
-R13494:13499 PV.WhileDDenotations DntSem_WhileD eval_r def
-R13521:13524 PV.Syntax Lang_WhileD CSeq constr
-R13541:13547 PV.WhileDDenotations DntSem_WhileD seq_sem def
-R13564:13571 PV.WhileDDenotations <> eval_com:194 def
-R13550:13557 PV.WhileDDenotations <> eval_com:194 def
-R13581:13583 PV.Syntax Lang_WhileD CIf constr
-R13602:13607 PV.WhileDDenotations DntSem_WhileD if_sem def
-R13635:13642 PV.WhileDDenotations <> eval_com:194 def
-R13621:13628 PV.WhileDDenotations <> eval_com:194 def
-R13610:13615 PV.WhileDDenotations DntSem_WhileD eval_r def
-R13652:13657 PV.Syntax Lang_WhileD CWhile constr
-R13673:13681 PV.WhileDDenotations DntSem_WhileD while_sem def
-R13695:13702 PV.WhileDDenotations <> eval_com:194 def
-R13684:13689 PV.WhileDDenotations DntSem_WhileD eval_r def
-R13720:13732 PV.WhileDDenotations DntSem_WhileD <> mod
+binder 4652:4652 <> s:80
+R4673:4679 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4682:4683 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4680:4681 <> i1:81
+R4691:4694 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4684:4685 PV.WhileDDenotations <> D1:79 var
+R4689:4690 PV.WhileDDenotations <> i1:81 var
+R4687:4687 PV.WhileDDenotations <> s:80 var
+R4695:4709 PV.WhileDDenotations DntSem_WhileD neg_compute_err def
+R4711:4712 PV.WhileDDenotations <> i1:81 var
+def 4727:4733 DntSem_WhileD neg_sem
+R4740:4746 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 4736:4737 <> D1:82
+R4750:4756 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R4770:4772 PV.WhileDDenotations DntSem_WhileD nrm proj
+R4770:4772 PV.WhileDDenotations DntSem_WhileD nrm proj
+R4803:4805 PV.WhileDDenotations DntSem_WhileD err proj
+R4818:4822 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R4812:4817 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R4810:4811 PV.WhileDDenotations <> D1:82 var
+R4823:4833 PV.WhileDDenotations DntSem_WhileD neg_sem_err def
+R4837:4842 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R4835:4836 PV.WhileDDenotations <> D1:82 var
+R4777:4787 PV.WhileDDenotations DntSem_WhileD neg_sem_nrm def
+R4791:4796 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R4789:4790 PV.WhileDDenotations <> D1:82 var
+def 4863:4873 DntSem_WhileD not_sem_nrm
+R4898:4901 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4907:4910 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4902:4906 compcert.lib.Integers <> int64 syndef
+R4893:4897 PV.WhileDDenotations DntSem_WhileD state rec
+binder 4889:4890 <> D1:83
+R4934:4938 PV.WhileDDenotations DntSem_WhileD state rec
+binder 4931:4931 <> s:84
+R4958:4962 compcert.lib.Integers <> int64 syndef
+binder 4955:4955 <> i:85
+R4976:4982 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4985:4986 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4983:4984 <> i1:86
+R4994:4997 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4987:4988 PV.WhileDDenotations <> D1:83 var
+R4992:4993 PV.WhileDDenotations <> i1:86 var
+R4990:4990 PV.WhileDDenotations <> s:84 var
+R4998:5012 PV.WhileDDenotations DntSem_WhileD not_compute_nrm def
+R5017:5017 PV.WhileDDenotations <> i:85 var
+R5014:5015 PV.WhileDDenotations <> i1:86 var
+def 5032:5038 DntSem_WhileD not_sem
+R5045:5051 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 5041:5042 <> D1:87
+R5055:5061 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R5075:5077 PV.WhileDDenotations DntSem_WhileD nrm proj
+R5075:5077 PV.WhileDDenotations DntSem_WhileD nrm proj
+R5108:5110 PV.WhileDDenotations DntSem_WhileD err proj
+R5117:5122 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R5115:5116 PV.WhileDDenotations <> D1:87 var
+R5082:5092 PV.WhileDDenotations DntSem_WhileD not_sem_nrm def
+R5096:5101 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R5094:5095 PV.WhileDDenotations <> D1:87 var
+def 5144:5161 DntSem_WhileD SC_and_compute_nrm
+R5170:5174 compcert.lib.Integers <> int64 syndef
+binder 5164:5165 <> i1:88
+binder 5167:5167 <> i:89
+R5206:5209 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5191:5193 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5189:5190 PV.WhileDDenotations <> i1:88 var
+R5194:5203 compcert.lib.Integers Int64 repr def
+R5211:5213 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5210:5210 PV.WhileDDenotations <> i:89 var
+R5214:5223 compcert.lib.Integers Int64 repr def
+def 5241:5257 DntSem_WhileD SC_or_compute_nrm
+R5266:5270 compcert.lib.Integers <> int64 syndef
+binder 5260:5261 <> i1:90
+binder 5263:5263 <> i:91
+R5305:5308 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5300:5303 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R5285:5296 compcert.lib.Integers Int64 signed def
+R5298:5299 PV.WhileDDenotations <> i1:90 var
+R5310:5312 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5309:5309 PV.WhileDDenotations <> i:91 var
+R5313:5322 compcert.lib.Integers Int64 repr def
+def 5340:5348 DntSem_WhileD NonSC_and
+R5355:5359 compcert.lib.Integers <> int64 syndef
+binder 5351:5352 <> i1:92
+R5389:5392 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R5374:5385 compcert.lib.Integers Int64 signed def
+R5387:5388 PV.WhileDDenotations <> i1:92 var
+def 5409:5416 DntSem_WhileD NonSC_or
+R5423:5427 compcert.lib.Integers <> int64 syndef
+binder 5419:5420 <> i1:93
+R5444:5446 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5442:5443 PV.WhileDDenotations <> i1:93 var
+R5447:5456 compcert.lib.Integers Int64 repr def
+def 5474:5490 DntSem_WhileD NonSC_compute_nrm
+R5499:5503 compcert.lib.Integers <> int64 syndef
+binder 5493:5494 <> i2:94
+binder 5496:5496 <> i:95
+R5555:5561 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5535:5538 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5520:5522 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5518:5519 PV.WhileDDenotations <> i2:94 var
+R5523:5532 compcert.lib.Integers Int64 repr def
+R5540:5542 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5539:5539 PV.WhileDDenotations <> i:95 var
+R5543:5552 compcert.lib.Integers Int64 repr def
+R5582:5585 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5577:5580 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R5562:5573 compcert.lib.Integers Int64 signed def
+R5575:5576 PV.WhileDDenotations <> i2:94 var
+R5587:5589 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5586:5586 PV.WhileDDenotations <> i:95 var
+R5590:5599 compcert.lib.Integers Int64 repr def
+def 5618:5628 DntSem_WhileD and_sem_nrm
+R5656:5659 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5665:5668 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5660:5664 compcert.lib.Integers <> int64 syndef
+R5651:5655 PV.WhileDDenotations DntSem_WhileD state rec
+binder 5644:5645 <> D1:96
+binder 5647:5648 <> D2:97
+R5692:5696 PV.WhileDDenotations DntSem_WhileD state rec
+binder 5689:5689 <> s:98
+R5716:5720 compcert.lib.Integers <> int64 syndef
+binder 5713:5713 <> i:99
+R5734:5740 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5743:5748 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 5741:5742 <> i1:100
+R5756:5764 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5869:5869 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5749:5750 PV.WhileDDenotations <> D1:96 var
+R5754:5755 PV.WhileDDenotations <> i1:100 var
+R5752:5752 PV.WhileDDenotations <> s:98 var
+R5788:5796 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5765:5782 PV.WhileDDenotations DntSem_WhileD SC_and_compute_nrm def
+R5787:5787 PV.WhileDDenotations <> i:99 var
+R5784:5785 PV.WhileDDenotations <> i1:100 var
+R5809:5817 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5797:5805 PV.WhileDDenotations DntSem_WhileD NonSC_and def
+R5807:5808 PV.WhileDDenotations <> i1:100 var
+R5818:5824 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5827:5835 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 5825:5826 <> i2:101
+R5843:5846 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5836:5837 PV.WhileDDenotations <> D2:97 var
+R5841:5842 PV.WhileDDenotations <> i2:101 var
+R5839:5839 PV.WhileDDenotations <> s:98 var
+R5847:5863 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
+R5868:5868 PV.WhileDDenotations <> i:99 var
+R5865:5866 PV.WhileDDenotations <> i2:101 var
+def 5884:5894 DntSem_WhileD and_sem_err
+R5919:5922 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5928:5931 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5923:5927 compcert.lib.Integers <> int64 syndef
+R5914:5918 PV.WhileDDenotations DntSem_WhileD state rec
+binder 5910:5911 <> D1:102
+R5961:5964 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5956:5960 PV.WhileDDenotations DntSem_WhileD state rec
+binder 5952:5953 <> D2:103
+R5988:5992 PV.WhileDDenotations DntSem_WhileD state rec
+binder 5985:5985 <> s:104
+R6006:6012 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6015:6020 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6013:6014 <> i1:105
+R6028:6031 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6021:6022 PV.WhileDDenotations <> D1:102 var
+R6026:6027 PV.WhileDDenotations <> i1:105 var
+R6024:6024 PV.WhileDDenotations <> s:104 var
+R6044:6047 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6032:6040 PV.WhileDDenotations DntSem_WhileD NonSC_and def
+R6042:6043 PV.WhileDDenotations <> i1:105 var
+R6048:6049 PV.WhileDDenotations <> D2:103 var
+R6051:6051 PV.WhileDDenotations <> s:104 var
+def 6066:6072 DntSem_WhileD and_sem
+R6082:6088 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 6075:6076 <> D1:106
+binder 6078:6079 <> D2:107
+R6092:6098 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R6112:6114 PV.WhileDDenotations DntSem_WhileD nrm proj
+R6112:6114 PV.WhileDDenotations DntSem_WhileD nrm proj
+R6154:6156 PV.WhileDDenotations DntSem_WhileD err proj
+R6169:6173 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R6163:6168 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R6161:6162 PV.WhileDDenotations <> D1:106 var
+R6174:6184 PV.WhileDDenotations DntSem_WhileD and_sem_err def
+R6197:6202 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R6195:6196 PV.WhileDDenotations <> D2:107 var
+R6188:6193 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6186:6187 PV.WhileDDenotations <> D1:106 var
+R6119:6129 PV.WhileDDenotations DntSem_WhileD and_sem_nrm def
+R6142:6147 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6140:6141 PV.WhileDDenotations <> D2:107 var
+R6133:6138 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6131:6132 PV.WhileDDenotations <> D1:106 var
+def 6223:6232 DntSem_WhileD or_sem_nrm
+R6260:6263 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6269:6272 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6264:6268 compcert.lib.Integers <> int64 syndef
+R6255:6259 PV.WhileDDenotations DntSem_WhileD state rec
+binder 6248:6249 <> D1:108
+binder 6251:6252 <> D2:109
+R6296:6300 PV.WhileDDenotations DntSem_WhileD state rec
+binder 6293:6293 <> s:110
+R6320:6324 compcert.lib.Integers <> int64 syndef
+binder 6317:6317 <> i:111
+R6338:6344 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6347:6352 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6345:6346 <> i1:112
+R6360:6368 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6471:6471 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6353:6354 PV.WhileDDenotations <> D1:108 var
+R6358:6359 PV.WhileDDenotations <> i1:112 var
+R6356:6356 PV.WhileDDenotations <> s:110 var
+R6391:6399 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R6369:6385 PV.WhileDDenotations DntSem_WhileD SC_or_compute_nrm def
+R6390:6390 PV.WhileDDenotations <> i:111 var
+R6387:6388 PV.WhileDDenotations <> i1:112 var
+R6411:6419 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6400:6407 PV.WhileDDenotations DntSem_WhileD NonSC_or def
+R6409:6410 PV.WhileDDenotations <> i1:112 var
+R6420:6426 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6429:6437 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6427:6428 <> i2:113
+R6445:6448 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6438:6439 PV.WhileDDenotations <> D2:109 var
+R6443:6444 PV.WhileDDenotations <> i2:113 var
+R6441:6441 PV.WhileDDenotations <> s:110 var
+R6449:6465 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
+R6470:6470 PV.WhileDDenotations <> i:111 var
+R6467:6468 PV.WhileDDenotations <> i2:113 var
+def 6486:6495 DntSem_WhileD or_sem_err
+R6520:6523 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6529:6532 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6524:6528 compcert.lib.Integers <> int64 syndef
+R6515:6519 PV.WhileDDenotations DntSem_WhileD state rec
+binder 6511:6512 <> D1:114
+R6562:6565 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6557:6561 PV.WhileDDenotations DntSem_WhileD state rec
+binder 6553:6554 <> D2:115
+R6589:6593 PV.WhileDDenotations DntSem_WhileD state rec
+binder 6586:6586 <> s:116
+R6607:6613 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6616:6621 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6614:6615 <> i1:117
+R6629:6632 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6622:6623 PV.WhileDDenotations <> D1:114 var
+R6627:6628 PV.WhileDDenotations <> i1:117 var
+R6625:6625 PV.WhileDDenotations <> s:116 var
+R6644:6647 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6633:6640 PV.WhileDDenotations DntSem_WhileD NonSC_or def
+R6642:6643 PV.WhileDDenotations <> i1:117 var
+R6648:6649 PV.WhileDDenotations <> D2:115 var
+R6651:6651 PV.WhileDDenotations <> s:116 var
+def 6666:6671 DntSem_WhileD or_sem
+R6681:6687 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 6674:6675 <> D1:118
+binder 6677:6678 <> D2:119
+R6691:6697 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R6711:6713 PV.WhileDDenotations DntSem_WhileD nrm proj
+R6711:6713 PV.WhileDDenotations DntSem_WhileD nrm proj
+R6752:6754 PV.WhileDDenotations DntSem_WhileD err proj
+R6767:6771 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R6761:6766 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R6759:6760 PV.WhileDDenotations <> D1:118 var
+R6772:6781 PV.WhileDDenotations DntSem_WhileD or_sem_err def
+R6794:6799 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R6792:6793 PV.WhileDDenotations <> D2:119 var
+R6785:6790 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6783:6784 PV.WhileDDenotations <> D1:118 var
+R6718:6727 PV.WhileDDenotations DntSem_WhileD or_sem_nrm def
+R6740:6745 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6738:6739 PV.WhileDDenotations <> D2:119 var
+R6731:6736 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R6729:6730 PV.WhileDDenotations <> D1:118 var
+def 6820:6827 DntSem_WhileD unop_sem
+R6834:6837 PV.Syntax Lang_While unop ind
+binder 6830:6831 <> op:120
+R6844:6850 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 6841:6841 <> D:121
+R6854:6860 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R6873:6874 PV.WhileDDenotations <> op:120 var
+R6885:6888 PV.Syntax Lang_While ONeg constr
+R6893:6899 PV.WhileDDenotations DntSem_WhileD neg_sem def
+R6901:6901 PV.WhileDDenotations <> D:121 var
+R6907:6910 PV.Syntax Lang_While ONot constr
+R6915:6921 PV.WhileDDenotations DntSem_WhileD not_sem def
+R6923:6923 PV.WhileDDenotations <> D:121 var
+def 6944:6952 DntSem_WhileD binop_sem
+R6959:6963 PV.Syntax Lang_While binop ind
+binder 6955:6956 <> op:123
+R6974:6980 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 6967:6968 <> D1:124
+binder 6970:6971 <> D2:125
+R6984:6990 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R7003:7004 PV.WhileDDenotations <> op:123 var
+R7015:7017 PV.Syntax Lang_While OOr constr
+R7022:7027 PV.WhileDDenotations DntSem_WhileD or_sem def
+R7032:7033 PV.WhileDDenotations <> D2:125 var
+R7029:7030 PV.WhileDDenotations <> D1:124 var
+R7039:7042 PV.Syntax Lang_While OAnd constr
+R7047:7053 PV.WhileDDenotations DntSem_WhileD and_sem def
+R7058:7059 PV.WhileDDenotations <> D2:125 var
+R7055:7056 PV.WhileDDenotations <> D1:124 var
+R7065:7067 PV.Syntax Lang_While OLt constr
+R7072:7078 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7087:7088 PV.WhileDDenotations <> D2:125 var
+R7084:7085 PV.WhileDDenotations <> D1:124 var
+R7080:7082 compcert.lib.Integers <> Clt constr
+R7094:7096 PV.Syntax Lang_While OLe constr
+R7101:7107 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7116:7117 PV.WhileDDenotations <> D2:125 var
+R7113:7114 PV.WhileDDenotations <> D1:124 var
+R7109:7111 compcert.lib.Integers <> Cle constr
+R7123:7125 PV.Syntax Lang_While OGt constr
+R7130:7136 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7145:7146 PV.WhileDDenotations <> D2:125 var
+R7142:7143 PV.WhileDDenotations <> D1:124 var
+R7138:7140 compcert.lib.Integers <> Cgt constr
+R7152:7154 PV.Syntax Lang_While OGe constr
+R7159:7165 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7174:7175 PV.WhileDDenotations <> D2:125 var
+R7171:7172 PV.WhileDDenotations <> D1:124 var
+R7167:7169 compcert.lib.Integers <> Cge constr
+R7181:7183 PV.Syntax Lang_While OEq constr
+R7188:7194 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7203:7204 PV.WhileDDenotations <> D2:125 var
+R7200:7201 PV.WhileDDenotations <> D1:124 var
+R7196:7198 compcert.lib.Integers <> Ceq constr
+R7210:7212 PV.Syntax Lang_While ONe constr
+R7217:7223 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R7232:7233 PV.WhileDDenotations <> D2:125 var
+R7229:7230 PV.WhileDDenotations <> D1:124 var
+R7225:7227 compcert.lib.Integers <> Cne constr
+R7239:7243 PV.Syntax Lang_While OPlus constr
+R7248:7257 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R7268:7269 PV.WhileDDenotations <> D2:125 var
+R7265:7266 PV.WhileDDenotations <> D1:124 var
+R7259:7263 Coq.ZArith.BinInt Z add def
+R7275:7280 PV.Syntax Lang_While OMinus constr
+R7285:7294 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R7305:7306 PV.WhileDDenotations <> D2:125 var
+R7302:7303 PV.WhileDDenotations <> D1:124 var
+R7296:7300 Coq.ZArith.BinInt Z sub def
+R7312:7315 PV.Syntax Lang_While OMul constr
+R7320:7329 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R7340:7341 PV.WhileDDenotations <> D2:125 var
+R7337:7338 PV.WhileDDenotations <> D1:124 var
+R7331:7335 Coq.ZArith.BinInt Z mul def
+R7347:7350 PV.Syntax Lang_While ODiv constr
+R7355:7364 PV.WhileDDenotations DntSem_WhileD arith_sem2 def
+R7380:7381 PV.WhileDDenotations <> D2:125 var
+R7377:7378 PV.WhileDDenotations <> D1:124 var
+R7366:7375 compcert.lib.Integers Int64 divs def
+R7387:7390 PV.Syntax Lang_While OMod constr
+R7395:7404 PV.WhileDDenotations DntSem_WhileD arith_sem2 def
+R7420:7421 PV.WhileDDenotations <> D2:125 var
+R7417:7418 PV.WhileDDenotations <> D1:124 var
+R7406:7415 compcert.lib.Integers Int64 mods def
+def 7442:7450 DntSem_WhileD const_sem
+R7456:7456 Coq.Numbers.BinNums <> Z ind
+binder 7453:7453 <> n:127
+R7460:7466 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R7480:7482 PV.WhileDDenotations DntSem_WhileD nrm proj
+R7480:7482 PV.WhileDDenotations DntSem_WhileD nrm proj
+R7591:7593 PV.WhileDDenotations DntSem_WhileD err proj
+binder 7602:7602 <> s:128
+R7640:7656 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R7621:7623 Coq.ZArith.BinInt <> ::Z_scope:x_'<'_x not
+R7620:7620 PV.WhileDDenotations <> n:127 var
+R7624:7639 compcert.lib.Integers Int64 min_signed def
+R7658:7660 Coq.ZArith.BinInt <> ::Z_scope:x_'>'_x not
+R7657:7657 PV.WhileDDenotations <> n:127 var
+R7661:7676 compcert.lib.Integers Int64 max_signed def
+binder 7491:7491 <> s:129
+binder 7493:7493 <> i:130
+R7527:7543 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7512:7514 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7511:7511 PV.WhileDDenotations <> i:130 var
+R7515:7524 compcert.lib.Integers Int64 repr def
+R7526:7526 PV.WhileDDenotations <> n:127 var
+R7560:7563 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
+R7565:7568 Coq.ZArith.BinInt <> ::Z_scope:x_'<='_x_'<='_x not
+R7544:7559 compcert.lib.Integers Int64 min_signed def
+R7564:7564 PV.WhileDDenotations <> n:127 var
+R7564:7564 PV.WhileDDenotations <> n:127 var
+R7569:7584 compcert.lib.Integers Int64 max_signed def
+def 7857:7869 DntSem_WhileD deref_sem_nrm
+R7894:7897 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7903:7906 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7898:7902 compcert.lib.Integers <> int64 syndef
+R7889:7893 PV.WhileDDenotations DntSem_WhileD state rec
+binder 7885:7886 <> D1:131
+R7930:7934 PV.WhileDDenotations DntSem_WhileD state rec
+binder 7927:7927 <> s:132
+R7954:7958 compcert.lib.Integers <> int64 syndef
+binder 7951:7951 <> i:133
+R7972:7978 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R7981:7982 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 7979:7980 <> i1:134
+R7990:7993 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7983:7984 PV.WhileDDenotations <> D1:131 var
+R7988:7989 PV.WhileDDenotations <> i1:134 var
+R7986:7986 PV.WhileDDenotations <> s:132 var
+R8004:8006 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7995:8003 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R7994:7994 PV.WhileDDenotations <> s:132 var
+R8002:8003 PV.WhileDDenotations <> i1:134 var
+R8007:8010 Coq.Init.Datatypes <> Some constr
+R8013:8016 PV.WhileDDenotations DntSem_WhileD Vint constr
+R8018:8018 PV.WhileDDenotations <> i:133 var
+def 8034:8046 DntSem_WhileD deref_sem_err
+R8071:8074 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8080:8083 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8075:8079 compcert.lib.Integers <> int64 syndef
+R8066:8070 PV.WhileDDenotations DntSem_WhileD state rec
+binder 8062:8063 <> D1:135
+R8107:8111 PV.WhileDDenotations DntSem_WhileD state rec
+binder 8104:8104 <> s:136
+R8125:8131 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8134:8139 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 8132:8133 <> i1:137
+R8147:8155 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8202:8202 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8140:8141 PV.WhileDDenotations <> D1:135 var
+R8145:8146 PV.WhileDDenotations <> i1:137 var
+R8143:8143 PV.WhileDDenotations <> s:136 var
+R8173:8176 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8166:8168 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8157:8165 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R8156:8156 PV.WhileDDenotations <> s:136 var
+R8164:8165 PV.WhileDDenotations <> i1:137 var
+R8169:8172 Coq.Init.Datatypes <> None constr
+R8187:8189 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8178:8186 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R8177:8177 PV.WhileDDenotations <> s:136 var
+R8185:8186 PV.WhileDDenotations <> i1:137 var
+R8190:8193 Coq.Init.Datatypes <> Some constr
+R8195:8201 PV.WhileDDenotations DntSem_WhileD Vuninit constr
+def 8217:8227 DntSem_WhileD deref_sem_r
+R8234:8240 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 8230:8231 <> D1:138
+R8244:8250 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R8264:8266 PV.WhileDDenotations DntSem_WhileD nrm proj
+R8264:8266 PV.WhileDDenotations DntSem_WhileD nrm proj
+R8299:8301 PV.WhileDDenotations DntSem_WhileD err proj
+R8314:8318 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R8308:8313 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R8306:8307 PV.WhileDDenotations <> D1:138 var
+R8319:8331 PV.WhileDDenotations DntSem_WhileD deref_sem_err def
+R8335:8340 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R8333:8334 PV.WhileDDenotations <> D1:138 var
+R8271:8283 PV.WhileDDenotations DntSem_WhileD deref_sem_nrm def
+R8287:8292 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R8285:8286 PV.WhileDDenotations <> D1:138 var
+def 8506:8514 DntSem_WhileD var_sem_l
+R8520:8527 PV.Syntax Lang_While var_name def
+binder 8517:8517 <> X:139
+R8531:8537 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R8551:8553 PV.WhileDDenotations DntSem_WhileD nrm proj
+R8551:8553 PV.WhileDDenotations DntSem_WhileD nrm proj
+R8588:8590 PV.WhileDDenotations DntSem_WhileD err proj
+R8595:8597 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+binder 8562:8562 <> s:140
+binder 8564:8564 <> i:141
+R8578:8580 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8570:8577 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
+R8569:8569 PV.WhileDDenotations <> s:140 var
+R8577:8577 PV.WhileDDenotations <> X:139 var
+R8581:8581 PV.WhileDDenotations <> i:141 var
+def 8680:8688 DntSem_WhileD var_sem_r
+R8694:8701 PV.Syntax Lang_While var_name def
+binder 8691:8691 <> X:142
+R8705:8711 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R8718:8728 PV.WhileDDenotations DntSem_WhileD deref_sem_r def
+R8731:8739 PV.WhileDDenotations DntSem_WhileD var_sem_l def
+R8741:8741 PV.WhileDDenotations <> X:142 var
+def 9224:9229 DntSem_WhileD eval_r
+def 9541:9546 DntSem_WhileD eval_l
+R9235:9238 PV.Syntax Lang_WhileD expr ind
+binder 9232:9232 <> e:143
+R9552:9555 PV.Syntax Lang_WhileD expr ind
+binder 9549:9549 <> e:144
+R9242:9248 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R9559:9565 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R9261:9261 PV.WhileDDenotations <> e:143 var
+R9272:9277 PV.Syntax Lang_WhileD EConst constr
+R9290:9298 PV.WhileDDenotations DntSem_WhileD const_sem def
+R9306:9309 PV.Syntax Lang_WhileD EVar constr
+R9322:9330 PV.WhileDDenotations DntSem_WhileD var_sem_r def
+R9338:9343 PV.Syntax Lang_WhileD EBinop constr
+R9363:9371 PV.WhileDDenotations DntSem_WhileD binop_sem def
+R9389:9394 PV.WhileDDenotations <> eval_r:145 def
+R9377:9382 PV.WhileDDenotations <> eval_r:145 def
+R9404:9408 PV.Syntax Lang_WhileD EUnop constr
+R9425:9432 PV.WhileDDenotations DntSem_WhileD unop_sem def
+R9438:9443 PV.WhileDDenotations <> eval_r:145 def
+R9453:9458 PV.Syntax Lang_WhileD EDeref constr
+R9472:9482 PV.WhileDDenotations DntSem_WhileD deref_sem_r def
+R9485:9490 PV.WhileDDenotations <> eval_r:145 def
+R9500:9506 PV.Syntax Lang_WhileD EAddrOf constr
+R9520:9525 PV.WhileDDenotations <> eval_l:146 def
+R9578:9578 PV.WhileDDenotations <> e:144 var
+R9589:9592 PV.Syntax Lang_WhileD EVar constr
+R9605:9613 PV.WhileDDenotations DntSem_WhileD var_sem_l def
+R9621:9626 PV.Syntax Lang_WhileD EDeref constr
+R9640:9645 PV.WhileDDenotations <> eval_r:145 def
+R9668:9670 PV.WhileDDenotations DntSem_WhileD nrm proj
+R9668:9670 PV.WhileDDenotations DntSem_WhileD nrm proj
+R9680:9682 PV.WhileDDenotations DntSem_WhileD err proj
+R9687:9695 SetsClass.SetsDomain Sets full meth
+R9675:9677 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+def 9718:9721 DntSem_WhileD rank
+R9726:9729 PV.Syntax Lang_WhileD expr ind
+binder 9724:9724 <> e:149
+R9733:9735 Coq.Init.Datatypes <> nat ind
+R9748:9748 PV.WhileDDenotations <> e:149 var
+R9759:9764 PV.Syntax Lang_WhileD EConst constr
+R9777:9777 Coq.Init.Datatypes <> O constr
+R9783:9786 PV.Syntax Lang_WhileD EVar constr
+R9799:9799 Coq.Init.Datatypes <> O constr
+R9805:9810 PV.Syntax Lang_WhileD EBinop constr
+R9830:9830 Coq.Init.Datatypes <> S constr
+R9839:9841 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R9832:9835 PV.WhileDDenotations <> rank:150 def
+R9842:9845 PV.WhileDDenotations <> rank:150 def
+R9855:9859 PV.Syntax Lang_WhileD EUnop constr
+R9876:9876 Coq.Init.Datatypes <> S constr
+R9878:9881 PV.WhileDDenotations <> rank:150 def
+R9891:9896 PV.Syntax Lang_WhileD EDeref constr
+R9910:9910 Coq.Init.Datatypes <> S constr
+R9912:9915 PV.WhileDDenotations <> rank:150 def
+R9925:9931 PV.Syntax Lang_WhileD EAddrOf constr
+R9945:9945 Coq.Init.Datatypes <> S constr
+R9947:9950 PV.WhileDDenotations <> rank:150 def
+prf 9970:9987 DntSem_WhileD eval_r_sem_inj_pre
+R10003:10005 Coq.Init.Datatypes <> nat ind
+binder 10000:10000 <> n:152
+R10013:10017 compcert.lib.Integers <> int64 syndef
+binder 10008:10008 <> a:153
+binder 10010:10010 <> b:154
+R10023:10026 PV.Syntax Lang_WhileD expr ind
+binder 10020:10020 <> e:155
+R10032:10036 PV.WhileDDenotations DntSem_WhileD state rec
+binder 10029:10029 <> s:156
+R10062:10067 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10088:10093 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10107:10112 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10114:10116 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10113:10113 PV.WhileDDenotations <> a:153 var
+R10117:10117 PV.WhileDDenotations <> b:154 var
+R10094:10095 Coq.Init.Peano <> le ind
+R10106:10106 PV.WhileDDenotations <> n:152 var
+R10098:10101 PV.WhileDDenotations DntSem_WhileD rank def
+R10103:10103 PV.WhileDDenotations <> e:155 var
+R10068:10068 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R10077:10087 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R10069:10074 PV.WhileDDenotations DntSem_WhileD eval_r def
+R10076:10076 PV.WhileDDenotations <> e:155 var
+R10087:10087 PV.WhileDDenotations <> b:154 var
+R10085:10085 PV.WhileDDenotations <> s:156 var
+R10042:10042 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R10051:10061 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R10043:10048 PV.WhileDDenotations DntSem_WhileD eval_r def
+R10050:10050 PV.WhileDDenotations <> e:155 var
+R10061:10061 PV.WhileDDenotations <> a:153 var
+R10059:10059 PV.WhileDDenotations <> s:156 var
+R10590:10602 PV.WhileDDenotations DntSem_WhileD deref_sem_nrm def
+R10788:10796 PV.WhileDDenotations DntSem_WhileD binop_sem def
+R10842:10847 PV.WhileDDenotations DntSem_WhileD or_sem def
+R10899:10908 PV.WhileDDenotations DntSem_WhileD or_sem_nrm def
+R11064:11065 Coq.Init.Peano <> le ind
+R11068:11071 PV.WhileDDenotations DntSem_WhileD rank def
+R11064:11065 Coq.Init.Peano <> le ind
+R11068:11071 PV.WhileDDenotations DntSem_WhileD rank def
+R11106:11108 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11106:11108 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11155:11171 PV.WhileDDenotations DntSem_WhileD SC_or_compute_nrm def
+R11199:11206 PV.WhileDDenotations DntSem_WhileD NonSC_or def
+R11234:11250 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
+R11281:11292 compcert.lib.Integers Int64 signed def
+R11281:11292 compcert.lib.Integers Int64 signed def
+R11552:11553 Coq.Init.Peano <> le ind
+R11556:11559 PV.WhileDDenotations DntSem_WhileD rank def
+R11552:11553 Coq.Init.Peano <> le ind
+R11556:11559 PV.WhileDDenotations DntSem_WhileD rank def
+R11596:11598 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11596:11598 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11654:11665 compcert.lib.Integers Int64 signed def
+R11654:11665 compcert.lib.Integers Int64 signed def
+R12785:12791 PV.WhileDDenotations DntSem_WhileD and_sem def
+R12843:12853 PV.WhileDDenotations DntSem_WhileD and_sem_nrm def
+R13009:13010 Coq.Init.Peano <> le ind
+R13013:13016 PV.WhileDDenotations DntSem_WhileD rank def
+R13009:13010 Coq.Init.Peano <> le ind
+R13013:13016 PV.WhileDDenotations DntSem_WhileD rank def
+R13051:13053 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13051:13053 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13100:13117 PV.WhileDDenotations DntSem_WhileD SC_and_compute_nrm def
+R13145:13153 PV.WhileDDenotations DntSem_WhileD NonSC_and def
+R13181:13197 PV.WhileDDenotations DntSem_WhileD NonSC_compute_nrm def
+R13228:13239 compcert.lib.Integers Int64 signed def
+R13228:13239 compcert.lib.Integers Int64 signed def
+R13699:13700 Coq.Init.Peano <> le ind
+R13702:13705 PV.WhileDDenotations DntSem_WhileD rank def
+R13699:13700 Coq.Init.Peano <> le ind
+R13702:13705 PV.WhileDDenotations DntSem_WhileD rank def
+R13742:13744 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13742:13744 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13800:13811 compcert.lib.Integers Int64 signed def
+R13800:13811 compcert.lib.Integers Int64 signed def
+R14831:14832 Coq.Init.Peano <> le ind
+R14834:14837 PV.WhileDDenotations DntSem_WhileD rank def
+R14831:14832 Coq.Init.Peano <> le ind
+R14834:14837 PV.WhileDDenotations DntSem_WhileD rank def
+R14876:14878 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14876:14878 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14938:14949 compcert.lib.Integers Int64 signed def
+R14938:14949 compcert.lib.Integers Int64 signed def
+R15693:15699 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R15750:15760 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R15787:15801 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R16010:16011 Coq.Init.Peano <> le ind
+R16014:16017 PV.WhileDDenotations DntSem_WhileD rank def
+R16010:16011 Coq.Init.Peano <> le ind
+R16014:16017 PV.WhileDDenotations DntSem_WhileD rank def
+R16049:16050 Coq.Init.Peano <> le ind
+R16053:16056 PV.WhileDDenotations DntSem_WhileD rank def
+R16049:16050 Coq.Init.Peano <> le ind
+R16053:16056 PV.WhileDDenotations DntSem_WhileD rank def
+R16091:16093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16091:16093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16127:16129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16127:16129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16193:16199 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R16250:16260 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R16287:16301 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R16510:16511 Coq.Init.Peano <> le ind
+R16514:16517 PV.WhileDDenotations DntSem_WhileD rank def
+R16510:16511 Coq.Init.Peano <> le ind
+R16514:16517 PV.WhileDDenotations DntSem_WhileD rank def
+R16549:16550 Coq.Init.Peano <> le ind
+R16553:16556 PV.WhileDDenotations DntSem_WhileD rank def
+R16549:16550 Coq.Init.Peano <> le ind
+R16553:16556 PV.WhileDDenotations DntSem_WhileD rank def
+R16591:16593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16591:16593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16627:16629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16627:16629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16693:16699 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R16750:16760 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R16787:16801 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R17010:17011 Coq.Init.Peano <> le ind
+R17014:17017 PV.WhileDDenotations DntSem_WhileD rank def
+R17010:17011 Coq.Init.Peano <> le ind
+R17014:17017 PV.WhileDDenotations DntSem_WhileD rank def
+R17049:17050 Coq.Init.Peano <> le ind
+R17053:17056 PV.WhileDDenotations DntSem_WhileD rank def
+R17049:17050 Coq.Init.Peano <> le ind
+R17053:17056 PV.WhileDDenotations DntSem_WhileD rank def
+R17091:17093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17091:17093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17127:17129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17127:17129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17193:17199 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R17250:17260 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R17287:17301 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R17510:17511 Coq.Init.Peano <> le ind
+R17514:17517 PV.WhileDDenotations DntSem_WhileD rank def
+R17510:17511 Coq.Init.Peano <> le ind
+R17514:17517 PV.WhileDDenotations DntSem_WhileD rank def
+R17549:17550 Coq.Init.Peano <> le ind
+R17553:17556 PV.WhileDDenotations DntSem_WhileD rank def
+R17549:17550 Coq.Init.Peano <> le ind
+R17553:17556 PV.WhileDDenotations DntSem_WhileD rank def
+R17591:17593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17591:17593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17627:17629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17627:17629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17693:17699 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R17750:17760 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R17787:17801 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R18010:18011 Coq.Init.Peano <> le ind
+R18014:18017 PV.WhileDDenotations DntSem_WhileD rank def
+R18010:18011 Coq.Init.Peano <> le ind
+R18014:18017 PV.WhileDDenotations DntSem_WhileD rank def
+R18049:18050 Coq.Init.Peano <> le ind
+R18053:18056 PV.WhileDDenotations DntSem_WhileD rank def
+R18049:18050 Coq.Init.Peano <> le ind
+R18053:18056 PV.WhileDDenotations DntSem_WhileD rank def
+R18091:18093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18091:18093 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18127:18129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18127:18129 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18193:18199 PV.WhileDDenotations DntSem_WhileD cmp_sem def
+R18250:18260 PV.WhileDDenotations DntSem_WhileD cmp_sem_nrm def
+R18287:18301 PV.WhileDDenotations DntSem_WhileD cmp_compute_nrm def
+R18510:18511 Coq.Init.Peano <> le ind
+R18514:18517 PV.WhileDDenotations DntSem_WhileD rank def
+R18510:18511 Coq.Init.Peano <> le ind
+R18514:18517 PV.WhileDDenotations DntSem_WhileD rank def
+R18549:18550 Coq.Init.Peano <> le ind
+R18553:18556 PV.WhileDDenotations DntSem_WhileD rank def
+R18549:18550 Coq.Init.Peano <> le ind
+R18553:18556 PV.WhileDDenotations DntSem_WhileD rank def
+R18591:18593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18591:18593 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18627:18629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18627:18629 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18693:18702 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R18753:18766 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R18793:18810 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R19019:19020 Coq.Init.Peano <> le ind
+R19023:19026 PV.WhileDDenotations DntSem_WhileD rank def
+R19019:19020 Coq.Init.Peano <> le ind
+R19023:19026 PV.WhileDDenotations DntSem_WhileD rank def
+R19058:19059 Coq.Init.Peano <> le ind
+R19062:19065 PV.WhileDDenotations DntSem_WhileD rank def
+R19058:19059 Coq.Init.Peano <> le ind
+R19062:19065 PV.WhileDDenotations DntSem_WhileD rank def
+R19100:19102 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19100:19102 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19136:19138 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19136:19138 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19242:19251 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R19302:19315 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R19342:19359 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R19568:19569 Coq.Init.Peano <> le ind
+R19572:19575 PV.WhileDDenotations DntSem_WhileD rank def
+R19568:19569 Coq.Init.Peano <> le ind
+R19572:19575 PV.WhileDDenotations DntSem_WhileD rank def
+R19607:19608 Coq.Init.Peano <> le ind
+R19611:19614 PV.WhileDDenotations DntSem_WhileD rank def
+R19607:19608 Coq.Init.Peano <> le ind
+R19611:19614 PV.WhileDDenotations DntSem_WhileD rank def
+R19649:19651 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19649:19651 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19685:19687 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19685:19687 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19791:19800 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R19851:19864 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R19891:19908 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R20117:20118 Coq.Init.Peano <> le ind
+R20121:20124 PV.WhileDDenotations DntSem_WhileD rank def
+R20117:20118 Coq.Init.Peano <> le ind
+R20121:20124 PV.WhileDDenotations DntSem_WhileD rank def
+R20156:20157 Coq.Init.Peano <> le ind
+R20160:20163 PV.WhileDDenotations DntSem_WhileD rank def
+R20156:20157 Coq.Init.Peano <> le ind
+R20160:20163 PV.WhileDDenotations DntSem_WhileD rank def
+R20198:20200 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20198:20200 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20234:20236 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20234:20236 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20340:20349 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R20400:20413 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R20440:20457 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R20666:20667 Coq.Init.Peano <> le ind
+R20670:20673 PV.WhileDDenotations DntSem_WhileD rank def
+R20666:20667 Coq.Init.Peano <> le ind
+R20670:20673 PV.WhileDDenotations DntSem_WhileD rank def
+R20705:20706 Coq.Init.Peano <> le ind
+R20709:20712 PV.WhileDDenotations DntSem_WhileD rank def
+R20705:20706 Coq.Init.Peano <> le ind
+R20709:20712 PV.WhileDDenotations DntSem_WhileD rank def
+R20747:20749 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20747:20749 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20783:20785 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20783:20785 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20889:20898 PV.WhileDDenotations DntSem_WhileD arith_sem1 def
+R20949:20962 PV.WhileDDenotations DntSem_WhileD arith_sem1_nrm def
+R20989:21006 PV.WhileDDenotations DntSem_WhileD arith_compute1_nrm def
+R21215:21216 Coq.Init.Peano <> le ind
+R21219:21222 PV.WhileDDenotations DntSem_WhileD rank def
+R21215:21216 Coq.Init.Peano <> le ind
+R21219:21222 PV.WhileDDenotations DntSem_WhileD rank def
+R21254:21255 Coq.Init.Peano <> le ind
+R21258:21261 PV.WhileDDenotations DntSem_WhileD rank def
+R21254:21255 Coq.Init.Peano <> le ind
+R21258:21261 PV.WhileDDenotations DntSem_WhileD rank def
+R21296:21298 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21296:21298 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21332:21334 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21332:21334 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21436:21443 PV.WhileDDenotations DntSem_WhileD unop_sem def
+R21504:21510 PV.WhileDDenotations DntSem_WhileD not_sem def
+R21561:21571 PV.WhileDDenotations DntSem_WhileD not_sem_nrm def
+R21598:21612 PV.WhileDDenotations DntSem_WhileD not_compute_nrm def
+R21765:21766 Coq.Init.Peano <> le ind
+R21768:21771 PV.WhileDDenotations DntSem_WhileD rank def
+R21765:21766 Coq.Init.Peano <> le ind
+R21768:21771 PV.WhileDDenotations DntSem_WhileD rank def
+R21805:21807 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21805:21807 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21860:21871 compcert.lib.Integers Int64 signed def
+R21860:21871 compcert.lib.Integers Int64 signed def
+R22471:22477 PV.WhileDDenotations DntSem_WhileD neg_sem def
+R22528:22538 PV.WhileDDenotations DntSem_WhileD neg_sem_nrm def
+R22565:22579 PV.WhileDDenotations DntSem_WhileD neg_compute_nrm def
+R22732:22733 Coq.Init.Peano <> le ind
+R22735:22738 PV.WhileDDenotations DntSem_WhileD rank def
+R22732:22733 Coq.Init.Peano <> le ind
+R22735:22738 PV.WhileDDenotations DntSem_WhileD rank def
+R22772:22774 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22772:22774 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22872:22884 PV.WhileDDenotations DntSem_WhileD deref_sem_nrm def
+R23027:23028 Coq.Init.Peano <> le ind
+R23030:23033 PV.WhileDDenotations DntSem_WhileD rank def
+R23027:23028 Coq.Init.Peano <> le ind
+R23030:23033 PV.WhileDDenotations DntSem_WhileD rank def
+R23065:23067 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23065:23067 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23169:23174 PV.WhileDDenotations DntSem_WhileD eval_l def
+R23328:23336 PV.WhileDDenotations DntSem_WhileD var_sem_l def
+R23658:23663 PV.WhileDDenotations DntSem_WhileD eval_r def
+R23658:23663 PV.WhileDDenotations DntSem_WhileD eval_r def
+R23746:23747 Coq.Init.Peano <> le ind
+R23750:23753 PV.WhileDDenotations DntSem_WhileD rank def
+R23746:23747 Coq.Init.Peano <> le ind
+R23750:23753 PV.WhileDDenotations DntSem_WhileD rank def
+prf 23920:23933 DntSem_WhileD eval_r_sem_inj
+R23952:23956 compcert.lib.Integers <> int64 syndef
+binder 23947:23947 <> a:157
+binder 23949:23949 <> b:158
+R23962:23965 PV.Syntax Lang_WhileD expr ind
+binder 23959:23959 <> e:159
+R23971:23975 PV.WhileDDenotations DntSem_WhileD state rec
+binder 23968:23968 <> s:160
+R24001:24006 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24027:24032 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24034:24036 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24033:24033 PV.WhileDDenotations <> a:157 var
+R24037:24037 PV.WhileDDenotations <> b:158 var
+R24007:24007 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R24016:24026 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R24008:24013 PV.WhileDDenotations DntSem_WhileD eval_r def
+R24015:24015 PV.WhileDDenotations <> e:159 var
+R24026:24026 PV.WhileDDenotations <> b:158 var
+R24024:24024 PV.WhileDDenotations <> s:160 var
+R23981:23981 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R23990:24000 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R23982:23987 PV.WhileDDenotations DntSem_WhileD eval_r def
+R23989:23989 PV.WhileDDenotations <> e:159 var
+R24000:24000 PV.WhileDDenotations <> a:157 var
+R23998:23998 PV.WhileDDenotations <> s:160 var
+R24070:24087 PV.WhileDDenotations DntSem_WhileD eval_r_sem_inj_pre thm
+R24090:24093 PV.WhileDDenotations DntSem_WhileD rank def
+R24070:24087 PV.WhileDDenotations DntSem_WhileD eval_r_sem_inj_pre thm
+R24090:24093 PV.WhileDDenotations DntSem_WhileD rank def
+def 24257:24265 DntSem_WhileD test_true
+R24271:24277 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 24268:24268 <> D:161
+R24288:24291 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24297:24300 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24292:24296 PV.WhileDDenotations DntSem_WhileD state rec
+R24283:24287 PV.WhileDDenotations DntSem_WhileD state rec
+R24311:24319 SetsClass.RelsDomain Rels test meth
+binder 24330:24330 <> s:162
+R24342:24348 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24350:24351 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 24349:24349 <> i:163
+R24363:24366 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R24353:24362 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R24352:24352 PV.WhileDDenotations <> D:161 var
+R24362:24362 PV.WhileDDenotations <> i:163 var
+R24360:24360 PV.WhileDDenotations <> s:162 var
+R24381:24384 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R24367:24378 compcert.lib.Integers Int64 signed def
+R24380:24380 PV.WhileDDenotations <> i:163 var
+def 24401:24410 DntSem_WhileD test_false
+R24416:24422 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 24413:24413 <> D:164
+R24433:24436 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24442:24445 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24437:24441 PV.WhileDDenotations DntSem_WhileD state rec
+R24428:24432 PV.WhileDDenotations DntSem_WhileD state rec
+R24456:24464 SetsClass.RelsDomain Rels test meth
+binder 24471:24471 <> s:165
+R24477:24499 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R24476:24476 PV.WhileDDenotations <> D:164 var
+R24487:24496 compcert.lib.Integers Int64 repr def
+R24484:24484 PV.WhileDDenotations <> s:165 var
+mod 24736:24742 <> DntSem_WhileD.CDenote
+rec 24753:24759 DntSem_WhileD.CDenote CDenote
+proj 24774:24776 DntSem_WhileD.CDenote nrm
+proj 24805:24807 DntSem_WhileD.CDenote err
+proj 24827:24829 DntSem_WhileD.CDenote inf
+R24784:24787 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24793:24796 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24788:24792 PV.WhileDDenotations DntSem_WhileD state rec
+R24779:24783 PV.WhileDDenotations DntSem_WhileD state rec
+R24815:24818 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24810:24814 PV.WhileDDenotations DntSem_WhileD state rec
+R24837:24840 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24832:24836 PV.WhileDDenotations DntSem_WhileD state rec
+R24854:24860 PV.WhileDDenotations DntSem_WhileD.CDenote <> mod
+R24907:24917 PV.WhileDDenotations DntSem_WhileD nrm proj
+not 24890:24890 DntSem_WhileD :::x_'.(nrm)'
+R24980:24990 PV.WhileDDenotations DntSem_WhileD err proj
+not 24963:24963 DntSem_WhileD :::x_'.(err)'
+R25073:25079 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R25073:25079 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R25110:25116 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25110:25116 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25128:25138 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25091:25101 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25197:25203 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R25197:25203 PV.WhileDDenotations DntSem_WhileD EDenote rec
+R25234:25240 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25234:25240 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25252:25262 PV.WhileDDenotations DntSem_WhileD err proj
+R25215:25225 PV.WhileDDenotations DntSem_WhileD err proj
+def 25286:25293 DntSem_WhileD skip_sem
+R25296:25302 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25316:25318 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25316:25318 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25336:25338 PV.WhileDDenotations DntSem_WhileD err proj
+R25352:25354 PV.WhileDDenotations DntSem_WhileD inf proj
+R25359:25361 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R25343:25345 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R25323:25329 SetsClass.RelsDomain Rels id meth
+def 25382:25388 DntSem_WhileD seq_sem
+R25398:25404 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 25391:25392 <> D1:170
+binder 25394:25395 <> D2:171
+R25408:25414 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25428:25430 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25428:25430 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25462:25464 PV.WhileDDenotations DntSem_WhileD err proj
+R25511:25513 PV.WhileDDenotations DntSem_WhileD inf proj
+R25526:25531 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25553:25553 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25522:25524 PV.WhileDDenotations DntSem_WhileD inf proj
+R25518:25519 PV.WhileDDenotations <> D1:170 var
+R25540:25544 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25534:25539 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25532:25533 PV.WhileDDenotations <> D1:170 var
+R25549:25551 PV.WhileDDenotations DntSem_WhileD inf proj
+R25545:25546 PV.WhileDDenotations <> D2:171 var
+R25477:25482 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25504:25504 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25471:25476 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R25469:25470 PV.WhileDDenotations <> D1:170 var
+R25491:25495 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25485:25490 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25483:25484 PV.WhileDDenotations <> D1:170 var
+R25498:25503 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R25496:25497 PV.WhileDDenotations <> D2:171 var
+R25443:25447 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25437:25442 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25435:25436 PV.WhileDDenotations <> D1:170 var
+R25450:25455 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25448:25449 PV.WhileDDenotations <> D2:171 var
+def 25574:25579 DntSem_WhileD if_sem
+R25599:25605 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 25595:25596 <> D0:172
+R25629:25635 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 25622:25623 <> D1:173
+binder 25625:25626 <> D2:174
+R25639:25645 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R25659:25661 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25659:25661 PV.WhileDDenotations DntSem_WhileD nrm proj
+R25743:25745 PV.WhileDDenotations DntSem_WhileD err proj
+R25851:25853 PV.WhileDDenotations DntSem_WhileD inf proj
+R25858:25858 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25884:25901 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25928:25928 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25871:25875 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25859:25867 PV.WhileDDenotations DntSem_WhileD test_true def
+R25869:25870 PV.WhileDDenotations <> D0:172 var
+R25880:25882 PV.WhileDDenotations DntSem_WhileD inf proj
+R25876:25877 PV.WhileDDenotations <> D1:173 var
+R25915:25919 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25902:25911 PV.WhileDDenotations DntSem_WhileD test_false def
+R25913:25914 PV.WhileDDenotations <> D0:172 var
+R25924:25926 PV.WhileDDenotations DntSem_WhileD inf proj
+R25920:25921 PV.WhileDDenotations <> D2:174 var
+R25801:25817 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25844:25844 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25758:25774 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25800:25800 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25752:25757 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R25750:25751 PV.WhileDDenotations <> D0:172 var
+R25787:25791 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25775:25783 PV.WhileDDenotations DntSem_WhileD test_true def
+R25785:25786 PV.WhileDDenotations <> D0:172 var
+R25794:25799 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R25792:25793 PV.WhileDDenotations <> D1:173 var
+R25831:25835 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25818:25827 PV.WhileDDenotations DntSem_WhileD test_false def
+R25829:25830 PV.WhileDDenotations <> D0:172 var
+R25838:25843 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R25836:25837 PV.WhileDDenotations <> D2:174 var
+R25666:25666 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25692:25709 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25736:25736 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R25679:25683 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25667:25675 PV.WhileDDenotations DntSem_WhileD test_true def
+R25677:25678 PV.WhileDDenotations <> D0:172 var
+R25686:25691 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25684:25685 PV.WhileDDenotations <> D1:173 var
+R25723:25727 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R25710:25719 PV.WhileDDenotations DntSem_WhileD test_false def
+R25721:25722 PV.WhileDDenotations <> D0:172 var
+R25730:25735 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R25728:25729 PV.WhileDDenotations <> D2:174 var
+def 25946:25958 DntSem_WhileD iter_nrm_lt_n
+R25976:25982 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 25972:25973 <> D0:175
+R26001:26007 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 25997:25998 <> D1:176
+R26025:26027 Coq.Init.Datatypes <> nat ind
+binder 26022:26022 <> n:177
+R26038:26041 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26047:26050 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26042:26046 PV.WhileDDenotations DntSem_WhileD state rec
+R26033:26037 PV.WhileDDenotations DntSem_WhileD state rec
+R26067:26067 PV.WhileDDenotations <> n:177 var
+R26078:26078 Coq.Init.Datatypes <> O constr
+R26083:26085 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R26091:26091 Coq.Init.Datatypes <> S constr
+R26105:26105 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26158:26170 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26184:26184 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26118:26122 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26106:26114 PV.WhileDDenotations DntSem_WhileD test_true def
+R26116:26117 PV.WhileDDenotations <> D0:175 var
+R26131:26135 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26125:26130 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R26123:26124 PV.WhileDDenotations <> D1:176 var
+R26136:26148 PV.WhileDDenotations <> iter_nrm_lt_n:178 def
+R26153:26154 PV.WhileDDenotations <> D1:176 var
+R26150:26151 PV.WhileDDenotations <> D0:175 var
+R26171:26180 PV.WhileDDenotations DntSem_WhileD test_false def
+R26182:26183 PV.WhileDDenotations <> D0:175 var
+def 26203:26215 DntSem_WhileD iter_err_lt_n
+R26233:26239 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 26229:26230 <> D0:180
+R26258:26264 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 26254:26255 <> D1:181
+R26282:26284 Coq.Init.Datatypes <> nat ind
+binder 26279:26279 <> n:182
+R26293:26296 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26288:26292 PV.WhileDDenotations DntSem_WhileD state rec
+R26313:26313 PV.WhileDDenotations <> n:182 var
+R26324:26324 Coq.Init.Datatypes <> O constr
+R26329:26331 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R26337:26337 Coq.Init.Datatypes <> S constr
+R26350:26350 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26437:26448 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26363:26376 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26436:26436 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26351:26359 PV.WhileDDenotations DntSem_WhileD test_true def
+R26361:26362 PV.WhileDDenotations <> D0:180 var
+R26377:26377 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26413:26427 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26386:26390 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26380:26385 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R26378:26379 PV.WhileDDenotations <> D1:181 var
+R26391:26403 PV.WhileDDenotations <> iter_err_lt_n:183 def
+R26408:26409 PV.WhileDDenotations <> D1:181 var
+R26405:26406 PV.WhileDDenotations <> D0:180 var
+R26430:26435 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R26428:26429 PV.WhileDDenotations <> D1:181 var
+R26451:26456 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R26449:26450 PV.WhileDDenotations <> D0:180 var
+def 26477:26482 DntSem_WhileD is_inf
+R26502:26508 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 26498:26499 <> D0:185
+R26529:26535 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 26525:26526 <> D1:186
+R26560:26563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26555:26559 PV.WhileDDenotations DntSem_WhileD state rec
+binder 26552:26552 <> X:187
+R26582:26586 SetsClass.SetsDomain <> ::sets_scope:x_'⊆'_x not
+R26581:26581 PV.WhileDDenotations <> X:187 var
+R26599:26604 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26634:26634 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26587:26595 PV.WhileDDenotations DntSem_WhileD test_true def
+R26597:26598 PV.WhileDDenotations <> D0:185 var
+R26605:26605 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26620:26625 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R26614:26618 SetsClass.SetsClass SetsNotation ::sets_scope:x_'∘'_x not
+R26608:26613 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R26606:26607 PV.WhileDDenotations <> D1:186 var
+R26619:26619 PV.WhileDDenotations <> X:187 var
+R26630:26632 PV.WhileDDenotations DntSem_WhileD inf proj
+R26626:26627 PV.WhileDDenotations <> D1:186 var
+def 26649:26657 DntSem_WhileD while_sem
+R26677:26683 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 26673:26674 <> D0:188
+R26704:26710 PV.WhileDDenotations DntSem_WhileD CDenote rec
+binder 26700:26701 <> D1:189
+R26714:26720 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R26734:26736 PV.WhileDDenotations DntSem_WhileD nrm proj
+R26734:26736 PV.WhileDDenotations DntSem_WhileD nrm proj
+R26772:26774 PV.WhileDDenotations DntSem_WhileD err proj
+R26810:26812 PV.WhileDDenotations DntSem_WhileD inf proj
+R26817:26834 SetsClass.SetsDomain Sets general_union def
+R26837:26842 PV.WhileDDenotations DntSem_WhileD is_inf def
+R26847:26848 PV.WhileDDenotations <> D1:189 var
+R26844:26845 PV.WhileDDenotations <> D0:188 var
+R26779:26783 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
+R26803:26803 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
+R26784:26796 PV.WhileDDenotations DntSem_WhileD iter_err_lt_n def
+R26801:26802 PV.WhileDDenotations <> D1:189 var
+R26798:26799 PV.WhileDDenotations <> D0:188 var
+R26741:26745 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
+R26765:26765 SetsClass.SetsDomain <> ::sets_scope:'⋃'_x not
+R26746:26758 PV.WhileDDenotations DntSem_WhileD iter_nrm_lt_n def
+R26763:26764 PV.WhileDDenotations <> D1:189 var
+R26760:26761 PV.WhileDDenotations <> D0:188 var
+def 27036:27053 DntSem_WhileD asgn_deref_sem_nrm
+R27081:27084 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27090:27093 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27085:27089 compcert.lib.Integers <> int64 syndef
+R27076:27080 PV.WhileDDenotations DntSem_WhileD state rec
+binder 27069:27070 <> D1:190
+binder 27072:27073 <> D2:191
+R27121:27125 PV.WhileDDenotations DntSem_WhileD state rec
+binder 27114:27115 <> s1:192
+binder 27117:27118 <> s2:193
+R27139:27145 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R27151:27156 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 27146:27147 <> i1:194
+binder 27149:27150 <> i2:195
+R27165:27172 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27157:27158 PV.WhileDDenotations <> D1:190 var
+R27163:27164 PV.WhileDDenotations <> i1:194 var
+R27160:27161 PV.WhileDDenotations <> s1:192 var
+R27181:27188 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27173:27174 PV.WhileDDenotations <> D2:191 var
+R27179:27180 PV.WhileDDenotations <> i2:195 var
+R27176:27177 PV.WhileDDenotations <> s1:192 var
+R27208:27215 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27200:27203 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R27191:27199 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R27189:27190 PV.WhileDDenotations <> s1:192 var
+R27198:27199 PV.WhileDDenotations <> i1:194 var
+R27204:27207 Coq.Init.Datatypes <> None constr
+R27244:27251 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27227:27229 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27218:27226 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R27216:27217 PV.WhileDDenotations <> s2:193 var
+R27225:27226 PV.WhileDDenotations <> i1:194 var
+R27230:27233 Coq.Init.Datatypes <> Some constr
+R27236:27239 PV.WhileDDenotations DntSem_WhileD Vint constr
+R27241:27242 PV.WhileDDenotations <> i2:195 var
+R27252:27252 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27286:27295 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27340:27340 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 27260:27260 <> X:196
+R27273:27275 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27265:27272 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
+R27263:27264 PV.WhileDDenotations <> s1:192 var
+R27272:27272 PV.WhileDDenotations <> X:196 var
+R27278:27285 PV.WhileDDenotations DntSem_WhileD :::x_'.(env)' not
+R27276:27277 PV.WhileDDenotations <> s2:193 var
+R27285:27285 PV.WhileDDenotations <> X:196 var
+binder 27303:27303 <> p:197
+R27313:27316 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27327:27329 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27319:27326 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R27317:27318 PV.WhileDDenotations <> s1:192 var
+R27326:27326 PV.WhileDDenotations <> p:197 var
+R27332:27339 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R27330:27331 PV.WhileDDenotations <> s2:193 var
+R27339:27339 PV.WhileDDenotations <> p:197 var
+R27308:27311 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R27306:27307 PV.WhileDDenotations <> i1:194 var
+R27312:27312 PV.WhileDDenotations <> p:197 var
+def 27355:27372 DntSem_WhileD asgn_deref_sem_err
+R27397:27400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27406:27409 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27401:27405 compcert.lib.Integers <> int64 syndef
+R27392:27396 PV.WhileDDenotations DntSem_WhileD state rec
+binder 27388:27389 <> D1:198
+R27434:27438 PV.WhileDDenotations DntSem_WhileD state rec
+binder 27430:27431 <> s1:199
+R27452:27458 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R27461:27466 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 27459:27460 <> i1:200
+R27475:27482 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27467:27468 PV.WhileDDenotations <> D1:198 var
+R27473:27474 PV.WhileDDenotations <> i1:200 var
+R27470:27471 PV.WhileDDenotations <> s1:199 var
+R27494:27496 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27485:27493 PV.WhileDDenotations DntSem_WhileD :::x_'.(mem)' not
+R27483:27484 PV.WhileDDenotations <> s1:199 var
+R27492:27493 PV.WhileDDenotations <> i1:200 var
+R27497:27500 Coq.Init.Datatypes <> None constr
+def 27515:27528 DntSem_WhileD asgn_deref_sem
+R27551:27557 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 27544:27545 <> D1:201
+binder 27547:27548 <> D2:202
+R27561:27567 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R27581:27583 PV.WhileDDenotations DntSem_WhileD nrm proj
+R27581:27583 PV.WhileDDenotations DntSem_WhileD nrm proj
+R27630:27632 PV.WhileDDenotations DntSem_WhileD err proj
+R27707:27709 PV.WhileDDenotations DntSem_WhileD inf proj
+R27714:27716 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R27658:27673 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R27645:27649 SetsClass.SetsDomain <> ::sets_scope:x_'∪'_x not
+R27639:27644 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R27637:27638 PV.WhileDDenotations <> D1:201 var
+R27652:27657 PV.WhileDDenotations DntSem_WhileD :::x_'.(err)' not
+R27650:27651 PV.WhileDDenotations <> D2:202 var
+R27674:27691 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem_err def
+R27695:27700 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R27693:27694 PV.WhileDDenotations <> D2:202 var
+R27588:27605 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem_nrm def
+R27618:27623 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R27616:27617 PV.WhileDDenotations <> D2:202 var
+R27609:27614 PV.WhileDDenotations DntSem_WhileD :::x_'.(nrm)' not
+R27607:27608 PV.WhileDDenotations <> D1:201 var
+def 27790:27801 DntSem_WhileD asgn_var_sem
+R27820:27827 PV.Syntax Lang_While var_name def
+binder 27817:27817 <> X:203
+R27848:27854 PV.WhileDDenotations DntSem_WhileD EDenote rec
+binder 27844:27845 <> D1:204
+R27858:27864 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R27871:27884 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem def
+R27900:27901 PV.WhileDDenotations <> D1:204 var
+R27887:27895 PV.WhileDDenotations DntSem_WhileD var_sem_l def
+R27897:27897 PV.WhileDDenotations <> X:203 var
+def 28015:28022 DntSem_WhileD eval_com
+R28028:28030 PV.Syntax Lang_WhileD com ind
+binder 28025:28025 <> c:205
+R28034:28040 PV.WhileDDenotations DntSem_WhileD CDenote rec
+R28053:28053 PV.WhileDDenotations <> c:205 var
+R28064:28068 PV.Syntax Lang_WhileD CSkip constr
+R28079:28086 PV.WhileDDenotations DntSem_WhileD skip_sem def
+R28092:28099 PV.Syntax Lang_WhileD CAsgnVar constr
+R28114:28125 PV.WhileDDenotations DntSem_WhileD asgn_var_sem def
+R28130:28135 PV.WhileDDenotations DntSem_WhileD eval_r def
+R28144:28153 PV.Syntax Lang_WhileD CAsgnDeref constr
+R28170:28183 PV.WhileDDenotations DntSem_WhileD asgn_deref_sem def
+R28198:28203 PV.WhileDDenotations DntSem_WhileD eval_r def
+R28186:28191 PV.WhileDDenotations DntSem_WhileD eval_r def
+R28213:28216 PV.Syntax Lang_WhileD CSeq constr
+R28233:28239 PV.WhileDDenotations DntSem_WhileD seq_sem def
+R28256:28263 PV.WhileDDenotations <> eval_com:206 def
+R28242:28249 PV.WhileDDenotations <> eval_com:206 def
+R28273:28275 PV.Syntax Lang_WhileD CIf constr
+R28294:28299 PV.WhileDDenotations DntSem_WhileD if_sem def
+R28327:28334 PV.WhileDDenotations <> eval_com:206 def
+R28313:28320 PV.WhileDDenotations <> eval_com:206 def
+R28302:28307 PV.WhileDDenotations DntSem_WhileD eval_r def
+R28344:28349 PV.Syntax Lang_WhileD CWhile constr
+R28365:28373 PV.WhileDDenotations DntSem_WhileD while_sem def
+R28387:28394 PV.WhileDDenotations <> eval_com:206 def
+R28376:28381 PV.WhileDDenotations DntSem_WhileD eval_r def
+R28412:28424 PV.WhileDDenotations DntSem_WhileD <> mod
