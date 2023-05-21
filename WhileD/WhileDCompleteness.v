@@ -113,7 +113,34 @@ Proof.
     - eapply hoare_conseq_post; [|apply H].
       apply (hoare_skip P).
   + admit.
-  + admit.
+  + unfold eval_com in HT.
+    simpl in HT.
+    assert(exists a, (forall (s:state), P s -> ((eval_r e1).(nrm) s a))).
+    admit.
+    assert(exists b, (forall (s:state), P s -> ((eval_r e2).(nrm) s b))).
+    admit.
+    destruct H as [a ?].
+    destruct H0 as [b ?].
+    pose proof hoare_asgn_deref_fwd P Q e1 e2 a b.
+    pose proof H1 H H0.
+    clear H1.
+    assert(P |-- exp (fun u : val => Assn ((store a u) * Q))).
+    - unfold sepcon.
+      unfold store.
+      unfold derives.
+      intros.
+      unfold exp.
+       
+    destruct H2.
+    apply H1 in H; auto.
+    - apply (hoare_conseq_post _ _ _ _ H).
+      unfold sepcon.
+      unfold derives.
+      intros.
+      destruct H2 as [s11 [s12 ?]].
+      destruct H2 as [? [? [? [? ?]]]].
+      specialize (HT ).
+    - 
   + apply (hoare_seq P (fun s => exists x: state, P x /\ (eval_com c1).(nrm) x s) Q).
     - apply IHc1.
       intros.
