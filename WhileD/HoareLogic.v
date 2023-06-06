@@ -220,9 +220,9 @@ Definition valid: HoareTriple -> Prop :=
   match ht with
   | BuildHoareTriple P c Q =>
       forall s1 s2,
-        P s1 ->
-        (eval_com c).(nrm) s1 s2 ->
-        Q s2
+        (P s1) ->
+        (((eval_com c).(nrm) s1 s2 -> Q s2)
+        /\ ((eval_com c).(err) s1 -> False))
   end.
 
 Lemma hoare_skip_sound:
@@ -231,7 +231,10 @@ Lemma hoare_skip_sound:
 Proof.
   simpl.
   intros.
-  rewrite <- H0; tauto.
+  split.
+  + intros. rewrite <- H0; tauto.
+  + unfold_RELS_tac.
+    tauto. 
 Qed.
 
 Lemma hoare_seq_sound:
@@ -243,10 +246,25 @@ Proof.
   simpl.
   unfold_RELS_tac.
   intros.
-  destruct H2 as [s1' [? ?] ].
-  specialize (H _ _ H1 H2).
-  specialize (H0 _ _ H H3).
-  apply H0.
+  split; intros.
+  + destruct H2 as [s1' [? ?] ].
+    specialize (H _ s1' H1).
+    destruct H.
+    specialize (H H2).
+    specialize (H0 _ s2 H).
+    destruct H0.
+    specialize (H0 H3).
+    apply H0.
+  + destruct H2.
+    - specialize (H s1 s1 H1).
+      destruct H.
+      tauto.
+    - destruct H2 as [s1' [? ?]].
+      specialize (H s1 s1' H1).
+      destruct H.
+      specialize (H H2).
+      specialize (H0 s1' s2 H).
+      tauto.
 Qed.
 
 (** 习题：*)
@@ -254,6 +272,7 @@ Lemma hoare_if_sound:
   forall (P Q: assertion) (e: expr) (c1 c2: com),
     valid (BuildHoareTriple (andp P (eb2assn e)) c1 Q) ->
     valid (BuildHoareTriple (andp P (eb2assn_not e)) c2 Q) ->
+    (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
     valid (BuildHoareTriple P (CIf e c1 c2) Q).
 Proof.
   simpl.
@@ -263,27 +282,49 @@ Proof.
   simpl.
   unfold not_sem.
   intros.
-  destruct H2 as [H2 | H2];
+  pose proof H1 as H100. clear H1.
+  pose proof H2 as H1. clear H2.
+  split; intros.
+  + destruct H2 as [H2 | H2];
     destruct H2 as [s1' [? ?] ].
-  + unfold test_true in H2.
-    revert H2; unfold_RELS_tac; intros.
-    destruct H2 as [H2 ?]; subst s1'.
-    apply (H s1 s2); tauto.
-  + unfold test_false in H2.
-    revert H2; unfold_RELS_tac; intros.
-    destruct H2 as [H2 ?]; subst s1'.
-    apply (H0 s1 s2).
-    - unfold eb2assn_not.
-      split; auto.
-      exists (Int64.repr 0).
+    - unfold test_true in H2.
+      revert H2; unfold_RELS_tac; intros.
+      destruct H2 as [H2 ?]; subst s1'.
+      apply (H s1 s2); tauto.
+    - unfold test_false in H2.
+      revert H2; unfold_RELS_tac; intros.
+      destruct H2 as [H2 ?]; subst s1'.
+      apply (H0 s1 s2).
+      * unfold eb2assn_not.
+        split; auto.
+        exists (Int64.repr 0).
+        tauto.
+      * tauto.
+  + destruct H2; [destruct H2 | ].
+    - specialize (H100 s1). tauto.
+    - destruct H2 as [s3 [? ?]].
+      unfold test_true in H2.
+      revert H2; unfold_RELS_tac; intros.
+      destruct H2; subst s3.
+      specialize (H s1 s2).
       tauto.
-    - tauto.
+    - destruct H2 as [s3 [? ?]].
+      unfold test_false in H2.
+      revert H2; unfold_RELS_tac; intros.
+      destruct H2; subst s3.
+      specialize (H0 s1 s2).
+      unfold eb2assn_not in H0.
+      assert (exists i : int64, (eval_r e).(nrm) s1 i /\ Int64.signed i = 0).
+      * exists (Int64.repr 0).
+        tauto.
+      * tauto.
 Qed.
 
 (** 习题：*)
 Lemma hoare_while_sound:
   forall (P: assertion) (e: expr) (c: com),
     valid (BuildHoareTriple (andp P (eb2assn e)) c P) ->
+    (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
     valid (BuildHoareTriple P (CWhile e c) (andp P (eb2assn_not e))).
 Proof.
   simpl.
@@ -293,32 +334,61 @@ Proof.
   simpl.
   unfold not_sem.
   intros.
-  destruct H1 as [n ?].
-  revert s1 s2 H0 H1; induction n; intros.
-  + simpl in H1.
-    unfold test_false in H1.
-    revert H1; unfold_RELS_tac; intros.
-    contradiction.
-  + simpl in H1.
-    unfold test_true in H1.
-    revert H1; unfold_RELS_tac; intros.
-    destruct H1; destruct H1.
-    - destruct H1.
+  pose proof H0 as H100; clear H0.
+  pose proof H1 as H0; clear H1.
+  split; intros.
+  + destruct H1 as [n ?].
+    revert s1 s2 H0 H1; induction n; intros.
+    - simpl in H1.
+      unfold test_false in H1.
+      revert H1; unfold_RELS_tac; intros.
+      contradiction.
+    - simpl in H1.
+      unfold test_true in H1.
+      revert H1; unfold_RELS_tac; intros.
+      destruct H1; destruct H1.
+      * destruct H1.
+        destruct H1.
+        destruct H1.
+        destruct H2.
+        destruct H2.
+        pose proof IHn x1 s2.
+        apply H5; auto.
+        pose proof H s1 x1.
+        apply H6; auto.
+        ++ split; auto.
+          exists x0; auto.
+        ++ subst x; auto.
+      * revert H1 H2; unfold_RELS_tac; intros; subst s2; split; auto.
+        unfold eb2assn_not.
+        exists (Int64.repr 0).
+        auto.
+  + destruct H1 as [i ?].
+    revert s1 H0 H1.
+    induction i; intros.
+    - simpl in H1.
+      revert H1; unfold_RELS_tac; intros.
+      tauto.
+    - simpl in H1.
+      revert H1; unfold_RELS_tac; intros.
       destruct H1.
-      destruct H1.
-      destruct H2.
-      destruct H2.
-      pose proof IHn x1 s2.
-      apply H5; auto.
-      pose proof H s1 x1.
-      apply H6; auto.
-      * split; auto.
+      * destruct H1.
+        destruct H1.
+        destruct H1.
+        destruct H1.
+        revert H3; unfold_RELS_tac; intros.
+        subst x.
+        assert ((exists i : int64,
+        (eval_r e).(nrm) s1 i /\ Int64.signed i <> 0)).
         exists x0; auto.
-      * subst x; auto.
-    - revert H1 H2; unfold_RELS_tac; intros; subst s2; split; auto.
-      unfold eb2assn_not.
-      exists (Int64.repr 0).
-      auto.
+        destruct H2.
+        ++ destruct H2 as [s1' [? ?]].
+           specialize (H s1 s1').
+           specialize (IHi s1').
+           tauto.
+        ++ specialize (H s1 s2).
+           tauto.
+      * specialize (H100 s1); tauto.
 Qed.
 
 Definition state_subst(s: state)(p:int64)(a:val) : state :=
@@ -342,8 +412,98 @@ Proof.
   unfold asgn_deref_sem_nrm.
   intros.
   unfold exp in H1.
-  destruct H3 as [i1 [i2 [? [ ? [? ? ]]]]].
-  destruct H6 as [? [? ?]].
+  split; intros. {
+    destruct H3 as [i1 [i2 [? [ ? [? ? ]]]]].
+    destruct H6 as [? [? ?]].
+    unfold derives in H1.
+    specialize (H s1).
+    specialize (H0 s1).
+    specialize (H1 s1).
+    pose proof H2.
+    pose proof H2.
+    pose proof H2.
+    apply H in H9.
+    apply H0 in H10.
+    apply H1 in H11.
+    clear H H0 H1.
+    destruct H11.
+    unfold eval_r in H3. fold eval_r in H3.
+    pose proof eval_r_sem_inj i1 a e1 s1.
+    assert (i1 = a) by tauto.
+    pose proof eval_r_sem_inj i2 b e2 s1.
+    assert (i2 = b) by tauto.
+    subst i1 i2.
+    clear H0 H11 H9 H10.
+    unfold sepcon.
+    unfold sepcon in H.
+    destruct H as [s11 [s12 ?]].
+    exists (state_subst s11 a (Vint b)), s12.
+    destruct H as [? [? [? [? ?]]]].
+    split.
+    + unfold store.
+      split. 
+      - simpl.
+        destruct (Int64.eq a a) eqn : I; auto.
+        pose proof Int64.eq_true a.
+        rewrite H11 in I.
+        discriminate.
+      - intros.
+        unfold store in H.
+        simpl.
+        destruct (Int64.eq i a) eqn : I.
+        * pose proof Int64.eq_false i a.
+          apply H12 in H11.
+          rewrite H11 in I.
+          discriminate.
+        * destruct H.
+          specialize (H12 i).
+          auto.
+    + split; auto.
+      split.
+      - simpl.
+        rewrite <- H1.
+        apply functional_extensionality.
+        intros.
+        specialize (H7 x0).
+        rewrite H7.
+        tauto.
+      - split.
+        * rewrite <- H9.
+          apply functional_extensionality.
+          intros.
+          specialize (H7 x0).
+          rewrite H7.
+          tauto.
+        * intros.
+          simpl.
+          pose proof Int64.eq_spec i a.
+          destruct (Int64.eq i a) eqn : I.
+          ++  left.
+              pose proof Int64.same_if_eq i a.
+              apply H12 in I; clear H11.
+              subst i.
+              specialize (H10 a).
+              unfold store in H.
+              destruct H.
+              destruct H10; try tauto.
+              destruct H10.
+              rewrite H in H13.
+              discriminate.
+          ++  specialize (H10 i).
+              destruct H10.
+              --  left.
+                  specialize (H8 i).
+                  pose proof not_eq_sym H11.
+                  apply H8 in H12.
+                  rewrite <- H12.
+                  tauto.
+              --  right. 
+                  specialize (H8 i).
+                  pose proof not_eq_sym H11.
+                  apply H8 in H12.
+                  rewrite <- H12.
+                  tauto.  
+  }
   unfold derives in H1.
   specialize (H s1).
   specialize (H0 s1).
@@ -351,105 +511,32 @@ Proof.
   pose proof H2.
   pose proof H2.
   pose proof H2.
-  apply H in H9.
-  apply H0 in H10.
-  apply H1 in H11.
+  apply H in H4.
+  apply H0 in H5.
+  apply H1 in H6.
   clear H H0 H1.
-  destruct H11.
-  unfold eval_r in H3. fold eval_r in H3.
-  pose proof eval_r_sem_inj i1 a e1 s1.
-  assert (i1 = a) by tauto.
-  pose proof eval_r_sem_inj i2 b e2 s1.
-  assert (i2 = b) by tauto.
-  subst i1 i2.
-  clear H0 H11 H9 H10.
-  unfold sepcon.
-  unfold sepcon in H.
-  destruct H as [s11 [s12 ?]].
-  exists (state_subst s11 a (Vint b)), s12.
-  destruct H as [? [? [? [? ?]]]].
-  split.
-  + unfold store.
-    split. 
-    - simpl.
-      destruct (Int64.eq a a) eqn : I; auto.
-      pose proof Int64.eq_true a.
-      rewrite H11 in I.
+  destruct H6.
+  revert H3; unfold_RELS_tac; intros.
+  destruct H3; [destruct H0 |].
+  + apply (eval_r_both_err_and_nrm _ _ _ H4 H0).
+  + apply (eval_r_both_err_and_nrm _ _ _ H5 H0).
+  + unfold asgn_deref_sem_err in H0.
+    destruct H0 as [v [? ?]].
+    pose proof eval_r_sem_inj _ _ _ _ H0 H4.
+    subst v.
+    clear H0.
+    unfold sepcon in H.
+    destruct H as [s3 [s4 [? [? [? [? ?]]]]]].
+    unfold store in H.
+    destruct H.
+    specialize (H7 a).
+    destruct H7; destruct H7.
+    - rewrite H7 in H1.
+      rewrite H in H1.
       discriminate.
-    - intros.
-      unfold store in H.
-      simpl.
-      destruct (Int64.eq i a) eqn : I.
-      * pose proof Int64.eq_false i a.
-        apply H12 in H11.
-        rewrite H11 in I.
-        discriminate.
-      * destruct H.
-        specialize (H12 i).
-        auto.
-  + split; auto.
-    split.
-    - simpl.
-      rewrite <- H1.
-      apply functional_extensionality.
-      intros.
-      specialize (H7 x0).
-      rewrite H7.
-      tauto.
-    - split.
-      * rewrite <- H9.
-        apply functional_extensionality.
-        intros.
-        specialize (H7 x0).
-        rewrite H7.
-        tauto.
-      * intros.
-        simpl.
-        pose proof Int64.eq_spec i a.
-        destruct (Int64.eq i a) eqn : I.
-        ++  left.
-            pose proof Int64.same_if_eq i a.
-            apply H12 in I; clear H11.
-            subst i.
-            specialize (H10 a).
-            unfold store in H.
-            destruct H.
-            destruct H10; try tauto.
-            destruct H10.
-            rewrite H in H13.
-            discriminate.
-        ++  specialize (H10 i).
-            destruct H10.
-            --  left.
-                specialize (H8 i).
-                pose proof not_eq_sym H11.
-                apply H8 in H12.
-                rewrite <- H12.
-                tauto.
-            --  right. 
-                specialize (H8 i).
-                pose proof not_eq_sym H11.
-                apply H8 in H12.
-                rewrite <- H12.
-                tauto.  
+    - rewrite H in H9.
+      discriminate.
 Qed.
-
-(* Definition var_equal_a(x : var_name)(a : int64) : assertion := 
-  fun s => exists i, (s.(env) x = i) /\ (s.(mem) i = Some (Vint a)). *)
-(*             
-Lemma hoare_asgn_var_fwd_sound:
-  forall (P: assertion) (e: expr) (x : var_name),
-  exists a: int64, (forall (s:state), P s -> ((eval_r e).(nrm) s a)) ->
-  valid (BuildHoareTriple P (CAsgnVar x e) ( andp (var_equal_a x a) (exp(fun u => (assn_subst P x u)) ))).
-Proof.
-Admitted. *)  
-
-(* 
-forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
-(forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
-(forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
-derives P (exp (fun u => (sepcon (store a u) Q) )) ->
-valid ( {{P}} ( * (e1) ::= e2 ) {{(store a (Vint b)) * Q}} ). *)
 
 Lemma hoare_asgn_var_fwd_sound:
   forall (P Q: assertion) (e: expr) (a b: int64) (x : var_name),
@@ -461,7 +548,100 @@ Proof.
   simpl.
   unfold asgn_deref_sem_nrm.
   intros.
-  destruct H3 as [xp [xv [? [? [? [? [? ?]]]]]]].
+  split; intros. {
+    destruct H3 as [xp [xv [? [? [? [? [? ?]]]]]]].
+    unfold derives in H1.
+    specialize (H s1).
+    specialize (H0 s1).
+    specialize (H1 s1).
+    pose proof H2.
+    pose proof H2.
+    pose proof H2.
+    apply H in H9.
+    apply H0 in H10.
+    apply H1 in H11.
+    clear H H0 H1.
+    unfold exp in H11.
+    destruct H11.
+    pose proof eval_r_sem_inj b xv e s1.
+    assert(b = xv) by tauto.
+    subst xv.
+    rewrite H3 in H10.
+    subst xp.
+    clear H0 H4.
+    unfold sepcon.
+    unfold sepcon in H.
+    destruct H as [s11 [s12 ?]].
+    exists (state_subst s11 a (Vint b)), s12.
+    destruct H as [? [? [? [? ?]]]].
+    split.
+    + unfold store.
+      split.
+      - simpl.
+        destruct (Int64.eq a a) eqn : I; auto.
+        pose proof Int64.eq_true a.
+        rewrite H11 in I.
+        discriminate.
+      - intros.
+        unfold store in H.
+        simpl.
+        destruct (Int64.eq i a) eqn : I.
+        * pose proof Int64.eq_false i a.
+          apply H12 in H11.
+          rewrite H11 in I.
+          discriminate.
+        * destruct H.
+          specialize (H12 i).
+          auto.
+    + split; auto.
+      split.
+      - simpl.
+        rewrite <- H1.
+        apply functional_extensionality.
+        intros.
+        specialize (H7 x1).
+        rewrite H7.
+        tauto.
+      - split.
+        * rewrite <- H3.
+          apply functional_extensionality.
+          intros.
+          specialize (H7 x1).
+          rewrite H7.
+          tauto.
+        * intros.
+          simpl.
+          pose proof Int64.eq_spec i a.
+          destruct (Int64.eq i a) eqn : I.
+          ++  left.
+              pose proof Int64.same_if_eq i a.
+              apply H12 in I; clear H11.
+              subst i.
+              specialize (H4 a).
+              unfold store in H.
+              destruct H.
+              subst a.
+              destruct H4; try tauto.
+              destruct H4.
+              rewrite H in H10.
+              discriminate.
+          ++  specialize (H4 i).
+              destruct H4.
+              --  left.
+                  specialize (H8 i).
+                  pose proof not_eq_sym H11.
+                  subst a.
+                  apply H8 in H12.
+                  rewrite <- H12.
+                  tauto.
+              --  right. 
+                  specialize (H8 i).
+                  pose proof not_eq_sym H11.
+                  subst a.
+                  apply H8 in H12.
+                  rewrite <- H12.
+                  tauto.
+  }
   unfold derives in H1.
   specialize (H s1).
   specialize (H0 s1).
@@ -469,91 +649,46 @@ Proof.
   pose proof H2.
   pose proof H2.
   pose proof H2.
-  apply H in H9.
-  apply H0 in H10.
-  apply H1 in H11.
+  apply H in H4.
+  apply H0 in H5.
+  apply H1 in H6.
   clear H H0 H1.
-  unfold exp in H11.
-  destruct H11.
-  pose proof eval_r_sem_inj b xv e s1.
-  assert(b = xv) by tauto.
-  subst xv.
-  rewrite H3 in H10.
-  subst xp.
-  clear H0 H4.
-  unfold sepcon.
-  unfold sepcon in H.
-  destruct H as [s11 [s12 ?]].
-  exists (state_subst s11 a (Vint b)), s12.
-  destruct H as [? [? [? [? ?]]]].
-  split.
-  + unfold store.
-    split.
-    - simpl.
-      destruct (Int64.eq a a) eqn : I; auto.
-      pose proof Int64.eq_true a.
-      rewrite H11 in I.
+  revert H3; unfold_RELS_tac; intros.
+  destruct H3; [destruct H |].
+  + tauto.
+  + apply (eval_r_both_err_and_nrm _ _ _ H4 H).
+  + unfold asgn_deref_sem_err in H.
+    destruct H as [v [? ?]].
+    rewrite H5 in H.
+    subst v.
+    unfold sepcon in H6.
+    unfold exp in H6.
+    destruct H6 as [n [s3 [s4 [? [? [? [? ?]]]]]]].
+    unfold store in H.
+    destruct H.
+    specialize (H7 a).
+    destruct H7; destruct H7.
+    - rewrite H7 in H0.
+      rewrite H in H0.
       discriminate.
-    - intros.
-      unfold store in H.
-      simpl.
-      destruct (Int64.eq i a) eqn : I.
-      * pose proof Int64.eq_false i a.
-        apply H12 in H11.
-        rewrite H11 in I.
-        discriminate.
-      * destruct H.
-        specialize (H12 i).
-        auto.
-  + split; auto.
-    split.
-    - simpl.
-      rewrite <- H1.
-      apply functional_extensionality.
-      intros.
-      specialize (H7 x1).
-      rewrite H7.
-      tauto.
-    - split.
-      * rewrite <- H3.
-        apply functional_extensionality.
-        intros.
-        specialize (H7 x1).
-        rewrite H7.
-        tauto.
-      * intros.
-        simpl.
-        pose proof Int64.eq_spec i a.
-        destruct (Int64.eq i a) eqn : I.
-        ++  left.
-            pose proof Int64.same_if_eq i a.
-            apply H12 in I; clear H11.
-            subst i.
-            specialize (H4 a).
-            unfold store in H.
-            destruct H.
-            subst a.
-            destruct H4; try tauto.
-            destruct H4.
-            rewrite H in H10.
-            discriminate.
-        ++  specialize (H4 i).
-            destruct H4.
-            --  left.
-                specialize (H8 i).
-                pose proof not_eq_sym H11.
-                subst a.
-                apply H8 in H12.
-                rewrite <- H12.
-                tauto.
-            --  right. 
-                specialize (H8 i).
-                pose proof not_eq_sym H11.
-                subst a.
-                apply H8 in H12.
-                rewrite <- H12.
-                tauto.
+    - rewrite H in H9.
+      discriminate.
 Qed.  
+
+Definition exp64 (P: int64 -> assertion): assertion := fun s => exists n:int64, P n s.
+
+Lemma hoare_exist_sound:
+  forall (P : int64 -> assertion) (Q : assertion) (c : com),
+  (forall (a : int64), valid ({{P a}} c {{ Q }} )) ->
+  (valid ( {{ exp64 P }} c {{ Q }}  )).
+Proof.
+  simpl.
+  unfold exp64.
+  intros.
+  destruct H0 as [n ?].
+  specialize (H n s1 s2).
+  tauto.
+Qed.
 
 Lemma hoare_conseq_sound:
   forall (P P' Q Q': assertion) (c: com),
@@ -566,8 +701,14 @@ Proof.
   unfold derives.
   intros.
   apply H0 in H2.
-  specialize (H _ _ H2 H3).
-  apply H1; tauto.
+  split; intros.
+  + specialize (H _ s2 H2).
+    destruct H.
+    specialize (H1 s2).
+    tauto.
+  + specialize (H _ s2 H2).
+    destruct H.
+    tauto.
 Qed.
 
 (** 下面定义可证：*)
@@ -585,10 +726,12 @@ Inductive provable: HoareTriple -> Prop :=
     forall (P Q: assertion) (e: expr) (c1 c2: com),
       provable (BuildHoareTriple (andp P (eb2assn e)) c1 Q) ->
       provable (BuildHoareTriple (andp P (eb2assn_not e)) c2 Q) ->
+      (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
       provable (BuildHoareTriple P (CIf e c1 c2) Q)
 | hoare_while:
     forall (P: assertion) (e: expr) (c: com),
       provable (BuildHoareTriple (andp P (eb2assn e)) c P) ->
+      (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
       provable (BuildHoareTriple P (CWhile e c) (andp P (eb2assn_not e)))
 | hoare_asgn_deref_fwd:
     forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
@@ -607,7 +750,11 @@ Inductive provable: HoareTriple -> Prop :=
       provable {{ P' }} c {{ Q' }} ->
       P |-- P' ->
       Q' |-- Q ->
-      provable {{ P }} c {{ Q }}.
+      provable {{ P }} c {{ Q }}
+| hoare_exist:
+    forall (P : int64 -> assertion) (Q : assertion) (c : com),
+    (forall (a : int64), provable ({{P a}} c {{ Q }} )) ->
+      (provable ( {{ exp64 P }} c {{ Q }}  )).    
 
 (** 将前面证明的结论连接起来，即可证明霍尔逻辑的可靠性。*)
 
@@ -623,6 +770,7 @@ Proof.
   + apply hoare_asgn_deref_fwd_sound; tauto.
   + apply hoare_asgn_var_fwd_sound; tauto.
   + apply (hoare_conseq_sound P P' Q Q'); tauto.
+  + apply (hoare_exist_sound P Q c); tauto.
 Qed.
 
 End HoareWhileD.
@@ -657,8 +805,12 @@ Proof.
   simpl.
   unfold derives.
   intros.
-  apply H0.
-  apply (H s1); tauto.
+  split.
+  + specialize (H s1 s2 H1).
+    specialize (H0 s2).
+    tauto.
+  + specialize (H s1 s2 H1).
+    tauto. 
 Qed.
 
 
@@ -708,4 +860,27 @@ Proof.
   + assn_tauto.
   + assn_tauto H0.
 Qed.
+
+
+(* Example should_not_be_proved:
+  forall (a b : int64)(Q : assertion), 
+  (Assn((store a (Vint (b))) * Q)) |-- Q.
+Proof.
+  simpl.
+  unfold derives.
+  unfold store.
+  unfold sepcon.
+  intros.
+  destruct H as [s1 [s2 ?]].
+  destruct H as [? [? [? [? ?]]]].
+  destruct H.
+  pose proof (H3 a).
+  destruct H5.
+  + destruct H5.
+    rewrite H in H5.
+    
+  + destruct H5.
+    rewrite H in H6.
+    discriminate. *)
+
 End HoareWhileD_Admissible.

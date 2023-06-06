@@ -804,6 +804,856 @@ Proof.
   auto.
 Qed.
 
+Lemma Int64_not_equal_zero:
+  forall (v : int64),
+  v <> Int64.repr 0 ->
+  Int64.signed v <> 0.
+Proof.
+  intros.
+  destruct (Int64.signed v) eqn : J.
+  -- rewrite <- J in H.
+    rewrite Int64.repr_signed in H.
+    contradiction.
+  -- lia.
+  -- lia.
+Qed.
+
+Lemma Int64_not_equal_min_signed:
+  forall (v : int64),
+  v <> Int64.repr Int64.min_signed ->
+  Int64.signed v <> Int64.min_signed.
+Proof.
+  intros.
+  intro.
+  rewrite <- H0 in H.
+  rewrite Int64.repr_signed in H.
+  contradiction.
+Qed.
+
+Lemma eval_r_not_err_pre:
+  forall (n: nat)(e: expr)(s: state),
+  ((eval_r e).(err) s -> False) ->
+  le (rank e) n ->
+  (exists k, (eval_r e).(nrm) s k).
+Proof.
+  induction n; simpl; intros.
+  + destruct e; simpl; intros.
+    - exists (Int64.repr n).
+      simpl in H.
+      assert(Int64.min_signed <= n <= Int64.max_signed) by lia.
+      tauto.
+    - unfold deref_sem_nrm.
+      simpl in H.
+      revert H; unfold_RELS_tac; intros.
+      assert(deref_sem_err (fun (s : state) (i : int64) => s.(env) x = i) s -> False) by tauto.
+      clear H.
+      unfold deref_sem_err in H1.
+      destruct (s.(mem) (s.(env) x)) eqn : I.
+      * destruct v eqn : J.
+        ++ destruct H1.
+           exists (s.(env) x).
+           tauto.
+        ++ exists i, (s.(env) x).
+           tauto.
+      * destruct H1.
+        exists (s.(env) x).
+        tauto.
+    - simpl in H0.
+      lia.
+    - simpl in H0.
+      lia.
+    - simpl in H0.
+      lia.
+    - simpl in H0.
+      lia.
+  + destruct e; simpl; intros.
+    - exists (Int64.repr n0).
+      simpl in H.
+      assert(Int64.min_signed <= n0 <= Int64.max_signed) by lia.
+      tauto.
+    - unfold deref_sem_nrm.
+      simpl in H.
+      revert H; unfold_RELS_tac; intros.
+      assert(deref_sem_err (fun (s : state) (i : int64) => s.(env) x = i) s -> False) by tauto.
+      clear H.
+      unfold deref_sem_err in H1.
+      destruct (s.(mem) (s.(env) x)) eqn : I.
+      * destruct v eqn : J.
+        ++ destruct H1.
+          exists (s.(env) x).
+          tauto.
+        ++ exists i, (s.(env) x).
+          tauto.
+      * destruct H1.
+        exists (s.(env) x).
+        tauto.
+    - destruct op; simpl; intros.
+      * simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        pose proof IHn e1 s H1 H2.
+        destruct H0 as [v1 ?].
+        unfold or_sem_nrm.        
+        unfold SC_or_compute_nrm.
+        unfold NonSC_or.
+        unfold NonSC_compute_nrm.
+        pose proof Int64.eq_spec v1 (Int64.repr 0).
+        destruct (Int64.eq v1 (Int64.repr 0)) eqn : I.
+        ++ assert (or_sem_err (eval_r e1).(nrm) (eval_r e2).(err) s -> False) by tauto.
+           unfold or_sem_err in H5.
+           unfold NonSC_or in H5.
+           assert((eval_r e2).(err) s -> False). {
+             intros.
+             apply H5.
+             exists v1.
+             tauto.
+           }
+           specialize (IHn e2 s H6 H3).
+           destruct IHn.
+           pose proof Int64.eq_spec x (Int64.repr 0).
+           destruct (Int64.eq x (Int64.repr 0)) eqn : J.
+           -- exists (Int64.repr 0), v1.
+              split; auto.
+              right.
+              split; auto.
+              exists x.
+              auto.
+           -- exists (Int64.repr 1), v1.
+              split; auto.
+              right.
+              split; auto.
+              exists x.
+              split; auto.
+              right.
+              split; auto.
+              destruct (Int64.signed x) eqn : K.
+              ** rewrite <- K in H8.
+                  rewrite Int64.repr_signed in H8.
+                  contradiction.
+              ** lia.
+              ** lia.
+        ++ exists (Int64.repr 1), v1.
+           split; [ apply H0 |].
+           left.
+           split; auto.
+           destruct (Int64.signed v1) eqn : J.
+           -- rewrite <- J in H4.
+              rewrite Int64.repr_signed in H4.
+              contradiction.
+           -- lia.
+           -- lia.
+      * simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        pose proof IHn e1 s H1 H2.
+        unfold and_sem_nrm.
+        unfold SC_and_compute_nrm.
+        unfold NonSC_and.
+        unfold NonSC_compute_nrm.
+        destruct H0 as [v1 ?].
+        pose proof Int64.eq_spec v1 (Int64.repr 0).
+        destruct (Int64.eq v1 (Int64.repr 0)) eqn : I.
+        ++ exists (Int64.repr 0), v1.
+           split; [ apply H0 |].
+           left.
+           tauto.
+        ++ assert (and_sem_err (eval_r e1).(nrm) (eval_r e2).(err) s -> False) by tauto.
+           unfold and_sem_err in H5.
+           unfold NonSC_and in H5.
+           assert((eval_r e2).(err) s -> False). {
+             intros.
+             apply H5.
+             exists v1.
+             pose proof Int64_not_equal_zero v1 H4.
+             tauto.
+           }
+           specialize (IHn e2 s H6 H3).
+           destruct IHn.
+           pose proof Int64.eq_spec x (Int64.repr 0).
+           destruct (Int64.eq x (Int64.repr 0)) eqn : J.
+           -- exists (Int64.repr 0), v1.
+              split; auto.
+              right.
+              split. {
+                apply (Int64_not_equal_zero v1 H4).
+              }
+              exists x.
+              auto.
+           -- exists (Int64.repr 1), v1.
+              split; auto.
+              right.
+              split. {
+                apply (Int64_not_equal_zero v1 H4).
+              }
+              exists x.
+              split; auto.
+              right.
+              split; auto.
+              destruct (Int64.signed x) eqn : K.
+              ** rewrite <- K in H8.
+                  rewrite Int64.repr_signed in H8.
+                  contradiction.
+              ** lia.
+              ** lia.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.lt v1 v2) eqn : I.
+        ++ exists (Int64.repr 1), v1, v2.
+           simpl.
+           split; auto; split; auto.
+           destruct (Int64.lt v1 v2) eqn : J.
+           -- reflexivity.
+           -- discriminate.
+        ++ exists (Int64.repr 0), v1, v2.
+           simpl.
+           split; auto; split; auto.
+           destruct (Int64.lt v1 v2) eqn : J.
+           -- discriminate.
+           -- reflexivity.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.lt v2 v1) eqn : I.
+        ++ exists (Int64.repr 0), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v2 v1) eqn : J; simpl.
+          -- reflexivity.
+          -- discriminate.
+        ++ exists (Int64.repr 1), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v2 v1) eqn : J; simpl.
+          -- discriminate.
+          -- reflexivity.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.lt v2 v1) eqn : I.
+        ++ exists (Int64.repr 1), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v2 v1) eqn : J; simpl.
+          -- reflexivity.
+          -- discriminate.
+        ++ exists (Int64.repr 0), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v2 v1) eqn : J; simpl.
+          -- discriminate.
+          -- reflexivity.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.lt v1 v2) eqn : I.
+        ++ exists (Int64.repr 0), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v1 v2) eqn : J; simpl.
+          -- reflexivity.
+          -- discriminate.
+        ++ exists (Int64.repr 1), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.lt v1 v2) eqn : J; simpl.
+          -- discriminate.
+          -- reflexivity.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.eq v1 v2) eqn : I.
+        ++ exists (Int64.repr 1), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.eq v1 v2) eqn : J; simpl.
+          -- reflexivity.
+          -- discriminate.
+        ++ exists (Int64.repr 0), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.eq v1 v2) eqn : J; simpl.
+          -- discriminate.
+          -- reflexivity.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear H IHn.
+        unfold cmp_sem_nrm.
+        unfold cmp_compute_nrm.
+        destruct (Int64.eq v1 v2) eqn : I.
+        ++ exists (Int64.repr 0), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.eq v1 v2) eqn : J; simpl.
+          -- reflexivity.
+          -- discriminate.
+        ++ exists (Int64.repr 1), v1, v2.
+          simpl.
+          split; auto; split; auto.
+          destruct (Int64.eq v1 v2) eqn : J; simpl.
+          -- discriminate.
+          -- reflexivity. 
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear IHn.
+        assert(arith_sem1_err Z.add (eval_r e1).(nrm) (eval_r e2).(nrm) s -> False) by tauto.
+        unfold arith_sem1_err in H6.
+        assert((arith_compute1_err Z.add v1 v2) -> False). {
+          intros.
+          apply H6.
+          exists v1, v2.
+          tauto.
+        }
+        unfold arith_compute1_err in H7.
+        unfold arith_sem1_nrm.
+        unfold arith_compute1_nrm.  
+        exists (Int64.repr (Int64.signed v1 + Int64.signed v2)), v1, v2.
+        split; auto; split; auto; split; auto.
+        lia.
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear IHn.
+        assert(arith_sem1_err Z.sub (eval_r e1).(nrm) (eval_r e2).(nrm) s -> False) by tauto.
+        unfold arith_sem1_err in H6.
+        assert((arith_compute1_err Z.sub v1 v2) -> False). {
+          intros.
+          apply H6.
+          exists v1, v2.
+          tauto.
+        }
+        unfold arith_compute1_err in H7.
+        unfold arith_sem1_nrm.
+        unfold arith_compute1_nrm.  
+        exists (Int64.repr (Int64.signed v1 - Int64.signed v2)), v1, v2.
+        split; auto; split; auto; split; auto.
+        lia.    
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear IHn.
+        assert(arith_sem1_err Z.mul (eval_r e1).(nrm) (eval_r e2).(nrm) s -> False) by tauto.
+        unfold arith_sem1_err in H6.
+        assert((arith_compute1_err Z.mul v1 v2) -> False). {
+          intros.
+          apply H6.
+          exists v1, v2.
+          tauto.
+        }
+        unfold arith_compute1_err in H7.
+        unfold arith_sem1_nrm.
+        unfold arith_compute1_nrm.  
+        exists (Int64.repr (Int64.signed v1 * Int64.signed v2)), v1, v2.
+        split; auto; split; auto; split; auto.
+        lia.            
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear IHn.
+        assert(arith_sem2_err (eval_r e1).(nrm) (eval_r e2).(nrm) s -> False) by tauto.
+        unfold arith_sem2_err in H6.
+        assert((arith_compute2_err v1 v2) -> False). {
+          intros.
+          apply H6.
+          exists v1, v2.
+          tauto.
+        }
+        unfold arith_compute2_err in H7.
+        unfold arith_sem2_nrm.
+        unfold arith_compute2_nrm.  
+        exists (Int64.divs v1 v2), v1, v2.
+        split; auto; split; auto; split; auto.
+        lia.    
+      * simpl in H0.
+        assert ((rank e1 <= n) % nat) by lia.
+        assert ((rank e2 <= n) % nat) by lia.
+        clear H0.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e1).(err) s -> False) by tauto.
+        assert ((eval_r e2).(err) s -> False) by tauto.
+        pose proof IHn e1 s H0 H1.
+        pose proof IHn e2 s H3 H2.
+        destruct H4 as [v1 ?].
+        destruct H5 as [v2 ?].
+        clear IHn.
+        assert(arith_sem2_err (eval_r e1).(nrm) (eval_r e2).(nrm) s -> False) by tauto.
+        unfold arith_sem2_err in H6.
+        assert((arith_compute2_err v1 v2) -> False). {
+          intros.
+          apply H6.
+          exists v1, v2.
+          tauto.
+        }
+        unfold arith_compute2_err in H7.
+        unfold arith_sem2_nrm.
+        unfold arith_compute2_nrm.  
+        exists (Int64.mods v1 v2), v1, v2.
+        split; auto; split; auto; split; auto.
+        lia.  
+    - destruct op; simpl.
+      * simpl in H0.
+        assert ((rank e <= n) % nat) by lia.
+        simpl in H.
+        specialize (IHn e s H H1).
+        destruct IHn as [v ?].
+        unfold not_sem_nrm.
+        unfold not_compute_nrm.
+        pose proof Int64.eq_spec v (Int64.repr 0).
+        destruct (Int64.eq v (Int64.repr 0)).
+        ++ exists (Int64.repr 1), v.
+           tauto.
+        ++ exists (Int64.repr 0), v.
+           split; auto.
+           left.
+           split; auto.
+           apply (Int64_not_equal_zero v H3).
+      * simpl in H0.
+        assert ((rank e <= n) % nat) by lia.
+        simpl in H.
+        revert H; unfold_RELS_tac; intros.
+        assert ((eval_r e).(err) s -> False) by tauto.
+        assert (neg_sem_err (eval_r e).(nrm) s -> False) by tauto.
+        clear H.
+        specialize (IHn e s H2 H1).
+        destruct IHn as [v ?].
+        unfold neg_sem_nrm.
+        unfold neg_compute_nrm.
+        unfold neg_sem_err in H3.
+        unfold neg_compute_err in H3.
+        pose proof Int64.eq_spec v (Int64.repr Int64.min_signed).
+        destruct (Int64.eq v (Int64.repr Int64.min_signed)).
+        ++ destruct H3.
+            exists v.
+            split; auto.
+            rewrite H4.
+            pose proof Int64.signed_range v.
+            rewrite Int64.signed_repr; lia.
+        ++ exists (Int64.neg v), v.
+            split; auto; split; auto.
+            apply (Int64_not_equal_min_signed v).
+            tauto.
+    - simpl in H0.
+      assert ((rank e <= n)%nat) by lia.
+      clear H0.
+      simpl in H.
+      revert H; unfold_RELS_tac; intros.
+      unfold deref_sem_err in H.
+      assert ((eval_r e).(err) s -> False) by tauto.
+      assert ((exists i1 : int64,
+       (eval_r e).(nrm) s i1 /\ (s.(mem) i1 = None \/ s.(mem) i1 = Some Vuninit)) -> False) by tauto.
+      pose proof IHn e s H0 H1.
+      clear IHn H.
+      destruct H3 as [v ?].
+      unfold deref_sem_nrm.
+      destruct (s.(mem) v) eqn : I.
+      * destruct v0.
+        ++ destruct H2.
+              exists v.
+              tauto.
+        ++ exists i, v.
+              tauto.
+      * destruct H2.
+        exists v.
+        tauto.
+    - simpl in H0.
+      assert ((rank e <= n)%nat) by lia.
+      clear H0.
+      simpl in H.
+      revert H.
+      unfold eval_l.
+      destruct e eqn : I.
+      * simpl; unfold_RELS_tac. tauto.
+      * simpl; unfold_RELS_tac. intros.
+        exists (s.(env) x).
+        reflexivity.
+      * simpl; unfold_RELS_tac. tauto.
+      * simpl; unfold_RELS_tac. tauto.
+      * fold eval_r.
+        intros.
+        simpl in H1.
+        assert ((rank e0 <= n)%nat) by lia.
+        pose proof IHn e0 s H H0.
+        tauto.
+      * simpl; unfold_RELS_tac. tauto.
+Qed.
+
+Lemma eval_r_not_err:
+  forall (e: expr)(s: state),
+  ((eval_r e).(err) s -> False) ->
+  (exists k, (eval_r e).(nrm) s k).
+Proof.
+  intros.
+  pose proof eval_r_not_err_pre (rank e) e s.
+  auto.
+Qed.
+
+Lemma eval_r_both_err_and_nrm_pre:
+  forall (n: nat)(e: expr)(s: state)(a: int64),
+  (eval_r e).(nrm) s a ->
+  (eval_r e).(err) s ->
+  le (rank e) n ->
+  False.
+Proof.
+  induction n; intros.
+  + destruct e; simpl; intros.
+    all: simpl in H1.
+    all: try lia.
+    - simpl in H.
+      simpl in H0.
+      lia.
+    - simpl in H.
+      simpl in H0.
+      revert H0; unfold_RELS_tac; intros.
+      destruct H0; auto.
+      unfold deref_sem_err in H0.
+      unfold deref_sem_nrm in H.
+      destruct H as [xp [? ?]].
+      destruct H0 as [xp' [? ?]].
+      subst xp' xp.
+      rewrite H2 in H3.
+      destruct H3; discriminate.
+  + destruct e; simpl; intros.
+    - simpl in H.
+      simpl in H0.
+      lia.
+    - simpl in H.
+      simpl in H0.
+      revert H0; unfold_RELS_tac; intros.
+      destruct H0; auto.
+      unfold deref_sem_err in H0.
+      unfold deref_sem_nrm in H.
+      destruct H as [xp [? ?]].
+      destruct H0 as [xp' [? ?]].
+      subst xp' xp.
+      rewrite H2 in H3.
+      destruct H3; discriminate.
+    - destruct op.
+      all: simpl in H.
+      all: simpl in H0.
+      all: revert H0; unfold_RELS_tac; intros.
+      all: simpl in H1.
+      all: assert((rank e1 <= n)%nat) by lia.
+      all: assert((rank e2 <= n)%nat) by lia.
+      all: simpl in IHn.
+      * unfold or_sem_nrm in H.
+        destruct H as [v1 [? ?]].
+        destruct H0.
+        ++ apply (IHn e1 s v1 H H0 H2).
+        ++ unfold or_sem_err in H0.
+           destruct H0 as [v1' [? [? ?]]].
+           unfold SC_or_compute_nrm in H4.
+           unfold NonSC_or in H4.
+           unfold NonSC_compute_nrm in H4.
+           unfold NonSC_or in H5.
+           pose proof eval_r_sem_inj _ _ _ _ H H0.
+           subst v1 v1'.
+           destruct H4.
+           -- destruct H4.
+              rewrite Int64.signed_repr in H4.
+              contradiction.
+              pose proof Int64.max_signed_pos.
+              pose proof Int64.min_signed_neg.
+              lia.
+           -- destruct H4.
+              destruct H5 as [v2 [? ?]].
+              apply (IHn e2 s v2 H5 H6 H3).
+      * unfold and_sem_nrm in H.
+        destruct H as [v1 [? ?]].
+        destruct H0.
+        ++ apply (IHn e1 s v1 H H0 H2).
+        ++ unfold and_sem_err in H0.
+          destruct H0 as [v1' [? [? ?]]].
+          unfold SC_and_compute_nrm in H4.
+          unfold NonSC_and in H4.
+          unfold NonSC_compute_nrm in H4.
+          unfold NonSC_and in H5.
+          pose proof eval_r_sem_inj _ _ _ _ H H0.
+          subst v1'.
+          destruct H4.
+          -- destruct H4.
+              subst a v1.
+              rewrite Int64.signed_repr in H5.
+              contradiction.
+              pose proof Int64.max_signed_pos.
+              pose proof Int64.min_signed_neg.
+              lia.
+          -- destruct H4.
+              destruct H7 as [v2 [? ?]].
+              apply (IHn e2 s v2 H7 H6 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold cmp_sem_nrm in H.
+        unfold cmp_compute_nrm in H.
+        destruct H as [v1 [v2 [? [? ?]]]].
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+      * unfold arith_sem1_nrm in H.
+        unfold arith_compute1_nrm in H.
+        unfold arith_sem1_err in H0.
+        unfold arith_compute1_err in H0.
+        destruct H as [v1 [v2 [? [? [? ?]]]]].
+        destruct H0. destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+        ++ destruct H0 as [v1' [v2' [? [? ?]]]].
+           pose proof eval_r_sem_inj _ _ _ _ H H0.
+           pose proof eval_r_sem_inj _ _ _ _ H4 H7.
+           subst v1' v2'.
+           lia.
+      * unfold arith_sem1_nrm in H.
+        unfold arith_compute1_nrm in H.
+        unfold arith_sem1_err in H0.
+        unfold arith_compute1_err in H0.
+        destruct H as [v1 [v2 [? [? [? ?]]]]].
+        destruct H0. destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+        ++ destruct H0 as [v1' [v2' [? [? ?]]]].
+          pose proof eval_r_sem_inj _ _ _ _ H H0.
+          pose proof eval_r_sem_inj _ _ _ _ H4 H7.
+          subst v1' v2'.
+          lia.
+      * unfold arith_sem1_nrm in H.
+        unfold arith_compute1_nrm in H.
+        unfold arith_sem1_err in H0.
+        unfold arith_compute1_err in H0.
+        destruct H as [v1 [v2 [? [? [? ?]]]]].
+        destruct H0. destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+        ++ destruct H0 as [v1' [v2' [? [? ?]]]].
+          pose proof eval_r_sem_inj _ _ _ _ H H0.
+          pose proof eval_r_sem_inj _ _ _ _ H4 H7.
+          subst v1' v2'.
+          lia.
+      * unfold arith_sem2_nrm in H.
+        unfold arith_compute2_nrm in H.
+        unfold arith_sem2_err in H0.
+        unfold arith_compute2_err in H0.
+        destruct H as [v1 [v2 [? [? [? ?]]]]].
+        destruct H0. destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+        ++ destruct H0 as [v1' [v2' [? [? ?]]]].
+          pose proof eval_r_sem_inj _ _ _ _ H H0.
+          pose proof eval_r_sem_inj _ _ _ _ H4 H7.
+          subst v1' v2'.
+          lia.        
+      * unfold arith_sem2_nrm in H.
+        unfold arith_compute2_nrm in H.
+        unfold arith_sem2_err in H0.
+        unfold arith_compute2_err in H0.
+        destruct H as [v1 [v2 [? [? [? ?]]]]].
+        destruct H0. destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ apply (IHn _ _ _ H4 H0 H3).
+        ++ destruct H0 as [v1' [v2' [? [? ?]]]].
+          pose proof eval_r_sem_inj _ _ _ _ H H0.
+          pose proof eval_r_sem_inj _ _ _ _ H4 H7.
+          subst v1' v2'.
+          lia.
+    - destruct op; simpl; intros.
+      all: simpl in H, H0, H1.
+      all: assert ((rank e <= n)%nat) by lia.
+      * unfold not_sem_nrm in H.
+        destruct H as [v1 [? ?]].
+        apply (IHn _ _ _ H H0 H2).
+      * unfold neg_sem_nrm in H.
+        destruct H as [v1 [? ?]].
+        revert H0; unfold_RELS_tac; intros.
+        unfold neg_compute_nrm in H3.
+        destruct H3.
+        destruct H0.
+        ++ apply (IHn _ _ _ H H0 H2).
+        ++ unfold neg_sem_err in H0.
+           destruct H0 as [v1' [? ?]].
+           pose proof eval_r_sem_inj _ _ _ _ H H0.
+           subst v1'.
+           unfold neg_compute_err in H5.
+           lia.
+    - simpl in H, H0, H1.
+      assert ((rank e <= n)%nat) by lia.
+      revert H0; unfold_RELS_tac; intros.
+      unfold deref_sem_nrm in H.
+      destruct H as [v1 [? ?]].
+      destruct H0.
+      * apply (IHn _ _ _ H H0 H2).
+      * unfold deref_sem_err in H0.
+        destruct H0 as [v1' [? ?]].
+        pose proof eval_r_sem_inj _ _ _ _ H H0; subst v1'.
+        rewrite H3 in H4; destruct H4; discriminate.
+    - simpl in H, H0, H1.
+      assert ((rank e <= n)%nat) by lia.
+      revert H H0.
+      unfold eval_l.
+      destruct e eqn : I.
+      * simpl; unfold_RELS_tac; contradiction.
+      * simpl; unfold_RELS_tac; contradiction.
+      * simpl; unfold_RELS_tac; contradiction.
+      * simpl; unfold_RELS_tac; contradiction.
+      * fold eval_r.
+        simpl in H2.
+        assert ((rank e0 <= n)%nat) by lia.
+        intros.
+        apply (IHn _ _ _ H0 H3 H).
+      * simpl; unfold_RELS_tac; contradiction.
+Qed.
+
+Lemma eval_r_both_err_and_nrm:
+  forall (e: expr)(s: state)(a: int64),
+  (eval_r e).(nrm) s a ->
+  (eval_r e).(err) s ->
+  False.
+Proof.
+  intros.
+  pose proof eval_r_both_err_and_nrm_pre (rank e) e s a.
+  auto.
+Qed.
 
 (** 这里_[test_true]_与_[test_false]_的定义不变，不过之后只会将其作用在表达式的
     右值上。*)
@@ -944,7 +1794,7 @@ Definition asgn_deref_sem
   {|
     nrm := asgn_deref_sem_nrm D1.(nrm) D2.(nrm);
     err := D1.(err) ∪ D2.(err) ∪
-           asgn_deref_sem_err D2.(nrm);
+           asgn_deref_sem_err D1.(nrm);
     inf := ∅;
   |}.
 
