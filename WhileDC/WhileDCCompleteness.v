@@ -343,8 +343,19 @@ Qed.
 
 Lemma for_P_to_R:
   forall (e:expr)(c1 c2 c3:com)(H:assertion),
-    ((eval_com) c1).(brk) = ∅ -> ((eval_com) c1).(cnt) = ∅ ->
-    ((eval_com) c2).(brk) = ∅ -> ((eval_com) c2).(cnt) = ∅ ->
+    valid (BuildHoareTriple
+      (wp (c1) (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false)
+      c1
+      (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false).
+Proof.
+  intros.
+  pose proof wp_is_precondition.
+  specialize (H0 c1 (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false).
+  tauto.
+Qed.
+
+(* Lemma for_P_to_R:
+  forall (e:expr)(c1 c2 c3:com)(H:assertion),
     valid (BuildHoareTriple
       (wp (CFor c1 e c2 c3) H asrt_false asrt_false)
       c1
@@ -354,12 +365,18 @@ Proof.
   unfold wp.
   unfold asrt_false.
   intros.
+  (* assert(((eval_com) c1).(brk) = ∅). {
+    pose proof wp_is_precondition (CFor c1 e c2 c3) H asrt_false asrt_false.
+    simpl in H1.
+    revert H1; unfold wp; unfold_RELS_tac; intros.
+
+  }
   pose proof H0 as H00.
   pose proof H1 as H01.
   pose proof H2 as H02.
   pose proof H3 as H03.
   clear H0 H1 H2 H3.
-  pose proof H4. clear H4.
+  pose proof H4. clear H4. *)
   destruct H0 as [? [? [? ?]]].
   split. {
     intros.
@@ -420,11 +437,10 @@ Proof.
   intros.
   rewrite H01 in H4.
   revert H4; unfold_RELS_tac; tauto.
-Qed.
+Qed. *)
 
 Lemma for_R_to_Q:
   forall (e:expr)(c2 c3:com)(H:assertion),
-    ((eval_com) c2).(brk) = ∅ -> ((eval_com) c2).(cnt) = ∅ ->
     valid (BuildHoareTriple
       (andp (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) (eb2assn e))
       c3
@@ -435,6 +451,8 @@ Proof.
   simpl.
   unfold wp, asrt_false, andp, eb2assn.
   intros.
+  pose proof H0 as H1.
+  pose proof H0 as H2.
   destruct H2 as [? ?].
   destruct H2 as [? [? [? ?]]].
   split. {
@@ -525,6 +543,7 @@ Proof.
       simpl.
       unfold_RELS_tac; tauto.
     }
+    simpl in H5,H6.
     rewrite H0, H1.
     unfold_RELS_tac; tauto.
   }
@@ -1364,16 +1383,36 @@ Proof.
     right.
     tauto.
   + pose proof hoare_for
-    (wp (CFor c1 e c2 c3) Q asrt_false asrt_false)
+    (wp (c1) (wp (CFor CSkip e c2 c3) Q asrt_false asrt_false) asrt_false asrt_false)
     (wp c2 (wp (CFor CSkip e c2 c3) Q asrt_false asrt_false) asrt_false asrt_false)
     (wp (CFor CSkip e c2 c3) Q asrt_false asrt_false)
     Q e c1 c2 c3.
     assert(    provable
-    {{(wp (CFor c1 e c2 c3) Q asrt_false asrt_false)}}
-    for {c1} e {c2}{c3}
-    {{(orp (andp (wp (CFor CSkip e c2 c3) Q asrt_false asrt_false) (eb2assn_not e)) Q), asrt_false,
-    asrt_false}}). {
-      apply H.
+    {{(wp c1 (wp (CFor CSkip e c2 c3) Q asrt_false asrt_false)
+         asrt_false asrt_false)}} for {c1} e {c2}{c3}
+    {{(orp
+         (andp (wp (CFor CSkip e c2 c3) Q asrt_false
+                  asrt_false) (eb2assn_not e)) Q),
+    asrt_false, asrt_false}}). {
+      apply H; clear H.
+      + pose proof for_P_to_R e c1 c2 c3 Q.
+        apply IHc1.
+        unfold valid in H.
+        tauto.
+      + intros.
+        unfold wp in H.
+        destruct H as [? [? [? ?]]].
+        apply H.
+        simpl.
+        unfold_RELS_tac.
+        right.
+        exists s. split; auto.
+        exists (S O).
+        simpl.
+        unfold_RELS_tac; right; tauto.
+      + apply IHc3.
+        pose proof for_R_to_Q.
+
     }
   + pose proof hoare_do_while (wp (CDoWhile c e) Q asrt_false asrt_false) (wp (CWhile e c) Q asrt_false asrt_false) Q e c.
     assert(    provable

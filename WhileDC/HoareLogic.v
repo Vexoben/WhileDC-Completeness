@@ -737,16 +737,12 @@ Lemma hoare_for_sound:
   (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
   valid (BuildHoareTriple (andp R (eb2assn e)) c3 Q R_brk Q) ->
   valid (BuildHoareTriple Q c2 R asrt_false asrt_false) ->
-  ((eval_com) c1).(brk) = ∅ -> ((eval_com) c1).(cnt) = ∅ ->
-  ((eval_com) c2).(brk) = ∅ -> ((eval_com) c2).(cnt) = ∅ ->
   valid (BuildHoareTriple P (CFor c1 e c2 c3) (orp (andp R (eb2assn_not e)) R_brk) asrt_false asrt_false).
 Proof.
   simpl.
   unfold_RELS_tac.
   unfold asrt_false.
   intros.
-  clear H3 H4 H5 H6.
-  pose proof H7. clear H7.
   specialize (H s1 H3).
   destruct H as [? [? [? ?]]].
   split. {
@@ -1277,8 +1273,6 @@ Inductive provable: HoareTriple -> Prop :=
       (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
       provable (BuildHoareTriple (andp R (eb2assn e)) c3 Q R_brk Q) ->
       provable (BuildHoareTriple Q c2 R asrt_false asrt_false) ->
-      ((eval_com) c1).(brk) = ∅ -> ((eval_com) c1).(cnt) = ∅ ->
-      ((eval_com) c2).(brk) = ∅ -> ((eval_com) c2).(cnt) = ∅ ->    
       provable (BuildHoareTriple P (CFor c1 e c2 c3) (orp (andp R (eb2assn_not e)) R_brk) asrt_false asrt_false)    
 | hoare_asgn_deref_fwd:
     forall (P Q : assertion) (e1 e2 : expr) (a b: int64),

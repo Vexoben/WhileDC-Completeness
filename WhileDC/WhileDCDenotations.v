@@ -595,21 +595,21 @@ Fixpoint iter_nrm_lt_n
   end.
 
 Fixpoint iter_err_lt_n
-           (D0: EDenote)
-           (D1: CDenote)
-           (D2: CDenote)
-           (n: nat): state -> Prop :=
-  match n with
+  (D0: EDenote)
+  (D1: CDenote)
+  (D2: CDenote)
+  (n: nat): state -> Prop :=
+match n with
   | O => ∅
   | S n0 =>
-     (test_true D0 ∘
-        ((D2.(nrm) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-         (D2.(cnt) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-         (D2.(nrm) ∘ D1.(err)) ∪
-         (D2.(cnt) ∘ D1.(err)) ∪
-         D2.(err))) ∪
+    (test_true D0 ∘
+      ((D2.(nrm) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
+      (D2.(cnt) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
+      (D2.(nrm) ∘ D1.(err)) ∪
+      (D2.(cnt) ∘ D1.(err)) ∪
+      D2.(err))) ∪
       D0.(err)
-  end.
+end.
 
 Definition is_inf
              (D0: EDenote)

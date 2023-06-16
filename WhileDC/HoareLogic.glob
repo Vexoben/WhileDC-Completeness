@@ -1,4 +1,4 @@
-DIGEST cfa9e4c92dcdadf95c4cde4086d2bafb
+DIGEST 831586ab0292887017edde370896bd31
 FPV.HoareLogic
 R15:38 Coq.Logic.Classical_Prop <> <> lib
 R56:89 Coq.Logic.FunctionalExtensionality <> <> lib
@@ -957,50 +957,22 @@ R20781:20781 Coq.Init.Logic <> ::type_scope:x_'->'_x not
 R20835:20841 Coq.Init.Logic <> ::type_scope:x_'->'_x not
 R20900:20905 Coq.Init.Logic <> ::type_scope:x_'->'_x not
 R20959:20964 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R20992:20995 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R21023:21028 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R21056:21059 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R21087:21092 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R21093:21097 PV.HoareLogic HoareWhileDC valid def
-R21100:21115 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R21185:21194 PV.HoareLogic HoareWhileDC asrt_false def
-R21174:21183 PV.HoareLogic HoareWhileDC asrt_false def
-R21138:21140 PV.HoareLogic HoareWhileDC orp def
-R21167:21171 PV.HoareLogic <> R_brk:104 var
-R21143:21146 PV.HoareLogic HoareWhileDC andp def
-R21151:21161 PV.HoareLogic HoareWhileDC eb2assn_not def
-R21163:21163 PV.HoareLogic <> e:105 var
-R21148:21148 PV.HoareLogic <> R:103 var
-R21120:21123 PV.Syntax Lang_WhileDC CFor constr
-R21133:21134 PV.HoareLogic <> c3:108 var
-R21130:21131 PV.HoareLogic <> c2:107 var
-R21128:21128 PV.HoareLogic <> e:105 var
-R21125:21126 PV.HoareLogic <> c1:106 var
-R21117:21117 PV.HoareLogic <> P:101 var
-R21081:21083 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R21060:21060 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R21074:21080 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R21062:21069 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R21072:21073 PV.HoareLogic <> c2:107 var
-R21084:21086 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R21050:21052 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R21029:21029 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R21043:21049 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R21031:21038 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R21041:21042 PV.HoareLogic <> c2:107 var
-R21053:21055 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R21017:21019 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20996:20996 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R21010:21016 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R20998:21005 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R21008:21009 PV.HoareLogic <> c1:106 var
-R21020:21022 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R20986:20988 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20965:20965 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R20979:20985 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R20967:20974 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R20977:20978 PV.HoareLogic <> c1:106 var
-R20989:20991 SetsClass.SetsDomain <> ::sets_scope:'∅' not
+R20965:20969 PV.HoareLogic HoareWhileDC valid def
+R20972:20987 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R21057:21066 PV.HoareLogic HoareWhileDC asrt_false def
+R21046:21055 PV.HoareLogic HoareWhileDC asrt_false def
+R21010:21012 PV.HoareLogic HoareWhileDC orp def
+R21039:21043 PV.HoareLogic <> R_brk:104 var
+R21015:21018 PV.HoareLogic HoareWhileDC andp def
+R21023:21033 PV.HoareLogic HoareWhileDC eb2assn_not def
+R21035:21035 PV.HoareLogic <> e:105 var
+R21020:21020 PV.HoareLogic <> R:103 var
+R20992:20995 PV.Syntax Lang_WhileDC CFor constr
+R21005:21006 PV.HoareLogic <> c3:108 var
+R21002:21003 PV.HoareLogic <> c2:107 var
+R21000:21000 PV.HoareLogic <> e:105 var
+R20997:20998 PV.HoareLogic <> c1:106 var
+R20989:20989 PV.HoareLogic <> P:101 var
 R20906:20910 PV.HoareLogic HoareWhileDC valid def
 R20913:20928 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
 R20948:20957 PV.HoareLogic HoareWhileDC asrt_false def
@@ -1037,1269 +1009,1241 @@ R20753:20762 PV.HoareLogic HoareWhileDC asrt_false def
 R20751:20751 PV.HoareLogic <> R:103 var
 R20748:20749 PV.HoareLogic <> c1:106 var
 R20746:20746 PV.HoareLogic <> P:101 var
-R21242:21251 PV.HoareLogic HoareWhileDC asrt_false def
-R21782:21790 PV.WhileDCDenotations DntSem_WhileDC test_true def
-R22037:22040 PV.HoareLogic HoareWhileDC andp def
-R22045:22051 PV.HoareLogic HoareWhileDC eb2assn def
-R22037:22040 PV.HoareLogic HoareWhileDC andp def
-R22045:22051 PV.HoareLogic HoareWhileDC eb2assn def
-R22087:22093 PV.HoareLogic HoareWhileDC eb2assn def
-R22096:22099 PV.HoareLogic HoareWhileDC andp def
-R22553:22556 PV.HoareLogic HoareWhileDC andp def
-R22561:22567 PV.HoareLogic HoareWhileDC eb2assn def
-R22553:22556 PV.HoareLogic HoareWhileDC andp def
-R22561:22567 PV.HoareLogic HoareWhileDC eb2assn def
-R22603:22609 PV.HoareLogic HoareWhileDC eb2assn def
-R22612:22615 PV.HoareLogic HoareWhileDC andp def
-R23012:23015 PV.HoareLogic HoareWhileDC andp def
-R23020:23026 PV.HoareLogic HoareWhileDC eb2assn def
-R23012:23015 PV.HoareLogic HoareWhileDC andp def
-R23020:23026 PV.HoareLogic HoareWhileDC eb2assn def
-R23060:23066 PV.HoareLogic HoareWhileDC eb2assn def
-R23069:23072 PV.HoareLogic HoareWhileDC andp def
-R23383:23386 PV.HoareLogic HoareWhileDC andp def
-R23391:23397 PV.HoareLogic HoareWhileDC eb2assn def
-R23383:23386 PV.HoareLogic HoareWhileDC andp def
-R23391:23397 PV.HoareLogic HoareWhileDC eb2assn def
-R23431:23437 PV.HoareLogic HoareWhileDC eb2assn def
-R23440:23443 PV.HoareLogic HoareWhileDC andp def
-R23715:23718 PV.HoareLogic HoareWhileDC andp def
-R23723:23729 PV.HoareLogic HoareWhileDC eb2assn def
-R23715:23718 PV.HoareLogic HoareWhileDC andp def
-R23723:23729 PV.HoareLogic HoareWhileDC eb2assn def
-R23763:23769 PV.HoareLogic HoareWhileDC eb2assn def
-R23772:23775 PV.HoareLogic HoareWhileDC andp def
-R24048:24050 PV.HoareLogic HoareWhileDC orp def
-R24322:24330 PV.WhileDCDenotations DntSem_WhileDC test_true def
-R24519:24522 PV.HoareLogic HoareWhileDC andp def
-R24527:24533 PV.HoareLogic HoareWhileDC eb2assn def
-R24519:24522 PV.HoareLogic HoareWhileDC andp def
-R24527:24533 PV.HoareLogic HoareWhileDC eb2assn def
-R24565:24571 PV.HoareLogic HoareWhileDC eb2assn def
-R24574:24577 PV.HoareLogic HoareWhileDC andp def
-R24983:24986 PV.HoareLogic HoareWhileDC andp def
-R24991:24997 PV.HoareLogic HoareWhileDC eb2assn def
-R24983:24986 PV.HoareLogic HoareWhileDC andp def
-R24991:24997 PV.HoareLogic HoareWhileDC eb2assn def
-R25029:25035 PV.HoareLogic HoareWhileDC eb2assn def
-R25038:25041 PV.HoareLogic HoareWhileDC andp def
-R25375:25378 PV.HoareLogic HoareWhileDC andp def
-R25383:25389 PV.HoareLogic HoareWhileDC eb2assn def
-R25375:25378 PV.HoareLogic HoareWhileDC andp def
-R25383:25389 PV.HoareLogic HoareWhileDC eb2assn def
-R25421:25427 PV.HoareLogic HoareWhileDC eb2assn def
-R25430:25433 PV.HoareLogic HoareWhileDC andp def
-R25624:25627 PV.HoareLogic HoareWhileDC andp def
-R25653:25662 PV.WhileDCDenotations DntSem_WhileDC test_false def
-R25672:25682 PV.HoareLogic HoareWhileDC eb2assn_not def
-R25771:25780 compcert.lib.Integers Int64 repr def
-R25771:25780 compcert.lib.Integers Int64 repr def
-def 25828:25838 HoareWhileDC state_subst
-R25843:25847 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 25840:25840 <> s:110
-R25852:25856 compcert.lib.Integers <> int64 syndef
-binder 25850:25850 <> p:111
-R25861:25863 PV.WhileDCDenotations DntSem_WhileDC val ind
-binder 25859:25859 <> a:112
-R25868:25872 PV.WhileDCDenotations DntSem_WhileDC state rec
-R25886:25888 PV.WhileDCDenotations DntSem_WhileDC env proj
-R25886:25888 PV.WhileDCDenotations DntSem_WhileDC env proj
-R25906:25908 PV.WhileDCDenotations DntSem_WhileDC mem proj
-binder 25917:25917 <> x:113
-R25926:25933 compcert.lib.Integers Int64 eq def
-R25937:25937 PV.HoareLogic <> p:111 var
-R25935:25935 PV.HoareLogic <> x:113 var
-R25960:25967 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(mem)' not
-R25959:25959 PV.HoareLogic <> s:110 var
-R25967:25967 PV.HoareLogic <> x:113 var
-R25946:25949 Coq.Init.Datatypes <> Some constr
-R25951:25951 PV.HoareLogic <> a:112 var
-R25894:25899 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
-R25893:25893 PV.HoareLogic <> s:110 var
-def 25990:25999 HoareWhileDC assn_subst
-R26005:26013 PV.HoareLogic HoareWhileDC assertion def
-binder 26002:26002 <> P:114
-R26020:26027 PV.Syntax Lang_While var_name def
-binder 26017:26017 <> x:115
-R26034:26036 PV.WhileDCDenotations DntSem_WhileDC val ind
-binder 26031:26031 <> v:116
-R26040:26048 PV.HoareLogic HoareWhileDC assertion def
-binder 26059:26059 <> s:117
-R26068:26068 PV.HoareLogic <> P:114 var
-R26071:26081 PV.HoareLogic HoareWhileDC state_subst def
-R26097:26097 PV.HoareLogic <> v:116 var
-R26087:26094 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
-R26086:26086 PV.HoareLogic <> s:117 var
-R26094:26094 PV.HoareLogic <> x:115 var
-R26083:26083 PV.HoareLogic <> s:117 var
-prf 26108:26133 HoareWhileDC hoare_asgn_deref_fwd_sound
-R26152:26160 PV.HoareLogic HoareWhileDC assertion def
-binder 26146:26146 <> P:118
-binder 26148:26148 <> Q:119
-R26172:26175 PV.Syntax Lang_WhileDC expr ind
-binder 26164:26165 <> e1:120
-binder 26167:26168 <> e2:121
-R26184:26188 compcert.lib.Integers <> int64 syndef
-binder 26179:26179 <> a:122
-binder 26181:26181 <> b:123
-R26196:26196 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26245:26253 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26254:26254 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26303:26311 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26362:26369 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26370:26374 PV.HoareLogic HoareWhileDC valid def
-R26378:26379 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26381:26383 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26401:26403 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26426:26427 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26438:26439 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26450:26451 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R26380:26380 PV.HoareLogic <> P:118 var
-R26384:26385 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R26399:26400 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R26386:26387 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
-R26392:26396 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
-R26388:26388 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R26391:26391 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R26389:26390 PV.HoareLogic <> e1:120 var
-R26397:26398 PV.HoareLogic <> e2:121 var
-R26422:26424 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
-R26404:26404 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R26421:26421 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R26412:26412 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R26413:26413 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R26420:26420 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R26418:26418 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R26419:26419 PV.HoareLogic <> b:123 var
-R26414:26417 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R26410:26410 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R26411:26411 PV.HoareLogic <> a:122 var
-R26405:26409 PV.HoareLogic HoareWhileDC store def
-R26425:26425 PV.HoareLogic <> Q:119 var
-R26428:26437 PV.HoareLogic HoareWhileDC asrt_false def
-R26440:26449 PV.HoareLogic HoareWhileDC asrt_false def
-R26312:26318 PV.HoareLogic HoareWhileDC derives def
-R26323:26325 PV.HoareLogic HoareWhileDC exp def
-binder 26332:26332 <> u:124
-R26338:26343 PV.HoareLogic HoareWhileDC sepcon def
-R26357:26357 PV.HoareLogic <> Q:119 var
-R26346:26350 PV.HoareLogic HoareWhileDC store def
-R26354:26354 PV.HoareLogic <> u:124 var
-R26352:26352 PV.HoareLogic <> a:122 var
-R26320:26320 PV.HoareLogic <> P:118 var
-R26265:26269 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 26263:26263 <> s:125
-R26276:26280 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26302:26302 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26281:26281 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R26291:26301 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R26282:26287 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R26289:26290 PV.HoareLogic <> e2:121 var
-R26301:26301 PV.HoareLogic <> b:123 var
-R26299:26299 PV.HoareLogic <> s:125 var
-R26273:26273 PV.HoareLogic <> P:118 var
-R26275:26275 PV.HoareLogic <> s:125 var
-R26207:26211 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 26205:26205 <> s:126
-R26218:26222 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26244:26244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26223:26223 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R26233:26243 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R26224:26229 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R26231:26232 PV.HoareLogic <> e1:120 var
-R26243:26243 PV.HoareLogic <> a:122 var
-R26241:26241 PV.HoareLogic <> s:126 var
-R26215:26215 PV.HoareLogic <> P:118 var
-R26217:26217 PV.HoareLogic <> s:126 var
-R26481:26498 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_nrm def
-R26520:26522 PV.HoareLogic HoareWhileDC exp def
-R26561:26567 PV.HoareLogic HoareWhileDC derives def
-R26886:26908 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R26886:26908 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R26937:26959 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R26937:26959 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R26988:27005 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_err def
-R27063:27076 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27063:27076 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27137:27142 PV.HoareLogic HoareWhileDC sepcon def
-R27212:27216 PV.HoareLogic HoareWhileDC store def
-R27529:27535 PV.HoareLogic HoareWhileDC derives def
-R27781:27786 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R27800:27805 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R27800:27805 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R27829:27842 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27829:27842 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27870:27872 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R27870:27872 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R27901:27914 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27901:27914 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R27942:27944 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R27942:27944 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R28011:28016 PV.HoareLogic HoareWhileDC sepcon def
-R28030:28035 PV.HoareLogic HoareWhileDC sepcon def
-R28088:28098 PV.HoareLogic HoareWhileDC state_subst def
-R28107:28110 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R28088:28098 PV.HoareLogic HoareWhileDC state_subst def
-R28107:28110 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R28183:28187 PV.HoareLogic HoareWhileDC store def
-R28237:28244 compcert.lib.Integers Int64 eq def
-R28237:28244 compcert.lib.Integers Int64 eq def
-R28285:28297 compcert.lib.Integers Int64 eq_true thm
-R28285:28297 compcert.lib.Integers Int64 eq_true thm
-R28381:28385 PV.HoareLogic HoareWhileDC store def
-R28426:28433 compcert.lib.Integers Int64 eq def
-R28426:28433 compcert.lib.Integers Int64 eq def
-R28470:28483 compcert.lib.Integers Int64 eq_false thm
-R28470:28483 compcert.lib.Integers Int64 eq_false thm
-R28722:28746 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R28722:28746 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R28884:28908 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R28884:28908 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R29054:29066 compcert.lib.Integers Int64 eq_spec thm
-R29054:29066 compcert.lib.Integers Int64 eq_spec thm
-R29093:29100 compcert.lib.Integers Int64 eq def
-R29093:29100 compcert.lib.Integers Int64 eq def
-R29161:29176 compcert.lib.Integers Int64 same_if_eq thm
-R29161:29176 compcert.lib.Integers Int64 same_if_eq thm
-R29302:29306 PV.HoareLogic HoareWhileDC store def
-R29619:29628 Coq.Init.Logic <> not_eq_sym thm
-R29619:29628 Coq.Init.Logic <> not_eq_sym thm
-R29821:29830 Coq.Init.Logic <> not_eq_sym thm
-R29821:29830 Coq.Init.Logic <> not_eq_sym thm
-prf 30064:30087 HoareWhileDC hoare_asgn_var_fwd_sound
-R30105:30113 PV.HoareLogic HoareWhileDC assertion def
-binder 30100:30100 <> P:127
-binder 30102:30102 <> Q:128
-R30120:30123 PV.Syntax Lang_WhileDC expr ind
-binder 30117:30117 <> e:129
-R30132:30136 compcert.lib.Integers <> int64 syndef
-binder 30127:30127 <> a:130
-binder 30129:30129 <> b:131
-R30144:30151 PV.Syntax Lang_While var_name def
-binder 30140:30140 <> x:132
-R30157:30157 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30205:30211 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30212:30212 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30251:30257 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30308:30313 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30314:30318 PV.HoareLogic HoareWhileDC valid def
-R30322:30323 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30325:30327 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30339:30341 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30364:30365 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30376:30377 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30388:30389 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R30324:30324 PV.HoareLogic <> P:127 var
-R30328:30329 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R30337:30338 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R30330:30330 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R30336:30336 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R30332:30334 PV.HoareLogic HoareWhileDC :expr_entry::x_'='_x not
-R30331:30331 PV.HoareLogic <> x:132 var
-R30335:30335 PV.HoareLogic <> e:129 var
-R30360:30362 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
-R30342:30342 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R30359:30359 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R30350:30350 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R30351:30351 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R30358:30358 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R30356:30356 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R30357:30357 PV.HoareLogic <> b:131 var
-R30352:30355 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R30348:30348 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R30349:30349 PV.HoareLogic <> a:130 var
-R30343:30347 PV.HoareLogic HoareWhileDC store def
-R30363:30363 PV.HoareLogic <> Q:128 var
-R30366:30375 PV.HoareLogic HoareWhileDC asrt_false def
-R30378:30387 PV.HoareLogic HoareWhileDC asrt_false def
-R30258:30264 PV.HoareLogic HoareWhileDC derives def
-R30269:30271 PV.HoareLogic HoareWhileDC exp def
-binder 30278:30278 <> u:133
-R30284:30289 PV.HoareLogic HoareWhileDC sepcon def
-R30303:30303 PV.HoareLogic <> Q:128 var
-R30292:30296 PV.HoareLogic HoareWhileDC store def
-R30300:30300 PV.HoareLogic <> u:133 var
-R30298:30298 PV.HoareLogic <> a:130 var
-R30266:30266 PV.HoareLogic <> P:127 var
-R30223:30227 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 30221:30221 <> s:134
-R30234:30237 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30247:30249 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R30239:30246 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
-R30238:30238 PV.HoareLogic <> s:134 var
-R30246:30246 PV.HoareLogic <> x:132 var
-R30250:30250 PV.HoareLogic <> a:130 var
-R30231:30231 PV.HoareLogic <> P:127 var
-R30233:30233 PV.HoareLogic <> s:134 var
-R30168:30172 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 30166:30166 <> s:135
-R30179:30183 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30204:30204 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R30184:30184 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R30193:30203 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R30185:30190 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R30192:30192 PV.HoareLogic <> e:129 var
-R30203:30203 PV.HoareLogic <> b:131 var
-R30201:30201 PV.HoareLogic <> s:135 var
-R30176:30176 PV.HoareLogic <> P:127 var
-R30178:30178 PV.HoareLogic <> s:135 var
-R30418:30435 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_nrm def
-R30478:30484 PV.HoareLogic HoareWhileDC derives def
-R30798:30820 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R30798:30820 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
-R30848:30865 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_err def
-R30955:30960 PV.HoareLogic HoareWhileDC sepcon def
-R30982:30984 PV.HoareLogic HoareWhileDC exp def
-R31060:31064 PV.HoareLogic HoareWhileDC store def
-R31353:31359 PV.HoareLogic HoareWhileDC derives def
-R31587:31589 PV.HoareLogic HoareWhileDC exp def
-R31632:31645 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R31632:31645 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
-R31670:31672 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R31670:31672 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R31766:31771 PV.HoareLogic HoareWhileDC sepcon def
-R31785:31790 PV.HoareLogic HoareWhileDC sepcon def
-R31843:31853 PV.HoareLogic HoareWhileDC state_subst def
-R31862:31865 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R31843:31853 PV.HoareLogic HoareWhileDC state_subst def
-R31862:31865 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R31938:31942 PV.HoareLogic HoareWhileDC store def
-R31991:31998 compcert.lib.Integers Int64 eq def
-R31991:31998 compcert.lib.Integers Int64 eq def
-R32039:32051 compcert.lib.Integers Int64 eq_true thm
-R32039:32051 compcert.lib.Integers Int64 eq_true thm
-R32135:32139 PV.HoareLogic HoareWhileDC store def
-R32180:32187 compcert.lib.Integers Int64 eq def
-R32180:32187 compcert.lib.Integers Int64 eq def
-R32224:32237 compcert.lib.Integers Int64 eq_false thm
-R32224:32237 compcert.lib.Integers Int64 eq_false thm
-R32476:32500 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R32476:32500 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R32638:32662 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R32638:32662 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
-R32808:32820 compcert.lib.Integers Int64 eq_spec thm
-R32808:32820 compcert.lib.Integers Int64 eq_spec thm
-R32847:32854 compcert.lib.Integers Int64 eq def
-R32847:32854 compcert.lib.Integers Int64 eq def
-R32915:32930 compcert.lib.Integers Int64 same_if_eq thm
-R32915:32930 compcert.lib.Integers Int64 same_if_eq thm
-R33055:33059 PV.HoareLogic HoareWhileDC store def
-R33391:33400 Coq.Init.Logic <> not_eq_sym thm
-R33391:33400 Coq.Init.Logic <> not_eq_sym thm
-R33620:33629 Coq.Init.Logic <> not_eq_sym thm
-R33620:33629 Coq.Init.Logic <> not_eq_sym thm
-def 33895:33899 HoareWhileDC exp64
-R33910:33913 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R33914:33922 PV.HoareLogic HoareWhileDC assertion def
-R33905:33909 compcert.lib.Integers <> int64 syndef
-binder 33902:33902 <> P:136
-R33926:33934 PV.HoareLogic HoareWhileDC assertion def
-binder 33943:33943 <> s:137
-R33948:33954 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R33962:33963 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R33957:33961 compcert.lib.Integers <> int64 syndef
-binder 33955:33955 <> n:138
-R33964:33964 PV.HoareLogic <> P:136 var
-R33968:33968 PV.HoareLogic <> s:137 var
-R33966:33966 PV.HoareLogic <> n:138 var
-prf 33978:33994 HoareWhileDC hoare_exist_sound
-R34016:34019 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34020:34028 PV.HoareLogic HoareWhileDC assertion def
-R34011:34015 compcert.lib.Integers <> int64 syndef
-binder 34007:34007 <> P:139
-R34047:34055 PV.HoareLogic HoareWhileDC assertion def
-binder 34032:34032 <> Q:140
-binder 34034:34038 <> Q_brk:141
-binder 34040:34044 <> Q_cnt:142
-R34063:34065 PV.Syntax Lang_WhileDC com ind
-binder 34059:34059 <> c:143
-R34071:34071 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34131:34138 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34186:34186 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34139:34143 PV.HoareLogic HoareWhileDC valid def
-R34147:34149 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34157:34160 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34162:34165 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34167:34168 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34174:34175 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34181:34182 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34155:34155 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R34156:34156 PV.HoareLogic <> P:139 var
-R34150:34154 PV.HoareLogic HoareWhileDC exp64 def
-R34161:34161 PV.HoareLogic <> c:143 var
-R34166:34166 PV.HoareLogic <> Q:140 var
-R34169:34173 PV.HoareLogic <> Q_brk:141 var
-R34176:34180 PV.HoareLogic <> Q_cnt:142 var
-R34084:34088 compcert.lib.Integers <> int64 syndef
-binder 34080:34080 <> a:144
-R34092:34096 PV.HoareLogic HoareWhileDC valid def
-R34099:34100 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34104:34106 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34108:34111 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34113:34114 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34120:34121 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34127:34128 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R34102:34102 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R34103:34103 PV.HoareLogic <> a:144 var
-R34101:34101 PV.HoareLogic <> P:139 var
-R34107:34107 PV.HoareLogic <> c:143 var
-R34112:34112 PV.HoareLogic <> Q:140 var
-R34115:34119 PV.HoareLogic <> Q_brk:141 var
-R34122:34126 PV.HoareLogic <> Q_cnt:142 var
-R34214:34218 PV.HoareLogic HoareWhileDC exp64 def
-prf 34302:34319 HoareWhileDC hoare_conseq_sound
-R34369:34377 PV.HoareLogic HoareWhileDC assertion def
-binder 34332:34332 <> P:145
-binder 34334:34335 <> P':146
-binder 34337:34337 <> Q:147
-binder 34339:34343 <> Q_brk:148
-binder 34345:34349 <> Q_cnt:149
-binder 34351:34352 <> Q':150
-binder 34354:34359 <> Q'_brk:151
-binder 34361:34366 <> Q'_cnt:152
-R34384:34386 PV.Syntax Lang_WhileDC com ind
-binder 34381:34381 <> c:153
-R34440:34447 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34460:34467 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34480:34487 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34508:34515 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34536:34543 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34544:34548 PV.HoareLogic HoareWhileDC valid def
-R34551:34566 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R34580:34584 PV.HoareLogic <> Q_cnt:149 var
-R34574:34578 PV.HoareLogic <> Q_brk:148 var
-R34572:34572 PV.HoareLogic <> Q:147 var
-R34570:34570 PV.HoareLogic <> c:153 var
-R34568:34568 PV.HoareLogic <> P:145 var
-R34516:34522 PV.HoareLogic HoareWhileDC derives def
-R34531:34535 PV.HoareLogic <> Q_cnt:149 var
-R34524:34529 PV.HoareLogic <> Q'_cnt:152 var
-R34488:34494 PV.HoareLogic HoareWhileDC derives def
-R34503:34507 PV.HoareLogic <> Q_brk:148 var
-R34496:34501 PV.HoareLogic <> Q'_brk:151 var
-R34468:34474 PV.HoareLogic HoareWhileDC derives def
-R34479:34479 PV.HoareLogic <> Q:147 var
-R34476:34477 PV.HoareLogic <> Q':150 var
-R34448:34454 PV.HoareLogic HoareWhileDC derives def
-R34458:34459 PV.HoareLogic <> P':146 var
-R34456:34456 PV.HoareLogic <> P:145 var
-R34394:34398 PV.HoareLogic HoareWhileDC valid def
-R34401:34416 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R34433:34438 PV.HoareLogic <> Q'_cnt:152 var
-R34426:34431 PV.HoareLogic <> Q'_brk:151 var
-R34423:34424 PV.HoareLogic <> Q':150 var
-R34421:34421 PV.HoareLogic <> c:153 var
-R34418:34419 PV.HoareLogic <> P':146 var
-R34613:34619 PV.HoareLogic HoareWhileDC derives def
-ind 34982:34989 HoareWhileDC provable
-constr 35017:35026 HoareWhileDC hoare_skip
-constr 35118:35128 HoareWhileDC hoare_break
-constr 35220:35233 HoareWhileDC hoare_continue
-constr 35328:35336 HoareWhileDC hoare_seq
-constr 35572:35579 HoareWhileDC hoare_if
-constr 35931:35941 HoareWhileDC hoare_while
-constr 36241:36254 HoareWhileDC hoare_do_while
-constr 36609:36617 HoareWhileDC hoare_for
-constr 37210:37229 HoareWhileDC hoare_asgn_deref_fwd
-constr 37562:37579 HoareWhileDC hoare_asgn_var_fwd
-constr 37903:37914 HoareWhileDC hoare_conseq
-constr 38204:38214 HoareWhileDC hoare_exist
-R35003:35006 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34992:35002 PV.HoareLogic HoareWhileDC HoareTriple ind
-R35043:35051 PV.HoareLogic HoareWhileDC assertion def
-binder 35040:35040 <> P:156
-R35060:35067 PV.HoareLogic <> provable:154 ind
-R35070:35072 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35074:35077 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35082:35085 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35087:35089 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35100:35101 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35112:35114 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35073:35073 PV.HoareLogic <> P:156 var
-R35078:35081 PV.HoareLogic HoareWhileDC :expr_entry::'skip' not
-R35086:35086 PV.HoareLogic <> P:156 var
-R35090:35099 PV.HoareLogic HoareWhileDC asrt_false def
-R35102:35111 PV.HoareLogic HoareWhileDC asrt_false def
-R35145:35153 PV.HoareLogic HoareWhileDC assertion def
-binder 35142:35142 <> P:157
-R35162:35169 PV.HoareLogic <> provable:154 ind
-R35171:35173 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35175:35178 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35185:35188 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35199:35200 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35202:35203 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35214:35216 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35174:35174 PV.HoareLogic <> P:157 var
-R35179:35184 PV.Syntax Lang_WhileDC CBreak constr
-R35189:35198 PV.HoareLogic HoareWhileDC asrt_false def
-R35201:35201 PV.HoareLogic <> P:157 var
-R35204:35213 PV.HoareLogic HoareWhileDC asrt_false def
-R35250:35258 PV.HoareLogic HoareWhileDC assertion def
-binder 35247:35247 <> P:158
-R35267:35274 PV.HoareLogic <> provable:154 ind
-R35276:35278 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35280:35283 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35293:35296 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35307:35308 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35319:35320 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35322:35324 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R35279:35279 PV.HoareLogic <> P:158 var
-R35284:35292 PV.Syntax Lang_WhileDC CContinue constr
-R35297:35306 PV.HoareLogic HoareWhileDC asrt_false def
-R35309:35318 PV.HoareLogic HoareWhileDC asrt_false def
-R35321:35321 PV.HoareLogic <> P:158 var
-R35370:35378 PV.HoareLogic HoareWhileDC assertion def
-binder 35351:35351 <> P:159
-binder 35353:35353 <> Q:160
-binder 35355:35355 <> R:161
-binder 35357:35361 <> R_brk:162
-binder 35363:35367 <> R_cnt:163
-R35389:35391 PV.Syntax Lang_WhileDC com ind
-binder 35382:35383 <> c1:164
-binder 35385:35386 <> c2:165
-R35447:35456 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35503:35512 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35513:35520 PV.HoareLogic <> provable:154 ind
-R35523:35538 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35563:35567 PV.HoareLogic <> R_cnt:163 var
-R35557:35561 PV.HoareLogic <> R_brk:162 var
-R35555:35555 PV.HoareLogic <> R:161 var
-R35543:35546 PV.Syntax Lang_WhileDC CSeq constr
-R35551:35552 PV.HoareLogic <> c2:165 var
-R35548:35549 PV.HoareLogic <> c1:164 var
-R35540:35540 PV.HoareLogic <> P:159 var
-R35457:35464 PV.HoareLogic <> provable:154 ind
-R35467:35482 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35497:35501 PV.HoareLogic <> R_cnt:163 var
-R35491:35495 PV.HoareLogic <> R_brk:162 var
-R35489:35489 PV.HoareLogic <> R:161 var
-R35486:35487 PV.HoareLogic <> c2:165 var
-R35484:35484 PV.HoareLogic <> Q:160 var
-R35401:35408 PV.HoareLogic <> provable:154 ind
-R35411:35426 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35441:35445 PV.HoareLogic <> R_cnt:163 var
-R35435:35439 PV.HoareLogic <> R_brk:162 var
-R35433:35433 PV.HoareLogic <> Q:160 var
-R35430:35431 PV.HoareLogic <> c1:164 var
-R35428:35428 PV.HoareLogic <> P:159 var
-R35611:35619 PV.HoareLogic HoareWhileDC assertion def
-binder 35594:35594 <> P:166
-binder 35596:35596 <> Q:167
-binder 35598:35602 <> Q_brk:168
-binder 35604:35608 <> Q_cnt:169
-R35626:35629 PV.Syntax Lang_WhileDC expr ind
-binder 35623:35623 <> e:170
-R35640:35642 PV.Syntax Lang_WhileDC com ind
-binder 35633:35634 <> c1:171
-binder 35636:35637 <> c2:172
-R35717:35726 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35796:35805 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35806:35806 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35860:35870 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35871:35878 PV.HoareLogic <> provable:154 ind
-R35881:35896 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35922:35926 PV.HoareLogic <> Q_cnt:169 var
-R35916:35920 PV.HoareLogic <> Q_brk:168 var
-R35914:35914 PV.HoareLogic <> Q:167 var
-R35901:35903 PV.Syntax Lang_WhileDC CIf constr
-R35910:35911 PV.HoareLogic <> c2:172 var
-R35907:35908 PV.HoareLogic <> c1:171 var
-R35905:35905 PV.HoareLogic <> e:170 var
-R35898:35898 PV.HoareLogic <> P:166 var
-R35817:35821 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 35814:35814 <> s:173
-R35828:35831 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35850:35853 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35854:35858 Coq.Init.Logic <> False ind
-R35832:35832 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R35841:35849 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R35833:35838 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R35840:35840 PV.HoareLogic <> e:170 var
-R35849:35849 PV.HoareLogic <> s:173 var
-R35825:35825 PV.HoareLogic <> P:166 var
-R35827:35827 PV.HoareLogic <> s:173 var
-R35727:35734 PV.HoareLogic <> provable:154 ind
-R35737:35752 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35790:35794 PV.HoareLogic <> Q_cnt:169 var
-R35784:35788 PV.HoareLogic <> Q_brk:168 var
-R35782:35782 PV.HoareLogic <> Q:167 var
-R35779:35780 PV.HoareLogic <> c2:172 var
-R35755:35758 PV.HoareLogic HoareWhileDC andp def
-R35763:35773 PV.HoareLogic HoareWhileDC eb2assn_not def
-R35775:35775 PV.HoareLogic <> e:170 var
-R35760:35760 PV.HoareLogic <> P:166 var
-R35652:35659 PV.HoareLogic <> provable:154 ind
-R35662:35677 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R35711:35715 PV.HoareLogic <> Q_cnt:169 var
-R35705:35709 PV.HoareLogic <> Q_brk:168 var
-R35703:35703 PV.HoareLogic <> Q:167 var
-R35700:35701 PV.HoareLogic <> c1:171 var
-R35680:35683 PV.HoareLogic HoareWhileDC andp def
-R35688:35694 PV.HoareLogic HoareWhileDC eb2assn def
-R35696:35696 PV.HoareLogic <> e:170 var
-R35685:35685 PV.HoareLogic <> P:166 var
-R35965:35973 PV.HoareLogic HoareWhileDC assertion def
-binder 35956:35956 <> P:174
-binder 35958:35962 <> P_brk:175
-R35980:35983 PV.Syntax Lang_WhileDC expr ind
-binder 35977:35977 <> e:176
-R35990:35992 PV.Syntax Lang_WhileDC com ind
-binder 35987:35987 <> c:177
-R36062:36071 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36072:36072 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36126:36136 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36137:36144 PV.HoareLogic <> provable:154 ind
-R36147:36162 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36227:36236 PV.HoareLogic HoareWhileDC asrt_false def
-R36216:36225 PV.HoareLogic HoareWhileDC asrt_false def
-R36180:36182 PV.HoareLogic HoareWhileDC orp def
-R36209:36213 PV.HoareLogic <> P_brk:175 var
-R36185:36188 PV.HoareLogic HoareWhileDC andp def
-R36193:36203 PV.HoareLogic HoareWhileDC eb2assn_not def
-R36205:36205 PV.HoareLogic <> e:176 var
-R36190:36190 PV.HoareLogic <> P:174 var
-R36167:36172 PV.Syntax Lang_WhileDC CWhile constr
-R36176:36176 PV.HoareLogic <> c:177 var
-R36174:36174 PV.HoareLogic <> e:176 var
-R36164:36164 PV.HoareLogic <> P:174 var
-R36083:36087 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 36080:36080 <> s:178
-R36094:36097 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36116:36119 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36120:36124 Coq.Init.Logic <> False ind
-R36098:36098 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36107:36115 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36099:36104 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R36106:36106 PV.HoareLogic <> e:176 var
-R36115:36115 PV.HoareLogic <> s:178 var
-R36091:36091 PV.HoareLogic <> P:174 var
-R36093:36093 PV.HoareLogic <> s:178 var
-R36002:36009 PV.HoareLogic <> provable:154 ind
-R36012:36027 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36060:36060 PV.HoareLogic <> P:174 var
-R36054:36058 PV.HoareLogic <> P_brk:175 var
-R36052:36052 PV.HoareLogic <> P:174 var
-R36050:36050 PV.HoareLogic <> c:177 var
-R36030:36033 PV.HoareLogic HoareWhileDC andp def
-R36038:36044 PV.HoareLogic HoareWhileDC eb2assn def
-R36046:36046 PV.HoareLogic <> e:176 var
-R36035:36035 PV.HoareLogic <> P:174 var
-R36280:36288 PV.HoareLogic HoareWhileDC assertion def
-binder 36269:36269 <> P:179
-binder 36271:36271 <> R:180
-binder 36273:36277 <> R_brk:181
-R36295:36298 PV.Syntax Lang_WhileDC expr ind
-binder 36292:36292 <> e:182
-R36305:36307 PV.Syntax Lang_WhileDC com ind
-binder 36302:36302 <> c:183
-R36358:36367 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36428:36437 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36438:36438 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36492:36502 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36503:36510 PV.HoareLogic <> provable:154 ind
-R36513:36528 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36595:36604 PV.HoareLogic HoareWhileDC asrt_false def
-R36584:36593 PV.HoareLogic HoareWhileDC asrt_false def
-R36548:36550 PV.HoareLogic HoareWhileDC orp def
-R36577:36581 PV.HoareLogic <> R_brk:181 var
-R36553:36556 PV.HoareLogic HoareWhileDC andp def
-R36561:36571 PV.HoareLogic HoareWhileDC eb2assn_not def
-R36573:36573 PV.HoareLogic <> e:182 var
-R36558:36558 PV.HoareLogic <> R:180 var
-R36533:36540 PV.Syntax Lang_WhileDC CDoWhile constr
-R36544:36544 PV.HoareLogic <> e:182 var
-R36542:36542 PV.HoareLogic <> c:183 var
-R36530:36530 PV.HoareLogic <> P:179 var
-R36449:36453 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 36446:36446 <> s:184
-R36460:36463 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36482:36485 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36486:36490 Coq.Init.Logic <> False ind
-R36464:36464 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36473:36481 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36465:36470 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R36472:36472 PV.HoareLogic <> e:182 var
-R36481:36481 PV.HoareLogic <> s:184 var
-R36457:36457 PV.HoareLogic <> R:180 var
-R36459:36459 PV.HoareLogic <> s:184 var
-R36368:36375 PV.HoareLogic <> provable:154 ind
-R36378:36393 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36426:36426 PV.HoareLogic <> R:180 var
-R36420:36424 PV.HoareLogic <> R_brk:181 var
-R36418:36418 PV.HoareLogic <> R:180 var
-R36416:36416 PV.HoareLogic <> c:183 var
-R36396:36399 PV.HoareLogic HoareWhileDC andp def
-R36404:36410 PV.HoareLogic HoareWhileDC eb2assn def
-R36412:36412 PV.HoareLogic <> e:182 var
-R36401:36401 PV.HoareLogic <> R:180 var
-R36317:36324 PV.HoareLogic <> provable:154 ind
-R36327:36342 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36356:36356 PV.HoareLogic <> R:180 var
-R36350:36354 PV.HoareLogic <> R_brk:181 var
-R36348:36348 PV.HoareLogic <> R:180 var
-R36346:36346 PV.HoareLogic <> c:183 var
-R36344:36344 PV.HoareLogic <> P:179 var
-R36645:36653 PV.HoareLogic HoareWhileDC assertion def
-binder 36632:36632 <> P:185
-binder 36634:36634 <> Q:186
-binder 36636:36636 <> R:187
-binder 36638:36642 <> R_brk:188
-R36660:36663 PV.Syntax Lang_WhileDC expr ind
-binder 36657:36657 <> e:189
-R36677:36679 PV.Syntax Lang_WhileDC com ind
-binder 36667:36668 <> c1:190
-binder 36670:36671 <> c2:191
-binder 36673:36674 <> c3:192
-R36745:36754 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36755:36755 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36809:36819 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36881:36890 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36947:36956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36984:36987 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37015:37024 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37052:37055 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37083:37096 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37097:37104 PV.HoareLogic <> provable:154 ind
-R37107:37122 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R37192:37201 PV.HoareLogic HoareWhileDC asrt_false def
-R37181:37190 PV.HoareLogic HoareWhileDC asrt_false def
-R37145:37147 PV.HoareLogic HoareWhileDC orp def
-R37174:37178 PV.HoareLogic <> R_brk:188 var
-R37150:37153 PV.HoareLogic HoareWhileDC andp def
-R37158:37168 PV.HoareLogic HoareWhileDC eb2assn_not def
-R37170:37170 PV.HoareLogic <> e:189 var
-R37155:37155 PV.HoareLogic <> R:187 var
-R37127:37130 PV.Syntax Lang_WhileDC CFor constr
-R37140:37141 PV.HoareLogic <> c3:192 var
-R37137:37138 PV.HoareLogic <> c2:191 var
-R37135:37135 PV.HoareLogic <> e:189 var
-R37132:37133 PV.HoareLogic <> c1:190 var
-R37124:37124 PV.HoareLogic <> P:185 var
-R37077:37079 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R37056:37056 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R37070:37076 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R37058:37065 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R37068:37069 PV.HoareLogic <> c2:191 var
-R37080:37082 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R37046:37048 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R37025:37025 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R37039:37045 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R37027:37034 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R37037:37038 PV.HoareLogic <> c2:191 var
-R37049:37051 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R37009:37011 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R36988:36988 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R37002:37008 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(cnt)' not
-R36990:36997 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R37000:37001 PV.HoareLogic <> c1:190 var
-R37012:37014 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R36978:36980 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R36957:36957 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R36971:36977 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(brk)' not
-R36959:36966 PV.WhileDCDenotations DntSem_WhileDC eval_com def
-R36969:36970 PV.HoareLogic <> c1:190 var
-R36981:36983 SetsClass.SetsDomain <> ::sets_scope:'∅' not
-R36891:36898 PV.HoareLogic <> provable:154 ind
-R36901:36916 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36936:36945 PV.HoareLogic HoareWhileDC asrt_false def
-R36925:36934 PV.HoareLogic HoareWhileDC asrt_false def
-R36923:36923 PV.HoareLogic <> R:187 var
-R36920:36921 PV.HoareLogic <> c2:191 var
-R36918:36918 PV.HoareLogic <> Q:186 var
-R36820:36827 PV.HoareLogic <> provable:154 ind
-R36830:36845 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36879:36879 PV.HoareLogic <> Q:186 var
-R36873:36877 PV.HoareLogic <> R_brk:188 var
-R36871:36871 PV.HoareLogic <> Q:186 var
-R36868:36869 PV.HoareLogic <> c3:192 var
-R36848:36851 PV.HoareLogic HoareWhileDC andp def
-R36856:36862 PV.HoareLogic HoareWhileDC eb2assn def
-R36864:36864 PV.HoareLogic <> e:189 var
-R36853:36853 PV.HoareLogic <> R:187 var
-R36766:36770 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 36763:36763 <> s:193
-R36777:36780 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36799:36802 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36803:36807 Coq.Init.Logic <> False ind
-R36781:36781 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36790:36798 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
-R36782:36787 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R36789:36789 PV.HoareLogic <> e:189 var
-R36798:36798 PV.HoareLogic <> s:193 var
-R36774:36774 PV.HoareLogic <> R:187 var
-R36776:36776 PV.HoareLogic <> s:193 var
-R36689:36696 PV.HoareLogic <> provable:154 ind
-R36699:36714 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R36734:36743 PV.HoareLogic HoareWhileDC asrt_false def
-R36723:36732 PV.HoareLogic HoareWhileDC asrt_false def
-R36721:36721 PV.HoareLogic <> R:187 var
-R36718:36719 PV.HoareLogic <> c1:190 var
-R36716:36716 PV.HoareLogic <> P:185 var
-R37250:37258 PV.HoareLogic HoareWhileDC assertion def
-binder 37244:37244 <> P:194
-binder 37246:37246 <> Q:195
-R37270:37273 PV.Syntax Lang_WhileDC expr ind
-binder 37262:37263 <> e1:196
-binder 37265:37266 <> e2:197
-R37282:37286 compcert.lib.Integers <> int64 syndef
-binder 37277:37277 <> a:198
-binder 37279:37279 <> b:199
-R37294:37294 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37343:37351 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37352:37352 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37401:37411 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37462:37471 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37472:37479 PV.HoareLogic <> provable:154 ind
-R37483:37484 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37486:37488 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37506:37508 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37531:37532 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37543:37544 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37555:37556 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37485:37485 PV.HoareLogic <> P:194 var
-R37489:37490 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37504:37505 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37491:37492 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
-R37497:37501 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
-R37493:37493 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37496:37496 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37494:37495 PV.HoareLogic <> e1:196 var
-R37502:37503 PV.HoareLogic <> e2:197 var
-R37527:37529 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
-R37509:37509 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37526:37526 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37517:37517 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37518:37518 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37525:37525 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37523:37523 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37524:37524 PV.HoareLogic <> b:199 var
-R37519:37522 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R37515:37515 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37516:37516 PV.HoareLogic <> a:198 var
-R37510:37514 PV.HoareLogic HoareWhileDC store def
-R37530:37530 PV.HoareLogic <> Q:195 var
-R37533:37542 PV.HoareLogic HoareWhileDC asrt_false def
-R37545:37554 PV.HoareLogic HoareWhileDC asrt_false def
-R37412:37418 PV.HoareLogic HoareWhileDC derives def
-R37423:37425 PV.HoareLogic HoareWhileDC exp def
-binder 37432:37432 <> u:200
-R37438:37443 PV.HoareLogic HoareWhileDC sepcon def
-R37457:37457 PV.HoareLogic <> Q:195 var
-R37446:37450 PV.HoareLogic HoareWhileDC store def
-R37454:37454 PV.HoareLogic <> u:200 var
-R37452:37452 PV.HoareLogic <> a:198 var
-R37420:37420 PV.HoareLogic <> P:194 var
-R37363:37367 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 37361:37361 <> s:201
-R37374:37378 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37400:37400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37379:37379 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37389:37399 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37380:37385 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R37387:37388 PV.HoareLogic <> e2:197 var
-R37399:37399 PV.HoareLogic <> b:199 var
-R37397:37397 PV.HoareLogic <> s:201 var
-R37371:37371 PV.HoareLogic <> P:194 var
-R37373:37373 PV.HoareLogic <> s:201 var
-R37305:37309 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 37303:37303 <> s:202
-R37316:37320 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37342:37342 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37321:37321 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37331:37341 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37322:37327 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R37329:37330 PV.HoareLogic <> e1:196 var
-R37341:37341 PV.HoareLogic <> a:198 var
-R37339:37339 PV.HoareLogic <> s:202 var
-R37313:37313 PV.HoareLogic <> P:194 var
-R37315:37315 PV.HoareLogic <> s:202 var
-R37599:37607 PV.HoareLogic HoareWhileDC assertion def
-binder 37594:37594 <> P:203
-binder 37596:37596 <> Q:204
-R37614:37617 PV.Syntax Lang_WhileDC expr ind
-binder 37611:37611 <> e:205
-R37626:37630 compcert.lib.Integers <> int64 syndef
-binder 37621:37621 <> a:206
-binder 37623:37623 <> b:207
-R37638:37645 PV.Syntax Lang_While var_name def
-binder 37634:37634 <> x:208
-R37653:37653 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37701:37709 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37710:37710 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37749:37759 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37810:37819 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37820:37827 PV.HoareLogic <> provable:154 ind
-R37831:37832 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37834:37836 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37848:37850 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37873:37874 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37885:37886 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37897:37898 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R37833:37833 PV.HoareLogic <> P:203 var
-R37837:37838 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37846:37847 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37839:37839 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37845:37845 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
-R37841:37843 PV.HoareLogic HoareWhileDC :expr_entry::x_'='_x not
-R37840:37840 PV.HoareLogic <> x:208 var
-R37844:37844 PV.HoareLogic <> e:205 var
-R37869:37871 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
-R37851:37851 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37868:37868 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37859:37859 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37860:37860 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37867:37867 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
-R37865:37865 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37866:37866 PV.HoareLogic <> b:207 var
-R37861:37864 PV.WhileDCDenotations DntSem_WhileDC Vint constr
-R37857:37857 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R37858:37858 PV.HoareLogic <> a:206 var
-R37852:37856 PV.HoareLogic HoareWhileDC store def
-R37872:37872 PV.HoareLogic <> Q:204 var
-R37875:37884 PV.HoareLogic HoareWhileDC asrt_false def
-R37887:37896 PV.HoareLogic HoareWhileDC asrt_false def
-R37760:37766 PV.HoareLogic HoareWhileDC derives def
-R37771:37773 PV.HoareLogic HoareWhileDC exp def
-binder 37780:37780 <> u:209
-R37786:37791 PV.HoareLogic HoareWhileDC sepcon def
-R37805:37805 PV.HoareLogic <> Q:204 var
-R37794:37798 PV.HoareLogic HoareWhileDC store def
-R37802:37802 PV.HoareLogic <> u:209 var
-R37800:37800 PV.HoareLogic <> a:206 var
-R37768:37768 PV.HoareLogic <> P:203 var
-R37721:37725 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 37719:37719 <> s:210
-R37732:37735 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37745:37747 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R37737:37744 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
-R37736:37736 PV.HoareLogic <> s:210 var
-R37744:37744 PV.HoareLogic <> x:208 var
-R37748:37748 PV.HoareLogic <> a:206 var
-R37729:37729 PV.HoareLogic <> P:203 var
-R37731:37731 PV.HoareLogic <> s:210 var
-R37664:37668 PV.WhileDCDenotations DntSem_WhileDC state rec
-binder 37662:37662 <> s:211
-R37675:37679 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37700:37700 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R37680:37680 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37689:37699 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
-R37681:37686 PV.WhileDCDenotations DntSem_WhileDC eval_r def
-R37688:37688 PV.HoareLogic <> e:205 var
-R37699:37699 PV.HoareLogic <> b:207 var
-R37697:37697 PV.HoareLogic <> s:211 var
-R37672:37672 PV.HoareLogic <> P:203 var
-R37674:37674 PV.HoareLogic <> s:211 var
-R37966:37974 PV.HoareLogic HoareWhileDC assertion def
-binder 37929:37929 <> P:212
-binder 37931:37932 <> P':213
-binder 37934:37934 <> Q:214
-binder 37936:37940 <> Q_brk:215
-binder 37942:37946 <> Q_cnt:216
-binder 37948:37949 <> Q':217
-binder 37951:37956 <> Q'_brk:218
-binder 37958:37963 <> Q'_cnt:219
-R37981:37983 PV.Syntax Lang_WhileDC com ind
-binder 37978:37978 <> c:220
-R38042:38051 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38064:38073 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38086:38095 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38116:38125 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38146:38155 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38156:38163 PV.HoareLogic <> provable:154 ind
-R38166:38181 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R38195:38199 PV.HoareLogic <> Q_cnt:216 var
-R38189:38193 PV.HoareLogic <> Q_brk:215 var
-R38187:38187 PV.HoareLogic <> Q:214 var
-R38185:38185 PV.HoareLogic <> c:220 var
-R38183:38183 PV.HoareLogic <> P:212 var
-R38126:38132 PV.HoareLogic HoareWhileDC derives def
-R38141:38145 PV.HoareLogic <> Q_cnt:216 var
-R38134:38139 PV.HoareLogic <> Q'_cnt:219 var
-R38096:38102 PV.HoareLogic HoareWhileDC derives def
-R38111:38115 PV.HoareLogic <> Q_brk:215 var
-R38104:38109 PV.HoareLogic <> Q'_brk:218 var
-R38074:38080 PV.HoareLogic HoareWhileDC derives def
-R38085:38085 PV.HoareLogic <> Q:214 var
-R38082:38083 PV.HoareLogic <> Q':217 var
-R38052:38058 PV.HoareLogic HoareWhileDC derives def
-R38062:38063 PV.HoareLogic <> P':213 var
-R38060:38060 PV.HoareLogic <> P:212 var
-R37993:38000 PV.HoareLogic <> provable:154 ind
-R38003:38018 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
-R38035:38040 PV.HoareLogic <> Q'_cnt:219 var
-R38028:38033 PV.HoareLogic <> Q'_brk:218 var
-R38025:38026 PV.HoareLogic <> Q':217 var
-R38023:38023 PV.HoareLogic <> c:220 var
-R38020:38021 PV.HoareLogic <> P':213 var
-R38238:38241 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38242:38250 PV.HoareLogic HoareWhileDC assertion def
-R38233:38237 compcert.lib.Integers <> int64 syndef
-binder 38229:38229 <> P:221
-R38269:38277 PV.HoareLogic HoareWhileDC assertion def
-binder 38254:38254 <> Q:222
-binder 38256:38260 <> Q_brk:223
-binder 38262:38266 <> Q_cnt:224
-R38285:38287 PV.Syntax Lang_WhileDC com ind
-binder 38281:38281 <> c:225
-R38297:38297 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38360:38371 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38422:38422 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38372:38379 PV.HoareLogic <> provable:154 ind
-R38383:38385 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38393:38396 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38398:38401 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38403:38404 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38410:38411 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38417:38418 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38391:38391 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R38392:38392 PV.HoareLogic <> P:221 var
-R38386:38390 PV.HoareLogic HoareWhileDC exp64 def
-R38397:38397 PV.HoareLogic <> c:225 var
-R38402:38402 PV.HoareLogic <> Q:222 var
-R38405:38409 PV.HoareLogic <> Q_brk:223 var
-R38412:38416 PV.HoareLogic <> Q_cnt:224 var
-R38310:38314 compcert.lib.Integers <> int64 syndef
-binder 38306:38306 <> a:226
-R38318:38325 PV.HoareLogic <> provable:154 ind
-R38328:38329 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38333:38335 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38337:38340 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38342:38343 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38349:38350 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38356:38357 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R38331:38331 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
-R38332:38332 PV.HoareLogic <> a:226 var
-R38330:38330 PV.HoareLogic <> P:221 var
-R38336:38336 PV.HoareLogic <> c:225 var
-R38341:38341 PV.HoareLogic <> Q:222 var
-R38344:38348 PV.HoareLogic <> Q_brk:223 var
-R38351:38355 PV.HoareLogic <> Q_cnt:224 var
-prf 38520:38530 HoareWhileDC hoare_sound
-binder 38540:38541 <> ht:227
-R38557:38560 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R38561:38565 PV.HoareLogic HoareWhileDC valid def
-R38567:38568 PV.HoareLogic <> ht:227 var
-R38546:38553 PV.HoareLogic HoareWhileDC provable ind
-R38555:38556 PV.HoareLogic <> ht:227 var
-R38613:38628 PV.HoareLogic HoareWhileDC hoare_skip_sound thm
-R38613:38628 PV.HoareLogic HoareWhileDC hoare_skip_sound thm
-R38641:38657 PV.HoareLogic HoareWhileDC hoare_break_sound thm
-R38641:38657 PV.HoareLogic HoareWhileDC hoare_break_sound thm
-R38670:38689 PV.HoareLogic HoareWhileDC hoare_continue_sound thm
-R38670:38689 PV.HoareLogic HoareWhileDC hoare_continue_sound thm
-R38703:38717 PV.HoareLogic HoareWhileDC hoare_seq_sound thm
-R38703:38717 PV.HoareLogic HoareWhileDC hoare_seq_sound thm
-R38742:38755 PV.HoareLogic HoareWhileDC hoare_if_sound thm
-R38742:38755 PV.HoareLogic HoareWhileDC hoare_if_sound thm
-R38775:38791 PV.HoareLogic HoareWhileDC hoare_while_sound thm
-R38775:38791 PV.HoareLogic HoareWhileDC hoare_while_sound thm
-R38811:38830 PV.HoareLogic HoareWhileDC hoare_do_while_sound thm
-R38811:38830 PV.HoareLogic HoareWhileDC hoare_do_while_sound thm
-R38851:38865 PV.HoareLogic HoareWhileDC hoare_for_sound thm
-R38851:38865 PV.HoareLogic HoareWhileDC hoare_for_sound thm
-R38900:38925 PV.HoareLogic HoareWhileDC hoare_asgn_deref_fwd_sound thm
-R38900:38925 PV.HoareLogic HoareWhileDC hoare_asgn_deref_fwd_sound thm
-R38945:38968 PV.HoareLogic HoareWhileDC hoare_asgn_var_fwd_sound thm
-R38945:38968 PV.HoareLogic HoareWhileDC hoare_asgn_var_fwd_sound thm
-R38989:39006 PV.HoareLogic HoareWhileDC hoare_conseq_sound thm
-R38989:39006 PV.HoareLogic HoareWhileDC hoare_conseq_sound thm
-R39064:39080 PV.HoareLogic HoareWhileDC hoare_exist_sound thm
-R39064:39080 PV.HoareLogic HoareWhileDC hoare_exist_sound thm
-R39119:39130 PV.HoareLogic HoareWhileDC <> mod
-mod 39141:39163 <> HoareWhileDC_Admissible
-prf 39259:39280 HoareWhileDC_Admissible hoare_conseq_pre_sound
-R39313:39321 PV.HoareLogic HoareWhileDC assertion def
-binder 39293:39293 <> P:228
-binder 39295:39296 <> P':229
-binder 39298:39298 <> Q:230
-binder 39300:39304 <> Q_brk:231
-binder 39306:39310 <> Q_cnt:232
-R39328:39330 PV.Syntax Lang_WhileDC com ind
-binder 39325:39325 <> c:233
-R39375:39382 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39391:39398 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39399:39403 PV.HoareLogic HoareWhileDC valid def
-R39405:39407 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39409:39412 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39414:39417 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39419:39420 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39426:39427 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39433:39434 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39408:39408 PV.HoareLogic <> P:228 var
-R39413:39413 PV.HoareLogic <> c:233 var
-R39418:39418 PV.HoareLogic <> Q:230 var
-R39421:39425 PV.HoareLogic <> Q_brk:231 var
-R39428:39432 PV.HoareLogic <> Q_cnt:232 var
-R39384:39388 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R39383:39383 PV.HoareLogic <> P:228 var
-R39389:39390 PV.HoareLogic <> P':229 var
-R39338:39342 PV.HoareLogic HoareWhileDC valid def
-R39344:39346 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39349:39352 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39354:39357 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39359:39360 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39366:39367 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39373:39374 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39347:39348 PV.HoareLogic <> P':229 var
-R39353:39353 PV.HoareLogic <> c:233 var
-R39358:39358 PV.HoareLogic <> Q:230 var
-R39361:39365 PV.HoareLogic <> Q_brk:231 var
-R39368:39372 PV.HoareLogic <> Q_cnt:232 var
-R39462:39468 PV.HoareLogic HoareWhileDC derives def
-prf 39534:39556 HoareWhileDC_Admissible hoare_conseq_post_sound
-R39603:39611 PV.HoareLogic HoareWhileDC assertion def
-binder 39569:39569 <> P:234
-binder 39571:39571 <> Q:235
-binder 39573:39577 <> Q_brk:236
-binder 39579:39583 <> Q_cnt:237
-binder 39585:39586 <> Q':238
-binder 39588:39593 <> Q'_brk:239
-binder 39595:39600 <> Q'_cnt:240
-R39618:39620 PV.Syntax Lang_WhileDC com ind
-binder 39615:39615 <> c:241
-R39668:39675 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39684:39691 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39708:39715 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39732:39739 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39740:39744 PV.HoareLogic HoareWhileDC valid def
-R39746:39748 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39750:39753 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39755:39758 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39760:39761 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39767:39768 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39774:39776 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39749:39749 PV.HoareLogic <> P:234 var
-R39754:39754 PV.HoareLogic <> c:241 var
-R39759:39759 PV.HoareLogic <> Q:235 var
-R39762:39766 PV.HoareLogic <> Q_brk:236 var
-R39769:39773 PV.HoareLogic <> Q_cnt:237 var
-R39722:39726 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R39716:39721 PV.HoareLogic <> Q'_cnt:240 var
-R39727:39731 PV.HoareLogic <> Q_cnt:237 var
-R39698:39702 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R39692:39697 PV.HoareLogic <> Q'_brk:239 var
-R39703:39707 PV.HoareLogic <> Q_brk:236 var
-R39678:39682 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R39676:39677 PV.HoareLogic <> Q':238 var
-R39683:39683 PV.HoareLogic <> Q:235 var
-R39628:39632 PV.HoareLogic HoareWhileDC valid def
-R39634:39636 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39638:39641 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39643:39646 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39649:39650 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39657:39658 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39665:39667 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R39637:39637 PV.HoareLogic <> P:234 var
-R39642:39642 PV.HoareLogic <> c:241 var
-R39647:39648 PV.HoareLogic <> Q':238 var
-R39651:39656 PV.HoareLogic <> Q'_brk:239 var
-R39659:39664 PV.HoareLogic <> Q'_cnt:240 var
-R39804:39810 PV.HoareLogic HoareWhileDC derives def
-prf 40080:40095 HoareWhileDC_Admissible hoare_conseq_pre
-R40128:40136 PV.HoareLogic HoareWhileDC assertion def
-binder 40108:40108 <> P:242
-binder 40110:40111 <> P':243
-binder 40113:40113 <> Q:244
-binder 40115:40119 <> Q_brk:245
-binder 40121:40125 <> Q_cnt:246
-R40143:40145 PV.Syntax Lang_WhileDC com ind
-binder 40140:40140 <> c:247
-R40193:40200 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R40209:40216 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R40217:40224 PV.HoareLogic HoareWhileDC provable ind
-R40226:40228 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40230:40233 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40235:40238 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40240:40241 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40247:40248 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40254:40255 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40229:40229 PV.HoareLogic <> P:242 var
-R40234:40234 PV.HoareLogic <> c:247 var
-R40239:40239 PV.HoareLogic <> Q:244 var
-R40242:40246 PV.HoareLogic <> Q_brk:245 var
-R40249:40253 PV.HoareLogic <> Q_cnt:246 var
-R40202:40206 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R40201:40201 PV.HoareLogic <> P:242 var
-R40207:40208 PV.HoareLogic <> P':243 var
-R40153:40160 PV.HoareLogic HoareWhileDC provable ind
-R40162:40164 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40167:40170 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40172:40175 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40177:40178 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40184:40185 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40191:40192 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40165:40166 PV.HoareLogic <> P':243 var
-R40171:40171 PV.HoareLogic <> c:247 var
-R40176:40176 PV.HoareLogic <> Q:244 var
-R40179:40183 PV.HoareLogic <> Q_brk:245 var
-R40186:40190 PV.HoareLogic <> Q_cnt:246 var
-R40327:40338 PV.HoareLogic HoareWhileDC hoare_conseq constr
-R40327:40338 PV.HoareLogic HoareWhileDC hoare_conseq constr
-R40380:40386 PV.HoareLogic HoareWhileDC derives def
-R40446:40452 PV.HoareLogic HoareWhileDC derives def
-R40455:40458 PV.HoareLogic HoareWhileDC andp def
-R40510:40513 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R40510:40513 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-binder 40652:40652 <> X:248
-R40660:40660 PV.HoareLogic <> X:248 var
-binder 40576:40577 <> X0:249
-binder 40580:40581 <> X1:250
-binder 40599:40599 <> s:251
-R40605:40606 PV.HoareLogic <> X0:249 var
-R40608:40608 PV.HoareLogic <> s:251 var
-R40612:40613 PV.HoareLogic <> X1:250 var
-R40615:40615 PV.HoareLogic <> s:251 var
-prf 40853:40869 HoareWhileDC_Admissible hoare_conseq_post
-R40916:40924 PV.HoareLogic HoareWhileDC assertion def
-binder 40882:40882 <> P:252
-binder 40884:40884 <> Q:253
-binder 40886:40890 <> Q_brk:254
-binder 40892:40896 <> Q_cnt:255
-binder 40898:40899 <> Q':256
-binder 40901:40906 <> Q'_brk:257
-binder 40908:40913 <> Q'_cnt:258
-R40931:40933 PV.Syntax Lang_WhileDC com ind
-binder 40928:40928 <> c:259
-R40984:40991 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R41000:41007 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R41024:41031 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R41048:41055 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R41056:41063 PV.HoareLogic HoareWhileDC provable ind
-R41065:41067 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41069:41072 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41074:41077 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41079:41080 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41086:41087 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41093:41095 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R41068:41068 PV.HoareLogic <> P:252 var
-R41073:41073 PV.HoareLogic <> c:259 var
-R41078:41078 PV.HoareLogic <> Q:253 var
-R41081:41085 PV.HoareLogic <> Q_brk:254 var
-R41088:41092 PV.HoareLogic <> Q_cnt:255 var
-R41038:41042 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R41032:41037 PV.HoareLogic <> Q'_cnt:258 var
-R41043:41047 PV.HoareLogic <> Q_cnt:255 var
-R41014:41018 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R41008:41013 PV.HoareLogic <> Q'_brk:257 var
-R41019:41023 PV.HoareLogic <> Q_brk:254 var
-R40994:40998 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R40992:40993 PV.HoareLogic <> Q':256 var
-R40999:40999 PV.HoareLogic <> Q:253 var
-R40941:40948 PV.HoareLogic HoareWhileDC provable ind
-R40950:40952 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40954:40957 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40959:40962 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40965:40966 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40973:40974 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40981:40983 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
-R40953:40953 PV.HoareLogic <> P:252 var
-R40958:40958 PV.HoareLogic <> c:259 var
-R40963:40964 PV.HoareLogic <> Q':256 var
-R40967:40972 PV.HoareLogic <> Q'_brk:257 var
-R40975:40980 PV.HoareLogic <> Q'_cnt:258 var
-R41125:41129 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R41125:41129 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
-R41147:41153 PV.HoareLogic HoareWhileDC derives def
-R41192:41203 PV.HoareLogic HoareWhileDC hoare_conseq constr
-R41192:41203 PV.HoareLogic HoareWhileDC hoare_conseq constr
-R41249:41271 PV.HoareLogic HoareWhileDC_Admissible <> mod
+R21114:21123 PV.HoareLogic HoareWhileDC asrt_false def
+R21606:21614 PV.WhileDCDenotations DntSem_WhileDC test_true def
+R21861:21864 PV.HoareLogic HoareWhileDC andp def
+R21869:21875 PV.HoareLogic HoareWhileDC eb2assn def
+R21861:21864 PV.HoareLogic HoareWhileDC andp def
+R21869:21875 PV.HoareLogic HoareWhileDC eb2assn def
+R21911:21917 PV.HoareLogic HoareWhileDC eb2assn def
+R21920:21923 PV.HoareLogic HoareWhileDC andp def
+R22377:22380 PV.HoareLogic HoareWhileDC andp def
+R22385:22391 PV.HoareLogic HoareWhileDC eb2assn def
+R22377:22380 PV.HoareLogic HoareWhileDC andp def
+R22385:22391 PV.HoareLogic HoareWhileDC eb2assn def
+R22427:22433 PV.HoareLogic HoareWhileDC eb2assn def
+R22436:22439 PV.HoareLogic HoareWhileDC andp def
+R22836:22839 PV.HoareLogic HoareWhileDC andp def
+R22844:22850 PV.HoareLogic HoareWhileDC eb2assn def
+R22836:22839 PV.HoareLogic HoareWhileDC andp def
+R22844:22850 PV.HoareLogic HoareWhileDC eb2assn def
+R22884:22890 PV.HoareLogic HoareWhileDC eb2assn def
+R22893:22896 PV.HoareLogic HoareWhileDC andp def
+R23207:23210 PV.HoareLogic HoareWhileDC andp def
+R23215:23221 PV.HoareLogic HoareWhileDC eb2assn def
+R23207:23210 PV.HoareLogic HoareWhileDC andp def
+R23215:23221 PV.HoareLogic HoareWhileDC eb2assn def
+R23255:23261 PV.HoareLogic HoareWhileDC eb2assn def
+R23264:23267 PV.HoareLogic HoareWhileDC andp def
+R23539:23542 PV.HoareLogic HoareWhileDC andp def
+R23547:23553 PV.HoareLogic HoareWhileDC eb2assn def
+R23539:23542 PV.HoareLogic HoareWhileDC andp def
+R23547:23553 PV.HoareLogic HoareWhileDC eb2assn def
+R23587:23593 PV.HoareLogic HoareWhileDC eb2assn def
+R23596:23599 PV.HoareLogic HoareWhileDC andp def
+R23872:23874 PV.HoareLogic HoareWhileDC orp def
+R24146:24154 PV.WhileDCDenotations DntSem_WhileDC test_true def
+R24343:24346 PV.HoareLogic HoareWhileDC andp def
+R24351:24357 PV.HoareLogic HoareWhileDC eb2assn def
+R24343:24346 PV.HoareLogic HoareWhileDC andp def
+R24351:24357 PV.HoareLogic HoareWhileDC eb2assn def
+R24389:24395 PV.HoareLogic HoareWhileDC eb2assn def
+R24398:24401 PV.HoareLogic HoareWhileDC andp def
+R24807:24810 PV.HoareLogic HoareWhileDC andp def
+R24815:24821 PV.HoareLogic HoareWhileDC eb2assn def
+R24807:24810 PV.HoareLogic HoareWhileDC andp def
+R24815:24821 PV.HoareLogic HoareWhileDC eb2assn def
+R24853:24859 PV.HoareLogic HoareWhileDC eb2assn def
+R24862:24865 PV.HoareLogic HoareWhileDC andp def
+R25199:25202 PV.HoareLogic HoareWhileDC andp def
+R25207:25213 PV.HoareLogic HoareWhileDC eb2assn def
+R25199:25202 PV.HoareLogic HoareWhileDC andp def
+R25207:25213 PV.HoareLogic HoareWhileDC eb2assn def
+R25245:25251 PV.HoareLogic HoareWhileDC eb2assn def
+R25254:25257 PV.HoareLogic HoareWhileDC andp def
+R25448:25451 PV.HoareLogic HoareWhileDC andp def
+R25477:25486 PV.WhileDCDenotations DntSem_WhileDC test_false def
+R25496:25506 PV.HoareLogic HoareWhileDC eb2assn_not def
+R25595:25604 compcert.lib.Integers Int64 repr def
+R25595:25604 compcert.lib.Integers Int64 repr def
+def 25652:25662 HoareWhileDC state_subst
+R25667:25671 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 25664:25664 <> s:110
+R25676:25680 compcert.lib.Integers <> int64 syndef
+binder 25674:25674 <> p:111
+R25685:25687 PV.WhileDCDenotations DntSem_WhileDC val ind
+binder 25683:25683 <> a:112
+R25692:25696 PV.WhileDCDenotations DntSem_WhileDC state rec
+R25710:25712 PV.WhileDCDenotations DntSem_WhileDC env proj
+R25710:25712 PV.WhileDCDenotations DntSem_WhileDC env proj
+R25730:25732 PV.WhileDCDenotations DntSem_WhileDC mem proj
+binder 25741:25741 <> x:113
+R25750:25757 compcert.lib.Integers Int64 eq def
+R25761:25761 PV.HoareLogic <> p:111 var
+R25759:25759 PV.HoareLogic <> x:113 var
+R25784:25791 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(mem)' not
+R25783:25783 PV.HoareLogic <> s:110 var
+R25791:25791 PV.HoareLogic <> x:113 var
+R25770:25773 Coq.Init.Datatypes <> Some constr
+R25775:25775 PV.HoareLogic <> a:112 var
+R25718:25723 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
+R25717:25717 PV.HoareLogic <> s:110 var
+def 25814:25823 HoareWhileDC assn_subst
+R25829:25837 PV.HoareLogic HoareWhileDC assertion def
+binder 25826:25826 <> P:114
+R25844:25851 PV.Syntax Lang_While var_name def
+binder 25841:25841 <> x:115
+R25858:25860 PV.WhileDCDenotations DntSem_WhileDC val ind
+binder 25855:25855 <> v:116
+R25864:25872 PV.HoareLogic HoareWhileDC assertion def
+binder 25883:25883 <> s:117
+R25892:25892 PV.HoareLogic <> P:114 var
+R25895:25905 PV.HoareLogic HoareWhileDC state_subst def
+R25921:25921 PV.HoareLogic <> v:116 var
+R25911:25918 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
+R25910:25910 PV.HoareLogic <> s:117 var
+R25918:25918 PV.HoareLogic <> x:115 var
+R25907:25907 PV.HoareLogic <> s:117 var
+prf 25932:25957 HoareWhileDC hoare_asgn_deref_fwd_sound
+R25976:25984 PV.HoareLogic HoareWhileDC assertion def
+binder 25970:25970 <> P:118
+binder 25972:25972 <> Q:119
+R25996:25999 PV.Syntax Lang_WhileDC expr ind
+binder 25988:25989 <> e1:120
+binder 25991:25992 <> e2:121
+R26008:26012 compcert.lib.Integers <> int64 syndef
+binder 26003:26003 <> a:122
+binder 26005:26005 <> b:123
+R26020:26020 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26069:26077 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26078:26078 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26127:26135 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26186:26193 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26194:26198 PV.HoareLogic HoareWhileDC valid def
+R26202:26203 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26205:26207 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26225:26227 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26250:26251 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26262:26263 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26274:26275 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R26204:26204 PV.HoareLogic <> P:118 var
+R26208:26209 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R26223:26224 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R26210:26211 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
+R26216:26220 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
+R26212:26212 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R26215:26215 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R26213:26214 PV.HoareLogic <> e1:120 var
+R26221:26222 PV.HoareLogic <> e2:121 var
+R26246:26248 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
+R26228:26228 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R26245:26245 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R26236:26236 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R26237:26237 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R26244:26244 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R26242:26242 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R26243:26243 PV.HoareLogic <> b:123 var
+R26238:26241 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R26234:26234 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R26235:26235 PV.HoareLogic <> a:122 var
+R26229:26233 PV.HoareLogic HoareWhileDC store def
+R26249:26249 PV.HoareLogic <> Q:119 var
+R26252:26261 PV.HoareLogic HoareWhileDC asrt_false def
+R26264:26273 PV.HoareLogic HoareWhileDC asrt_false def
+R26136:26142 PV.HoareLogic HoareWhileDC derives def
+R26147:26149 PV.HoareLogic HoareWhileDC exp def
+binder 26156:26156 <> u:124
+R26162:26167 PV.HoareLogic HoareWhileDC sepcon def
+R26181:26181 PV.HoareLogic <> Q:119 var
+R26170:26174 PV.HoareLogic HoareWhileDC store def
+R26178:26178 PV.HoareLogic <> u:124 var
+R26176:26176 PV.HoareLogic <> a:122 var
+R26144:26144 PV.HoareLogic <> P:118 var
+R26089:26093 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 26087:26087 <> s:125
+R26100:26104 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26126:26126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26105:26105 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R26115:26125 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R26106:26111 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R26113:26114 PV.HoareLogic <> e2:121 var
+R26125:26125 PV.HoareLogic <> b:123 var
+R26123:26123 PV.HoareLogic <> s:125 var
+R26097:26097 PV.HoareLogic <> P:118 var
+R26099:26099 PV.HoareLogic <> s:125 var
+R26031:26035 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 26029:26029 <> s:126
+R26042:26046 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26068:26068 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26047:26047 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R26057:26067 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R26048:26053 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R26055:26056 PV.HoareLogic <> e1:120 var
+R26067:26067 PV.HoareLogic <> a:122 var
+R26065:26065 PV.HoareLogic <> s:126 var
+R26039:26039 PV.HoareLogic <> P:118 var
+R26041:26041 PV.HoareLogic <> s:126 var
+R26305:26322 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_nrm def
+R26344:26346 PV.HoareLogic HoareWhileDC exp def
+R26385:26391 PV.HoareLogic HoareWhileDC derives def
+R26710:26732 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R26710:26732 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R26761:26783 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R26761:26783 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R26812:26829 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_err def
+R26887:26900 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R26887:26900 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R26961:26966 PV.HoareLogic HoareWhileDC sepcon def
+R27036:27040 PV.HoareLogic HoareWhileDC store def
+R27353:27359 PV.HoareLogic HoareWhileDC derives def
+R27605:27610 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R27624:27629 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R27624:27629 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R27653:27666 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R27653:27666 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R27694:27696 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27694:27696 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27725:27738 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R27725:27738 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R27766:27768 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27766:27768 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27835:27840 PV.HoareLogic HoareWhileDC sepcon def
+R27854:27859 PV.HoareLogic HoareWhileDC sepcon def
+R27912:27922 PV.HoareLogic HoareWhileDC state_subst def
+R27931:27934 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R27912:27922 PV.HoareLogic HoareWhileDC state_subst def
+R27931:27934 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R28007:28011 PV.HoareLogic HoareWhileDC store def
+R28061:28068 compcert.lib.Integers Int64 eq def
+R28061:28068 compcert.lib.Integers Int64 eq def
+R28109:28121 compcert.lib.Integers Int64 eq_true thm
+R28109:28121 compcert.lib.Integers Int64 eq_true thm
+R28205:28209 PV.HoareLogic HoareWhileDC store def
+R28250:28257 compcert.lib.Integers Int64 eq def
+R28250:28257 compcert.lib.Integers Int64 eq def
+R28294:28307 compcert.lib.Integers Int64 eq_false thm
+R28294:28307 compcert.lib.Integers Int64 eq_false thm
+R28546:28570 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R28546:28570 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R28708:28732 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R28708:28732 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R28878:28890 compcert.lib.Integers Int64 eq_spec thm
+R28878:28890 compcert.lib.Integers Int64 eq_spec thm
+R28917:28924 compcert.lib.Integers Int64 eq def
+R28917:28924 compcert.lib.Integers Int64 eq def
+R28985:29000 compcert.lib.Integers Int64 same_if_eq thm
+R28985:29000 compcert.lib.Integers Int64 same_if_eq thm
+R29126:29130 PV.HoareLogic HoareWhileDC store def
+R29443:29452 Coq.Init.Logic <> not_eq_sym thm
+R29443:29452 Coq.Init.Logic <> not_eq_sym thm
+R29645:29654 Coq.Init.Logic <> not_eq_sym thm
+R29645:29654 Coq.Init.Logic <> not_eq_sym thm
+prf 29888:29911 HoareWhileDC hoare_asgn_var_fwd_sound
+R29929:29937 PV.HoareLogic HoareWhileDC assertion def
+binder 29924:29924 <> P:127
+binder 29926:29926 <> Q:128
+R29944:29947 PV.Syntax Lang_WhileDC expr ind
+binder 29941:29941 <> e:129
+R29956:29960 compcert.lib.Integers <> int64 syndef
+binder 29951:29951 <> a:130
+binder 29953:29953 <> b:131
+R29968:29975 PV.Syntax Lang_While var_name def
+binder 29964:29964 <> x:132
+R29981:29981 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30029:30035 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30036:30036 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30075:30081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30132:30137 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30138:30142 PV.HoareLogic HoareWhileDC valid def
+R30146:30147 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30149:30151 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30163:30165 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30188:30189 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30200:30201 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30212:30213 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R30148:30148 PV.HoareLogic <> P:127 var
+R30152:30153 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R30161:30162 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R30154:30154 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R30160:30160 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R30156:30158 PV.HoareLogic HoareWhileDC :expr_entry::x_'='_x not
+R30155:30155 PV.HoareLogic <> x:132 var
+R30159:30159 PV.HoareLogic <> e:129 var
+R30184:30186 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
+R30166:30166 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R30183:30183 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R30174:30174 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R30175:30175 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R30182:30182 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R30180:30180 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R30181:30181 PV.HoareLogic <> b:131 var
+R30176:30179 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R30172:30172 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R30173:30173 PV.HoareLogic <> a:130 var
+R30167:30171 PV.HoareLogic HoareWhileDC store def
+R30187:30187 PV.HoareLogic <> Q:128 var
+R30190:30199 PV.HoareLogic HoareWhileDC asrt_false def
+R30202:30211 PV.HoareLogic HoareWhileDC asrt_false def
+R30082:30088 PV.HoareLogic HoareWhileDC derives def
+R30093:30095 PV.HoareLogic HoareWhileDC exp def
+binder 30102:30102 <> u:133
+R30108:30113 PV.HoareLogic HoareWhileDC sepcon def
+R30127:30127 PV.HoareLogic <> Q:128 var
+R30116:30120 PV.HoareLogic HoareWhileDC store def
+R30124:30124 PV.HoareLogic <> u:133 var
+R30122:30122 PV.HoareLogic <> a:130 var
+R30090:30090 PV.HoareLogic <> P:127 var
+R30047:30051 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 30045:30045 <> s:134
+R30058:30061 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30071:30073 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30063:30070 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
+R30062:30062 PV.HoareLogic <> s:134 var
+R30070:30070 PV.HoareLogic <> x:132 var
+R30074:30074 PV.HoareLogic <> a:130 var
+R30055:30055 PV.HoareLogic <> P:127 var
+R30057:30057 PV.HoareLogic <> s:134 var
+R29992:29996 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 29990:29990 <> s:135
+R30003:30007 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30028:30028 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30008:30008 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R30017:30027 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R30009:30014 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R30016:30016 PV.HoareLogic <> e:129 var
+R30027:30027 PV.HoareLogic <> b:131 var
+R30025:30025 PV.HoareLogic <> s:135 var
+R30000:30000 PV.HoareLogic <> P:127 var
+R30002:30002 PV.HoareLogic <> s:135 var
+R30242:30259 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_nrm def
+R30302:30308 PV.HoareLogic HoareWhileDC derives def
+R30622:30644 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R30622:30644 PV.WhileDCDenotations DntSem_WhileDC eval_r_both_err_and_nrm thm
+R30672:30689 PV.WhileDCDenotations DntSem_WhileDC asgn_deref_sem_err def
+R30779:30784 PV.HoareLogic HoareWhileDC sepcon def
+R30806:30808 PV.HoareLogic HoareWhileDC exp def
+R30884:30888 PV.HoareLogic HoareWhileDC store def
+R31177:31183 PV.HoareLogic HoareWhileDC derives def
+R31411:31413 PV.HoareLogic HoareWhileDC exp def
+R31456:31469 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R31456:31469 PV.WhileDCDenotations DntSem_WhileDC eval_r_sem_inj thm
+R31494:31496 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31494:31496 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31590:31595 PV.HoareLogic HoareWhileDC sepcon def
+R31609:31614 PV.HoareLogic HoareWhileDC sepcon def
+R31667:31677 PV.HoareLogic HoareWhileDC state_subst def
+R31686:31689 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R31667:31677 PV.HoareLogic HoareWhileDC state_subst def
+R31686:31689 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R31762:31766 PV.HoareLogic HoareWhileDC store def
+R31815:31822 compcert.lib.Integers Int64 eq def
+R31815:31822 compcert.lib.Integers Int64 eq def
+R31863:31875 compcert.lib.Integers Int64 eq_true thm
+R31863:31875 compcert.lib.Integers Int64 eq_true thm
+R31959:31963 PV.HoareLogic HoareWhileDC store def
+R32004:32011 compcert.lib.Integers Int64 eq def
+R32004:32011 compcert.lib.Integers Int64 eq def
+R32048:32061 compcert.lib.Integers Int64 eq_false thm
+R32048:32061 compcert.lib.Integers Int64 eq_false thm
+R32300:32324 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R32300:32324 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R32462:32486 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R32462:32486 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R32632:32644 compcert.lib.Integers Int64 eq_spec thm
+R32632:32644 compcert.lib.Integers Int64 eq_spec thm
+R32671:32678 compcert.lib.Integers Int64 eq def
+R32671:32678 compcert.lib.Integers Int64 eq def
+R32739:32754 compcert.lib.Integers Int64 same_if_eq thm
+R32739:32754 compcert.lib.Integers Int64 same_if_eq thm
+R32879:32883 PV.HoareLogic HoareWhileDC store def
+R33215:33224 Coq.Init.Logic <> not_eq_sym thm
+R33215:33224 Coq.Init.Logic <> not_eq_sym thm
+R33444:33453 Coq.Init.Logic <> not_eq_sym thm
+R33444:33453 Coq.Init.Logic <> not_eq_sym thm
+def 33719:33723 HoareWhileDC exp64
+R33734:33737 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33738:33746 PV.HoareLogic HoareWhileDC assertion def
+R33729:33733 compcert.lib.Integers <> int64 syndef
+binder 33726:33726 <> P:136
+R33750:33758 PV.HoareLogic HoareWhileDC assertion def
+binder 33767:33767 <> s:137
+R33772:33778 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R33786:33787 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R33781:33785 compcert.lib.Integers <> int64 syndef
+binder 33779:33779 <> n:138
+R33788:33788 PV.HoareLogic <> P:136 var
+R33792:33792 PV.HoareLogic <> s:137 var
+R33790:33790 PV.HoareLogic <> n:138 var
+prf 33802:33818 HoareWhileDC hoare_exist_sound
+R33840:33843 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33844:33852 PV.HoareLogic HoareWhileDC assertion def
+R33835:33839 compcert.lib.Integers <> int64 syndef
+binder 33831:33831 <> P:139
+R33871:33879 PV.HoareLogic HoareWhileDC assertion def
+binder 33856:33856 <> Q:140
+binder 33858:33862 <> Q_brk:141
+binder 33864:33868 <> Q_cnt:142
+R33887:33889 PV.Syntax Lang_WhileDC com ind
+binder 33883:33883 <> c:143
+R33895:33895 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33955:33962 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34010:34010 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33963:33967 PV.HoareLogic HoareWhileDC valid def
+R33971:33973 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33981:33984 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33986:33989 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33991:33992 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33998:33999 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34005:34006 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33979:33979 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R33980:33980 PV.HoareLogic <> P:139 var
+R33974:33978 PV.HoareLogic HoareWhileDC exp64 def
+R33985:33985 PV.HoareLogic <> c:143 var
+R33990:33990 PV.HoareLogic <> Q:140 var
+R33993:33997 PV.HoareLogic <> Q_brk:141 var
+R34000:34004 PV.HoareLogic <> Q_cnt:142 var
+R33908:33912 compcert.lib.Integers <> int64 syndef
+binder 33904:33904 <> a:144
+R33916:33920 PV.HoareLogic HoareWhileDC valid def
+R33923:33924 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33928:33930 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33932:33935 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33937:33938 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33944:33945 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33951:33952 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R33926:33926 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R33927:33927 PV.HoareLogic <> a:144 var
+R33925:33925 PV.HoareLogic <> P:139 var
+R33931:33931 PV.HoareLogic <> c:143 var
+R33936:33936 PV.HoareLogic <> Q:140 var
+R33939:33943 PV.HoareLogic <> Q_brk:141 var
+R33946:33950 PV.HoareLogic <> Q_cnt:142 var
+R34038:34042 PV.HoareLogic HoareWhileDC exp64 def
+prf 34126:34143 HoareWhileDC hoare_conseq_sound
+R34193:34201 PV.HoareLogic HoareWhileDC assertion def
+binder 34156:34156 <> P:145
+binder 34158:34159 <> P':146
+binder 34161:34161 <> Q:147
+binder 34163:34167 <> Q_brk:148
+binder 34169:34173 <> Q_cnt:149
+binder 34175:34176 <> Q':150
+binder 34178:34183 <> Q'_brk:151
+binder 34185:34190 <> Q'_cnt:152
+R34208:34210 PV.Syntax Lang_WhileDC com ind
+binder 34205:34205 <> c:153
+R34264:34271 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34284:34291 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34304:34311 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34332:34339 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34360:34367 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34368:34372 PV.HoareLogic HoareWhileDC valid def
+R34375:34390 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R34404:34408 PV.HoareLogic <> Q_cnt:149 var
+R34398:34402 PV.HoareLogic <> Q_brk:148 var
+R34396:34396 PV.HoareLogic <> Q:147 var
+R34394:34394 PV.HoareLogic <> c:153 var
+R34392:34392 PV.HoareLogic <> P:145 var
+R34340:34346 PV.HoareLogic HoareWhileDC derives def
+R34355:34359 PV.HoareLogic <> Q_cnt:149 var
+R34348:34353 PV.HoareLogic <> Q'_cnt:152 var
+R34312:34318 PV.HoareLogic HoareWhileDC derives def
+R34327:34331 PV.HoareLogic <> Q_brk:148 var
+R34320:34325 PV.HoareLogic <> Q'_brk:151 var
+R34292:34298 PV.HoareLogic HoareWhileDC derives def
+R34303:34303 PV.HoareLogic <> Q:147 var
+R34300:34301 PV.HoareLogic <> Q':150 var
+R34272:34278 PV.HoareLogic HoareWhileDC derives def
+R34282:34283 PV.HoareLogic <> P':146 var
+R34280:34280 PV.HoareLogic <> P:145 var
+R34218:34222 PV.HoareLogic HoareWhileDC valid def
+R34225:34240 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R34257:34262 PV.HoareLogic <> Q'_cnt:152 var
+R34250:34255 PV.HoareLogic <> Q'_brk:151 var
+R34247:34248 PV.HoareLogic <> Q':150 var
+R34245:34245 PV.HoareLogic <> c:153 var
+R34242:34243 PV.HoareLogic <> P':146 var
+R34437:34443 PV.HoareLogic HoareWhileDC derives def
+ind 34806:34813 HoareWhileDC provable
+constr 34841:34850 HoareWhileDC hoare_skip
+constr 34942:34952 HoareWhileDC hoare_break
+constr 35044:35057 HoareWhileDC hoare_continue
+constr 35152:35160 HoareWhileDC hoare_seq
+constr 35396:35403 HoareWhileDC hoare_if
+constr 35755:35765 HoareWhileDC hoare_while
+constr 36065:36078 HoareWhileDC hoare_do_while
+constr 36433:36441 HoareWhileDC hoare_for
+constr 36894:36913 HoareWhileDC hoare_asgn_deref_fwd
+constr 37246:37263 HoareWhileDC hoare_asgn_var_fwd
+constr 37587:37598 HoareWhileDC hoare_conseq
+constr 37888:37898 HoareWhileDC hoare_exist
+R34827:34830 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34816:34826 PV.HoareLogic HoareWhileDC HoareTriple ind
+R34867:34875 PV.HoareLogic HoareWhileDC assertion def
+binder 34864:34864 <> P:156
+R34884:34891 PV.HoareLogic <> provable:154 ind
+R34894:34896 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34898:34901 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34906:34909 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34911:34913 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34924:34925 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34936:34938 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34897:34897 PV.HoareLogic <> P:156 var
+R34902:34905 PV.HoareLogic HoareWhileDC :expr_entry::'skip' not
+R34910:34910 PV.HoareLogic <> P:156 var
+R34914:34923 PV.HoareLogic HoareWhileDC asrt_false def
+R34926:34935 PV.HoareLogic HoareWhileDC asrt_false def
+R34969:34977 PV.HoareLogic HoareWhileDC assertion def
+binder 34966:34966 <> P:157
+R34986:34993 PV.HoareLogic <> provable:154 ind
+R34995:34997 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34999:35002 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35009:35012 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35023:35024 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35026:35027 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35038:35040 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R34998:34998 PV.HoareLogic <> P:157 var
+R35003:35008 PV.Syntax Lang_WhileDC CBreak constr
+R35013:35022 PV.HoareLogic HoareWhileDC asrt_false def
+R35025:35025 PV.HoareLogic <> P:157 var
+R35028:35037 PV.HoareLogic HoareWhileDC asrt_false def
+R35074:35082 PV.HoareLogic HoareWhileDC assertion def
+binder 35071:35071 <> P:158
+R35091:35098 PV.HoareLogic <> provable:154 ind
+R35100:35102 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35104:35107 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35117:35120 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35131:35132 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35143:35144 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35146:35148 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R35103:35103 PV.HoareLogic <> P:158 var
+R35108:35116 PV.Syntax Lang_WhileDC CContinue constr
+R35121:35130 PV.HoareLogic HoareWhileDC asrt_false def
+R35133:35142 PV.HoareLogic HoareWhileDC asrt_false def
+R35145:35145 PV.HoareLogic <> P:158 var
+R35194:35202 PV.HoareLogic HoareWhileDC assertion def
+binder 35175:35175 <> P:159
+binder 35177:35177 <> Q:160
+binder 35179:35179 <> R:161
+binder 35181:35185 <> R_brk:162
+binder 35187:35191 <> R_cnt:163
+R35213:35215 PV.Syntax Lang_WhileDC com ind
+binder 35206:35207 <> c1:164
+binder 35209:35210 <> c2:165
+R35271:35280 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35327:35336 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35337:35344 PV.HoareLogic <> provable:154 ind
+R35347:35362 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35387:35391 PV.HoareLogic <> R_cnt:163 var
+R35381:35385 PV.HoareLogic <> R_brk:162 var
+R35379:35379 PV.HoareLogic <> R:161 var
+R35367:35370 PV.Syntax Lang_WhileDC CSeq constr
+R35375:35376 PV.HoareLogic <> c2:165 var
+R35372:35373 PV.HoareLogic <> c1:164 var
+R35364:35364 PV.HoareLogic <> P:159 var
+R35281:35288 PV.HoareLogic <> provable:154 ind
+R35291:35306 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35321:35325 PV.HoareLogic <> R_cnt:163 var
+R35315:35319 PV.HoareLogic <> R_brk:162 var
+R35313:35313 PV.HoareLogic <> R:161 var
+R35310:35311 PV.HoareLogic <> c2:165 var
+R35308:35308 PV.HoareLogic <> Q:160 var
+R35225:35232 PV.HoareLogic <> provable:154 ind
+R35235:35250 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35265:35269 PV.HoareLogic <> R_cnt:163 var
+R35259:35263 PV.HoareLogic <> R_brk:162 var
+R35257:35257 PV.HoareLogic <> Q:160 var
+R35254:35255 PV.HoareLogic <> c1:164 var
+R35252:35252 PV.HoareLogic <> P:159 var
+R35435:35443 PV.HoareLogic HoareWhileDC assertion def
+binder 35418:35418 <> P:166
+binder 35420:35420 <> Q:167
+binder 35422:35426 <> Q_brk:168
+binder 35428:35432 <> Q_cnt:169
+R35450:35453 PV.Syntax Lang_WhileDC expr ind
+binder 35447:35447 <> e:170
+R35464:35466 PV.Syntax Lang_WhileDC com ind
+binder 35457:35458 <> c1:171
+binder 35460:35461 <> c2:172
+R35541:35550 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35620:35629 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35630:35630 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35684:35694 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35695:35702 PV.HoareLogic <> provable:154 ind
+R35705:35720 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35746:35750 PV.HoareLogic <> Q_cnt:169 var
+R35740:35744 PV.HoareLogic <> Q_brk:168 var
+R35738:35738 PV.HoareLogic <> Q:167 var
+R35725:35727 PV.Syntax Lang_WhileDC CIf constr
+R35734:35735 PV.HoareLogic <> c2:172 var
+R35731:35732 PV.HoareLogic <> c1:171 var
+R35729:35729 PV.HoareLogic <> e:170 var
+R35722:35722 PV.HoareLogic <> P:166 var
+R35641:35645 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 35638:35638 <> s:173
+R35652:35655 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35674:35677 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35678:35682 Coq.Init.Logic <> False ind
+R35656:35656 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R35665:35673 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R35657:35662 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R35664:35664 PV.HoareLogic <> e:170 var
+R35673:35673 PV.HoareLogic <> s:173 var
+R35649:35649 PV.HoareLogic <> P:166 var
+R35651:35651 PV.HoareLogic <> s:173 var
+R35551:35558 PV.HoareLogic <> provable:154 ind
+R35561:35576 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35614:35618 PV.HoareLogic <> Q_cnt:169 var
+R35608:35612 PV.HoareLogic <> Q_brk:168 var
+R35606:35606 PV.HoareLogic <> Q:167 var
+R35603:35604 PV.HoareLogic <> c2:172 var
+R35579:35582 PV.HoareLogic HoareWhileDC andp def
+R35587:35597 PV.HoareLogic HoareWhileDC eb2assn_not def
+R35599:35599 PV.HoareLogic <> e:170 var
+R35584:35584 PV.HoareLogic <> P:166 var
+R35476:35483 PV.HoareLogic <> provable:154 ind
+R35486:35501 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35535:35539 PV.HoareLogic <> Q_cnt:169 var
+R35529:35533 PV.HoareLogic <> Q_brk:168 var
+R35527:35527 PV.HoareLogic <> Q:167 var
+R35524:35525 PV.HoareLogic <> c1:171 var
+R35504:35507 PV.HoareLogic HoareWhileDC andp def
+R35512:35518 PV.HoareLogic HoareWhileDC eb2assn def
+R35520:35520 PV.HoareLogic <> e:170 var
+R35509:35509 PV.HoareLogic <> P:166 var
+R35789:35797 PV.HoareLogic HoareWhileDC assertion def
+binder 35780:35780 <> P:174
+binder 35782:35786 <> P_brk:175
+R35804:35807 PV.Syntax Lang_WhileDC expr ind
+binder 35801:35801 <> e:176
+R35814:35816 PV.Syntax Lang_WhileDC com ind
+binder 35811:35811 <> c:177
+R35886:35895 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35896:35896 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35950:35960 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35961:35968 PV.HoareLogic <> provable:154 ind
+R35971:35986 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36051:36060 PV.HoareLogic HoareWhileDC asrt_false def
+R36040:36049 PV.HoareLogic HoareWhileDC asrt_false def
+R36004:36006 PV.HoareLogic HoareWhileDC orp def
+R36033:36037 PV.HoareLogic <> P_brk:175 var
+R36009:36012 PV.HoareLogic HoareWhileDC andp def
+R36017:36027 PV.HoareLogic HoareWhileDC eb2assn_not def
+R36029:36029 PV.HoareLogic <> e:176 var
+R36014:36014 PV.HoareLogic <> P:174 var
+R35991:35996 PV.Syntax Lang_WhileDC CWhile constr
+R36000:36000 PV.HoareLogic <> c:177 var
+R35998:35998 PV.HoareLogic <> e:176 var
+R35988:35988 PV.HoareLogic <> P:174 var
+R35907:35911 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 35904:35904 <> s:178
+R35918:35921 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35940:35943 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35944:35948 Coq.Init.Logic <> False ind
+R35922:35922 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R35931:35939 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R35923:35928 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R35930:35930 PV.HoareLogic <> e:176 var
+R35939:35939 PV.HoareLogic <> s:178 var
+R35915:35915 PV.HoareLogic <> P:174 var
+R35917:35917 PV.HoareLogic <> s:178 var
+R35826:35833 PV.HoareLogic <> provable:154 ind
+R35836:35851 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R35884:35884 PV.HoareLogic <> P:174 var
+R35878:35882 PV.HoareLogic <> P_brk:175 var
+R35876:35876 PV.HoareLogic <> P:174 var
+R35874:35874 PV.HoareLogic <> c:177 var
+R35854:35857 PV.HoareLogic HoareWhileDC andp def
+R35862:35868 PV.HoareLogic HoareWhileDC eb2assn def
+R35870:35870 PV.HoareLogic <> e:176 var
+R35859:35859 PV.HoareLogic <> P:174 var
+R36104:36112 PV.HoareLogic HoareWhileDC assertion def
+binder 36093:36093 <> P:179
+binder 36095:36095 <> R:180
+binder 36097:36101 <> R_brk:181
+R36119:36122 PV.Syntax Lang_WhileDC expr ind
+binder 36116:36116 <> e:182
+R36129:36131 PV.Syntax Lang_WhileDC com ind
+binder 36126:36126 <> c:183
+R36182:36191 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36252:36261 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36262:36262 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36316:36326 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36327:36334 PV.HoareLogic <> provable:154 ind
+R36337:36352 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36419:36428 PV.HoareLogic HoareWhileDC asrt_false def
+R36408:36417 PV.HoareLogic HoareWhileDC asrt_false def
+R36372:36374 PV.HoareLogic HoareWhileDC orp def
+R36401:36405 PV.HoareLogic <> R_brk:181 var
+R36377:36380 PV.HoareLogic HoareWhileDC andp def
+R36385:36395 PV.HoareLogic HoareWhileDC eb2assn_not def
+R36397:36397 PV.HoareLogic <> e:182 var
+R36382:36382 PV.HoareLogic <> R:180 var
+R36357:36364 PV.Syntax Lang_WhileDC CDoWhile constr
+R36368:36368 PV.HoareLogic <> e:182 var
+R36366:36366 PV.HoareLogic <> c:183 var
+R36354:36354 PV.HoareLogic <> P:179 var
+R36273:36277 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 36270:36270 <> s:184
+R36284:36287 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36306:36309 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36310:36314 Coq.Init.Logic <> False ind
+R36288:36288 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R36297:36305 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R36289:36294 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R36296:36296 PV.HoareLogic <> e:182 var
+R36305:36305 PV.HoareLogic <> s:184 var
+R36281:36281 PV.HoareLogic <> R:180 var
+R36283:36283 PV.HoareLogic <> s:184 var
+R36192:36199 PV.HoareLogic <> provable:154 ind
+R36202:36217 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36250:36250 PV.HoareLogic <> R:180 var
+R36244:36248 PV.HoareLogic <> R_brk:181 var
+R36242:36242 PV.HoareLogic <> R:180 var
+R36240:36240 PV.HoareLogic <> c:183 var
+R36220:36223 PV.HoareLogic HoareWhileDC andp def
+R36228:36234 PV.HoareLogic HoareWhileDC eb2assn def
+R36236:36236 PV.HoareLogic <> e:182 var
+R36225:36225 PV.HoareLogic <> R:180 var
+R36141:36148 PV.HoareLogic <> provable:154 ind
+R36151:36166 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36180:36180 PV.HoareLogic <> R:180 var
+R36174:36178 PV.HoareLogic <> R_brk:181 var
+R36172:36172 PV.HoareLogic <> R:180 var
+R36170:36170 PV.HoareLogic <> c:183 var
+R36168:36168 PV.HoareLogic <> P:179 var
+R36469:36477 PV.HoareLogic HoareWhileDC assertion def
+binder 36456:36456 <> P:185
+binder 36458:36458 <> Q:186
+binder 36460:36460 <> R:187
+binder 36462:36466 <> R_brk:188
+R36484:36487 PV.Syntax Lang_WhileDC expr ind
+binder 36481:36481 <> e:189
+R36501:36503 PV.Syntax Lang_WhileDC com ind
+binder 36491:36492 <> c1:190
+binder 36494:36495 <> c2:191
+binder 36497:36498 <> c3:192
+R36569:36578 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36579:36579 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36633:36643 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36705:36714 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36771:36780 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36781:36788 PV.HoareLogic <> provable:154 ind
+R36791:36806 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36876:36885 PV.HoareLogic HoareWhileDC asrt_false def
+R36865:36874 PV.HoareLogic HoareWhileDC asrt_false def
+R36829:36831 PV.HoareLogic HoareWhileDC orp def
+R36858:36862 PV.HoareLogic <> R_brk:188 var
+R36834:36837 PV.HoareLogic HoareWhileDC andp def
+R36842:36852 PV.HoareLogic HoareWhileDC eb2assn_not def
+R36854:36854 PV.HoareLogic <> e:189 var
+R36839:36839 PV.HoareLogic <> R:187 var
+R36811:36814 PV.Syntax Lang_WhileDC CFor constr
+R36824:36825 PV.HoareLogic <> c3:192 var
+R36821:36822 PV.HoareLogic <> c2:191 var
+R36819:36819 PV.HoareLogic <> e:189 var
+R36816:36817 PV.HoareLogic <> c1:190 var
+R36808:36808 PV.HoareLogic <> P:185 var
+R36715:36722 PV.HoareLogic <> provable:154 ind
+R36725:36740 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36760:36769 PV.HoareLogic HoareWhileDC asrt_false def
+R36749:36758 PV.HoareLogic HoareWhileDC asrt_false def
+R36747:36747 PV.HoareLogic <> R:187 var
+R36744:36745 PV.HoareLogic <> c2:191 var
+R36742:36742 PV.HoareLogic <> Q:186 var
+R36644:36651 PV.HoareLogic <> provable:154 ind
+R36654:36669 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36703:36703 PV.HoareLogic <> Q:186 var
+R36697:36701 PV.HoareLogic <> R_brk:188 var
+R36695:36695 PV.HoareLogic <> Q:186 var
+R36692:36693 PV.HoareLogic <> c3:192 var
+R36672:36675 PV.HoareLogic HoareWhileDC andp def
+R36680:36686 PV.HoareLogic HoareWhileDC eb2assn def
+R36688:36688 PV.HoareLogic <> e:189 var
+R36677:36677 PV.HoareLogic <> R:187 var
+R36590:36594 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 36587:36587 <> s:193
+R36601:36604 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36623:36626 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36627:36631 Coq.Init.Logic <> False ind
+R36605:36605 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R36614:36622 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(err)' not
+R36606:36611 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R36613:36613 PV.HoareLogic <> e:189 var
+R36622:36622 PV.HoareLogic <> s:193 var
+R36598:36598 PV.HoareLogic <> R:187 var
+R36600:36600 PV.HoareLogic <> s:193 var
+R36513:36520 PV.HoareLogic <> provable:154 ind
+R36523:36538 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R36558:36567 PV.HoareLogic HoareWhileDC asrt_false def
+R36547:36556 PV.HoareLogic HoareWhileDC asrt_false def
+R36545:36545 PV.HoareLogic <> R:187 var
+R36542:36543 PV.HoareLogic <> c1:190 var
+R36540:36540 PV.HoareLogic <> P:185 var
+R36934:36942 PV.HoareLogic HoareWhileDC assertion def
+binder 36928:36928 <> P:194
+binder 36930:36930 <> Q:195
+R36954:36957 PV.Syntax Lang_WhileDC expr ind
+binder 36946:36947 <> e1:196
+binder 36949:36950 <> e2:197
+R36966:36970 compcert.lib.Integers <> int64 syndef
+binder 36961:36961 <> a:198
+binder 36963:36963 <> b:199
+R36978:36978 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37027:37035 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37036:37036 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37085:37095 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37146:37155 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37156:37163 PV.HoareLogic <> provable:154 ind
+R37167:37168 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37170:37172 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37190:37192 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37215:37216 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37227:37228 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37239:37240 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37169:37169 PV.HoareLogic <> P:194 var
+R37173:37174 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37188:37189 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37175:37176 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
+R37181:37185 PV.HoareLogic HoareWhileDC :expr_entry::'*'_x_'::='_x not
+R37177:37177 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37180:37180 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37178:37179 PV.HoareLogic <> e1:196 var
+R37186:37187 PV.HoareLogic <> e2:197 var
+R37211:37213 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
+R37193:37193 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37210:37210 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37201:37201 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37202:37202 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37209:37209 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37207:37207 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37208:37208 PV.HoareLogic <> b:199 var
+R37203:37206 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R37199:37199 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37200:37200 PV.HoareLogic <> a:198 var
+R37194:37198 PV.HoareLogic HoareWhileDC store def
+R37214:37214 PV.HoareLogic <> Q:195 var
+R37217:37226 PV.HoareLogic HoareWhileDC asrt_false def
+R37229:37238 PV.HoareLogic HoareWhileDC asrt_false def
+R37096:37102 PV.HoareLogic HoareWhileDC derives def
+R37107:37109 PV.HoareLogic HoareWhileDC exp def
+binder 37116:37116 <> u:200
+R37122:37127 PV.HoareLogic HoareWhileDC sepcon def
+R37141:37141 PV.HoareLogic <> Q:195 var
+R37130:37134 PV.HoareLogic HoareWhileDC store def
+R37138:37138 PV.HoareLogic <> u:200 var
+R37136:37136 PV.HoareLogic <> a:198 var
+R37104:37104 PV.HoareLogic <> P:194 var
+R37047:37051 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 37045:37045 <> s:201
+R37058:37062 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37084:37084 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37063:37063 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37073:37083 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37064:37069 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R37071:37072 PV.HoareLogic <> e2:197 var
+R37083:37083 PV.HoareLogic <> b:199 var
+R37081:37081 PV.HoareLogic <> s:201 var
+R37055:37055 PV.HoareLogic <> P:194 var
+R37057:37057 PV.HoareLogic <> s:201 var
+R36989:36993 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 36987:36987 <> s:202
+R37000:37004 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37026:37026 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37005:37005 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37015:37025 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37006:37011 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R37013:37014 PV.HoareLogic <> e1:196 var
+R37025:37025 PV.HoareLogic <> a:198 var
+R37023:37023 PV.HoareLogic <> s:202 var
+R36997:36997 PV.HoareLogic <> P:194 var
+R36999:36999 PV.HoareLogic <> s:202 var
+R37283:37291 PV.HoareLogic HoareWhileDC assertion def
+binder 37278:37278 <> P:203
+binder 37280:37280 <> Q:204
+R37298:37301 PV.Syntax Lang_WhileDC expr ind
+binder 37295:37295 <> e:205
+R37310:37314 compcert.lib.Integers <> int64 syndef
+binder 37305:37305 <> a:206
+binder 37307:37307 <> b:207
+R37322:37329 PV.Syntax Lang_While var_name def
+binder 37318:37318 <> x:208
+R37337:37337 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37385:37393 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37394:37394 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37433:37443 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37494:37503 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37504:37511 PV.HoareLogic <> provable:154 ind
+R37515:37516 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37518:37520 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37532:37534 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37557:37558 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37569:37570 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37581:37582 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R37517:37517 PV.HoareLogic <> P:203 var
+R37521:37522 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37530:37531 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37523:37523 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37529:37529 PV.HoareLogic HoareWhileDC :expr_entry::'('_x_')' not
+R37525:37527 PV.HoareLogic HoareWhileDC :expr_entry::x_'='_x not
+R37524:37524 PV.HoareLogic <> x:208 var
+R37528:37528 PV.HoareLogic <> e:205 var
+R37553:37555 PV.HoareLogic HoareWhileDC :assn_entry::x_'*'_x not
+R37535:37535 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37552:37552 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37543:37543 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37544:37544 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37551:37551 PV.HoareLogic HoareWhileDC :assn_entry::'('_x_')' not
+R37549:37549 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37550:37550 PV.HoareLogic <> b:207 var
+R37545:37548 PV.WhileDCDenotations DntSem_WhileDC Vint constr
+R37541:37541 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R37542:37542 PV.HoareLogic <> a:206 var
+R37536:37540 PV.HoareLogic HoareWhileDC store def
+R37556:37556 PV.HoareLogic <> Q:204 var
+R37559:37568 PV.HoareLogic HoareWhileDC asrt_false def
+R37571:37580 PV.HoareLogic HoareWhileDC asrt_false def
+R37444:37450 PV.HoareLogic HoareWhileDC derives def
+R37455:37457 PV.HoareLogic HoareWhileDC exp def
+binder 37464:37464 <> u:209
+R37470:37475 PV.HoareLogic HoareWhileDC sepcon def
+R37489:37489 PV.HoareLogic <> Q:204 var
+R37478:37482 PV.HoareLogic HoareWhileDC store def
+R37486:37486 PV.HoareLogic <> u:209 var
+R37484:37484 PV.HoareLogic <> a:206 var
+R37452:37452 PV.HoareLogic <> P:203 var
+R37405:37409 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 37403:37403 <> s:210
+R37416:37419 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37429:37431 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37421:37428 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(env)' not
+R37420:37420 PV.HoareLogic <> s:210 var
+R37428:37428 PV.HoareLogic <> x:208 var
+R37432:37432 PV.HoareLogic <> a:206 var
+R37413:37413 PV.HoareLogic <> P:203 var
+R37415:37415 PV.HoareLogic <> s:210 var
+R37348:37352 PV.WhileDCDenotations DntSem_WhileDC state rec
+binder 37346:37346 <> s:211
+R37359:37363 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37384:37384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37364:37364 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37373:37383 PV.WhileDCDenotations DntSem_WhileDC :::x_'.(nrm)' not
+R37365:37370 PV.WhileDCDenotations DntSem_WhileDC eval_r def
+R37372:37372 PV.HoareLogic <> e:205 var
+R37383:37383 PV.HoareLogic <> b:207 var
+R37381:37381 PV.HoareLogic <> s:211 var
+R37356:37356 PV.HoareLogic <> P:203 var
+R37358:37358 PV.HoareLogic <> s:211 var
+R37650:37658 PV.HoareLogic HoareWhileDC assertion def
+binder 37613:37613 <> P:212
+binder 37615:37616 <> P':213
+binder 37618:37618 <> Q:214
+binder 37620:37624 <> Q_brk:215
+binder 37626:37630 <> Q_cnt:216
+binder 37632:37633 <> Q':217
+binder 37635:37640 <> Q'_brk:218
+binder 37642:37647 <> Q'_cnt:219
+R37665:37667 PV.Syntax Lang_WhileDC com ind
+binder 37662:37662 <> c:220
+R37726:37735 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37748:37757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37770:37779 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37800:37809 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37830:37839 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37840:37847 PV.HoareLogic <> provable:154 ind
+R37850:37865 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R37879:37883 PV.HoareLogic <> Q_cnt:216 var
+R37873:37877 PV.HoareLogic <> Q_brk:215 var
+R37871:37871 PV.HoareLogic <> Q:214 var
+R37869:37869 PV.HoareLogic <> c:220 var
+R37867:37867 PV.HoareLogic <> P:212 var
+R37810:37816 PV.HoareLogic HoareWhileDC derives def
+R37825:37829 PV.HoareLogic <> Q_cnt:216 var
+R37818:37823 PV.HoareLogic <> Q'_cnt:219 var
+R37780:37786 PV.HoareLogic HoareWhileDC derives def
+R37795:37799 PV.HoareLogic <> Q_brk:215 var
+R37788:37793 PV.HoareLogic <> Q'_brk:218 var
+R37758:37764 PV.HoareLogic HoareWhileDC derives def
+R37769:37769 PV.HoareLogic <> Q:214 var
+R37766:37767 PV.HoareLogic <> Q':217 var
+R37736:37742 PV.HoareLogic HoareWhileDC derives def
+R37746:37747 PV.HoareLogic <> P':213 var
+R37744:37744 PV.HoareLogic <> P:212 var
+R37677:37684 PV.HoareLogic <> provable:154 ind
+R37687:37702 PV.HoareLogic HoareWhileDC BuildHoareTriple constr
+R37719:37724 PV.HoareLogic <> Q'_cnt:219 var
+R37712:37717 PV.HoareLogic <> Q'_brk:218 var
+R37709:37710 PV.HoareLogic <> Q':217 var
+R37707:37707 PV.HoareLogic <> c:220 var
+R37704:37705 PV.HoareLogic <> P':213 var
+R37922:37925 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37926:37934 PV.HoareLogic HoareWhileDC assertion def
+R37917:37921 compcert.lib.Integers <> int64 syndef
+binder 37913:37913 <> P:221
+R37953:37961 PV.HoareLogic HoareWhileDC assertion def
+binder 37938:37938 <> Q:222
+binder 37940:37944 <> Q_brk:223
+binder 37946:37950 <> Q_cnt:224
+R37969:37971 PV.Syntax Lang_WhileDC com ind
+binder 37965:37965 <> c:225
+R37981:37981 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38044:38055 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38106:38106 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38056:38063 PV.HoareLogic <> provable:154 ind
+R38067:38069 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38077:38080 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38082:38085 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38087:38088 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38094:38095 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38101:38102 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38075:38075 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R38076:38076 PV.HoareLogic <> P:221 var
+R38070:38074 PV.HoareLogic HoareWhileDC exp64 def
+R38081:38081 PV.HoareLogic <> c:225 var
+R38086:38086 PV.HoareLogic <> Q:222 var
+R38089:38093 PV.HoareLogic <> Q_brk:223 var
+R38096:38100 PV.HoareLogic <> Q_cnt:224 var
+R37994:37998 compcert.lib.Integers <> int64 syndef
+binder 37990:37990 <> a:226
+R38002:38009 PV.HoareLogic <> provable:154 ind
+R38012:38013 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38017:38019 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38021:38024 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38026:38027 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38033:38034 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38040:38041 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R38015:38015 PV.HoareLogic HoareWhileDC :assn_entry::x_x not
+R38016:38016 PV.HoareLogic <> a:226 var
+R38014:38014 PV.HoareLogic <> P:221 var
+R38020:38020 PV.HoareLogic <> c:225 var
+R38025:38025 PV.HoareLogic <> Q:222 var
+R38028:38032 PV.HoareLogic <> Q_brk:223 var
+R38035:38039 PV.HoareLogic <> Q_cnt:224 var
+prf 38204:38214 HoareWhileDC hoare_sound
+binder 38224:38225 <> ht:227
+R38241:38244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38245:38249 PV.HoareLogic HoareWhileDC valid def
+R38251:38252 PV.HoareLogic <> ht:227 var
+R38230:38237 PV.HoareLogic HoareWhileDC provable ind
+R38239:38240 PV.HoareLogic <> ht:227 var
+R38297:38312 PV.HoareLogic HoareWhileDC hoare_skip_sound thm
+R38297:38312 PV.HoareLogic HoareWhileDC hoare_skip_sound thm
+R38325:38341 PV.HoareLogic HoareWhileDC hoare_break_sound thm
+R38325:38341 PV.HoareLogic HoareWhileDC hoare_break_sound thm
+R38354:38373 PV.HoareLogic HoareWhileDC hoare_continue_sound thm
+R38354:38373 PV.HoareLogic HoareWhileDC hoare_continue_sound thm
+R38387:38401 PV.HoareLogic HoareWhileDC hoare_seq_sound thm
+R38387:38401 PV.HoareLogic HoareWhileDC hoare_seq_sound thm
+R38426:38439 PV.HoareLogic HoareWhileDC hoare_if_sound thm
+R38426:38439 PV.HoareLogic HoareWhileDC hoare_if_sound thm
+R38459:38475 PV.HoareLogic HoareWhileDC hoare_while_sound thm
+R38459:38475 PV.HoareLogic HoareWhileDC hoare_while_sound thm
+R38495:38514 PV.HoareLogic HoareWhileDC hoare_do_while_sound thm
+R38495:38514 PV.HoareLogic HoareWhileDC hoare_do_while_sound thm
+R38535:38549 PV.HoareLogic HoareWhileDC hoare_for_sound thm
+R38535:38549 PV.HoareLogic HoareWhileDC hoare_for_sound thm
+R38584:38609 PV.HoareLogic HoareWhileDC hoare_asgn_deref_fwd_sound thm
+R38584:38609 PV.HoareLogic HoareWhileDC hoare_asgn_deref_fwd_sound thm
+R38629:38652 PV.HoareLogic HoareWhileDC hoare_asgn_var_fwd_sound thm
+R38629:38652 PV.HoareLogic HoareWhileDC hoare_asgn_var_fwd_sound thm
+R38673:38690 PV.HoareLogic HoareWhileDC hoare_conseq_sound thm
+R38673:38690 PV.HoareLogic HoareWhileDC hoare_conseq_sound thm
+R38748:38764 PV.HoareLogic HoareWhileDC hoare_exist_sound thm
+R38748:38764 PV.HoareLogic HoareWhileDC hoare_exist_sound thm
+R38803:38814 PV.HoareLogic HoareWhileDC <> mod
+mod 38825:38847 <> HoareWhileDC_Admissible
+prf 38943:38964 HoareWhileDC_Admissible hoare_conseq_pre_sound
+R38997:39005 PV.HoareLogic HoareWhileDC assertion def
+binder 38977:38977 <> P:228
+binder 38979:38980 <> P':229
+binder 38982:38982 <> Q:230
+binder 38984:38988 <> Q_brk:231
+binder 38990:38994 <> Q_cnt:232
+R39012:39014 PV.Syntax Lang_WhileDC com ind
+binder 39009:39009 <> c:233
+R39059:39066 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39075:39082 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39083:39087 PV.HoareLogic HoareWhileDC valid def
+R39089:39091 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39093:39096 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39098:39101 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39103:39104 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39110:39111 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39117:39118 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39092:39092 PV.HoareLogic <> P:228 var
+R39097:39097 PV.HoareLogic <> c:233 var
+R39102:39102 PV.HoareLogic <> Q:230 var
+R39105:39109 PV.HoareLogic <> Q_brk:231 var
+R39112:39116 PV.HoareLogic <> Q_cnt:232 var
+R39068:39072 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R39067:39067 PV.HoareLogic <> P:228 var
+R39073:39074 PV.HoareLogic <> P':229 var
+R39022:39026 PV.HoareLogic HoareWhileDC valid def
+R39028:39030 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39033:39036 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39038:39041 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39043:39044 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39050:39051 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39057:39058 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39031:39032 PV.HoareLogic <> P':229 var
+R39037:39037 PV.HoareLogic <> c:233 var
+R39042:39042 PV.HoareLogic <> Q:230 var
+R39045:39049 PV.HoareLogic <> Q_brk:231 var
+R39052:39056 PV.HoareLogic <> Q_cnt:232 var
+R39146:39152 PV.HoareLogic HoareWhileDC derives def
+prf 39218:39240 HoareWhileDC_Admissible hoare_conseq_post_sound
+R39287:39295 PV.HoareLogic HoareWhileDC assertion def
+binder 39253:39253 <> P:234
+binder 39255:39255 <> Q:235
+binder 39257:39261 <> Q_brk:236
+binder 39263:39267 <> Q_cnt:237
+binder 39269:39270 <> Q':238
+binder 39272:39277 <> Q'_brk:239
+binder 39279:39284 <> Q'_cnt:240
+R39302:39304 PV.Syntax Lang_WhileDC com ind
+binder 39299:39299 <> c:241
+R39352:39359 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39368:39375 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39392:39399 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39416:39423 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39424:39428 PV.HoareLogic HoareWhileDC valid def
+R39430:39432 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39434:39437 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39439:39442 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39444:39445 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39451:39452 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39458:39460 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39433:39433 PV.HoareLogic <> P:234 var
+R39438:39438 PV.HoareLogic <> c:241 var
+R39443:39443 PV.HoareLogic <> Q:235 var
+R39446:39450 PV.HoareLogic <> Q_brk:236 var
+R39453:39457 PV.HoareLogic <> Q_cnt:237 var
+R39406:39410 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R39400:39405 PV.HoareLogic <> Q'_cnt:240 var
+R39411:39415 PV.HoareLogic <> Q_cnt:237 var
+R39382:39386 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R39376:39381 PV.HoareLogic <> Q'_brk:239 var
+R39387:39391 PV.HoareLogic <> Q_brk:236 var
+R39362:39366 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R39360:39361 PV.HoareLogic <> Q':238 var
+R39367:39367 PV.HoareLogic <> Q:235 var
+R39312:39316 PV.HoareLogic HoareWhileDC valid def
+R39318:39320 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39322:39325 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39327:39330 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39333:39334 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39341:39342 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39349:39351 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39321:39321 PV.HoareLogic <> P:234 var
+R39326:39326 PV.HoareLogic <> c:241 var
+R39331:39332 PV.HoareLogic <> Q':238 var
+R39335:39340 PV.HoareLogic <> Q'_brk:239 var
+R39343:39348 PV.HoareLogic <> Q'_cnt:240 var
+R39488:39494 PV.HoareLogic HoareWhileDC derives def
+prf 39764:39779 HoareWhileDC_Admissible hoare_conseq_pre
+R39812:39820 PV.HoareLogic HoareWhileDC assertion def
+binder 39792:39792 <> P:242
+binder 39794:39795 <> P':243
+binder 39797:39797 <> Q:244
+binder 39799:39803 <> Q_brk:245
+binder 39805:39809 <> Q_cnt:246
+R39827:39829 PV.Syntax Lang_WhileDC com ind
+binder 39824:39824 <> c:247
+R39877:39884 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39893:39900 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39901:39908 PV.HoareLogic HoareWhileDC provable ind
+R39910:39912 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39914:39917 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39919:39922 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39924:39925 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39931:39932 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39938:39939 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39913:39913 PV.HoareLogic <> P:242 var
+R39918:39918 PV.HoareLogic <> c:247 var
+R39923:39923 PV.HoareLogic <> Q:244 var
+R39926:39930 PV.HoareLogic <> Q_brk:245 var
+R39933:39937 PV.HoareLogic <> Q_cnt:246 var
+R39886:39890 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R39885:39885 PV.HoareLogic <> P:242 var
+R39891:39892 PV.HoareLogic <> P':243 var
+R39837:39844 PV.HoareLogic HoareWhileDC provable ind
+R39846:39848 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39851:39854 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39856:39859 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39861:39862 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39868:39869 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39875:39876 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R39849:39850 PV.HoareLogic <> P':243 var
+R39855:39855 PV.HoareLogic <> c:247 var
+R39860:39860 PV.HoareLogic <> Q:244 var
+R39863:39867 PV.HoareLogic <> Q_brk:245 var
+R39870:39874 PV.HoareLogic <> Q_cnt:246 var
+R40011:40022 PV.HoareLogic HoareWhileDC hoare_conseq constr
+R40011:40022 PV.HoareLogic HoareWhileDC hoare_conseq constr
+R40064:40070 PV.HoareLogic HoareWhileDC derives def
+R40130:40136 PV.HoareLogic HoareWhileDC derives def
+R40139:40142 PV.HoareLogic HoareWhileDC andp def
+R40194:40197 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40194:40197 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 40336:40336 <> X:248
+R40344:40344 PV.HoareLogic <> X:248 var
+binder 40260:40261 <> X0:249
+binder 40264:40265 <> X1:250
+binder 40283:40283 <> s:251
+R40289:40290 PV.HoareLogic <> X0:249 var
+R40292:40292 PV.HoareLogic <> s:251 var
+R40296:40297 PV.HoareLogic <> X1:250 var
+R40299:40299 PV.HoareLogic <> s:251 var
+prf 40537:40553 HoareWhileDC_Admissible hoare_conseq_post
+R40600:40608 PV.HoareLogic HoareWhileDC assertion def
+binder 40566:40566 <> P:252
+binder 40568:40568 <> Q:253
+binder 40570:40574 <> Q_brk:254
+binder 40576:40580 <> Q_cnt:255
+binder 40582:40583 <> Q':256
+binder 40585:40590 <> Q'_brk:257
+binder 40592:40597 <> Q'_cnt:258
+R40615:40617 PV.Syntax Lang_WhileDC com ind
+binder 40612:40612 <> c:259
+R40668:40675 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40684:40691 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40708:40715 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40732:40739 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40740:40747 PV.HoareLogic HoareWhileDC provable ind
+R40749:40751 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40753:40756 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40758:40761 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40763:40764 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40770:40771 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40777:40779 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40752:40752 PV.HoareLogic <> P:252 var
+R40757:40757 PV.HoareLogic <> c:259 var
+R40762:40762 PV.HoareLogic <> Q:253 var
+R40765:40769 PV.HoareLogic <> Q_brk:254 var
+R40772:40776 PV.HoareLogic <> Q_cnt:255 var
+R40722:40726 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R40716:40721 PV.HoareLogic <> Q'_cnt:258 var
+R40727:40731 PV.HoareLogic <> Q_cnt:255 var
+R40698:40702 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R40692:40697 PV.HoareLogic <> Q'_brk:257 var
+R40703:40707 PV.HoareLogic <> Q_brk:254 var
+R40678:40682 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R40676:40677 PV.HoareLogic <> Q':256 var
+R40683:40683 PV.HoareLogic <> Q:253 var
+R40625:40632 PV.HoareLogic HoareWhileDC provable ind
+R40634:40636 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40638:40641 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40643:40646 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40649:40650 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40657:40658 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40665:40667 PV.HoareLogic HoareWhileDC :::'{{'_x_'}}'_x_'{{'_x_','_x_','_x_'}}' not
+R40637:40637 PV.HoareLogic <> P:252 var
+R40642:40642 PV.HoareLogic <> c:259 var
+R40647:40648 PV.HoareLogic <> Q':256 var
+R40651:40656 PV.HoareLogic <> Q'_brk:257 var
+R40659:40664 PV.HoareLogic <> Q'_cnt:258 var
+R40809:40813 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R40809:40813 PV.HoareLogic HoareWhileDC :::x_'|--'_x not
+R40831:40837 PV.HoareLogic HoareWhileDC derives def
+R40876:40887 PV.HoareLogic HoareWhileDC hoare_conseq constr
+R40876:40887 PV.HoareLogic HoareWhileDC hoare_conseq constr
+R40933:40955 PV.HoareLogic HoareWhileDC_Admissible <> mod
