@@ -748,7 +748,13 @@ Proof.
   split. {
     intros.
     destruct H7.
-    + apply H, H7.
+    + destruct H7.
+      - destruct H7.
+        * destruct H7 as [s2 [? ?]].
+          apply (H5 s2 H7).
+        * destruct H7 as [s2 [? ?]].
+          apply (H6 s2 H7).
+      - tauto.
     + destruct H7 as [s2 [? ?]].
       specialize (H4 s2 H7).
       destruct H8 as [i ?].
@@ -764,6 +770,74 @@ Proof.
           destruct H. subst s2'.
           destruct H3; [destruct H3|].
           + destruct H3; [destruct H3|]. {
+              destruct H3; [destruct H3|]. {
+                destruct H3; [destruct H3|]. {
+                  destruct H3 as [s3 [? ?]].
+                  destruct H5 as [s4 [? ?]].
+                  assert((andp R (eb2assn e)) s2). {
+                    unfold eb2assn, andp.
+                    split; auto.
+                  }
+                  specialize (H1 s2 H7).
+                  destruct H1 as [? [? [? ?]]].
+                  specialize (H8 s3 H3).
+                  specialize (H2 s3 H8).
+                  destruct H2 as [? [? [? ?]]].
+                  specialize (H11 s4 H5).
+                  apply (IHi s4 H11 H6).                  
+                }
+                {
+                  destruct H3 as [s3 [? ?]].
+                  destruct H5 as [s4 [? ?]].
+                  assert((andp R (eb2assn e)) s2). {
+                    unfold eb2assn, andp.
+                    split; auto.
+                  }
+                  specialize (H1 s2 H7).
+                  destruct H1 as [? [? [? ?]]].
+                  specialize (H10 s3 H3).
+                  specialize (H2 s3 H10).
+                  destruct H2 as [? [? [? ?]]].
+                  specialize (H11 s4 H5).
+                  apply (IHi s4 H11 H6).
+                }
+                destruct H3 as [s3 [? ?]].
+                assert((andp R (eb2assn e)) s2). {
+                  unfold eb2assn, andp.
+                  split; auto.
+                }
+                specialize (H1 s2 H6).
+                destruct H1 as [? [? [? ?]]].
+                specialize (H7 s3 H3).
+                specialize (H2 s3 H7).
+                destruct H2 as [? [? [? ?]]].
+                tauto.
+              }
+              + destruct H3 as [s3 [? ?]].
+                assert((andp R (eb2assn e)) s2). {
+                  unfold eb2assn, andp.
+                  split; auto.
+                }
+                specialize (H1 s2 H6).
+                destruct H1 as [? [? [? ?]]].
+                specialize (H9 s3 H3).
+                specialize (H2 s3 H9).
+                destruct H2 as [? [? [? ?]]].
+                tauto.
+              + destruct H3 as [s3 [? ?]].
+                destruct H5 as [s4 [? ?]].
+                assert((andp R (eb2assn e)) s2). {
+                  unfold eb2assn, andp.
+                  split; auto.
+                }
+                specialize (H1 s2 H7).
+                destruct H1 as [? [? [? ?]]].
+                specialize (H10 s3 H3).
+                specialize (H2 _ H10).
+                destruct H2 as [? [? [? ?]]].
+                apply (H12 s4 H5).
+              }
+            {
               destruct H3 as [s3 [? ?]].
               destruct H5 as [s4 [? ?]].
               assert((andp R (eb2assn e)) s2). {
@@ -773,10 +847,9 @@ Proof.
               specialize (H1 s2 H7).
               destruct H1 as [? [? [? ?]]].
               specialize (H8 s3 H3).
-              specialize (H2 s3 H8).
+              specialize (H2 _ H8).
               destruct H2 as [? [? [? ?]]].
-              specialize (H11 s4 H5).
-              apply (IHi s4 H11 H6).
+              apply (H12 s4 H5).
             }
             {
               destruct H3 as [s3 [? ?]].
@@ -788,33 +861,22 @@ Proof.
               specialize (H1 s2 H7).
               destruct H1 as [? [? [? ?]]].
               specialize (H10 s3 H3).
-              specialize (H2 s3 H10).
+              specialize (H2 _ H10).
               destruct H2 as [? [? [? ?]]].
-              specialize (H11 s4 H5).
-              apply (IHi s4 H11 H6).
+              apply (H13 s4 H5).
             }
-            destruct H3 as [s3 [? ?]].
-            assert((andp R (eb2assn e)) s2). {
-              unfold eb2assn, andp.
-              split; auto.
-            }
-            specialize (H1 s2 H6).
-            destruct H1 as [? [? [? ?]]].
-            specialize (H7 s3 H3).
-            specialize (H2 s3 H7).
-            destruct H2 as [? [? [? ?]]].
-            tauto.
           + destruct H3 as [s3 [? ?]].
+            destruct H5 as [s4 [? ?]].
             assert((andp R (eb2assn e)) s2). {
               unfold eb2assn, andp.
               split; auto.
             }
-            specialize (H1 s2 H6).
+            specialize (H1 s2 H7).
             destruct H1 as [? [? [? ?]]].
-            specialize (H9 s3 H3).
-            specialize (H2 s3 H9).
+            specialize (H8 s3 H3).
+            specialize (H2 _ H8).
             destruct H2 as [? [? [? ?]]].
-            tauto.
+            apply (H13 s4 H5).
           + assert((andp R (eb2assn e)) s2). {
               unfold eb2assn, andp.
               split; auto.
@@ -824,69 +886,69 @@ Proof.
             tauto.
         }
         apply (H0 s2 H4 H).
-  }
-  split. {
-    intros.
-    destruct H7 as [s3 [? ?]].
-    destruct H8 as [i ?].
-    unfold orp.
-    specialize (H4 s3 H7).
-    clear H7 H5 H6 H.
-    revert s2 s3 H4 H8.
-    induction i; simpl; intros.
-    + revert H8; unfold_RELS_tac; tauto.
-    + revert H8; unfold_RELS_tac; intros.
-      destruct H8. {
-        destruct H as [s3' [? ?]].
-        revert H; unfold test_true; unfold_RELS_tac; intros.
-        destruct H; subst s3'.
-        destruct H5; [destruct H5 |].
-        + destruct H5 as [s4 [? ?]].
-          destruct H6 as [s5 [? ?]].
-          assert((andp R (eb2assn e)) s3). {
-            unfold eb2assn, andp.
-            split; auto.
-          }
-          specialize (H1 s3 H8).
-          destruct H1 as [? [? [? ?]]].
-          specialize (H9 s4 H5).
-          specialize (H2 _ H9).
-          destruct H2 as [? [? [? ?]]].
-          specialize (H12 s5 H6).
-          specialize (IHi s2 s5 H12 H7).
-          apply IHi.
-        + destruct H5 as [s4 [? ?]].
-          destruct H6 as [s5 [? ?]].
-          assert((andp R (eb2assn e)) s3). {
-            unfold eb2assn, andp.
-            split; auto.
-          }
-          specialize (H1 s3 H8).
-          destruct H1 as [? [? [? ?]]].
-          specialize (H11 s4 H5).
-          specialize (H2 _ H11).
-          destruct H2 as [? [? [? ?]]].
-          specialize (H12 s5 H6).
-          specialize (IHi s2 s5 H12 H7).
-          apply IHi.
-        + assert((andp R (eb2assn e)) s3). {
-            unfold eb2assn, andp.
-            split; auto.
-          }
-          specialize (H1 s3 H6).
-          destruct H1 as [? [? [? ?]]].
-          right.
-          apply (H8 s2 H5).
       }
-      left.
-      unfold andp.
-      revert H; unfold test_false; unfold eb2assn_not; unfold_RELS_tac; intros.
-      destruct H; subst s3.
-      split; auto.
-      exists (Int64.repr 0).
-      auto.
-  }
-  tauto.
+    split. {
+      intros.
+      destruct H7 as [s3 [? ?]].
+      destruct H8 as [i ?].
+      unfold orp.
+      specialize (H4 s3 H7).
+      clear H7 H5 H6 H.
+      revert s2 s3 H4 H8.
+      induction i; simpl; intros.
+      + revert H8; unfold_RELS_tac; tauto.
+      + revert H8; unfold_RELS_tac; intros.
+        destruct H8. {
+          destruct H as [s3' [? ?]].
+          revert H; unfold test_true; unfold_RELS_tac; intros.
+          destruct H; subst s3'.
+          destruct H5; [destruct H5 |].
+          + destruct H5 as [s4 [? ?]].
+            destruct H6 as [s5 [? ?]].
+            assert((andp R (eb2assn e)) s3). {
+              unfold eb2assn, andp.
+              split; auto.
+            }
+            specialize (H1 s3 H8).
+            destruct H1 as [? [? [? ?]]].
+            specialize (H9 s4 H5).
+            specialize (H2 _ H9).
+            destruct H2 as [? [? [? ?]]].
+            specialize (H12 s5 H6).
+            specialize (IHi s2 s5 H12 H7).
+            apply IHi.
+          + destruct H5 as [s4 [? ?]].
+            destruct H6 as [s5 [? ?]].
+            assert((andp R (eb2assn e)) s3). {
+              unfold eb2assn, andp.
+              split; auto.
+            }
+            specialize (H1 s3 H8).
+            destruct H1 as [? [? [? ?]]].
+            specialize (H11 s4 H5).
+            specialize (H2 _ H11).
+            destruct H2 as [? [? [? ?]]].
+            specialize (H12 s5 H6).
+            specialize (IHi s2 s5 H12 H7).
+            apply IHi.
+          + assert((andp R (eb2assn e)) s3). {
+              unfold eb2assn, andp.
+              split; auto.
+            }
+            specialize (H1 s3 H6).
+            destruct H1 as [? [? [? ?]]].
+            right.
+            apply (H8 s2 H5).
+        }
+        left.
+        unfold andp.
+        revert H; unfold test_false; unfold eb2assn_not; unfold_RELS_tac; intros.
+        destruct H; subst s3.
+        split; auto.
+        exists (Int64.repr 0).
+        auto.
+      }
+    auto.
 Qed.
 
 Definition state_subst(s: state)(p:int64)(a:val) : state :=

@@ -607,6 +607,10 @@ match n with
       (D2.(cnt) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
       (D2.(nrm) ∘ D1.(err)) ∪
       (D2.(cnt) ∘ D1.(err)) ∪
+      (D2.(cnt) ∘ D1.(brk) ∘ Sets.full) ∪
+      (D2.(nrm) ∘ D1.(brk) ∘ Sets.full) ∪
+      (D2.(cnt) ∘ D1.(cnt) ∘ Sets.full) ∪
+      (D2.(nrm) ∘ D1.(cnt) ∘ Sets.full) ∪
       D2.(err))) ∪
       D0.(err)
 end.
@@ -634,7 +638,7 @@ Definition for_sem
     nrm := D.(nrm) ∘ ⋃ (ForSem.iter_nrm_lt_n D0 D1 D2);
     brk := ∅;
     cnt := ∅;
-    err := D.(err) ∪ (D.(nrm) ∘ ⋃ (ForSem.iter_err_lt_n D0 D1 D2));
+    err := (D.(brk) ∘ Sets.full) ∪ (D.(cnt) ∘ Sets.full) ∪ D.(err) ∪ (D.(nrm) ∘ ⋃ (ForSem.iter_err_lt_n D0 D1 D2));
     inf := D.(inf) ∪ (D.(nrm) ∘ Sets.general_union (ForSem.is_inf D0 D1 D2));
   |}.
 

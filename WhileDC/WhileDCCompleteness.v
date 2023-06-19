@@ -439,7 +439,7 @@ Proof.
   revert H4; unfold_RELS_tac; tauto.
 Qed. *)
 
-Lemma for_R_to_Q:
+(* Lemma for_R_to_Q:
   forall (e:expr)(c2 c3:com)(H:assertion),
     valid (BuildHoareTriple
       (andp (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) (eb2assn e))
@@ -639,6 +639,253 @@ Proof.
   }
   rewrite H0, H1.
   unfold_RELS_tac.
+  tauto.
+Qed. *)
+
+Lemma for_R_to_Q:
+  forall (e:expr)(c2 c3:com)(H:assertion),
+    valid (BuildHoareTriple
+      (andp (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) (eb2assn e))
+      c3
+      (wp c2 (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false)
+      H
+      (wp c2 (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false)).
+Proof.
+  simpl.
+  unfold wp, asrt_false, andp, eb2assn.
+  intros.
+  destruct H0 as [? ?].
+  destruct H0 as [? [? [? ?]]].
+  split. {
+    intros. apply H0.
+    simpl.
+    unfold_RELS_tac.
+    right.
+    exists s1; split; auto.
+    exists (S O).
+    simpl.
+    unfold test_true; unfold_RELS_tac.
+    left.
+    exists (s1).
+    split; auto.
+  }
+  split. {
+    intros.
+    split. {
+      intros.
+      apply H0.
+      simpl.
+      unfold_RELS_tac.
+      right.
+      exists s1; split; auto.
+      exists (S O).
+      simpl.
+      unfold test_true.
+      unfold_RELS_tac.
+      left.
+      exists s1;split; auto.
+      left. left. left. left. left. left. right.
+      exists s2.
+      tauto.
+    }
+    split. {
+      intro s3.
+      intros.
+      split. {
+        intros.
+        apply H0.
+        revert H7.
+        simpl.
+        unfold_RELS_tac.
+        intros.
+        destruct H7; auto.
+        right.
+        destruct H7 as [s3' [? ?]]; subst s3'.
+        destruct H8 as [i ?].
+        exists s1; split; auto.
+        exists (S i).
+        simpl.
+        unfold test_true.
+        unfold_RELS_tac.
+        left.
+        exists s1; split; auto.
+        left. left. left. left. left. left. left. left.
+        exists s2.
+        split; auto.
+        exists s3; auto. 
+      }
+      split. {
+        intro s4; intros.
+        apply H2.
+        revert H7; simpl; unfold_RELS_tac.
+        intros.
+        destruct H7 as [s3' [? ?]].
+        subst s3'.
+        destruct H8 as [i ?].
+        exists s1; split; auto.
+        exists (S i).
+        simpl; unfold test_true; unfold_RELS_tac.
+        left.
+        exists s1; split; auto.
+        left. left.
+        exists s2; split; auto.
+        exists s3; split; auto.
+      }
+      auto.
+    }
+    split. {
+      intro s3; intros.
+      apply H0.
+      simpl.
+      unfold_RELS_tac.
+      right.
+      exists s1; split; auto.
+      exists (S O).
+      simpl; unfold test_true; unfold_RELS_tac.
+      left.
+      exists s1; split; auto.
+      left. left. left. right.
+      exists s2; split; auto.
+      exists s3; split; auto.
+    }
+    intro s3; intros.
+    apply H0.
+    simpl.
+    unfold_RELS_tac.
+    right.
+    exists s1; split; auto.
+    exists (S O).
+    simpl; unfold test_true; unfold_RELS_tac.
+    left.
+    exists s1; split; auto.
+    left. right.
+    exists s2; split; auto.
+    exists s3; split; auto.
+  }
+  split. {
+    intros.
+    apply H2.
+    simpl.
+    unfold_RELS_tac.
+    exists s1; split; auto.
+    exists (S O).
+    simpl.
+    unfold test_true.
+    unfold_RELS_tac.
+    left.
+    exists s1; split; auto. 
+  }
+  split. {
+    intros.
+    apply H0.
+    simpl.
+    unfold_RELS_tac.
+    right.
+    exists s1; split; auto.
+    exists (S O).
+    simpl; unfold test_true; unfold_RELS_tac.
+    left.
+    exists (s1); split; auto.
+    left. left. left. left. left. right.
+    exists s2; split; auto.
+  }
+  split. {
+    intros.
+    split. {
+      intros.
+      apply H0.
+      revert H7.
+      simpl.
+      unfold_RELS_tac.
+      intros.
+      destruct H7; auto.
+      right.
+      exists s1; split; auto.
+      destruct H7 as [s3 [? ?]].
+      destruct H8 as [i ?].
+      subst s'.
+      exists (S i).
+      simpl.
+      unfold test_true; unfold_RELS_tac.
+      left.
+      exists (s1); split; auto.
+      left. left. left. left. left. left. left. right.
+      exists s2; split; auto.
+      exists s3; split; auto.
+    }
+    split. {
+      intros.
+      apply H2.
+      revert H7.
+      simpl.
+      unfold_RELS_tac.
+      intros.
+      exists s1; split; auto.
+      destruct H7 as [s3 [? ?]].
+      destruct H8 as [i ?].
+      subst s'.
+      exists (S i).
+      simpl.
+      unfold test_true; unfold_RELS_tac.
+      left.
+      exists (s1); split; auto.
+      left. right.
+      exists s2; split; auto.
+      exists s3; split; auto.
+    }
+    auto.
+  }
+  split. {
+    intros.
+    apply H0.
+    simpl.
+    unfold_RELS_tac.
+    right.
+    exists s1; split; auto.
+    exists (S O).
+    simpl; unfold test_true; unfold_RELS_tac.
+    left.
+    exists s1; split; auto.
+    left. left. left. left. right.
+    exists s2; split; auto.
+    exists s'; split; auto.
+  }
+  intros.
+  apply H0.
+  simpl.
+  unfold_RELS_tac.
+  right.
+  exists s1; split; auto.
+  exists (S O).
+  simpl; unfold test_true; unfold_RELS_tac.
+  left.
+  exists s1; split; auto.
+  left. left. right.
+  exists s2; split; auto.
+  exists s'; split; auto.
+Qed.
+
+Lemma for_Q_to_R:
+forall (e:expr)(c2 c3:com)(H:assertion),
+    valid (BuildHoareTriple
+      (wp c2 (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false)
+      c2
+      (wp (CFor CSkip e c2 c3) H asrt_false asrt_false) asrt_false asrt_false).
+Proof.
+  intros.
+  simpl.
+  unfold wp, asrt_false.
+  intros.
+  destruct H0 as [? [? [? ?]]].
+  split. {
+    tauto.
+  }
+  split. {
+    intros.
+    specialize (H1 s2 H4).
+    destruct H1 as [? [? [? ?]]].
+    tauto.
+  }
   tauto.
 Qed.
 
@@ -1412,8 +1659,103 @@ Proof.
         unfold_RELS_tac; right; tauto.
       + apply IHc3.
         pose proof for_R_to_Q.
-
+        specialize (H e c2 c3 Q).
+        unfold valid in H.
+        tauto.
+      + apply IHc2.
+        apply for_Q_to_R. 
     }
+    apply (hoare_conseq _ _ _ _ _ _ _ _ _ H0); clear H H0 IHc1 IHc2 IHc3.
+    - unfold wp, derives, asrt_false.
+      intros.
+      specialize (HT s H).
+      destruct HT as [? [? [? ?]]].
+      split. {
+        intros.
+        apply H0.
+        simpl.
+        unfold_RELS_tac.
+        left. right.
+        tauto.
+      }
+      split. {
+        intro s1.
+        intros.
+        split. {
+          intros.
+          apply H0.
+          revert H5.
+          simpl.
+          unfold_RELS_tac.
+          intros.
+          right.
+          destruct H5. {
+            destruct H5; try contradiction.
+            destruct H5; destruct H5; destruct H5; try contradiction.
+          }
+          destruct H5 as [s1' [? ?]].
+          subst s1'.
+          destruct H6 as [i ?].
+          exists s1.
+          split; auto.
+          exists i.
+          auto.
+        }
+        split. {
+          intro s2.
+          intros.
+          apply H1.
+          revert H5.
+          simpl.
+          unfold_RELS_tac.
+          intros.
+          destruct H5 as [s1' [? ?]].
+          subst s1'.
+          destruct H6 as [i ?].
+          exists s1.
+          split; auto.
+          exists i.
+          auto.
+        }
+        auto.
+      }
+      split. {
+        intro s1.
+        intros.
+        apply H0.
+        simpl.
+        unfold_RELS_tac.
+        left. left. left.
+        exists s1; auto.
+      }
+      {
+        intro s1.
+        intros.
+        apply H0.
+        simpl.
+        unfold_RELS_tac.
+        left. left. right.
+        exists s1; auto.
+      }
+    - unfold orp, andp, derives, asrt_false, eb2assn_not, wp.    
+      intros.
+      destruct H; auto.
+      destruct H.
+      destruct H as [? [? [? ?]]].
+      apply H1.
+      simpl.
+      unfold_RELS_tac.
+      exists s; split; auto.
+      exists (S O).
+      simpl; unfold test_false; unfold_RELS_tac.
+      right.
+      destruct H0 as [i [? ?]].
+      split; auto.
+      rewrite <- H4.
+      rewrite Int64.repr_signed.
+      tauto.
+    - apply false_derives_all.
+    - apply false_derives_all.  
   + pose proof hoare_do_while (wp (CDoWhile c e) Q asrt_false asrt_false) (wp (CWhile e c) Q asrt_false asrt_false) Q e c.
     assert(    provable
       {{(wp (CDoWhile c e) Q asrt_false asrt_false)}}
