@@ -230,15 +230,15 @@
 
 ##### `hoare_asgn_deref_fwd`
 
-$P \vdash \exist a, (P \wedge [e1 = a])$
+$P \vdash \exists a, (P \wedge [e1 = a])$
 
 由 `hoare_exist` 只需证明 
 
-$ \forall a, \text{provable} (P \wedge [e1 =a]) (e1 = e2) Q$
+$\forall a, \text{provable} (P \wedge [e1 =a]) (e1 = e2) Q$
 
 同理只需证明
 
-$ \forall a,b, \text{provable} (P \wedge [e1 =a] \wedge [e2 = b]) (e1 = e2) Q$
+$\forall a,b, \text{provable} (P \wedge [e1 =a] \wedge [e2 = b]) (e1 = e2) Q$
 
 从而可以使用 `hoare_asgn_deref_fwd`
 
