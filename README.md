@@ -1,6 +1,59 @@
-## WhileDC 完备性证明
+## WhileDC Relative Completeness Proof
 
-### 基础定义
+### Definition
+
+- `syntax`
+
+  > $e:=n\ |\ x\ |\ e_1\otimes e_2\ |\ \odot e \ |\ *e\ |\ \&e$
+  >
+  > $\otimes\in\{+,-,\times,/,\%,<,>,\le,\ge,=,\ne,||,\&\&\}$ 
+  >
+  > $ \odot\in\{!,-\} $ 
+  >
+  > $\begin{aligned}c:= &\ \text{skip}\ |\ x:=e\ |\ *e_1:=e_2\ |\ c_1;c_2\ |\ \text{if}\ (e) \ \text{then}\ c_1\ \text{else}\ c_2\ |\ \text{while}\ (e) \ c\ |\\&\ \text{do}\ c \ \text{while}\ (e)\ |\ \text{for}\ (c_1;e;c_2)\ c_3\ |\ \text{break}\ |\ \text{continue}     \end{aligned}$ 
+
+- `semantic` 
+
+  ```
+  val := Vuninit | Vint (i: int64)
+  
+  Record state: Type := {
+    env: var_name -> int64;
+    mem: int64 -> option val;
+  }.
+  
+  // the type of the denotational semantic of expressions
+  Record EDenote: Type := {
+    nrm: state -> int64 -> Prop;
+    err: state -> Prop;
+  }.
+  
+  // the type of the denotational semantic of commands
+  Record CDenote: Type := {
+    nrm: state -> state -> Prop;
+    brk: state -> state -> Prop;
+    cnt: state -> state -> Prop;
+    err: state -> Prop;
+    inf: state -> Prop
+  }.
+  ```
+
+  The detailed definitions of the denotational semantic can be found in the file `WhileDCDenotations.v` .
+
+- `assertion`
+
+  ```
+  Definition assertion: Type := state -> Prop.
+  ```
+
+- `HoareTriple`
+
+  ```
+  Inductive HoareTriple: Type :=
+  | BuildHoareTriple: assertion -> com -> assertion -> assertion -> assertion -> HoareTriple.
+  ```
+
+  We notate $\text{BuildHoareTriple}\ P\ c\ Q_{nrm}\ Q_{brk}\ Q_{cnt}$  as $\{\{P\}\}\ c\ \{\{Q_{nrm},Q_{brk},Q_{cnt} \}\}$ 
 
 - `valid` 
 
@@ -19,7 +72,7 @@
     end.
   ```
 
-- 最弱前条件
+- weakest precondition
 
   ```
   Definition wp (c:com) (Q Q_brk Q_cnt:assertion) : assertion :=
@@ -30,243 +83,117 @@
     (forall s', (eval_com c).(cnt) s s' -> Q_cnt s').
   ```
 
-- Hoare 规则
+- provable
 
-  - `hoare_skip`
-
-    ```ocaml
-    Lemma hoare_skip_sound:
+  ```
+  Inductive provable: HoareTriple -> Prop :=
+  | hoare_skip:
       forall P: assertion,
-        valid {{ P }} skip {{ P , asrt_false, asrt_false }}.
-    ```
-
-  - `hoare_break`
-
-    ```
-    Lemma hoare_break_sound:
+        provable  {{ P }} skip {{ P , asrt_false, asrt_false }}
+  | hoare_break:
       forall P: assertion,
-        valid {{ P }} CBreak {{ asrt_false, P, asrt_false }}.
-    ```
-
-  - `hoare_continue`
-
-    ```
-    Lemma hoare_continue_sound:
+        provable {{ P }} CBreak {{ asrt_false, P, asrt_false }}
+  | hoare_continue:
       forall P: assertion,
-        valid {{ P }} CContinue {{ asrt_false, asrt_false, P }}.
-    ```
-
-  - `hoare_seq`
-
-    ```
-    Lemma hoare_seq_sound:
+        provable {{ P }} CContinue {{ asrt_false, asrt_false, P }}
+  | hoare_seq:
       forall (P Q R R_brk R_cnt: assertion) (c1 c2: com),
-        valid (BuildHoareTriple P c1 Q R_brk R_cnt) ->
-        valid (BuildHoareTriple Q c2 R R_brk R_cnt) ->
-        valid (BuildHoareTriple P (CSeq c1 c2) R R_brk R_cnt).
-    ```
-
-  - `hoare_if`
-
-    ```
-    Lemma hoare_if_sound:
+        provable {{ P }} c1 {{ Q, R_brk, R_cnt }} ->
+        provable {{ Q }} c2 {{ R, R_brk, R_cnt }} ->
+        provable {{ P }} (CSeq c1 c2) {{ R, R_brk, R_cnt }}
+  | hoare_if:
       forall (P Q Q_brk Q_cnt: assertion) (e: expr) (c1 c2: com),
-        valid (BuildHoareTriple (andp P (eb2assn e)) c1 Q Q_brk Q_cnt) ->
-        valid (BuildHoareTriple (andp P (eb2assn_not e)) c2 Q Q_brk Q_cnt) ->
+        provable {{ P && e }} c1 {{ Q, Q_brk, Q_cnt }} ->
+        provable {{ P && !e }} c2 {{ Q, Q_brk, Q_cnt }} ->
         (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
-        valid (BuildHoareTriple P (CIf e c1 c2) Q Q_brk Q_cnt).
-    ```
-
-  - `hoare_while`
-
-    ```
-    Lemma hoare_while_sound:
+        provable {{ P }}(CIf e c1 c2) {{ Q, Q_brk, Q_cnt }}
+  | hoare_while:
       forall (P P_brk: assertion) (e: expr) (c: com),
-        valid (BuildHoareTriple (andp P (eb2assn e)) c P P_brk P) ->
+        provable {{ P && e }} c {{ P, P_brk, P }} ->
         (forall s: state, (P s -> (eval_r e).(err) s -> False)) ->
-        valid (BuildHoareTriple P (CWhile e c) (orp (andp P (eb2assn_not e)) P_brk) asrt_false asrt_false).
-    ```
-
-  - `hoare_do_while`
-
-    ```
-    Lemma hoare_do_while_sound:
+        provable {{ P }} (CWhile e c) {{ (P && !e) || P_brk, asrt_false, asrt_false }}
+  | hoare_do_while:
       forall (P R R_brk: assertion) (e: expr) (c: com),
-      valid (BuildHoareTriple P c R R_brk R) ->
-      valid (BuildHoareTriple (andp R (eb2assn e)) c R R_brk R) ->
-      (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
-      valid (BuildHoareTriple P (CDoWhile c e) (orp (andp R (eb2assn_not e)) R_brk) asrt_false asrt_false).
-    ```
-
-  - `hoare_for`
-
-    ```
-    Lemma hoare_for_sound:
-      forall (P Q R R_brk: assertion) (e: expr) (c1 c2 c3: com),  
-      valid (BuildHoareTriple P c1 R asrt_false asrt_false) ->
-      (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
-      valid (BuildHoareTriple (andp R (eb2assn e)) c3 Q R_brk Q) ->
-      valid (BuildHoareTriple Q c2 R asrt_false asrt_false) ->
-      valid (BuildHoareTriple P (CFor c1 e c2 c3) (orp (andp R (eb2assn_not e)) R_brk) asrt_false asrt_false).
-    ```
-
-  - `hoare_asgn_deref_fwd`
-
-    ```
-    Lemma hoare_asgn_deref_fwd_sound:
+        provable {{ P }} c {{ R, R_brk, R}} ->
+        provable {{ R && e }} c {{ R, R_brk, R }} ->
+        (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
+        provable {{ P }} (CDoWhile c e) {{ (R && !e) || R_brk, asrt_false, asrt_false }}
+  | hoare_for:
+      forall (P Q R R_brk: assertion) (e: expr) (c1 c2 c3: com),
+        provable {{ P }} c1 {{ R, asrt_false, asrt_false }} ->
+        (forall s: state, (R s -> (eval_r e).(err) s -> False)) ->
+        provable {{ R && e }} c3 {{ Q, R_brk, Q }} ->
+        provable {{ Q }} c2 {{ R, asrt_false, asrt_false }} ->
+        provable {{ P || (CFor c1 e c2 c3) {{ (R && !e) || R_brk, asrt_false, asrt_false }}   
+  | hoare_asgn_deref_fwd:
       forall (P Q : assertion) (e1 e2 : expr) (a b: int64),
-        (forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
-        (forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
-        derives P (exp (fun u => (sepcon (store a u) Q) )) ->
-        valid ( {{P}} ( * (e1) ::= e2 ) {{(store a (Vint b)) * Q, asrt_false, asrt_false}} ).
-    ```
-
-  - `hoare_asgn_var_fwd`
-
-    ```
-    Lemma hoare_asgn_var_fwd_sound:
+      (forall (s:state), P s -> ((eval_r e1).(nrm) s a)) ->
+      (forall (s:state), P s -> ((eval_r e2).(nrm) s b)) ->
+        P |-- (exp (fun u => (sepcon (store a u) Q) )) ->
+        provable ( {{ P }} ( * (e1) ::= e2 ) {{ (store a (Vint b)) * Q, asrt_false, asrt_false }} )
+  | hoare_asgn_var_fwd:
       forall (P Q: assertion) (e: expr) (a b: int64) (x : var_name),
       (forall (s:state), P s -> ((eval_r e).(nrm) s b)) ->
       (forall (s:state), P s -> s.(env) x = a) ->
-      derives P (exp (fun u => (sepcon (store a u) Q) )) ->
-      valid ( {{P}} ( (x = e) ) {{(store a (Vint b)) * Q, asrt_false, asrt_false}}).
-    ```
-
-  - `hoare_exist`
-
-    ```
-    Lemma hoare_exist_sound:
-      forall (P : int64 -> assertion) (Q Q_brk Q_cnt: assertion) (c : com),
-      (forall (a : int64), valid ({{P a}} c {{ Q, Q_brk, Q_cnt}} )) ->
-      (valid ( {{ exp64 P }} c {{ Q, Q_brk, Q_cnt}}  )).
-    ```
-
-  - `hoare_conseq`
-
-    ```
-    Lemma hoare_conseq_sound:
+        P |-- (exp (fun u => (sepcon (store a u) Q) )) ->
+        provable ( {{ P }} (x = e) {{(store a (Vint b)) * Q, asrt_false, asrt_false }})
+  | hoare_conseq:
       forall (P P' Q Q_brk Q_cnt Q' Q'_brk Q'_cnt: assertion) (c: com),
-        valid (BuildHoareTriple P' c Q' Q'_brk Q'_cnt) ->
-        derives P P' ->
-        derives Q' Q ->
-        derives Q'_brk Q_brk ->
-        derives Q'_cnt Q_cnt ->
-        valid (BuildHoareTriple P c Q Q_brk Q_cnt).
-    ```
-
-### Denotation
-
-- 修复了一些原有代码的 bug
-
-  - `asgn_deref_sem ` 里面的 `err` 部分，应该是 
-
-    `err := D1.(err) ∪ D2.(err) ∪ asgn_deref_sem_err D2.(nrm)`
-
-  - `do_while_sem` 里面的 `nrm` 部分，应该还要包含第一次进入 `c` 直接 break 的情况
-
-  - `For` 的 `iter_err_lt_n` 应该加上 `D1` error 的情况
-
-    ```
-    Fixpoint iter_err_lt_n
-               (D0: EDenote)
-               (D1: CDenote)
-               (D2: CDenote)
-               (n: nat): state -> Prop :=
-      match n with
-      | O => ∅
-      | S n0 =>
-         (test_true D0 ∘
-            ((D2.(nrm) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-             (D2.(cnt) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-             (D2.(nrm) ∘ D1.(err)) ∪
-             (D2.(cnt) ∘ D1.(err)) ∪
-             D2.(err))) ∪
-          D0.(err)
-      end.
-    
-    ```
-
-- 对于 For 循环 `For (c1; e; c2) c3;` 将 `c1` 和 `c2` 出现 `break` 和 `continue` 的情况算作 For 语句的 `error`
-
-  ```
-  Fixpoint iter_err_lt_n
-    (D0: EDenote)
-    (D1: CDenote)
-    (D2: CDenote)
-    (n: nat): state -> Prop :=
-  match n with
-    | O => ∅
-    | S n0 =>
-      (test_true D0 ∘
-        ((D2.(nrm) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-        (D2.(cnt) ∘ D1.(nrm) ∘ iter_err_lt_n D0 D1 D2 n0) ∪
-        (D2.(nrm) ∘ D1.(err)) ∪
-        (D2.(cnt) ∘ D1.(err)) ∪
-        (D2.(cnt) ∘ D1.(brk) ∘ Sets.full) ∪
-        (D2.(nrm) ∘ D1.(brk) ∘ Sets.full) ∪
-        (D2.(cnt) ∘ D1.(cnt) ∘ Sets.full) ∪
-        (D2.(nrm) ∘ D1.(cnt) ∘ Sets.full) ∪
-        D2.(err))) ∪
-        D0.(err)
-  end.
+        provable {{ P' }} c {{ Q', Q'_brk, Q'_cnt }} ->
+        P |-- P' ->
+        Q' |-- Q ->
+        Q'_brk |-- Q_brk ->
+        Q'_cnt |-- Q_cnt ->
+        provable {{ P }} c {{ Q, Q_brk, Q_cnt }}
+  | hoare_exist:
+      forall (P : int64 -> assertion) (Q Q_brk Q_cnt: assertion) (c : com),
+        (forall (a : int64), provable ({{P a}} c {{ Q, Q_brk, Q_cnt}} )) ->
+        (provable ( {{ exp64 P }} c {{ Q, Q_brk, Q_cnt}}  )).
   ```
 
-  ```
-  Definition for_sem
-               (D: CDenote)
-               (D0: EDenote)
-               (D1: CDenote)
-               (D2: CDenote): CDenote :=
-    {|
-      nrm := D.(nrm) ∘ ⋃ (ForSem.iter_nrm_lt_n D0 D1 D2);
-      brk := ∅;
-      cnt := ∅;
-      err := (D.(brk) ∘ Sets.full) ∪ (D.(cnt) ∘ Sets.full) ∪ D.(err) ∪ (D.(nrm) ∘ ⋃ (ForSem.iter_err_lt_n D0 D1 D2));
-      inf := D.(inf) ∪ (D.(nrm) ∘ Sets.general_union (ForSem.is_inf D0 D1 D2));
-    |}.
-  ```
-
-### 证明思路
+### About the proof
 
 ##### `hoare_asgn_deref_fwd`
 
-$P \vdash \exists a, (P \wedge [e1 = a])$
+Since the condition `valid {{ P }} *e1 = e2 {{ Q }}` secure that `e1` can be safely evaluated under the assertion `P` , we can prove that
+$$
+P \vdash \exists a, (P \wedge [e1 = a])
+$$
+Due to `hoare_exist` , it suffices to prove that 
 
-由 `hoare_exist` 只需证明 
+$$
+\forall a, \text{provable} (P \wedge [e1 =a]) (e1 = e2) Q
+$$
+Similarly, it suffices to prove that
 
-$\forall a, \text{provable} (P \wedge [e1 =a]) (e1 = e2) Q$
-
-同理只需证明
-
-$\forall a,b, \text{provable} (P \wedge [e1 =a] \wedge [e2 = b]) (e1 = e2) Q$
-
-从而可以使用 `hoare_asgn_deref_fwd`
-
-使用之后证出来的是 $store(a, b) * ((P \wedge [e1 =a] \wedge [e2 = b]) \text{把a有关 mem 挖掉的结果})$
-
-然后用这个命题证 $Q$ 即可
+$$
+\forall a,b, \text{provable} (P \wedge [e1 =a] \wedge [e2 = b]) (e1 = e2) Q
+$$
+Therefore, we can use `hoare_asgn_deref_fwd` , and the postcondition is like
+$$
+store(a, b) * ((P \wedge [e1 =a] \wedge [e2 = b])/ \text{delete }a \text{ from }mem)
+$$
+Then, we prove that this post-condition can derive $Q$ by `conseq`.
 
 ##### `hoare_while`
 
-最弱前条件就是循环不变量
+The weakest precondition is the loop invariant.
 
 ##### `hoare_do_while`
 
-对于语句 `do c while (e)`
-
-先证 `do c while (e)` 的最弱前条件经过 `c` 可以推出 `while(e) c` 的最弱前条件，将 `while(e) c` 的最弱前条件作为循环不变量
+For the statement `do c while (e)`, the weakest precondition of `do c while (e)` after `c` implies the weakest precondition of `while(e) c`. This weakest precondition of `while(e) c` is considered as the loop invariant.
 
 ##### `hoare_for`
 
-对于语句 `for (c1; e; c2) c3`
+For the statement `for (c1; e; c2) c3`,
 
-循环不变量取为 `for (skip; e; c2) c3` 的最弱前条件，设其为 $R$
+The loop invariant is taken as the weakest precondition of `for (skip; e; c2) c3`, denoted as $R$.
 
-令 $P$ 为 $c1$ 推出 $R$ 的最弱前条件，$Q$ 为 $c2$ 推出 $R$ 的最弱前条件
+Let $P$ be the weakest precondition of $c1$ that leads to $R$, and $Q$ be the weakest precondition of $c2$ that leads to $R$.
 
-只需证明：
+It suffices to prove:
 
-- $\text{provable } P (c1) (R, false,false) $
-- $\text{provable } (R \wedge [e]) (c3) (Q, \text{如果break终止则到后条件}, Q)$
-- $\text{provable } Q (c2) (R, false,false) $
-- $(R \wedge [!e]) \vdash \text{后条件}$
+- $\text{provable } P (c1) (R, \text{false}, \text{false})$
+- $\text{provable } (R \land [e]) (c3) (Q, \text{if terminated by break, to the postcondition}, Q)$
+- $\text{provable } Q (c2) (R, \text{false}, \text{false})$
+- $(R \land [\lnot e]) \vdash \text{postcondition}$

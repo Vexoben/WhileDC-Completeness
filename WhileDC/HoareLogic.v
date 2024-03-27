@@ -1247,7 +1247,8 @@ Proof.
   revert H3; unfold_RELS_tac; intros; tauto.
 Qed.  
 
-Definition exp64 (P: int64 -> assertion): assertion := fun s => exists n:int64, P n s.
+Definition exp64 (P: int64 -> assertion): assertion :=
+    fun s => exists n:int64, P n s.
 
 Lemma hoare_exist_sound:
   forall (P : int64 -> assertion) (Q Q_brk Q_cnt: assertion) (c : com),
