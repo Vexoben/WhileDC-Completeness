@@ -4,13 +4,15 @@
 
 - `syntax`
 
-  > $e:=n\ |\ x\ |\ e_1\otimes e_2\ |\ \odot e \ |\ *e\ |\ \&e$
-  >
-  > $\otimes\in\{+,-,\times,/,\%,<,>,\le,\ge,=,\ne,||,\&\&\}$ 
-  >
-  > $ \odot\in\{!,-\} $ 
-  >
-  > $\begin{aligned}c:= &\ \text{skip}\ |\ x:=e\ |\ *e_1:=e_2\ |\ c_1;c_2\ |\ \text{if}\ (e) \ \text{then}\ c_1\ \text{else}\ c_2\ |\ \text{while}\ (e) \ c\ |\\&\ \text{do}\ c \ \text{while}\ (e)\ |\ \text{for}\ (c_1;e;c_2)\ c_3\ |\ \text{break}\ |\ \text{continue}     \end{aligned}$ 
+> ```math
+> \begin{align}
+> &\mbox{e:= } n\ |\ x\ |\ e_1\otimes e_2\ |\ \odot e \ |\ *e\ |\  \&e \\
+> &\otimes \in \{ +,-,\times,/,\%,<,>,\le,\ge,=,\ne, ||, \&\& \} \\
+> & \odot \in\{!,-\} \\
+> & c:= \ \text{skip}\ |\ x:=e\ |\ *e_1:=e_2\ |\ c_1;c_2\ |\ \text{if}\ (e) \ \text{then}\ c_1\ \text{else}\ c_2\ |\ \text{while}\ (e) \ c\ |\\ & \ \ \ \ \ \ \ \ \ \ \text{do}\ c \ \text{while}\ (e)\ |\ \text{for}\ (c_1;e;c_2)\ c_3\ |\ \text{break}\ |\ \text{continue}
+>  \end{align}
+> ```
+
 
 - `semantic` 
 
@@ -53,7 +55,7 @@
   | BuildHoareTriple: assertion -> com -> assertion -> assertion -> assertion -> HoareTriple.
   ```
 
-  We notate $\text{BuildHoareTriple}\ P\ c\ Q_{nrm}\ Q_{brk}\ Q_{cnt}$  as $\{\{P\}\}\ c\ \{\{Q_{nrm},Q_{brk},Q_{cnt} \}\}$ 
+  We notate $\text{BuildHoareTriple}\ P\ c\ Q_{nrm}\ Q_{brk}\ Q_{cnt}$  as $`\{\{P\}\}\ c\ \{\{Q_{nrm},Q_{brk},Q_{cnt} \}\}`$ 
 
 - `valid` 
 
@@ -156,23 +158,23 @@
 ##### `hoare_asgn_deref_fwd`
 
 Since the condition `valid {{ P }} *e1 = e2 {{ Q }}` secure that `e1` can be safely evaluated under the assertion `P` , we can prove that
-$$
-P \vdash \exists a, (P \wedge [e1 = a])
-$$
+```math
+P \vdash \exists a, (P \wedge [e_1 = a])
+```
 Due to `hoare_exist` , it suffices to prove that 
 
-$$
-\forall a, \text{provable} (P \wedge [e1 =a]) (e1 = e2) Q
-$$
+```math
+\forall a, \text{provable} (P \wedge [e_1 =a]) (*e_1 = e_2) Q
+```
 Similarly, it suffices to prove that
 
-$$
-\forall a,b, \text{provable} (P \wedge [e1 =a] \wedge [e2 = b]) (e1 = e2) Q
-$$
+```math
+\forall a,b, \text{provable} (P \wedge [e_1 =a] \wedge [e_2 = b]) (*e_1 = e_2) Q
+```
 Therefore, we can use `hoare_asgn_deref_fwd` , and the postcondition is like
-$$
-store(a, b) * ((P \wedge [e1 =a] \wedge [e2 = b])/ \text{delete }a \text{ from }mem)
-$$
+```math
+store(a, b) * ((P \wedge [e_1 =a] \wedge [e_2 = b])/ \text{delete }a \text{ from }mem)
+```
 Then, we prove that this post-condition can derive $Q$ by `conseq`.
 
 ##### `hoare_while`
@@ -189,11 +191,11 @@ For the statement `for (c1; e; c2) c3`,
 
 The loop invariant is taken as the weakest precondition of `for (skip; e; c2) c3`, denoted as $R$.
 
-Let $P$ be the weakest precondition of $c1$ that leads to $R$, and $Q$ be the weakest precondition of $c2$ that leads to $R$.
+Let $P$ be the weakest precondition of $c_1$ that leads to $R$, and $Q$ be the weakest precondition of $c_2$ that leads to $R$.
 
 It suffices to prove:
 
-- $\text{provable } P (c1) (R, \text{false}, \text{false})$
-- $\text{provable } (R \land [e]) (c3) (Q, \text{if terminated by break, to the postcondition}, Q)$
-- $\text{provable } Q (c2) (R, \text{false}, \text{false})$
+- $\text{provable } P (c_1) (R, \text{false}, \text{false})$
+- $\text{provable } (R \land [e]) (c_3) (Q, \text{if terminated by break, to the postcondition}, Q)$
+- $\text{provable } Q (c_2) (R, \text{false}, \text{false})$
 - $(R \land [\lnot e]) \vdash \text{postcondition}$
